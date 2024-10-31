@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/back-office', [BackOfficePageController::class, 'index'])->name('back-office');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
