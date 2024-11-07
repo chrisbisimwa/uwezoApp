@@ -8,116 +8,15 @@
             <div class="andro_header-navigation">
 
                 <ul>
-                    <li class="has-megamenu">
-                        <a href="index.html">Home</a>
-                        <ul class="andro_megamenu andro_megamenu-cards">
-                            <li class="nice-scroll" tabindex="1"
-                                style="overflow: hidden; outline: none; touch-action: none;">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <a href="index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-1.jpg') }}" alt="Noisy Home 1">
-                                                <span> <b class="color-primary">1.</b> Home One</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="demo-2/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-2.jpg') }}" alt="Noisy Home 2">
-                                                <span><b class="color-primary">2.</b> Home Two</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="demo-3/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-3.jpg') }}" alt="Noisy Home 3">
-                                                <span><b class="color-primary">3.</b> Home Three</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="demo-4/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-4.jpg') }}" alt="Noisy Home 4">
-                                                <span><b class="color-primary">4.</b> Home Four</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="demo-5/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-5.jpg') }}" alt="Noisy Home 5">
-                                                <span><b class="color-primary">5.</b> Home Five</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="demo-6/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-6.jpg') }}" alt="Noisy Home 6">
-                                                <span><b class="color-primary">6.</b> Home Six</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a class="mb-0" href="demo-7/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-7.jpg') }}" alt="Noisy Home 7">
-                                                <span><b class="color-primary">7.</b> Home Seven</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a class="mb-0" href="demo-8/index.html">
-                                                <img src="{{ asset('front-office-assets/img/megamenu/home-8.jpg') }}" alt="Noisy Home 8">
-                                                <span><b class="color-primary">8.</b> Home Eight</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr"
-                                style="width: 8px; z-index: 333; cursor: default; position: absolute; top: 0px; left: 642px; height: 350px; touch-action: none; display: block; opacity: 0;">
-                                <div class="nicescroll-cursors"
-                                    style="position: relative; top: 0px; float: right; width: 6px; height: 181px; background-color: rgb(239, 239, 239); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px; touch-action: none;">
-                                </div>
-                            </div>
-                            <div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr"
-                                style="height: 8px; z-index: 333; top: 342px; left: 0px; position: absolute; cursor: default; display: none; width: 642px; opacity: 0;">
-                                <div class="nicescroll-cursors"
-                                    style="position: absolute; top: 0px; height: 6px; width: 650px; background-color: rgb(239, 239, 239); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px; left: 0px;">
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="has-megamenu">
-                        <a href="#">Pages</a>
-                        <ul class="andro_megamenu">
-                            <li>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <h6 class="andro_megamenu-title">Pages One</h6>
-                                            <a href="line-up.html">Line Up</a>
-                                            <a href="artist-details.html">Artist Details</a>
-                                            <a href="festival-gallery.html">Festival Gallery</a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <h6 class="andro_megamenu-title">Pages Two</h6>
-                                            <a href="buy-tickets.html">Buy Tickets</a>
-                                            <a href="cart.html">Cart</a>
-                                            <a href="checkout.html">Checkout</a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <h6 class="andro_megamenu-title">Pages Three</h6>
-                                            <a href="pricing-plans.html">Pricing Plans</a>
-                                            <a href="album-details.html">Album Details</a>
-                                            <a href="contact-us.html">Contact Us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Blog</a>
-                        <ul>
-                            <li> <a href="blog.html">Blog Archive</a> </li>
-                            <li> <a href="blog-details.html">Blog Details</a> </li>
-                        </ul>
-                    </li>
-                    <li> <a href="festival-gallery.html">Photos</a> </li>
-                    <li> <a href="contact-us.html">Contact Us</a> </li>
+
+                    <li> <a href="contact-us.html">Accueil</a> </li>
+                    <li> <a href="contact-us.html">Artistes</a> </li>
+                    <li> <a href="contact-us.html">Evenements</a> </li>
+                    <li> <a href="contact-us.html">Promo</a> </li>
+                    <li> <a href="contact-us.html">Blog</a> </li>
+                    <li> <a href="contact-us.html">A propos</a> </li>
+                    <li> <a href="contact-us.html">Nous contacter</a> </li>
+
                 </ul>
 
                 <div class="andro_header-controls">
@@ -188,41 +87,15 @@
     </div>
     <nav>
         <ul>
-            <li class="has-children">
-                <a href="#"> Demos </a>
-                <ul>
-                    <li> <a href="index.html">Demo One</a> </li>
-                    <li> <a href="demo-2/index.html">Demo Two</a> </li>
-                    <li> <a href="demo-3/index.html">Demo Three</a> </li>
-                    <li> <a href="demo-4/index.html">Demo Four</a> </li>
-                    <li> <a href="demo-5/index.html">Demo Five</a> </li>
-                    <li> <a href="demo-6/index.html">Demo Six</a> </li>
-                    <li> <a href="demo-7/index.html">Demo Seven</a> </li>
-                    <li> <a href="demo-8/index.html">Demo Eight</a> </li>
-                </ul>
-            </li>
-            <li class="has-children">
-                <a href="#"> Pages </a>
-                <ul>
-                    <li> <a href="line-up.html">Line Up</a> </li>
-                    <li> <a href="artist-details.html">Artist Details</a> </li>
-                    <li> <a href="festival-gallery.html">Festival Gallery</a> </li>
-                    <li> <a href="buy-tickets.html">Buy Tickets</a> </li>
-                    <li> <a href="pricing-plans.html">Pricing Plans</a> </li>
-                    <li> <a href="cart.html">Cart</a> </li>
-                    <li> <a href="checkout.html">Checkout</a> </li>
-                    <li> <a href="cart.html">Cart</a> </li>
-                </ul>
-            </li>
-            <li class="has-children">
-                <a href="#">Blog</a>
-                <ul>
-                    <li> <a href="blog.html">Blog Archive</a> </li>
-                    <li> <a href="blog-details.html">Blog Details</a> </li>
-                </ul>
-            </li>
-            <li> <a href="album-details-2.html"> Album Details </a> </li>
-            <li> <a href="contact-us.html">Contact Us</a> </li>
+            <li> <a href="contact-us.html">Accueil</a> </li>
+            <li> <a href="contact-us.html">Artistes</a> </li>
+            <li> <a href="contact-us.html">Evenements</a> </li>
+            <li> <a href="contact-us.html">Promo</a> </li>
+            <li> <a href="contact-us.html">Blog</a> </li>
+            <li> <a href="contact-us.html">A propos</a> </li>
+            <li> <a href="contact-us.html">Nous contacter</a> </li>
+            
+          
         </ul>
     </nav>
 
