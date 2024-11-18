@@ -4,8 +4,6 @@
     @livewire('front-office.home.section-hero')
 
 
-
-
     @livewire('front-office.home.section-countdown')
 
 
