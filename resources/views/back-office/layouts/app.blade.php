@@ -55,8 +55,8 @@
     <link rel="stylesheet" href="{{ asset('back-office-assets/libs/swiper/swiper-bundle.min.css') }}">
     <script src="{{ asset('back-office-assets/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('back-office-assets/libs/choices.js/public/assets/styles/choices.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('back-office-assets/libs/quill/quill.snow.css') }}">
-    <link rel="stylesheet" href="{{ asset('back-office-assets/libs/quill/quill.bubble.css') }}">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.snow.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('back-office-assets/libs/filepond/filepond.min.css') }}">
     <link rel="stylesheet" href="{{ asset('back-office-assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css') }}">
     <link rel="stylesheet" href="{{ asset('back-office-assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css') }}">
@@ -839,7 +839,7 @@
     <script src="{{ asset('back-office-assets/js/custom-switcher.min.js') }}"></script>
     <script src="{{ asset('back-office-assets/js/custom.js') }}"></script>
     <script src="{{ asset('back-office-assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('back-office-assets/libs/quill/quill.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.js"></script>
     
 
 
@@ -859,6 +859,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    @stack('quilEditor')
 
     @livewireScripts
     @if (session()->has('success'))
