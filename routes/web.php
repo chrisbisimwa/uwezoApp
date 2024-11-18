@@ -30,3 +30,4 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
