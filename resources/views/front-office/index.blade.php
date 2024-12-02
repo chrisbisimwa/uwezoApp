@@ -10,7 +10,6 @@
     @livewire('front-office.home.section1')
 
 
-
     @livewire('front-office.home.section2')
 
     @livewire('front-office.home.section3')

@@ -30,4 +30,7 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/evenements', [App\Http\Controllers\EventController::class, 'evenements'])->name('evenements');
+
+
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');

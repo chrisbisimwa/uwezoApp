@@ -10,6 +10,8 @@
                 <ul>
 
                     <li> <a href="contact-us.html">Accueil</a> </li>
+                    <li> <a href="contact-us.html">Artistes</a> </li>
+                    <li> <a href="/evenements">Evenements</a> </li>
                     <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
                     <li> <a href="contact-us.html">Evenements</a> </li>
                     <li> <a href="contact-us.html">Promo</a> </li>
@@ -71,7 +73,6 @@
         </button>
     </form>
 </div>
-
 
 <aside class="andro_aside">
     <div class="close_btn mobile-trigger">
