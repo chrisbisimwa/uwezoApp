@@ -1,9 +1,7 @@
 <div class="main-header-container container-fluid">
 
-    <!-- Start::header-content-left -->
     <div class="header-content-left">
 
-        <!-- Start::header-element -->
         <div class="header-element">
             <div class="horizontal-logo">
                 <a href="index.html" class="header-logo">
@@ -14,39 +12,26 @@
                 </a>
             </div>
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element">
-            <!-- Start::header-link -->
             <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
-            <!-- End::header-link -->
+          
         </div>
-        <!-- End::header-element -->
 
     </div>
-    <!-- End::header-content-left -->
 
-    <!-- Start::header-content-right -->
     <div class="header-content-right">
 
-        <!-- Start::header-element -->
         <div class="header-element header-search">
-            <!-- Start::header-link -->
             <a href="javascript:void(0);" class="header-link" data-bs-toggle="modal" data-bs-target="#searchModal">
                 <i class="bx bx-search-alt-2 header-link-icon"></i>
             </a>
-            <!-- End::header-link -->
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element country-selector">
-            <!-- Start::header-link|dropdown-toggle -->
             <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
                 <img src="{{ asset('back-office-assets/images/flags/us_flag.jpg') }}" alt="img" class="rounded-circle">
             </a>
-            <!-- End::header-link|dropdown-toggle -->
             <ul class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
                 <li>
                     <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
@@ -77,36 +62,23 @@
                
             </ul>
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element header-theme-mode">
-            <!-- Start::header-link|layout-setting -->
             <a href="javascript:void(0);" class="header-link layout-setting">
                 <span class="light-layout">
-                    <!-- Start::header-link-icon -->
                 <i class="bx bx-moon header-link-icon"></i>
-                    <!-- End::header-link-icon -->
                 </span>
                 <span class="dark-layout">
-                    <!-- Start::header-link-icon -->
                 <i class="bx bx-sun header-link-icon"></i>
-                    <!-- End::header-link-icon -->
                 </span>
             </a>
-            <!-- End::header-link|layout-setting -->
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element cart-dropdown">
-            <!-- Start::header-link|dropdown-toggle -->
             <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
                 <i class="bx bx-cart header-link-icon"></i>
                 <span class="badge bg-primary rounded-pill header-icon-badge" id="cart-icon-badge">5</span>
             </a>
-            <!-- End::header-link|dropdown-toggle -->
-            <!-- Start::main-header-dropdown -->
             <div class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
@@ -242,19 +214,13 @@
                     </div>
                 </div>
             </div>
-            <!-- End::main-header-dropdown -->
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element notifications-dropdown">
-            <!-- Start::header-link|dropdown-toggle -->
             <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
                 <i class="bx bx-bell header-link-icon"></i>
                 <span class="badge bg-secondary rounded-pill header-icon-badge pulse pulse-secondary" id="notification-icon-badge">5</span>
             </a>
-            <!-- End::header-link|dropdown-toggle -->
-            <!-- Start::main-header-dropdown -->
             <div class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
@@ -359,18 +325,12 @@
                     </div>
                 </div>
             </div>
-            <!-- End::main-header-dropdown -->
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element header-shortcuts-dropdown">
-            <!-- Start::header-link|dropdown-toggle -->
             <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="notificationDropdown" aria-expanded="false">
                 <i class="bx bx-grid-alt header-link-icon"></i>
             </a>
-            <!-- End::header-link|dropdown-toggle -->
-            <!-- Start::main-header-dropdown -->
             <div class="main-header-dropdown header-shortcuts-dropdown dropdown-menu pb-0 dropdown-menu-end" aria-labelledby="notificationDropdown">
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
@@ -478,24 +438,16 @@
                     </div>
                 </div>
             </div>
-            <!-- End::main-header-dropdown -->
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element header-fullscreen">
-            <!-- Start::header-link -->
             <a onclick="openFullscreen();" href="#" class="header-link">
                 <i class="bx bx-fullscreen full-screen-open header-link-icon"></i>
                 <i class="bx bx-exit-fullscreen full-screen-close header-link-icon d-none"></i>
             </a>
-            <!-- End::header-link -->
         </div>
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element">
-            <!-- Start::header-link|dropdown-toggle -->
             <a href="#" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <div class="me-sm-2 me-0">
@@ -507,7 +459,6 @@
                     </div>
                 </div>
             </a>
-            <!-- End::header-link|dropdown-toggle -->
             <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
                 <li><a class="dropdown-item d-flex" href="profile.html"><i class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
                 <li><a class="dropdown-item d-flex" href="mail.html"><i class="ti ti-inbox fs-18 me-2 op-7"></i>Inbox <span class="badge bg-success-transparent ms-auto">25</span></a></li>
@@ -518,19 +469,13 @@
                 <li><a class="dropdown-item d-flex" href="sign-in-cover.html"><i class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
             </ul>
         </div>  
-        <!-- End::header-element -->
 
-        <!-- Start::header-element -->
         <div class="header-element">
-            <!-- Start::header-link|switcher-icon -->
             <a href="#" class="header-link switcher-icon" data-bs-toggle="offcanvas" data-bs-target="#switcher-canvas">
                 <i class="bx bx-cog header-link-icon"></i>
             </a>
-            <!-- End::header-link|switcher-icon -->
         </div>
-        <!-- End::header-element -->
 
     </div>
-    <!-- End::header-content-right -->
 
 </div>

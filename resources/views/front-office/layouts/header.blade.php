@@ -12,6 +12,8 @@
                     <li> <a href="contact-us.html">Accueil</a> </li>
                     <li> <a href="contact-us.html">Artistes</a> </li>
                     <li> <a href="/evenements">Evenements</a> </li>
+                    <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
+                    <li> <a href="contact-us.html">Evenements</a> </li>
                     <li> <a href="contact-us.html">Promo</a> </li>
                     <li> <a href="contact-us.html">Blog</a> </li>
                     <li> <a href="contact-us.html">A propos</a> </li>

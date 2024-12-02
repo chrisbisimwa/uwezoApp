@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\View\View;
 
-Class BlogController extends Controller
+Class BlogCategoryController extends Controller
 {
      /**
      * Create a new controller instance.
@@ -17,9 +17,5 @@ Class BlogController extends Controller
 
 
     
-    //
-    public function index()
-    {
-        return view('back-office.blog.index');
-    }
+    
 }
