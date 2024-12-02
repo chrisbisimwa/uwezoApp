@@ -20,6 +20,17 @@ class Create extends Component
     public $tags;
     public $imageNames = [];
 
+    public $languages = [
+        'Python',
+        'Php',
+        'Java',
+        'C',
+        'C++',
+    ];
+
+    public $prog_lang = '';
+    public $programming_languages = [];
+
     public function uploadImage($image)
     {
         $imageData = substr($image, strpos($image, ',') + 1);
@@ -43,7 +54,13 @@ class Create extends Component
         return $this->dispatch('blogimageUploaded', $url);
     }
 
-    
+   
+
+    public function cancel(){
+        return redirect()->route('blog.index');
+    }
+
+
 
 
     public function render()
