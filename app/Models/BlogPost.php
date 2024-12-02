@@ -26,6 +26,19 @@ class BlogPost extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
+    public function shord_content()
+    {
+        //parse html of the content to get the first 100 characters
+        $content = strip_tags($this->content);
+        return substr($content, 0, 200);
+
+
+    }
+
+    public function post_body_output(){
+        return $this->content;
+    }
+
     public function categories()
     {
         return $this->belongsToMany(BlogCategory::class, 'blog_post_categories');
