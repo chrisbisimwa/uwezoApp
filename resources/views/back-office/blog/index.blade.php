@@ -59,7 +59,12 @@
                                         <div class="d-flex align-items-center">
                                             <div class="me-2 lh-1">
                                                 <span class="avatar avatar-sm avatar-rounded">
+                                                    @if ($post->featured_image)
+                                                        <img src="{{ asset('storage/uploads/' . $post->featured_image) }}" alt="">
+                                                    @else
                                                     <img src="../assets/images/faces/11.jpg" alt="">
+                                                    @endif
+                                                    
                                                 </span>
                                             </div>
                                             <div>

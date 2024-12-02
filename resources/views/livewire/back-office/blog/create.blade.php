@@ -8,62 +8,33 @@
                 <div class="row gy-3">
                     <div class="col-xl-12">
                         <label for="blog-title" class="form-label">Titre</label>
-                        <input type="text" class="form-control" id="blog-title" placeholder="Blog Title">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="blog-title"
+                            wire:model="title" placeholder="Blog Title" required>
+                        @error('title')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
 
 
 
-                    <div class="col-xl-6">
-                        <label for="publish-date" class="form-label">Publish Date</label>
-                        <input type="text" class="form-control flatpickr-input" id="publish-date"
-                            placeholder="Choose date" readonly="readonly">
-                    </div>
-                    <div class="col-xl-6">
-                        <label for="publish-time" class="form-label">Publish Time</label>
-                        <input type="text" class="form-control flatpickr-input" id="publish-time"
-                            placeholder="Choose time" readonly="readonly">
-                    </div>
 
-                    
+
                     <div class="col-xl-12">
                         <label class="form-label">Blog Content</label>
+                        <input type="hidden" wire:model="content" class="form-control @error('content') is-invalid @enderror">
+                        @error('content')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         <div class="relative mt-4" wire:ignore>
+
                             <div id="editor" wire:model="content"></div>
                         </div>
                     </div>
-                    <div class="col-xl-12 blog-images-container">
-                        <label for="blog-author-email" class="form-label">Blog Images</label>
-                        <div class="filepond--root blog-images filepond--hopper"
-                            data-style-button-remove-item-position="left"
-                            data-style-button-process-item-position="right" data-style-load-indicator-position="right"
-                            data-style-progress-indicator-position="right" data-style-button-remove-item-align="false"
-                            style="height: 76px;"><input class="filepond--browser" type="file"
-                                id="filepond--browser-nrpmorg9z" name="filepond"
-                                aria-controls="filepond--assistant-nrpmorg9z"
-                                aria-labelledby="filepond--drop-label-nrpmorg9z" multiple=""><a
-                                class="filepond--credits" aria-hidden="true" href="https://pqina.nl/"
-                                target="_blank" rel="noopener noreferrer"
-                                style="transform: translateY(68px);">Powered by PQINA</a>
-                            <div class="filepond--drop-label"
-                                style="transform: translate3d(0px, 0px, 0px); opacity: 1;"><label
-                                    for="filepond--browser-nrpmorg9z" id="filepond--drop-label-nrpmorg9z"
-                                    aria-hidden="true">Drag &amp; Drop your files or <span
-                                        class="filepond--label-action" tabindex="0">Browse</span></label></div>
-                            <div class="filepond--list-scroller" style="transform: translate3d(0px, 60px, 0px);">
-                                <ul class="filepond--list" role="list"></ul>
-                            </div>
-                            <div class="filepond--panel filepond--panel-root" data-scalable="true">
-                                <div class="filepond--panel-top filepond--panel-root"></div>
-                                <div class="filepond--panel-center filepond--panel-root"
-                                    style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.6, 1);"></div>
-                                <div class="filepond--panel-bottom filepond--panel-root"
-                                    style="transform: translate3d(0px, 68px, 0px);"></div>
-                            </div><span class="filepond--assistant" id="filepond--assistant-nrpmorg9z" role="status"
-                                aria-live="polite" aria-relevant="additions"></span>
-                            <div class="filepond--drip"></div>
-                            <fieldset class="filepond--data"></fieldset>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
@@ -86,8 +57,9 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <div class="btn-list text-end">
-                            
-                            <button type="button" class="btn btn-sm btn-primary">Enregistrer</button>
+
+                            <button type="button" class="btn btn-sm btn-primary"
+                                wire:click="savePost()">Enregistrer</button>
                             <button type="button" wire:click="cancel()" class="btn btn-sm btn-light">Annuler</button>
                         </div>
                     </li>
@@ -98,7 +70,7 @@
                                 <label for="blog-category" class="form-label">Published Status</label>
 
                                 <select class="form-control" data-trigger name="choices-single-default"
-                                    id="choices-single-default">
+                                    wire:model="status" id="choices-single-default">
 
                                     <option value="draft">Brouillon</option>
                                     <option value="published">Publié</option>
@@ -115,19 +87,58 @@
                                 <label for="blog-category" class="form-label">Blog Category</label>
 
                                 <select class="form-control" name="choices-multiple-remove-button"
-                                    id="choices-multiple-remove-button" multiple>
-                                    <option value="Choice 1" selected>Choice 1</option>
-                                    <option value="Choice 2">Choice 2</option>
-                                    <option value="Choice 3">Choice 3</option>
-                                    <option value="Choice 4">Choice 4</option>
+                                    wire:model="selectedCategories" id="choices-multiple-remove-button" multiple>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
 
 
                             </div>
                         </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex gap-2 flex-wrap align-items-center">
+                            <div class="col-xl-12">
+                                <label for="featured_image" class="form-label">Featured Image</label>
+
+                                @if ($featured_image && $featured_image->isValid())
+                                    <div class="card custom-card product-card">
+                                        <div class="card-body">
+                                            <a href="javascript:void(0);" class="product-image">
+                                                <img src="{{ asset('back-office-assets/images/ecommerce/png/2.png') }}"
+                                                    class="card-img mb-3" alt="...">
+                                            </a>
+                                            <div class="product-icons" style="cursor: pointer;">
+                                                <a wire:click="removeImage()" class="wishlist btn-delete"><i
+                                                        class="ri-close-line"></i></a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                @else
+                                    <input type="file" wire:model="featured_image"
+                                        class=" @error('featured_image') is-invalid @enderror">
+
+                                    @error('featured_image')
+                                        <span class="text-sm text-red-500 italic" style="color: red;" role="alert">{{ $message }}</span>
+                                    @enderror
+                                   
+
+                                    <div wire:loading wire:target="featured_image" class="text-sm text-gray-500 italic">
+                                        Uploading...</div>
+                                @endif
 
 
-                    
+
+
+
+                            </div>
+                        </div>
+                    </li>
+
+
                 </ul>
             </div>
         </div>
@@ -209,6 +220,8 @@
 
             // Update the previous list of images
             previousImages = currentImages;
+
+            @this.set('content', editor.root.innerHTML);
         });
 
         Livewire.on('blogimageUploaded', function(imagePaths) {
