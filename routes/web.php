@@ -35,3 +35,5 @@ Route::get('/blog', [App\Http\Controllers\FrontOfficePageController::class, 'blo
 Route::get('/blog/{slug}', [App\Http\Controllers\FrontOfficePageController::class, 'blogPost'])->name('front.blog-post');
 
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
+
+Route::get('nous-contacter', [App\Http\Controllers\FrontOfficePageController::class, 'contact'])->name('front.contact');

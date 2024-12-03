@@ -29,4 +29,9 @@ class FrontOfficePageController extends Controller
         $blogPost = BlogPost::where('slug', $slug)->first();
         return view('front-office.blog-post', compact('blogPost'));
     }
+
+    public function contact()
+    {
+        return view('front-office.contact');
+    }
 }
