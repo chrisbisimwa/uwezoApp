@@ -54,7 +54,8 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = BlogPost::where('slug', $id)->first();
+        return view('back-office.blog.edit', compact('post'));
     }
 
     /**

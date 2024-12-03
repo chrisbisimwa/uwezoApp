@@ -29,7 +29,8 @@
                             </div>
                             <h5> <a href="{{route('front.blog-post', $blog->slug)}}">{{ $blog->title }}</a> </h5>
                             <p>
-                                {{ $blog->shord_content() }}
+                                
+                                {!! Str::limit($blog->shord_content(), 150, ' ...') !!}
                             </p>
                             <a href="{{route('front.blog-post', $blog->slug)}}" class="button secondary">Lire la suite</a>
                         </div>
