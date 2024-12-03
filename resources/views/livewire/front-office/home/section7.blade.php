@@ -16,19 +16,18 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="andro_post">
                         <div class="andro_post-thumb">
-                            <a href="{{route('front.blog-post', $post->slug)}}">
+                            <a href="{{ route('front.blog-post', $post->slug) }}">
                                 @if ($post->featured_image)
                                     <img src="{{ asset('storage/uploads/' . $post->featured_image) }}" alt="blog post">
-                                    
                                 @else
-                                <img src="{{ asset('front-office-assets/img/no-image.jpg') }}" alt="blog post"> 
+                                    <img src="{{ asset('front-office-assets/img/no-image.jpg') }}" alt="blog post">
                                 @endif
-                                
+
                                 <span class="andro_post-date">{{ $post->created_at->format('M Y') }}</span>
                             </a>
                         </div>
                         <div class="andro_post-body">
-                            <h5> <a href="{{route('front.blog-post', $post->slug)}}">{!! Str::limit($post->title, 50, ' ...') !!}</a> </h5>
+                            <h5> <a href="{{ route('front.blog-post', $post->slug) }}">{!! Str::limit($post->title, 50, ' ...') !!}</a> </h5>
                             <p>{{ $post->shord_content() }}</p>
                             <div class="andro_post-author">
                                 <div class="andro_post-author-thumb">
@@ -56,18 +55,22 @@
 
 
 
-          
 
-         
+
+
 
         </div>
 
-        <div class="container text-center">
-        
-            
-            <a href="{{route('front.blog')}}" class="button primary icon-after">Afficher plus <i class="fal fa-arrow-right"></i> </a>
-        
-        </div>
+        @if ($posts->count() > 0)
+            <div class="container text-center">
+
+
+                <a href="{{ route('front.blog') }}" class="button primary icon-after">Afficher plus <i
+                        class="fal fa-arrow-right"></i> </a>
+
+            </div>
+        @endif
+
     </div>
 
 </div>
