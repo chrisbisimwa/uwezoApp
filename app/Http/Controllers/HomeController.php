@@ -19,7 +19,6 @@ class HomeController extends Controller
     }
     
 
-
     public function artistes(){
         return view('front-office.artiste');
     }
