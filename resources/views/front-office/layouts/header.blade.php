@@ -1,4 +1,5 @@
 <div class="andro_header andro_header-absolute style-1">
+    
     <div class="container andro_header-wrap">
         <div class="andro_header-logo">
             <a href="index.html"><img src="{{ asset('front-office-assets/img/logo.png') }}" alt="logo"></a>
@@ -24,28 +25,17 @@
                     <a class="search-trigger" href="#">
                         <i class="fal fa-search"></i>
                     </a>
-                    <a class="andro_header-cart" href="cart.html">
-                        <i class="fal fa-shopping-basket"></i>
-                        <span class="andro_header-cart-count">3</span>
-                    </a>
-                    <a href="#" class="andro_burger-icon mobile-trigger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
+                    
                 </div>
 
             </div>
 
             <div class="andro_header-contacts">
-                <a href="#"> <i class="fal fa-envelope"></i> Subscribe Today </a>
+                
                 <ul class="andro_socials">
                     <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                    <li> <a href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
                 </ul>
             </div>
 
