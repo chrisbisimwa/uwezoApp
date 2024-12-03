@@ -11,7 +11,6 @@
                 <ul>
 
                     <li> <a href="{{route('front.home')}}">Accueil</a> </li>
-                    <li> <a href="contact-us.html">Artistes</a> </li>
                     <li> <a href="/evenements">Evenements</a> </li>
                     <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
                     <li> <a href="#">Promo</a> </li>
