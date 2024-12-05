@@ -33,7 +33,9 @@
                     @endif
 
                 @empty
-                    <h2>Rien à afficher pour le moment</h2>
+                <center>
+                    <span style="color: red;">Rien à afficher pour le moment</span>
+                </center>
                 @endforelse
 
             </ol>

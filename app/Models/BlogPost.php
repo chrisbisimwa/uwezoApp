@@ -26,7 +26,7 @@ class BlogPost extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
-    public function shord_content()
+    public function short_content()
     {
         //parse html of the content to get the first 100 characters
         $content = strip_tags($this->content);

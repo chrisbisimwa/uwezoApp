@@ -18,7 +18,7 @@
         content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('back-office-assets/images/brand-logos/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('back-office-assets/images/logo-uwezo.png')}}">
 
 
 

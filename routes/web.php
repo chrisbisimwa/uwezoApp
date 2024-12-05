@@ -30,8 +30,8 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
 });
 
 Route::get('/evenements', [App\Http\Controllers\EventController::class, 'evenements'])->name('evenements');
-Route::get('/blog', [App\Http\Controllers\FrontOfficePageController::class, 'blog'])->name('front.blog');
-Route::get('/blog/{slug}', [App\Http\Controllers\FrontOfficePageController::class, 'blogPost'])->name('front.blog-post');
+Route::get('/actualite', [App\Http\Controllers\FrontOfficePageController::class, 'blog'])->name('front.blog');
+Route::get('/actualite/{slug}', [App\Http\Controllers\FrontOfficePageController::class, 'blogPost'])->name('front.blog-post');
 
 Route::get('/evenements', [App\Http\Controllers\EventController::class, 'evenements'])->name('front.evenements');
 

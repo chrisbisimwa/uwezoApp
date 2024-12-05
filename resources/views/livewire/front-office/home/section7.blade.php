@@ -23,12 +23,12 @@
                                     <img src="{{ asset('front-office-assets/img/no-image.jpg') }}" alt="blog post">
                                 @endif
 
-                                <span class="andro_post-date">{{ $post->created_at->format('M Y') }}</span>
+                                <span class="andro_post-date">{{ $post->created_at->format('d M, Y') }}</span>
                             </a>
                         </div>
                         <div class="andro_post-body">
                             <h5> <a href="{{ route('front.blog-post', $post->slug) }}">{!! Str::limit($post->title, 50, ' ...') !!}</a> </h5>
-                            <p>{!! Str::limit($post->shord_content(), 150, ' ...') !!}</p>
+                            <p>{!! Str::limit($post->short _content(), 150, ' ...') !!}</p>
                             <div class="andro_post-author">
                                 <div class="andro_post-author-thumb">
                                     @if ($post->author->profile_image)
@@ -52,11 +52,6 @@
             @empty
                 <h2>Aucun article trouvé !</h2>
             @endforelse
-
-
-
-
-
 
 
         </div>

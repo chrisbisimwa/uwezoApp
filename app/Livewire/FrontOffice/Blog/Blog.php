@@ -13,7 +13,7 @@ class Blog extends Component
 
     public function render()
     {
-        $blogPosts = BlogPost::where('status', 'published')->latest()->paginate(5);
+        $blogPosts = BlogPost::where('status', 'published')->latest()->paginate(6);
 
         return view('livewire.front-office.blog.blog',  compact('blogPosts') );
     }

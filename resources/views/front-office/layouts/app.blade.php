@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('front-office-assets/fonts/flaticon/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/style.css') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('front-office-assets/img/logo-uwezo.png')}}">
     
 
 

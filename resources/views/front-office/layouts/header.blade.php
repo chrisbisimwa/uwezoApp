@@ -14,9 +14,7 @@
                     <li> <a href="/evenements">Evenements</a> </li>
                     <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
                     <li> <a href="#">Promo</a> </li>
-                    <li> <a href="contact-us.html">Evenements</a> </li>
-                    <li> <a href="contact-us.html">Promo</a> </li>
-                    <li> <a href="{{route('front.blog')}}">Blog</a> </li>
+                    <li> <a href="{{route('front.blog')}}">Actualités</a> </li>
                     <li> <a href="contact-us.html">A propos</a> </li>
                     <li> <a href="{{route('front.contact')}}">Nous contacter</a> </li>
 
@@ -32,13 +30,13 @@
 
             </div>
 
-            <div class="andro_header-contacts">
+           {{--  <div class="andro_header-contacts">
                 <ul class="andro_socials">
                     <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
                 </ul>
-            </div>
+            </div> --}}
  
         </div>
     </div>

@@ -26,8 +26,22 @@ class FrontOfficePageController extends Controller
 
     public function blogPost($slug)
     {
+        //get host url
+        
+        
         $blogPost = BlogPost::where('slug', $slug)->first();
-        return view('front-office.blog-post', compact('blogPost'));
+        $share_buttons = \Share::page(
+            'https://www.laravelclick.com/post/laravel-10-social-media-share-buttons-integration-tutorial',
+            'How to Add Social Media Share Button in Laravel 10 App?'
+        )
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->whatsapp()
+        ->telegram()
+        ->reddit();
+        $view_data['share_buttons'] = $share_buttons;
+        return view('front-office.blog-post', compact('blogPost'))->with($view_data);
     }
 
     public function contact()
