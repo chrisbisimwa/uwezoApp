@@ -10,11 +10,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>UWEZO APP</title>
+    {{-- <title>UWEZO APP</title>
     <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
     <meta name="Author" content="KivuTech">
     <meta name="keywords"
-        content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+        content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit."> --}}
+
+    {!! seo($blogPost ?? null) !!}
 
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/bootstrap-datepicker.min.css') }}">
@@ -24,8 +26,14 @@
     <link rel="stylesheet" href="{{ asset('front-office-assets/fonts/flaticon/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/style.css') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('front-office-assets/img/logo-uwezo.png')}}">
-    
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front-office-assets/img/logo-uwezo.png') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
 
 
     @livewireStyles
@@ -63,6 +71,8 @@
     <script src="{{ asset('front-office-assets/js/andro-audioplayer.js') }}"></script>
     <script src="{{ asset('front-office-assets/js/main.js') }}"></script>
 
+    <script src="{{ asset('js/share.js') }}"></script>
+
     @livewireScripts
 
 
@@ -75,7 +85,7 @@
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+
     <x-livewire-alert::scripts />
 
     @if (session()->has('success'))
