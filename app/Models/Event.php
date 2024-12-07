@@ -3,6 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Scopes\Searchable;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Event extends Model
 {
@@ -27,6 +31,10 @@ class Event extends Model
         'updated_at' 
     ];
 
+    public function author(){
+        return $this->belongsTo(User::class, 'author_id');
+    }
+
     public function categories()
     {
         return $this->belongsToMany(EventCategory::class, 'event_post_categories');
@@ -34,6 +42,6 @@ class Event extends Model
 
     public function comments()
     {
-        return $this->hasMany(EventComment::class);
+        return $this->hasMany(EventComment::class, );
     }
 }
