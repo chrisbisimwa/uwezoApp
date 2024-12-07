@@ -63,19 +63,31 @@
                                     </li>
                                     <!-- End::slide -->
 
+                                    <li class="slide__category"><span class="category-name">Actualité</span></li>
                                     <li class="slide {{ Request::routeIs('blog.index') ? 'active' : '' }}">
                                         <a href="{{ route('blog.index') }}" class="side-menu__item">
                                             <i class="bx bx-file side-menu__icon"></i>
-                                            <span class="side-menu__label">Articles</span>
+                                            <span class="side-menu__label">Actualié</span>
                                         </a>
                                     </li>
+                                    <li class="slide">
+                                        <a href="{{route('blog-category.index')}}" class="side-menu__item">
+                                            <i class="bx bx-category side-menu__icon"></i>
+                                            <span class="side-menu__label">Catégories</span>
+                                        </a>
+                                    </li>
+                                    <li class="slide">
+                                        <a href="{{route('blog-comment.index')}}" class="side-menu__item">
+                                            <i class="bx bx-comment side-menu__icon"></i>
+                                            <span class="side-menu__label">Commentaires</span>
+                                        </a>
+                                    </li>
+                                    
 
-                                    <!-- Start::slide__category -->
-                                    <li class="slide__category"><span class="category-name">Pages</span></li>
-                                    <!-- End::slide__category -->
 
 
-                                    <!-- End::slide -->
+
+                                   
                                 </ul>
                                 <div class="slide-right d-none" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg"
                                         fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">

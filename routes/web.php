@@ -4,11 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackOfficePageController;
 use App\Http\Controllers\FrontOfficePageController;
 use App\Http\Controllers\BackOffice\BlogController;
-use App\Http\Controllers\BackOffice\BlogCategoryController;
 use App\Http\Controllers\BackOffice\EventController;
 use App\Http\Controllers\BackOffice\EventCategoryController;
 use App\Http\Controllers\BackOffice\ArtworkController;
 use App\Http\Controllers\BackOffice\ArtworkCategoryController;
+use App\Http\Controllers\BackOffice\BlogCategoryController;
+use App\Http\Controllers\BackOffice\BlogCommentController;
 
 Route::get('/', [App\Http\Controllers\FrontOfficePageController::class, 'index'])->name('front.home');
 
@@ -24,7 +25,8 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
     Route::resource('blog', App\Http\Controllers\BackOffice\BlogController::class);
     //Route::resource('event', App\Http\Controllers\BackOffice\EventController::class);
     //Route::resource('artwork', App\Http\Controllers\BackOffice\ArtworkController::class);
-    //Route::resource('blog-category', App\Http\Controllers\BackOffice\BlogCategoryController::class);
+    Route::resource('blog-category', App\Http\Controllers\BackOffice\BlogCategoryController::class);
+    Route::resource('blog-comment', App\Http\Controllers\BackOffice\BlogCommentController::class);
     //Route::resource('event-category', App\Http\Controllers\BackOffice\EventCategoryController::class);
    // Route::resource('artwork-category', App\Http\Controllers\BackOffice\ArtworkCategoryController::class);
 });

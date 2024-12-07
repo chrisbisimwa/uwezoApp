@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\BackOffice;
 
 use App\Http\Controllers\Controller;
-use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use App\Models\BlogPost;
 
-class BlogCategoryController extends Controller
+class BlogCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +15,12 @@ class BlogCategoryController extends Controller
     {
         $search = $request->get('search', '');
 
-        $categories = BlogCategory::search($search)
+        $posts = BlogPost::search($search)
             ->latest()
             ->paginate(10)
             ->withQueryString();
 
-        return view('back-office.category.index', compact('categories', 'search'));
+        return view('back-office.blog.index', compact('posts', 'search'));
     }
 
     /**

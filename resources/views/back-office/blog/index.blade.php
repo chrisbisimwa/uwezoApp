@@ -77,7 +77,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            {!! Str::limit($post->shord_content(), 150, ' ...') !!}
+                                            {!! Str::limit($post->short_content(), 150, ' ...') !!}
                                         </td>
                                         <td>
                                             {{ $post->author->name }}
@@ -122,21 +122,9 @@
 
                 </div>
                 <div class="card-footer">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination mb-0 float-end">
-                            <li class="page-item disabled">
-                                <a class="page-link">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+                   
+
+                    {{ $posts->links('vendor.livewire.backend') }}
                 </div>
             </div>
         </div>
