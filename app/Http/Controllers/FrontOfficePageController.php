@@ -41,6 +41,11 @@ class FrontOfficePageController extends Controller
         ->telegram()
         ->reddit();
         $view_data['share_buttons'] = $share_buttons;
+
+
+     
+
+         //dd($blogPost->getDynamicSEOData());
         return view('front-office.blog-post', compact('blogPost'))->with($view_data);
     }
 

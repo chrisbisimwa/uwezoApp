@@ -1,6 +1,26 @@
 @extends("front-office.layouts.app")
 
+@section('styles')
+    div#social-links {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    div#social-links ul li {
+        display: inline-block;
+    }   
+
+    div#social-links ul li a {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin: 1px;
+        font-size: 30px;
+        color: #222;
+        background-color: #ccc;
+    }
+@endsection
 @section("content")
+
 <div class="andro_subheader style-4 bg-cover bg-center bg-norepeat dark-overlay dark-overlay-2" style="background-image: url(../front-office-assets/img/subheader-7.jpg)">
     <div class="container">
 
@@ -60,18 +80,24 @@
 
       <div class="andro_post-d-footer">
 
+        @if ($blogPost->categories)
         <div class="andro_post-d-tags">
           <b>Tags: </b>
-          <a href="#">Kally</a>,
-          <a href="#">Amazing</a>,
-          <a href="#">Photography</a>
+          @foreach ($blogPost->categories->pluck('name')->toArray() as $item)
+          <a href="#">{{$item}}</a>@if (!$loop->last), @endif
+              
+          @endforeach
+          
         </div>
 
+        @endif
+        
         <ul class="andro_socials">
+          
           <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
           <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
           <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
-          {!! $share_buttons !!}
+          
         </ul>
 
       </div>
