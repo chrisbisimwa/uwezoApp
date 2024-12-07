@@ -1,14 +1,14 @@
 @extends("front-office.layouts.app")
 
 @section("content")
-<div class="andro_subheader style-4 bg-cover bg-center bg-norepeat dark-overlay dark-overlay-2" style="background-image: url(../assets/img/subheader-7.jpg)">
+<div class="andro_subheader style-4 bg-cover bg-center bg-norepeat dark-overlay dark-overlay-2" style="background-image: url(../front-office-assets/img/subheader-7.jpg)">
     <div class="container">
 
-      <h1>Blog details</h1>
+      <h1>Détails de l'actualité</h1>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Blog details</li>
+          <li class="breadcrumb-item"><a href="{{route('front.blog')}}">Actualités</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Détails de l'actualité</li>
         </ol>
       </nav>
 
@@ -71,7 +71,7 @@
           <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
           <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
           <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
-          <li> <a href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
+          {!! $share_buttons !!}
         </ul>
 
       </div>

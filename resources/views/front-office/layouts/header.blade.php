@@ -2,7 +2,7 @@
     
     <div class="container andro_header-wrap">
         <div class="andro_header-logo">
-            <a href="index.html"><img src="{{ asset('front-office-assets/img/logo-uwezo.png') }}" alt="logo"></a>
+            <a href="{{route('front.home')}}"><img src="{{ asset('front-office-assets/img/logo-uwezo.png') }}" style="width: 120px" alt="logo"></a>
         </div>
         <div class="andro_header-inner">
 
@@ -10,17 +10,13 @@
 
                 <ul>
 
-                    <li> <a href="contact-us.html">Accueil</a> </li>
-                    <li> <a href="contact-us.html">Artistes</a> </li>
+                    <li> <a href="{{route('front.home')}}">Accueil</a> </li>
                     <li> <a href="/evenements">Evenements</a> </li>
                     <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
                     <li> <a href="#">Promo</a> </li>
-                    <li> <a href="#">Blog</a> </li>
-                    <li> <a href="contact-us.html">Evenements</a> </li>
-                    <li> <a href="contact-us.html">Promo</a> </li>
-                    <li> <a href="contact-us.html">Blog</a> </li>
+                    <li> <a href="{{route('front.blog')}}">Actualités</a> </li>
                     <li> <a href="contact-us.html">A propos</a> </li>
-                    <li> <a href="contact-us.html">Nous contacter</a> </li>
+                    <li> <a href="{{route('front.contact')}}">Nous contacter</a> </li>
 
                 </ul>
 
@@ -28,30 +24,20 @@
                     <a class="search-trigger" href="#">
                         <i class="fal fa-search"></i>
                     </a>
-                    <a class="andro_header-cart" href="cart.html">
-                        <i class="fal fa-shopping-basket"></i>
-                        <span class="andro_header-cart-count">3</span>
-                    </a>
-                    <a href="#" class="andro_burger-icon mobile-trigger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
+                   
+                  
                 </div>
 
             </div>
 
-            <div class="andro_header-contacts">
-                <a href="#"> <i class="fal fa-envelope"></i> Subscribe Today </a>
+           {{--  <div class="andro_header-contacts">
                 <ul class="andro_socials">
                     <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
                 </ul>
-            </div>
- -->
+            </div> --}}
+ 
         </div>
     </div>
 </div>
