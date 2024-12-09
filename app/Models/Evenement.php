@@ -8,7 +8,7 @@ use App\Models\Scopes\Searchable;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
-class Event extends Model
+class Evenement extends Model
 {
     //
     use HasFactory; 
