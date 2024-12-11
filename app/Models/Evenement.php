@@ -12,6 +12,7 @@ class Evenement extends Model
 {
     //
     use HasFactory; 
+    use Searchable;
 
     protected $table = 'events'; 
 
