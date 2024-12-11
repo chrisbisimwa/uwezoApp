@@ -84,7 +84,7 @@
                                     </li>
                                     <!-- Start::slide event -->
                                     <li class="slide__category"><span class="category-name">Evénements</span></li>
-                                    <li class="slide {{ Request::routeIs('blog.index') ? 'active' : '' }}">
+                                    <li class="slide {{ Request::routeIs('evenement.index') ? 'active' : '' }}">
                                         <a href="{{ route('evenement.index') }}" class="side-menu__item">
                                             <i class="bx bx-file side-menu__icon"></i>
                                             <span class="side-menu__label">Evenements</span>

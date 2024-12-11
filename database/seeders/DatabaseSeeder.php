@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'User11',
-            'email' => 'user11@uwezo.dev',
+            'name' => 'User2',
+            'email' => 'user2@uwezo.dev',
         ]);
         Evenement::factory()->create([
             'title'=> 'Slam Show à Kin Elubu',

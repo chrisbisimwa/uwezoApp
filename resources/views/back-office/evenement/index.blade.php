@@ -22,7 +22,7 @@
                         Gérer les événements
                     </div>
                     <div class="d-flex">
-                        <a href="{{ route('blog.create') }}"
+                        <a href="{{ route('evenement.create') }}"
                             class="btn btn-sm btn-primary btn-wave waves-light waves-effect waves-light"><i
                                 class="ri-add-line fw-semibold align-middle me-1"></i> Nouvel événement</a>
                         <div class="dropdown ms-2">
@@ -31,12 +31,7 @@
                                 type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">All Invoices</a></li>
-                                <li><a class="dropdown-item" href="#">Paid Invoices</a></li>
-                                <li><a class="dropdown-item" href="#">Pending Invoices</a></li>
-                                <li><a class="dropdown-item" href="#">Overdue Invoices</a></li>
-                            </ul>
+                           
                         </div>
                     </div>
                 </div>
@@ -45,11 +40,14 @@
                         <table class="table align-middle">
                             <thead>
                                 <tr>
-                                    <th scope="col" class="w-20">Titre</th>
-                                    <th scope="col" class="w-35">Contenu</th>
-                                    <th scope="col" class="w-15">Auteur</th>
-                                    <th scope="col" class="w-15">Date</th>
+                                    <th scope="col" class="w-20 g-300" >Titre</th>
+                                    <th scope="col" class="w-35">Description</th>
+                                    <th scope="col" class="w-15">Lieu</th>
+                                    <th scope="col" class="w-15">Date de début</th>
+                                    <th scope="col" class="w-15">Date de fin</th>
                                     <th scope="col" class="w-5">Status</th>
+                                    <th scope="col" class="w-5">Créer Par</th>
+                                    <th scope="col" class="w-5">Date</th>
                                     <th scope="col" class="w-5">Action</th>
                                 </tr>
                             </thead>
@@ -57,13 +55,13 @@
                                 @forelse($posts as $post)
                                     <tr>
                                         <td>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex align-items-center" >
                                                 <div class="me-2 lh-1">
                                                     <span class="avatar avatar-sm ">
 
-                                                        @if ($post->featured_image)
+                                                        @if ($post->image_path)
                                                             <img style="width: 40px"
-                                                                src="{{ asset('storage/uploads/' . $post->featured_image) }}"
+                                                                src="{{ asset('storage/uploads/' . $post->image_path) }}"
                                                                 alt="">
                                                         @else
                                                             <img src="../assets/images/faces/11.jpg" alt="">
@@ -71,13 +69,35 @@
 
                                                     </span>
                                                 </div>
-                                                <div>
-                                                    <p class="mb-0 fw-semibold">{{ $post->title }}</p>
+                                                <div >
+                                                    <p class="mb-0 fw-semibold" >{{ $post->title }}</p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            {!! Str::limit($post->short_content(), 150, ' ...') !!}
+                                            {{ $post->description}}
+                                        </td>
+                                        <td>
+                                            {{ $post->location }}
+                                        </td>
+                                        <td>
+                                            {{ $post->start_date }}
+                                        </td>
+                                        <td>
+                                            {{ $post->end_date }}
+                                        </td>
+                                        <td>
+                                            @if ($post->status == 'completed')
+                                                <span class="badge bg-success">Terminé</span>
+                                            @endif
+
+                                            @if ($post->status == 'upcoming')
+                                                <span class="badge bg-warning">A venir</span>
+                                            @endif
+                                            @if ($post->status == 'ongoing')
+                                                <span class="badge bg-warning">En cours</span>
+                                            @endif
+
                                         </td>
                                         <td>
                                             {{ $post->author->name }}
@@ -85,20 +105,10 @@
                                         <td>
                                             {{ $post->created_at->format('M d Y') }}
                                         </td>
-                                        <td>
-                                            @if ($post->status == 'published')
-                                                <span class="badge bg-success">Publié</span>
-                                            @endif
-
-                                            @if ($post->status == 'draft')
-                                                <span class="badge bg-warning">Brouillon</span>
-                                            @endif
-
-                                        </td>
-
+                                        
                                         <td>
                                             <a class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
-                                                data-bs-placement="top" data-bs-title="Modifier" href="{{route('blog.edit', $post->slug)}}">
+                                                data-bs-placement="top" data-bs-title="Modifier" href="">
                                                 <i class="las la-edit"></i>
                                             </a>
                                             <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
