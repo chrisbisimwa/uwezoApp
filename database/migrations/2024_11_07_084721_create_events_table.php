@@ -16,11 +16,14 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('location');
+            $table->unsignedBigInteger('author_id');
             $table->datetime('start_date');
             $table->datetime('end_date');
             $table->string('image_path')->nullable();
             $table->enum('status', ['upcoming', 'ongoing', 'completed'])->default('upcoming');
             $table->timestamps();
+            
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
