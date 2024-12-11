@@ -12,8 +12,11 @@ class Evenement extends Model
 {
     //
     use HasFactory; 
+    use Searchable;
 
     protected $table = 'events'; 
+
+    protected $searchableFields = ['*'];
 
     protected $fillable = [ 
         'title', 
@@ -22,7 +25,8 @@ class Evenement extends Model
         'start_date',
         'end_date', 
         'image_path', 
-        'status' 
+        'status',
+        'author_id'
     ]; 
         protected $dates = [ 
         'start_date', 
