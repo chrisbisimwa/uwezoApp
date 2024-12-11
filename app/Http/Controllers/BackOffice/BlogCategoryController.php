@@ -14,14 +14,8 @@ class BlogCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->get('search', '');
-
-        $categories = BlogCategory::search($search)
-            ->latest()
-            ->paginate(10)
-            ->withQueryString();
-
-        return view('back-office.category.index', compact('categories', 'search'));
+        
+        return view('back-office.category.index');
     }
 
     /**
