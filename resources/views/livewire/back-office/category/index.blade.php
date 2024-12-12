@@ -9,7 +9,13 @@
                 </div>
                 <div class="d-flex">
         
-                
+                    <div class="input-group">
+                        <a href="javascript:void(0);" class="input-group-text" id="Search-Grid">
+                            <i class="fe fe-search header-link-icon fs-18"></i>
+                        </a>
+                        <input type="search" class="form-control  px-2" placeholder="Recherche..."
+                            wire:model.live="searchTerm">
+                    </div>
                     
                 
                     
@@ -59,7 +65,7 @@
                             @empty
         
                                 <tr class="odd">
-                                    <td valign="top" colspan="7" class="dataTables_empty">Rien à afficher pour
+                                    <td valign="top" colspan="7" class="dataTables_empty" style="color: red;">Rien à afficher pour
                                         le
                                         moment</td>
                                 </tr>

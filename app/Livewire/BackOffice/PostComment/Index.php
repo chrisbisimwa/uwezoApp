@@ -119,7 +119,7 @@ class Index extends Component
     public function render()
     {
 
-        //load comments with pagination and search in comment content, comment author or comment blogPost if searchTerm is not empty 
+        
         $comments = BlogComment::where('content', 'like', '%'.$this->searchTerm.'%')
             ->orWhereHas('user', function($query){
                 $query->where('name', 'like', '%'.$this->searchTerm.'%');
