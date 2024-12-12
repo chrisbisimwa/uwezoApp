@@ -5,15 +5,20 @@ namespace App\Livewire\BackOffice\PostComment;
 use App\Models\BlogComment;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
     use LivewireAlert;
+    use WithPagination;
 
     public $comment_id;
+    public $searchTerm;
 
     protected $listeners = [
         'approveComment',
+        'rejectComment',
+        'deleteComment',
     ];
 
     public function approve($id)
@@ -114,9 +119,16 @@ class Index extends Component
     public function render()
     {
 
-        $comments =BlogComment::latest()
-        ->paginate(10)
-        ->withQueryString();
+        //load comments with pagination and search in comment content, comment author or comment blogPost if searchTerm is not empty 
+        $comments = BlogComment::where('content', 'like', '%'.$this->searchTerm.'%')
+            ->orWhereHas('user', function($query){
+                $query->where('name', 'like', '%'.$this->searchTerm.'%');
+            })
+            ->orWhereHas('blogPost', function($query){
+                $query->where('title', 'like', '%'.$this->searchTerm.'%');
+            })
+            ->latest()
+            ->paginate(10);
         return view('livewire.back-office.post-comment.index', compact('comments'));
     }
 }

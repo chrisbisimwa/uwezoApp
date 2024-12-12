@@ -5,11 +5,13 @@ namespace App\Livewire\BackOffice\Category;
 use Livewire\Component;
 use App\Models\BlogCategory;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
 
     use LivewireAlert;
+    use WithPagination;
     public $category_id;
 
     protected $listeners = [

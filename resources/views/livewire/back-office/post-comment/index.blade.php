@@ -7,10 +7,13 @@
                 </div>
                 <div class="d-flex">
 
-
-
-
-
+                    <div class="input-group">
+                        <a href="javascript:void(0);" class="input-group-text" id="Search-Grid">
+                            <i class="fe fe-search header-link-icon fs-18"></i>
+                        </a>
+                        <input type="search" class="form-control  px-2" placeholder="Recherche..."
+                            wire:model.live="searchTerm">
+                    </div>
 
 
                 </div>
@@ -62,7 +65,8 @@
 
                                     <td>
                                         @if ($comment->status == 'pending')
-                                            <button class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-success-light"
+                                            <button
+                                                class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-success-light"
                                                 data-bs-toggle="tooltip" data-bs-placement="top"
                                                 data-bs-title="Approuver" wire:click="approve({{ $comment->id }})">
                                                 <i class="las la-check"></i>
