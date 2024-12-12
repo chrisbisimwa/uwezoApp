@@ -10,15 +10,21 @@ class Create extends Component
 {
     use LivewireAlert;
 
-    public $name;
-    public $description;
+    public $categoryName;
+    public $categoryDescription;
+    public $mode;
+    public $category_id;
+
+    protected $listeners = [
+        'editCategory' => 'edit',
+    ];
 
     protected $rules = [
-        'name' => 'required',
+        'categoryName' => 'required',
     ];
 
     protected $messages = [
-        'name.required' => 'Le nom de la catégorie est requise',
+        'categoryName.required' => 'Le nom de la catégorie est requise',
     ];
 
 
@@ -26,16 +32,22 @@ class Create extends Component
     {
         $this->validate();
 
-        BlogCategory::create([
-            'name' => $this->name,
-            'description' => $this->description,
-        ]);
+        if($this->mode=="create"){
+            BlogCategory::create([
+                'name' => $this->categoryName,
+                'description' => $this->categoryDescription,
+            ]);
+    
+        }else{
+            $category = BlogCategory::find($this->category_id);
+            $category->name = $this->categoryName;
+            $category->description = $this->categoryDescription;
+            $category->save();
+
+        }
 
 
-
-        $this->resetForm();
-
-        $this->alert('success', 'Catégorie créée avec success', [
+        $this->alert('success', 'Catégorie enregistrée avec success', [
             'position' =>  'top-end',
             'timer' =>  3000,
             'toast' =>  true,
@@ -47,18 +59,30 @@ class Create extends Component
         ]);
 
         $this->dispatch('category-created', 'Category created successfully');
+        $this->resetForm();
     }
+
+    public function edit($id)
+    {
+        $category = BlogCategory::find($id);
+        $this->categoryName = $category->name;
+        $this->categoryDescription = $category->description;
+        $this->category_id = $id;
+        $this->mode = "edit";
+    }
+
 
     public function resetForm(){
-        $this->name="";
-        $this->description="";
+        $this->categoryName="";
+        $this->categoryDescription="";
     }
 
-
-    public function updated($propertyName)
+    public function mount()
     {
-        $this->validateOnly($propertyName);
+        $this->mode = "create";
     }
+
+
 
 
 

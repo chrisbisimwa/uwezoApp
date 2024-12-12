@@ -13,7 +13,8 @@ class Index extends Component
     public $category_id;
 
     protected $listeners = [
-        'deleteCategory'
+        'deleteCategory',
+        'category-created' => 'reload',
     ];
 
 
@@ -30,6 +31,10 @@ class Index extends Component
         ]);
     }
 
+    public function reload(){
+        $this->render();
+    }
+
     public function deleteCategory(){
         $category = BlogCategory::find($this->category_id);
         $category->delete();
@@ -43,6 +48,12 @@ class Index extends Component
             'showCancelButton' =>  false,
             'showConfirmButton' =>  false,
         ]);
+        $this->render();
+    }
+
+    public function edit($id)
+    {
+        $this->dispatch('editCategory', $id);
     }
 
     public function render()
