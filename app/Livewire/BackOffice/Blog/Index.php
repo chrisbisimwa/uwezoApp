@@ -11,8 +11,42 @@ class Index extends Component
 {
     use WithPagination;
     use LivewireAlert;
+    
+    protected $listeners = [
+        'deleteBlog',
+    ]; 
+
     public $post_id;
     public $searchTerm;
+
+    public function delete($id){
+        $this->post_id= $id;
+
+        $this->confirm('Êtes-vous sûr de vouloir supprimer cette cette actualité ?', [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'cancelButtonText' => 'Annuler',
+            'onConfirmed' => 'deleteBlog',
+            'onCancelled' => 'cancelled'
+        ]);
+    }
+
+    public function deleteBlog(){
+        $post = BlogPost::find($this->post_id);
+        $post->delete();
+        $this->alert('success', 'Actualité supprimé avec succès', [
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Fermer',
+            'cancelButtonText' =>  'Annuler',
+            'showCancelButton' =>  false,
+            'showConfirmButton' =>  false,
+        ]);
+
+    }
 
     public function render()
     {

@@ -5,25 +5,24 @@
                 <div class="card-title">
                     Gérer les articles
                 </div>
-                <div class="d-flex">
-                    <div class="input-group">
-                        <a href="javascript:void(0);" class="input-group-text" id="Search-Grid">
-                            <i class="fe fe-search header-link-icon fs-18"></i>
-                        </a>
-                        <input type="search" class="form-control  px-2" placeholder="Recherche..."
-                            wire:model.live="searchTerm">
+                <div class="d-flex flex-row">
+                    <div class="p-2">
+                        <div class="input-group">
+                            <a href="javascript:void(0);" class="input-group-text" id="Search-Grid">
+                                <i class="fe fe-search header-link-icon fs-18"></i>
+                            </a>
+                            <input type="search" class="form-control  px-2" placeholder="Recherche..."
+                                wire:model.live="searchTerm">
+                        </div>
                     </div>
-                </div>
-                <div class="d-flex">
-                   
-                    <div>
+                    <div class="p-2">
                         <a href="{{ route('blog.create') }}"
-                        class="btn btn-sm btn-primary btn-wave waves-light waves-effect waves-light"><i
-                            class="ri-add-line fw-semibold align-middle me-1"></i> Créer un article</a>
+                            class="btn btn-sm btn-primary btn-wave waves-light waves-effect waves-light"><i
+                                class="ri-add-line fw-semibold align-middle me-1"></i> Créer un article</a>
                     </div>
                     
-                    
                 </div>
+                
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -59,7 +58,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            
+
                                             <div>
                                                 <p class="mb-0 fw-semibold">{{ $post->title }}</p>
                                             </div>
@@ -87,11 +86,13 @@
 
                                     <td>
                                         <a class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" data-bs-title="Modifier" href="{{route('blog.edit', $post->slug)}}">
+                                            data-bs-placement="top" data-bs-title="Modifier"
+                                            href="{{ route('blog.edit', $post->slug) }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
-                                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
+                                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"
+                                            wire:click="delete({{ $post->id }})"><i
                                                 class="ri-delete-bin-5-line"></i></button>
                                     </td>
                                 </tr>
@@ -111,7 +112,7 @@
 
             </div>
             <div class="card-footer">
-               
+
 
                 {{ $posts->links('vendor.livewire.backend') }}
             </div>
