@@ -16,6 +16,10 @@ class EventController extends Controller
     {
         return view('front-office.index');
     }
+
+    public function create(Request $request){
+
+    }
     
 
     public function evenements(){
