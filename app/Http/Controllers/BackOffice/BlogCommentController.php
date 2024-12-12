@@ -13,14 +13,9 @@ class BlogCommentController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->get('search', '');
+       
 
-        $posts = BlogPost::search($search)
-            ->latest()
-            ->paginate(10)
-            ->withQueryString();
-
-        return view('back-office.blog.index', compact('posts', 'search'));
+        return view('back-office.post-comment.index');
     }
 
     /**

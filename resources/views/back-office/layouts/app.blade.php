@@ -18,7 +18,7 @@
         content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('back-office-assets/images/logo-uwezo.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('back-office-assets/images/logo-uwezo.png') }}">
 
 
 
@@ -547,8 +547,9 @@
     </div>
     <div class="page">
 
-        @include('back-office.layouts.header')
-
+        <header class="app-header">
+            @include('back-office.layouts.header')
+        </header>
 
 
         @include('back-office.layouts.sidebar')
@@ -639,6 +640,7 @@
     @livewireScripts
 
     <script src="{{ asset('back-office-assets/libs/@popperjs/core/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('back-office-assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('back-office-assets/js/defaultmenu.min.js') }}"></script>
     <script src="{{ asset('back-office-assets/libs/node-waves/waves.min.js') }}"></script>
     <script src="{{ asset('back-office-assets/js/sticky.js') }}"></script>
@@ -649,6 +651,8 @@
     <script src="{{ asset('back-office-assets/libs/jsvectormap/maps/world-merc.js') }}"></script>
     <script src="{{ asset('back-office-assets/libs/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('back-office-assets/libs/chart.js/chart.min.js') }}"></script>
+    <script src="{{ asset('back-office-assets/js/custom-switcher.min.js') }}"></script>
+    <script src="{{ asset('back-office-assets/js/custom.js') }}"></script>
     <script src="{{ asset('back-office-assets/libs/flatpickr/flatpickr.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.5/dist/quill.js"></script>
 
