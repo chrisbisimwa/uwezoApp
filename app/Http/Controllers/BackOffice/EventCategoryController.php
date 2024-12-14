@@ -8,14 +8,10 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Evenement;
 
 class EventCategoryController extends Controller{
+    
     public function index(Request $request){
-        $search= $request->get("search");
-        $events = Evenement::orderBy("created_at","desc")->paginate(10);
-        $posts = Evenement::search($search)
-            ->latest()
-            ->paginate(10)
-            ->withQueryString();
-        return view("back-office.evenement.index",compact("post","search" ));
+      
+        return view("back-office.eventcategory.index");
     }
   
     public function create()

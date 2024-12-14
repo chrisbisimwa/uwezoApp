@@ -8,6 +8,6 @@ class EditeventCat extends Component
 {
     public function render()
     {
-        return view('livewire.editevent-cat');
+        return view('livewire.back-office.eventcategory.creatcategory');
     }
 }

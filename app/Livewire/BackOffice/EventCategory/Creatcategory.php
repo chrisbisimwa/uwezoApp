@@ -62,6 +62,6 @@ class CreateventCat extends Component
 
     public function render()
     {
-        return view('livewire.back-office.eventcategory.createventcat');
+        return view('livewire.back-office.eventcategory.creatcategory');
     }
 }
