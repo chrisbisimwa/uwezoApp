@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire;
+namespace App\Livewire\BackOffice\EventCategory;
 use App\Models\EventCategory;
 
 use Livewire\Component;
