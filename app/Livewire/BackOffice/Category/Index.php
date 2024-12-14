@@ -5,15 +5,19 @@ namespace App\Livewire\BackOffice\Category;
 use Livewire\Component;
 use App\Models\BlogCategory;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
 
     use LivewireAlert;
+    use WithPagination;
     public $category_id;
+    public $searchTerm;
 
     protected $listeners = [
-        'deleteCategory'
+        'deleteCategory',
+        'category-created' => 'reload',
     ];
 
 
@@ -30,6 +34,10 @@ class Index extends Component
         ]);
     }
 
+    public function reload(){
+        $this->render();
+    }
+
     public function deleteCategory(){
         $category = BlogCategory::find($this->category_id);
         $category->delete();
@@ -43,13 +51,20 @@ class Index extends Component
             'showCancelButton' =>  false,
             'showConfirmButton' =>  false,
         ]);
+        $this->render();
+    }
+
+    public function edit($id)
+    {
+        $this->dispatch('editCategory', $id);
     }
 
     public function render()
     {
-        $categories = BlogCategory::latest()
-            ->paginate(10)
-            ->withQueryString();
+        
+        $categories = BlogCategory::where('name', 'like', '%'.$this->searchTerm.'%')
+            ->orWhere('description', 'like', '%'.$this->searchTerm.'%')
+            ->paginate(10);
         return view('livewire.back-office.category.index', compact('categories'));
     }
 }

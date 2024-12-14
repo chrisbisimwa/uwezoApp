@@ -56,7 +56,7 @@
                                     </ul>
                                 </li> --}}
                                     <li class="slide {{ Request::routeIs('back-office') ? 'active' : '' }}">
-                                        <a href="{{ route('back-office') }}" class="side-menu__item">
+                                        <a href="{{ route('back-office') }}" class="side-menu__item {{ Request::routeIs('back-office') ? 'active' : '' }}">
                                             <i class="bx bx-home side-menu__icon"></i>
                                             <span class="side-menu__label">Tableau de bord</span>
                                         </a>
@@ -64,20 +64,21 @@
                                     <!-- End::slide -->
 
                                     <li class="slide__category"><span class="category-name">Actualité</span></li>
+                                 
                                     <li class="slide {{ Request::routeIs('blog.index') ? 'active' : '' }}">
-                                        <a href="{{ route('blog.index') }}" class="side-menu__item">
+                                        <a href="{{ route('blog.index') }}" class="side-menu__item {{ Request::routeIs('blog.index') ? 'active' : '' }}">
                                             <i class="bx bx-file side-menu__icon"></i>
-                                            <span class="side-menu__label">Actualié</span>
+                                            <span class="side-menu__label">Actualité</span>
                                         </a>
                                     </li>
-                                    <li class="slide">
-                                        <a href="{{route('blog-category.index')}}" class="side-menu__item">
+                                    <li class="slide {{ Request::routeIs('blog-category.index') ? 'active' : '' }}">
+                                        <a href="{{route('blog-category.index')}}" class="side-menu__item {{ Request::routeIs('blog-category.index') ? 'active' : '' }}">
                                             <i class="bx bx-category side-menu__icon"></i>
                                             <span class="side-menu__label">Catégories</span>
                                         </a>
                                     </li>
-                                    <li class="slide">
-                                        <a href="{{route('blog-comment.index')}}" class="side-menu__item">
+                                    <li class="slide {{ Request::routeIs('blog-comment.index') ? 'active' : '' }}">
+                                        <a href="{{route('blog-comment.index')}}" class="side-menu__item {{ Request::routeIs('blog-comment.index') ? 'active' : '' }}">
                                             <i class="bx bx-comment side-menu__icon"></i>
                                             <span class="side-menu__label">Commentaires</span>
                                         </a>
@@ -85,19 +86,19 @@
                                     <!-- Start::slide event -->
                                     <li class="slide__category"><span class="category-name">Evénements</span></li>
                                     <li class="slide {{ Request::routeIs('evenement.index') ? 'active' : '' }}">
-                                        <a href="{{ route('evenement.index') }}" class="side-menu__item">
+                                        <a href="{{ route('evenement.index') }}" class="side-menu__item {{ Request::routeIs('evenement.index') ? 'active' : '' }}">
                                             <i class="bx bx-file side-menu__icon"></i>
                                             <span class="side-menu__label">Evenements</span>
                                         </a>
                                     </li>
-                                    <li class="slide">
-                                        <a href="{{route('event-category.index')}}" class="side-menu__item">
+                                    <li class="slide {{ Request::routeIs('event-category.index') ? 'active' : '' }}">
+                                        <a href="{{route('event-category.index')}}" class="side-menu__item {{ Request::routeIs('event-category.index') ? 'active' : '' }}">
                                             <i class="bx bx-category side-menu__icon"></i>
                                             <span class="side-menu__label">Catégories</span>
                                         </a>
                                     </li>
-                                    <li class="slide">
-                                        <a href="{{route('event-comment.index')}}" class="side-menu__item">
+                                    <li class="slide {{ Request::routeIs('event-comment.index') ? 'active' : '' }}">
+                                        <a href="{{route('event-comment.index')}}" class="side-menu__item {{ Request::routeIs('event-comment.index') ? 'active' : '' }}">
                                             <i class="bx bx-comment side-menu__icon"></i>
                                             <span class="side-menu__label">Commentaires</span>
                                         </a>
