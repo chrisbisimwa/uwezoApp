@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\EventCategory;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class CreateventCat extends Component
+class CreatCategory extends Component
 {
     use LivewireAlert;
 

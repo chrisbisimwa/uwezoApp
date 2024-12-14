@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Livewire;
+use App\Models\EventCategory;
 
 use Livewire\Component;
 
-class EditeventCat extends Component
+class EditCategory extends Component
 {
     public function render()
     {

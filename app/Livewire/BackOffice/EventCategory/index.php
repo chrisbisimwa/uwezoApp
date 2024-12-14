@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\BackOffice\Category;
+namespace App\Livewire\BackOffice\EventCe;
 
 use Livewire\Component;
 use App\Models\EventCategory;
@@ -12,6 +12,7 @@ class Index extends Component
 
     use LivewireAlert;
     use WithPagination;
+
     public $category_id;
     public $searchTerm;
 
