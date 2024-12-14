@@ -75,6 +75,7 @@ class Createvent extends Component
         'title' => 'required',
         'description' => 'required',
         'image_path' => 'required|image|max:1024',
+        
     ]);
 
     
@@ -84,6 +85,7 @@ class Createvent extends Component
         $post = Evenement::create([
             'title' => $this->title,
             'description' => $this->description,
+            'location' => $this->location,
             'image_path' => $this->image_path,
             'status' => $this->status,
             'author_id' => Auth::user()->id,

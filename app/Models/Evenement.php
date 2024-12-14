@@ -41,7 +41,7 @@ class Evenement extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(EventCategory::class, 'event_post_categories');
+        return $this->belongsToMany(EventCategory::class, 'event_category_mappings');
     }
 
     public function comments()

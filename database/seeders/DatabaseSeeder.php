@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        /* User::factory()->create([
             'name' => 'User2',
             'email' => 'user2@uwezo.dev',
         ]);
@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
             'image_path'=> 'Slam Show à Kin Elubu',
             'status'=> 'completed',
             'author_id'=> \App\Models\User::factory(),
-        ]);
+        ]); */
     }
 }

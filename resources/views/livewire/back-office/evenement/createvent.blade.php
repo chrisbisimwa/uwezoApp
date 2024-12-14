@@ -19,7 +19,7 @@
 
                     <div class="col-xl-12">
                         <label class="form-label">Event Description</label>
-                        <input type="hidden" wire:model="description" class="form-control @error('description') is-invalid @enderror">
+                        <input type="hiden" wire:model="description" class="form-control @error('description') is-invalid @enderror">
                         @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
 
                     <div class="col-xl-12">
                         <label class="form-label">Event Location</label>
-                        <input type="hidden" wire:model="location" class="form-control @error('location') is-invalid @enderror">
+                        <input type="text" wire:model="location" class="form-control @error('location') is-invalid @enderror">
                         @error('location')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -44,22 +44,12 @@
                             <div id="editor" wire:model="location"></div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 mx-auto">
-                                <div class="form-group">
-                              <div class="form-group">
-                                  <div class="datepicker date input-group">
-                                      <input type="text" placeholder="Choisir une date" class="form-control" id="reservationDate">
-                                      <div class="input-group-append"><span class="input-group-text px-4"><i class="fa fa-calendar"></i></span></div>
-                                  </div>
-                              </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="date-fields">
+                        <label for="start-date">Date de début :</label>
+                        <input type="date" class="form-control" wire:model="start_date" id="editor" name="start-date">
+                        <label for="end-date">Date de fin :</label>
+                        <input type="date" class="form-control" wire:model="end_date" id="editor" name="end-date">
                       </div>
-
-                </div>
             </div>
             <div class="card-footer">
                

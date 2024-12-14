@@ -17,12 +17,8 @@
                         @enderror
                     </div>
 
-
-
-
-
                     <div class="col-xl-12">
-                        <label class="form-label">Blog Content</label>
+                        <label class="form-label">Event Content</label>
                         <input type="hidden" wire:model="content" class="form-control @error('content') is-invalid @enderror">
                         @error('content')
                             <span class="invalid-feedback" role="alert">
@@ -59,7 +55,7 @@
                         <div class="btn-list text-end">
 
                             <button type="button" class="btn btn-sm btn-primary"
-                                wire:click="savePost()">Enregistrer</button>
+                                wire:click="saveEvent()">Enregistrer</button>
                             <button type="button" wire:click="cancel()" class="btn btn-sm btn-light">Annuler</button>
                         </div>
                     </li>
@@ -67,13 +63,14 @@
                         <div class="d-flex gap-2 flex-wrap align-items-center">
 
                             <div class="col-xl-12">
-                                <label for="blog-category" class="form-label">Published Status</label>
+                                <label for="event-category" class="form-label">Completed Status</label>
 
                                 <select class="form-control" data-trigger name="choices-single-default"
                                     wire:model="status" id="choices-single-default">
 
-                                    <option value="draft">Brouillon</option>
-                                    <option value="published">Publié</option>
+                                    <option value="upcoming">A venir</option>
+                                    <option value="ongoing">Encours</option>
+                                    <option value="completed">Terminé</option>
                                 </select>
 
 
@@ -84,7 +81,7 @@
                     <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
                             <div class="col-xl-12">
-                                <label for="blog-category" class="form-label">Blog Category</label>
+                                <label for="event-category" class="form-label">Event Category</label>
 
                                 <select class="form-control" name="choices-multiple-remove-button"
                                     wire:model="selectedCategories" id="choices-multiple-remove-button" multiple>
@@ -100,9 +97,9 @@
                     <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
                             <div class="col-xl-12">
-                                <label for="featured_image" class="form-label">Featured Image</label>
+                                <label for="image_path" class="form-label">Image</label>
 
-                                @if ($featured_image && $featured_image->isValid())
+                                @if ($image_path && $image_path->isValid())
                                     <div class="card custom-card product-card">
                                         <div class="card-body">
                                             <a href="javascript:void(0);" class="product-image">
@@ -118,15 +115,15 @@
 
                                     </div>
                                 @else
-                                    <input type="file" wire:model="featured_image"
-                                        class=" @error('featured_image') is-invalid @enderror">
+                                    <input type="file" wire:model="image_path"
+                                        class=" @error('image_path') is-invalid @enderror">
 
-                                    @error('featured_image')
+                                    @error('image_path')
                                         <span class="text-sm text-red-500 italic" style="color: red;" role="alert">{{ $message }}</span>
                                     @enderror
                                    
 
-                                    <div wire:loading wire:target="featured_image" class="text-sm text-gray-500 italic">
+                                    <div wire:loading wire:target="image_path" class="text-sm text-gray-500 italic">
                                         Uploading...</div>
                                 @endif
 
@@ -222,7 +219,7 @@
             @this.set('content', editor.root.innerHTML);
         });
 
-        Livewire.on('blogimageUploaded', function(imagePaths) {
+        Livewire.on('eventimageUploaded', function(imagePaths) {
             if (Array.isArray(imagePaths) && imagePaths.length > 0) {
                 var imagePath = imagePaths[0]; // Extract the first image path from the array
                 console.log('Received imagePath:', imagePath);
