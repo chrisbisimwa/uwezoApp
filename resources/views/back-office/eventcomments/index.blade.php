@@ -12,6 +12,6 @@
         </nav>
     </div>
 </div>
-            @livewire('back-office.eventcomment.index')
+            @livewire('back-office.eventcomments.index')
 
 @endsection

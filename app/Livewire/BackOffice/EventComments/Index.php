@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\BackOffice\EventComment;
+namespace App\Livewire\BackOffice\EventComments;
 
 use App\Models\EventComment;
 use Livewire\Component;
@@ -129,6 +129,6 @@ class Index extends Component
             })
             ->latest()
             ->paginate(10);
-        return view('livewire.back-office.eventcomment.index', compact('comments'));
+        return view('livewire.back-office.eventcomments.index', compact('comments'));
     }
 }
