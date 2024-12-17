@@ -42,7 +42,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        {{ $comment->Evenement->title }}
+                                        {{ $comment->Event->title }}
                                     </td>
                                     <td>
                                         {{ $comment->content }}

@@ -10,7 +10,7 @@ use App\Models\Evenement;
 class EventCommentController extends Controller{
 
 public function index(Request $request){
-        return view('back-office.eventcomments.index');
+        return view('back-office.event-comments.index');
 }
 
 public function create()

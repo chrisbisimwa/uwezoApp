@@ -15,21 +15,23 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    </div>
+                    
+                </div>
 
-                    <div class="col-xl-12">
-                        <label class="form-label">Event Description</label>
-                        <input type="hiden" wire:model="description" class="form-control @error('description') is-invalid @enderror">
-                        @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        <div class="relative mt-4" wire:ignore>
+                <div class="col-xl-12">
+                    <label class="form-label">Event description</label>
+                    <input type="hidden" wire:model="description" class="form-control @error('description') is-invalid @enderror">
+                    @error('description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    <div class="relative mt-4" wire:ignore>
 
-                            <div id="editor" wire:model="description"></div>
-                        </div>
+                        <div id="editor" wire:model="description"></div>
                     </div>
+                </div>
+
 
                     <div class="col-xl-12">
                         <label class="form-label">Event Location</label>

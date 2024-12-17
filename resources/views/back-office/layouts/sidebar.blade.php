@@ -97,8 +97,8 @@
                                             <span class="side-menu__label">Catégories</span>
                                         </a>
                                     </li>
-                                    <li class="slide {{ Request::routeIs('eventcomment.index') ? 'active' : '' }}">
-                                        <a href="{{route('eventcomment.index')}}" class="side-menu__item {{ Request::routeIs('eventcomment.index') ? 'active' : '' }}">
+                                    <li class="slide {{ Request::routeIs('event-comment.index') ? 'active' : '' }}">
+                                        <a href="{{route('event-comment.index')}}" class="side-menu__item {{ Request::routeIs('event-comment.index') ? 'active' : '' }}">
                                             <i class="bx bx-comment side-menu__icon"></i>
                                             <span class="side-menu__label">Commentaires</span>
                                         </a>
