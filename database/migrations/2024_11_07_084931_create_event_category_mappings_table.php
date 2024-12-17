@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('event_category_mappings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('evenement_id');
             $table->unsignedBigInteger('event_category_id');
             $table->timestamps();
 
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->foreign('evenement_id')->references('id')->on('events')->onDelete('cascade');
             $table->foreign('event_category_id')->references('id')->on('event_categories')->onDelete('cascade');
         });
     }

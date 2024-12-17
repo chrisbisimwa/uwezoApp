@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         return view('front-office.index');
     }
-
+    
 
     public function artistes(){
         return view('front-office.artiste');

@@ -13,14 +13,9 @@ class BlogController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->get('search', '');
+       
 
-        $posts = BlogPost::search($search)
-            ->latest()
-            ->paginate(10)
-            ->withQueryString();
-
-        return view('back-office.blog.index', compact('posts', 'search'));
+        return view('back-office.blog.index');
     }
 
     /**
@@ -54,7 +49,8 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = BlogPost::where('slug', $id)->first();
+        return view('back-office.blog.edit', compact('post'));
     }
 
     /**
