@@ -6,6 +6,7 @@
     
   </div>
 <div class="section md white-bg">
+  
     <div class="container">
 
       <div class="andro_isotope-filter-nav">
@@ -19,12 +20,11 @@
 
         <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 0px;">
           <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/1.jpg" alt="artist">
+          @foreach ($artiste as $art )
+            <div class="andro_artist-img">  
+              <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
               <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
+                <div class="andro_artist-meta">  
                 </div>
                 <ul class="andro_socials">
                   <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
@@ -33,19 +33,20 @@
                 </ul>
               </div>
             </div>
-            <span class="andro_artist-designation">Audio Engineer</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Stacey Gold</a> </h5>
+            <span class="andro_artist-designation">Chanteur Rap/Hip Hop</span>
+            <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail')}}">
+            {{ $art->nom }} {{ $art->prenom }}
+            @endforeach</a> </h5>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d2" style="position: absolute; left: 0px; top: 372.677px;">
+        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 0px;">
           <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/2.jpg" alt="artist">
+          @foreach ($artiste as $art )
+            <div class="andro_artist-img">  
+              <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
               <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
+                <div class="andro_artist-meta">  
                 </div>
                 <ul class="andro_socials">
                   <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
@@ -54,136 +55,26 @@
                 </ul>
               </div>
             </div>
-            <span class="andro_artist-designation">Pianist</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Dacey Arbit</a> </h5>
+            <span class="andro_artist-designation">Chanteur Rap/Hip Hop</span>
+            <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail')}}">
+            {{ $art->nom }} {{ $art->prenom }}
+            @endforeach</a> </h5>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d3" style="position: absolute; left: 0px; top: 745.354px;">
-          <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/3.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <span class="andro_artist-designation">Drum Artist</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Jakki Walim</a> </h5>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1 d3" style="position: absolute; left: 0px; top: 1118.03px;">
-          <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/4.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <span class="andro_artist-designation">Guitarist</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Noimi Smith</a> </h5>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d2" style="position: absolute; left: 0px; top: 1490.71px;">
-          <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/5.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <span class="andro_artist-designation">Audio Engineer</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Stacey Gold</a> </h5>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d3" style="position: absolute; left: 0px; top: 1863.38px;">
-          <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/6.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <span class="andro_artist-designation">Pianist</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Dacey Arbit</a> </h5>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 2236.06px;">
-          <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/7.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <span class="andro_artist-designation">Drum Artist</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Jakki Walim</a> </h5>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d2" style="position: absolute; left: 0px; top: 2608.74px;">
-          <div class="andro_artist style-2">
-            <div class="andro_artist-img">
-              <img src="front-office-assets/img/artists/md/8.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">
-                  <span>First Day: </span>
-                  <b>08:00AM - 05:00PM</b>
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <span class="andro_artist-designation">Guitarist</span>
-            <h5 class="andro_artist-name"> <a href="artist-details.html">Noimi Smith</a> </h5>
-          </div>
-        </div>
+        
+
+        
 
       </div>
     </div>
@@ -192,8 +83,8 @@
     <div class="container">
 
       <div class="section-title text-center">
-        <h3>Find all The Top Music &amp; Trending Artists</h3>
-        <p class="mb-0">Music and playlists will let your fans enjoy listening</p>
+        <h3>Retrouvez toute les meilleures musiques </h3>
+        <p class="mb-0">La musique et les playlists permettront à vos fans de profiter de l'écoute</p>
       </div>
 
       <div class="andro_lineup">
@@ -205,98 +96,25 @@
           </div>
           <div class="andro_lineup-table">
             <div class="andro_lineup-table-row">
-              <b>Deyonce</b>
-              <b>Starly Rae</b>
-              <b>Prank Frocean</b>
+              <b>Sean Joe Praise</b>
+              <b>Moïse Freed Apostolos</b>
+              <b>Yvon Bwishe</b>
             </div>
             <div class="andro_lineup-table-row">
-              <b>Grimes</b>
-              <b>D'angle</b>
-              <b>Erykah Bui</b>
+              <b>Auga Chak</b>
+              <b>Babul Nigga</b>
+              <b>J’Adore Viscache</b>
             </div>
-            <div class="andro_lineup-table-row">
-              <b>The Weekday</b>
-              <b>Miguel</b>
-              <a href="#" class="btn-link">View all <i class="fal fa-arrow-right"></i> </a>
-            </div>
+            
           </div>
 
         </div>
 
-        <div class="andro_lineup-item">
+        
 
-          <div class="andro_lineup-title">
-            <h5 class="h3 color-primary">Rock</h5>
-          </div>
-          <div class="andro_lineup-table">
-            <div class="andro_lineup-table-row">
-              <b>Deyonce</b>
-              <b>Starly Rae</b>
-              <b>Prank Frocean</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>Grimes</b>
-              <b>D'angle</b>
-              <b>Erykah Bui</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>The Weekday</b>
-              <b>Miguel</b>
-              <a href="#" class="btn-link">View all <i class="fal fa-arrow-right"></i> </a>
-            </div>
-          </div>
+        
 
-        </div>
-
-        <div class="andro_lineup-item">
-
-          <div class="andro_lineup-title">
-            <h5 class="h3 color-primary">R&amp;B</h5>
-          </div>
-          <div class="andro_lineup-table">
-            <div class="andro_lineup-table-row">
-              <b>Deyonce</b>
-              <b>Starly Rae</b>
-              <b>Prank Frocean</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>Grimes</b>
-              <b>D'angle</b>
-              <b>Erykah Bui</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>The Weekday</b>
-              <b>Miguel</b>
-              <a href="#" class="btn-link">View all <i class="fal fa-arrow-right"></i> </a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="andro_lineup-item">
-
-          <div class="andro_lineup-title">
-            <h5 class="h3 color-primary">Hip Hop</h5>
-          </div>
-          <div class="andro_lineup-table">
-            <div class="andro_lineup-table-row">
-              <b>Deyonce</b>
-              <b>Starly Rae</b>
-              <b>Prank Frocean</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>Grimes</b>
-              <b>D'angle</b>
-              <b>Erykah Bui</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>The Weekday</b>
-              <b>Miguel</b>
-              <a href="#" class="btn-link">View all <i class="fal fa-arrow-right"></i> </a>
-            </div>
-          </div>
-
-        </div>
+        
 
       </div>
 

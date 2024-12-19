@@ -63,8 +63,8 @@
               </div>
               <div class="andro_infobox-body">
                 <h6 class="color-primary">Location</h6>
-                <span class="text-white">123 New Yourk E Block 12670,</span>
-                <span class="text-white">Street 2101 USA</span>
+                <span class="text-white">N°243, Av. FIZI, IBANDA,</span>
+                <span class="text-white">Bukavu, RDC</span>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
     <div class="container">
 
       <div class="section-title text-center">
-        <h3>Have Any Questions?</h3>
+        <h3>Avez-vous des questions ?</h3>
       </div>
 
       <form method="post">

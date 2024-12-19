@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +20,8 @@ class HomeController extends Controller
     
 
     public function artistes(){
-        return view('front-office.artiste');
+        $artiste = Artist::all();
+        //dd($artiste);
+        return view('front-office.artiste',compact('artiste'));
     }
 }
