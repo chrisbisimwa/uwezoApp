@@ -11,11 +11,12 @@
                 <ul>
 
                     <li> <a href="{{route('front.home')}}">Accueil</a> </li>
-                    <li> <a href="/evenements">Evenements</a> </li>
                     <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
-                    <li> <a href="#">Promo</a> </li>
+                    <li> <a href="/evenements">Evenements</a> </li>
+                    
+                    {{-- <li> <a href="#">Promo</a> </li> --}}
                     <li> <a href="{{route('front.blog')}}">Actualités</a> </li>
-                    <li> <a href="contact-us.html">A propos</a> </li>
+                    <li> <a href="#">A propos</a> </li>
                     <li> <a href="{{route('front.contact')}}">Nous contacter</a> </li>
 
                 </ul>
