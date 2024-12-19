@@ -10,11 +10,11 @@
     @livewire('front-office.home.section1')
 
 
-    @livewire('front-office.home.section2')
+   {{--  @livewire('front-office.home.section2') --}}
 
-    @livewire('front-office.home.section3')
+    {{-- @livewire('front-office.home.section3')
 
-    @livewire('front-office.home.section4')
+    @livewire('front-office.home.section4') --}}
     
 
     @livewire('front-office.home.section5')
