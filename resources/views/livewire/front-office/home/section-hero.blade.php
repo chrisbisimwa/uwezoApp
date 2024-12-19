@@ -5,17 +5,17 @@
 
             <div class="andro_hero-item-inner">
                 <div class="andro_hero-typo">
-                    <img src="{{ asset('front-office-assets/img/hero/typo-1.png') }}" alt="Music">
+                    <img src="{{ asset('front-office-assets/img/hero/typo-2.png') }}" alt="Music">
                 </div>
-                <p>Musical Entertainment Festival 2021</p>
+                <p>Donnez vie à l'art – Explorez, soutenez et célébrez nos talents.</p>
             </div>
 
         </div>
 
-        <a href="#" class="andro_hero-cta">
+       {{--  <a href="#" class="andro_hero-cta">
             <span>Startup Music Event</span>
             <i class="fal fa-chevron-down"></i>
-        </a>
+        </a> --}}
 
     </div>
 

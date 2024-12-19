@@ -11,13 +11,13 @@
                         <div class="p-5">
                             <div class="mb-3">
                                 <a href="index.html">
-                                    <img src="{{ asset('back-office-assets/images/brand-logos/desktop-logo.png') }}" alt=""
+                                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt=""
                                         class="authentication-brand desktop-logo">
-                                    <img src="{{ asset('back-office-assets/images/brand-logos/desktop-dark.png') }}" alt=""
+                                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt=""
                                         class="authentication-brand desktop-dark">
                                 </a>
                             </div>
-                            <p class="h5 fw-semibold mb-2">Sign In</p>
+                            <p class="h5 fw-semibold mb-2">Connexion</p>
                             <div class="btn-list">
 
                             </div>
@@ -38,10 +38,10 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-12 mb-3">
-                                    <label for="signin-password" class="form-label text-default d-block">Password
+                                    <label for="signin-password" class="form-label text-default d-block">Mot de passe
                                         @if (Route::has('password.request'))
                                             <a class="float-end text-danger" href="{{ route('password.request') }}">
-                                                Forget password ?
+                                                Mot de passe oublié ?
                                             </a>
                                         @endif
                                         
@@ -64,7 +64,7 @@
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                                 {{ old('remember') ? 'checked' : '' }}>
                                             <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
-                                                Remember password ?
+                                                Se souvenir du mot de passe ?
                                             </label>
                                         </div>
                                     </div>

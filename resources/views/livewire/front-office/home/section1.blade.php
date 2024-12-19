@@ -3,16 +3,16 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="me-0 me-lg-5 mb-lg-0 mb-5">
-                    <h3 class="h2">I Write <span class="fw-400 color-primary">Soundtracks and Songs</span> For
-                        Events, Shows and Albums. I Love Music </h3>
+                    <h3 class="h2">La mission d'<span class="fw-400 color-primary">UWEZO AFRIKA</span> : mettre en
+                        lumière les talents Africains</h3>
                     <p>
-                        Cupcake ipsum dolor sit amet soufflé. I love liquorice oat cake bsc
-                        fruitcake tart caramels marzipan. Brownie I love chocolate that bar
-                        Chupa chups loream sesame snaps jelly tiramisu Cupcake ipsumd
-                        Caramels chocolate liquorice sweet roll tart.
+                        Chez UWEZO AFRIKA, nous croyons en la puissance de l'art pour raconter des histoires, préserver
+                        notre patrimoine culturel, et connecter les communautés. Notre plateforme est dédiée à la mise
+                        en valeur des talents artistiques africains, en offrant un espace où les artistes peuvent
+                        partager leurs créations uniques avec le monde
                     </p>
                     <br>
-                    <a href="#" class="button primary">More Information</a>
+                    <a href="#" class="button primary">En savoir plus sur nous</a>
                 </div>
             </div>
             <div class="col-lg-6">
