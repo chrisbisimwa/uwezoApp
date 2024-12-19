@@ -7,7 +7,7 @@
                 <p class="mb-0">Découvrez les artistes récemment ajoutés sur UWEZO AFRIKA, une communauté vibrante et
                     dynamique où chaque talent raconte une histoire unique. Ces créateurs, issus de différents horizons,
                     incarnent la richesse et la diversité de l’art africain. </p>
-                <a href="#" class="button primary">Tous les artistes</a>
+                <a href="{{route('front.artistes')}}" class="button primary">Tous les artistes</a>
             </div>
 
         </div>
