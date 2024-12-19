@@ -44,5 +44,6 @@ Route::get('/evenements', [App\Http\Controllers\EventController::class, 'eveneme
 
 
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
+Route::get('/artisteDetail', [App\Http\Controllers\ArtistController::class, 'artisteDetails'])->name('front.artisteDetail');
 
 Route::get('nous-contacter', [App\Http\Controllers\FrontOfficePageController::class, 'contact'])->name('front.contact');
