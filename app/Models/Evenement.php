@@ -46,6 +46,6 @@ class Evenement extends Model
 
     public function comments()
     {
-        return $this->hasMany(EventComment::class, );
+        return $this->hasMany(EventComment::class);
     }
 }
