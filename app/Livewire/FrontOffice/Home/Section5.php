@@ -3,11 +3,13 @@
 namespace App\Livewire\FrontOffice\Home;
 
 use Livewire\Component;
+use App\Models\Artist;
 
 class Section5 extends Component
 {
     public function render()
     {
-        return view('livewire.front-office.home.section5');
+        $artists = Artist::orderBy('created_at', 'desc')->take(6)->get();
+        return view('livewire.front-office.home.section5', compact('artists'));
     }
 }

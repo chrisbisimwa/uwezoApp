@@ -25,7 +25,7 @@
 
     @livewire('front-office.home.section8')
 
-    
+    @livewire('front-office.home.section9')
 
 
     

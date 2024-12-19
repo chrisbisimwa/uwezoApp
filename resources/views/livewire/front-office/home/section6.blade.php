@@ -6,11 +6,10 @@ style="background-image: url(front-office-assets/img/banner-1.jpg)">
     <div class="section-title text-center">
         <h3 class="text-white">Suivez-nous sur Facebook</h3>
         <p class="color-body-light-2">
-            Lorem ipsum dolor sit amet concateur non tropp sit namo, allegro sustenuto
-            spresso coel spresso concateur non value maro noro strata.
+            Rejoignez notre communauté sur Facebook et restez connectés avec les dernières nouvelles, événements, et œuvres d’art en vedette. 
         </p>
     </div>
-    <a href="#" class="button primary icon-after">Follow Us <i class="fal fa-arrow-right"></i> </a>
+    <a href="#" class="button primary icon-after">Suivez-nous <i class="fal fa-arrow-right"></i> </a>
 
 </div>
 </div>
