@@ -16,6 +16,6 @@
 
 @livewire('front-office.home.event')
 @livewire('front-office.home.listevent')
-@livewire('front-office.home.newsletter')
-@livewire('front-office.home.section1')
+{{-- @livewire('front-office.home.newsletter') --}}
+{{-- @livewire('front-office.home.section1') --}}
 @endsection
