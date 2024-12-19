@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Scopes\Searchable;
+use Carbon\Doctrine\CarbonTypeConverter;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
@@ -33,6 +34,12 @@ class Evenement extends Model
         'end_date', 
         'created_at', 
         'updated_at' 
+    ];
+    protected $casts = [
+        'start_date'=> 'datetime',
+        'end_date'=> 'datetime',
+        'created_at'=> 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     public function author(){
