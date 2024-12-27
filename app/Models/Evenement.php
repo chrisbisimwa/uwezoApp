@@ -55,4 +55,16 @@ class Evenement extends Model
     {
         return $this->hasMany(EventComment::class);
     }
+
+    public function short_content()
+    {
+        //parse html of the content to get the first 100 characters
+        $content = strip_tags($this->content);
+        return substr($content, 0, 200);
+    }
+
+    public function event_body_output()
+    {
+        return $this->content;
+    }
 }
