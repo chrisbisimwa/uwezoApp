@@ -35,7 +35,7 @@
 
             @empty
             <div class="col-lg-6 col-md-8">
-                <h3>Aucun artiste disponible pour le moment !</h3>
+                <h5>Aucun artiste disponible pour le moment !</h5>
             </div>
             
 
