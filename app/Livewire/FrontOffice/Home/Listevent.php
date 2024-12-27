@@ -12,7 +12,7 @@ class Listevent extends Component
     
     public function render()
     {
-        $events= Evenement::latest()->paginate(5);
+        $events= Evenement::whereIn('status', ['upcoming', 'ongoing', 'completed'])->latest()->paginate(5);
         $count=Evenement::count();
         return view('livewire.front-office.home.listevent', compact('events','count'));
     }

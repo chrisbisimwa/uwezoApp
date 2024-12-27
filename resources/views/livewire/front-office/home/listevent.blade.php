@@ -21,10 +21,15 @@
                 </div>
                 <div class="andro_event-content">
                   <div class="andro_event-body">
-                    <h5>{{$event->description}}</h5>  
+                     
                     <div class="andro_event-data">
-                      <span>{{$event->title}}</span>
+                      <span> <a href="{{route('front.event-details', $event->title)}}"></span>
                       <b> <i class="fal fa-map-marker"></i> {{$event->location}} </b>
+                    </div>
+                    <div class="andro_event">
+                    </div>
+                    <div class="andro_event">
+                      <h6>{!! Str::limit($event->description, 60,'')!!}</h6> 
                     </div>
                   </div>
                   <div class="andro_event-controls">
@@ -43,6 +48,7 @@
 
             </div>
           </div>
+          {{ $events->links('vendor.livewire.frontend') }}
 
           {{-- <div class="andro_artist-d-section" id="similarArtists">
             <h4>Similar Artists</h4>

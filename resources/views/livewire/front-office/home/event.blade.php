@@ -30,12 +30,11 @@
                 <div class="andro_countdown-timer-data">
                   <h6 class="text-white text-uppercase mb-0">Lieu de l'évènement: </h6>
                   <p class="mb-1 color-body-light-2">{{$event->location}}</p>
-                  <p class="mb-1 color-body-light-2">San Fancisco, CA</p>
                 </div>
               </div>
             </div>
             <div class="mt-4">
-              <a href="#" class="button primary">Buy Tickets Now</a>
+              <a href="#" class="button primary">Contacter l'organisateur</a>
             </div>
           </div>
         </div>
