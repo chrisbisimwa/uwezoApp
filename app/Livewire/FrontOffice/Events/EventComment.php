@@ -14,11 +14,11 @@ class EventComment extends Component
     public $eventcomment;
 
     protected $rules = [
-        'comment' => 'required'
+        'eventcomment' => 'required'
     ];
 
     protected $messages = [
-        'comment.required' => 'Le commentaire est obligatoire.'
+        'eventcomment.required' => 'Le commentaire est obligatoire.'
     ];
 
     public function mount($eventDetails)
@@ -26,10 +26,10 @@ class EventComment extends Component
         $this->eventDetails = $eventDetails;
     }
 
-    public function commenter()
+    public function eventcommenter()
     {
         $this->validate([
-            'comment' => 'required'
+            'eventcomment' => 'required'
         ]);
 
         $this->eventDetails->comments()->create([

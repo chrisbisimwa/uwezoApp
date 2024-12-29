@@ -1,29 +1,29 @@
 <div>
     <div class="andro_post-d-section">
-        <h4>{{ count($eventcomment) }} Commentaires</h4>
+        <h4>{{ count($eventcomments) }} Commentaires</h4>
         <div class="andro_post-d-section-content">
             <ol class="andro_comment-list">
-                @forelse ($eventcomment as $comment)
-                    @if ($comment->status == 'approved' || $comment->user_id == Auth()->user()->id)
+                @forelse ($eventcomments as $eventcomment)
+                    @if ($eventcomment->status == 'approved' || $eventcomment->user_id == Auth()->user()->id)
                         <li>
                             <div class="andro_comment-item">
                                 <div class="andro_comment-author">
-                                    @if ($comment->user->profile_image)
-                                        <img src="{{ asset('storage/uploads/' . $comment->user->profile_photo_path) }}"
-                                            alt="comment">
+                                    @if ($eventcomment->user->profile_image)
+                                        <img src="{{ asset('storage/uploads/' . $eventcomment->user->profile_photo_path) }}"
+                                            alt="eventcomment">
                                     @else
-                                        <img src="{{ asset('front-office-assets/img/no-image.jpg') }}" alt="comment">
+                                        <img src="{{ asset('front-office-assets/img/no-image.jpg') }}" alt="eventcomment">
                                     @endif
 
                                     <div class="andro_comment-author-body">
-                                        <h6>{{ $comment->user->name }}</h6>
-                                        <span>{{ $comment->user->role }}</span>
+                                        <h6>{{ $eventcomment->user->name }}</h6>
+                                        <span>{{ $eventcomment->user->role }}</span>
                                     </div>
                                 </div>
                                 <div class="andro_comment-body">
-                                    <p>{{ $comment->content }}</p>
+                                    <p>{{ $eventcomment->content }}</p>
                                 </div>
-                                @if ($comment->status != 'approved' && $comment->user_id == Auth()->user()->id)
+                                @if ($eventcomment->status != 'approved' && $eventcomment->user_id == Auth()->user()->id)
                                     <a href="#" class="andro_comment-reply-link">En attente de validation</a>
                                 @endif
 
@@ -68,16 +68,16 @@
                             readonly value="{{ Auth()->user()->type }}">
                     </div>
                     <div class="col-lg-12 mb-4">
-                        <textarea name="message" class="form-control @error('comment') is-invalid @enderror" placeholder="Votre commentaire"
-                            cols="80" wire:model="comment"></textarea>
-                        @error('comment')
+                        <textarea name="message" class="form-control @error('eventcomment') is-invalid @enderror" placeholder="Votre commentaire"
+                            cols="80" wire:model="eventcomment"></textarea>
+                        @error('eventcomment')
                             <span class="invalid-feedback" role="alert">
                                 <strong style="color: brown;">{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="button primary" name="button" wire:click="commenter()">Commenter</button>
+                <button type="submit" class="button primary" name="button" wire:click="eventcommenter()">Commenter</button>
             @endif
 
 
