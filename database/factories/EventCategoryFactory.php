@@ -18,6 +18,8 @@ class EventCategoryFactory extends Factory
     {
         return [
             //
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(),
         ];
     }
 }

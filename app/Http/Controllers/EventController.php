@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Evenement;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -26,4 +27,9 @@ class EventController extends Controller
         return view('front-office.evenement');
     }
 
+    public function eventDetails($title)
+    {
+        $eventDetails=Evenement::where('title',$title)->first();
+        return view('front-office.event-details',compact('eventDetails'));
+    }
 }

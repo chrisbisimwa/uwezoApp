@@ -41,6 +41,7 @@ Route::get('/actualite', [App\Http\Controllers\FrontOfficePageController::class,
 Route::get('/actualite/{slug}', [App\Http\Controllers\FrontOfficePageController::class, 'blogPost'])->name('front.blog-post');
 
 
+Route::get('/evenements/{title}', [App\Http\Controllers\EventController::class,'eventDetails'])->name('front.event-details');
 
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
 Route::get('/artisteDetail', [App\Http\Controllers\ArtistController::class, 'artisteDetails'])->name('front.artisteDetail');

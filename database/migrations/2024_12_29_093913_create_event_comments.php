@@ -12,15 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('event_comments', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('evenement_id');
-            $table->unsignedBigInteger('user_id');
-            $table->text('content');
-            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->id();
             $table->timestamps();
-
-            $table->foreign('evenement_id')->references('id')->on('events')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

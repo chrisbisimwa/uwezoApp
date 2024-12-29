@@ -13,6 +13,6 @@ class EventCategory extends Seeder
     public function run(): void
     {
         //
-        \App\Models\EventCategory::factory(15)->create();
+        \App\Models\EventCategory::factory(10)->create();
     }
 }

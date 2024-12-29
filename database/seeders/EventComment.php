@@ -13,6 +13,6 @@ class EventComment extends Seeder
     public function run(): void
     {
         //
-        \App\Models\EventComment::factory(15)->create();
+        \App\Models\EventComment::factory(10)->create();
     }
 }
