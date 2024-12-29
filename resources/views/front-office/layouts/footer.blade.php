@@ -11,13 +11,13 @@
         </div>
         <div class="col-lg-3 offset-lg-1">
           <div class="widget">
-            <h5 class="widget-title">Useful Links</h5>
+            <h5 class="widget-title">Liens rapides</h5>
             <ul>
-              <li> <a href="#">Artist &amp; Band Profile</a> </li>
-              <li> <a href="#">Best Sale Album 3</a> </li>
-              <li> <a href="#">Best Sale Album 2</a> </li>
-              <li> <a href="#">Best Sale Album 1</a> </li>
-              <li> <a href="#">Musical Instruments</a> </li>
+              <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
+              <li> <a href="{{route('front.evenements')}}">Evenements</a> </li>
+              <li> <a href="{{route('front.blog')}}">Actualités</a> </li>
+              <li> <a href="{{route('front.about')}}">A propos</a> </li>
+              <li> <a href="{{route('front.contact')}}">Nous contacter</a> </li>
             </ul>
           </div>
         </div>
@@ -28,7 +28,7 @@
               <p>Subscribe to our mailing list to <span class="color-primary">get the updates</span> to your email inbox.</p>
               <form method="post">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Email Address">
+                  <input type="text" class="form-control" placeholder="Addresse Email">
                   <button class="button primary" type="submit"> <i class="fal fa-paper-plane"></i> </button>
                 </div>
               </form>
@@ -39,7 +39,6 @@
             <li> <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a> </li>
             <li> <a href="#"> <i class="fab fa-instagram"></i> Instagram </a> </li>
             <li> <a href="#"> <i class="fab fa-twitter"></i> Twitter </a> </li>
-            <li> <a href="#"> <i class="fab fa-soundcloud"></i> Soundcloud </a> </li>
           </ul>
 
         </div>

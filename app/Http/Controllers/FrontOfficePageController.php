@@ -53,4 +53,9 @@ class FrontOfficePageController extends Controller
     {
         return view('front-office.contact');
     }
+
+    public function about()
+    {
+        return view('front-office.about');
+    }
 }
