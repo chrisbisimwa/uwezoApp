@@ -51,20 +51,20 @@ class Evenement extends Model
         return $this->belongsToMany(EventCategory::class, 'event_category_mappings');
     }
 
-    public function comments()
+    public function eventcomments()
     {
-        return $this->hasMany(EventComment::class);
+        return $this->hasMany(EventComment::class, 'event_id');
     }
 
     public function short_content()
     {
         //parse html of the content to get the first 100 characters
-        $content = strip_tags($this->content);
-        return substr($content, 0, 200);
+        $description = strip_tags($this->description);
+        return substr($description, 0, 200);
     }
 
     public function event_body_output()
     {
-        return $this->content;
+        return $this->description;
     }
 }

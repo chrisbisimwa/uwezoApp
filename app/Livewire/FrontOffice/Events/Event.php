@@ -11,7 +11,7 @@ class Event extends Component
     use WithPagination;
     public function render()
     {
-        $events= Evenement::latest()->paginate(1);
+        $events= Evenement::whereIn('status', ['upcoming', 'ongoing', 'completed'])->latest()->paginate(1);
         $count=Evenement::count();
         return view('livewire.front-office.events.event', compact('events','count'));
     }

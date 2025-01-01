@@ -11,6 +11,7 @@ class EventComment extends Component
     use LivewireAlert;
 
     public $eventDetails;
+    public $events;
     public $eventcomment;
 
     protected $rules = [
@@ -32,7 +33,7 @@ class EventComment extends Component
             'eventcomment' => 'required'
         ]);
 
-        $this->eventDetails->comments()->create([
+        $this->eventDetails->eventcomments()->create([
             'content' => $this->eventcomment,
             'user_id' => Auth::user()->id
         ]);
@@ -54,7 +55,7 @@ class EventComment extends Component
 
     public function render()
     {
-        $eventcomments = $this->eventDetails->comments()->get();
+        $eventcomments = $this->eventDetails->eventcomments()->get();
         return view('livewire.front-office.events.event-comment', compact('eventcomments'));
     }
 }

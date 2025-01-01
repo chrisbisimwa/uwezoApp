@@ -10,9 +10,9 @@
             <div class="section-title mb-0">
               <h3 class="text-white"> {{$event->title}} {{-- <span class="family-display color-primary">{{$event->title}} </span> --}} </h3>
               <p class="text-white">
-                {{$event->description}}
+                {{substr($event->description,0, 200)}}
               </p>
-              <img src="front-office-assets/img/sig2.png" alt="Signature">
+              <a href="#" class="button primary">Contacter l'organisateur</a>
             </div>
           </div>
           <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">
@@ -32,9 +32,6 @@
                   <p class="mb-1 color-body-light-2">{{$event->location}}</p>
                 </div>
               </div>
-            </div>
-            <div class="mt-4">
-              <a href="#" class="button primary">Contacter l'organisateur</a>
             </div>
           </div>
         </div>
