@@ -18,7 +18,7 @@ class EventCommentFactory extends Factory
     {
         return [
             //
-            'evenement_id' => \App\Models\Evenement::factory(),
+            'event_id' => \App\Models\Evenement::factory(),
             'user_id' => \App\Models\User::factory(),
             'content' => $this->faker->text(),
             'status' => "approved",

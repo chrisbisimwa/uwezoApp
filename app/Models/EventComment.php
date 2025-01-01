@@ -18,7 +18,7 @@ class EventComment extends Model
     protected $table = 'event_comments'; 
     
     protected $fillable = [ 
-        'evenement_id', 
+        'event_id', 
         'user_id', 
         'content', 
         'status'
