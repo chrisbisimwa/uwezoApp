@@ -12,7 +12,7 @@
                         partager leurs créations uniques avec le monde
                     </p>
                     <br>
-                    <a href="#" class="button primary">En savoir plus sur nous</a>
+                    <a href="{{route('front.about')}}" class="button primary">En savoir plus sur nous</a>
                 </div>
             </div>
             <div class="col-lg-6">

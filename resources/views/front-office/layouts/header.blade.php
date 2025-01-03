@@ -1,8 +1,9 @@
 <div class="andro_header andro_header-absolute style-1">
-    
+
     <div class="container andro_header-wrap">
         <div class="andro_header-logo">
-            <a href="{{route('front.home')}}"><img src="{{ asset('front-office-assets/img/logo-uwezo.png') }}" style="width: 120px" alt="logo"></a>
+            <a href="{{ route('front.home') }}"><img src="{{ asset('front-office-assets/img/logo-uwezo.png') }}"
+                    style="width: 120px" alt="logo"></a>
         </div>
         <div class="andro_header-inner">
 
@@ -10,13 +11,14 @@
 
                 <ul>
 
-                    <li> <a href="{{route('front.home')}}">Accueil</a> </li>
-                    <li> <a href="/evenements">Evenements</a> </li>
-                    <li> <a href="{{ route('front.artistes')}}">Artistes</a> </li>
-                    <li> <a href="#">Promo</a> </li>
-                    <li> <a href="{{route('front.blog')}}">Actualités</a> </li>
-                    <li> <a href="contact-us.html">A propos</a> </li>
-                    <li> <a href="{{route('front.contact')}}">Nous contacter</a> </li>
+                    <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
+                    <li> <a href="{{ route('front.artistes') }}">Artistes</a> </li>
+                    <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
+
+                    {{-- <li> <a href="#">Promo</a> </li> --}}
+                    <li> <a href="{{ route('front.blog') }}">Actualités</a> </li>
+                    <li> <a href="{{ route('front.about') }}">A propos</a> </li>
+                    <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
 
                 </ul>
 
@@ -24,25 +26,31 @@
                     <a class="search-trigger" href="#">
                         <i class="fal fa-search"></i>
                     </a>
-                   
-                  
+                    <a href="#" class="andro_burger-icon mobile-trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </a>
+
                 </div>
 
             </div>
 
-           {{--  <div class="andro_header-contacts">
+            {{--  <div class="andro_header-contacts">
                 <ul class="andro_socials">
                     <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
                     <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
                 </ul>
             </div> --}}
- 
+
         </div>
     </div>
 </div>
 
-<!-- <div class="andro_header-search">
+<div class="andro_header-search">
     <div class="search-trigger close_btn">
         <svg width="100" height="100" viewBox="0 0 100 100">
             <path class="line line1"
@@ -60,9 +68,9 @@
             <i class="fal fa-search"></i>
         </button>
     </form>
-</div> -->
+</div>
 
-<!-- <aside class="andro_aside">
+<aside class="andro_aside">
     <div class="close_btn mobile-trigger">
         <svg width="100" height="100" viewBox="0 0 100 100">
             <path class="line line1"
@@ -76,15 +84,16 @@
     </div>
     <nav>
         <ul>
-            <li> <a href="contact-us.html">Accueil</a> </li>
-            <li> <a href="contact-us.html">Artistes</a> </li>
-            <li> <a href="contact-us.html">Evenements</a> </li>
-            <li> <a href="contact-us.html">Promo</a> </li>
-            <li> <a href="{{route('front.blog')}}">Blog</a> </li>
-            <li> <a href="contact-us.html">A propos</a> </li>
-            <li> <a href="contact-us.html">Nous contacter</a> </li>
-            
-          
+            <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
+            <li> <a href="{{ route('front.artistes') }}">Artistes</a> </li>
+            <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
+
+            {{-- <li> <a href="#">Promo</a> </li> --}}
+            <li> <a href="{{ route('front.blog') }}">Actualités</a> </li>
+            <li> <a href="{{ route('front.about') }}">A propos</a> </li>
+            <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
+
+
         </ul>
     </nav>
 
@@ -99,7 +108,7 @@
         </ul>
     </div>
 
-</aside> -->
+</aside>
 
 
 <div class="andro_aside-overlay mobile-trigger"></div>

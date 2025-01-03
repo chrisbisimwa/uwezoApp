@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Scopes\Searchable;
+use Carbon\Doctrine\CarbonTypeConverter;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
@@ -34,6 +35,12 @@ class Evenement extends Model
         'created_at', 
         'updated_at' 
     ];
+    protected $casts = [
+        'start_date'=> 'datetime',
+        'end_date'=> 'datetime',
+        'created_at'=> 'datetime',
+        'updated_at' => 'datetime'
+    ];
 
     public function author(){
         return $this->belongsTo(User::class, 'author_id');
@@ -44,8 +51,20 @@ class Evenement extends Model
         return $this->belongsToMany(EventCategory::class, 'event_category_mappings');
     }
 
-    public function comments()
+    public function eventcomments()
     {
-        return $this->hasMany(EventComment::class);
+        return $this->hasMany(EventComment::class, 'event_id');
+    }
+
+    public function short_content()
+    {
+        //parse html of the content to get the first 100 characters
+        $description = strip_tags($this->description);
+        return substr($description, 0, 200);
+    }
+
+    public function event_body_output()
+    {
+        return $this->description;
     }
 }

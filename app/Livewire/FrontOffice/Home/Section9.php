@@ -4,10 +4,10 @@ namespace App\Livewire\FrontOffice\Home;
 
 use Livewire\Component;
 
-class Event extends Component
+class Section9 extends Component
 {
     public function render()
     {
-        return view('livewire.front-office.home.event');
+        return view('livewire.front-office.home.section9');
     }
 }
