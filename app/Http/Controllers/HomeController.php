@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Artist;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,7 +22,10 @@ class HomeController extends Controller
 
     public function artistes(){
         $artiste = Artist::all();
-        //dd($artiste);
-        return view('front-office.artiste',compact('artiste'));
+        $categorie = Category::all();
+        //$categorieArtist = Category::select(name = )
+        //dd($categorie);
+        return view('front-office.artiste',compact('artiste','categorie'));
     }
+    
 }

@@ -2,6 +2,7 @@
 
 
 @section("content")
+
 <div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
 
 </div>
@@ -26,11 +27,15 @@
 
             <div class="andro_artist-d-header">
               <div class="andro_artist-d-name">
-                <span class="andro_artist-d-designation">Chanteur Rap/Hip Hop</span>
-                <h2 class="h3">@foreach ($artisteDetail as $arti )
+                <span class="andro_artist-d-designation">{{$artisteDetail->nom}}</span>
+                <h2 class="h3">
+
+                
+                  @foreach ($artisteDetail as $arti )
                     {{$arti->nom}} {{ $arti->prenom}}
                 
-                @endforeach</h2>
+                @endforeach </h2> 
+
               </div>
               <ul class="andro_socials">
                 <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
@@ -43,11 +48,15 @@
             <div class="andro_artist-d-meta">
               <div class="andro_artist-d-meta-item">
                 <b>Date de naissance: </b>
-                <span>25 Novembre 1990 <b class="fw-500 color-primary">( 34 ans)</b> </span>
+                @foreach ($artisteDetail as $art )
+                 
+                
+                <span>{{$ageArtist = date('d-m-Y', strtotime($art->datenaissance))}} <b class="fw-500 color-primary">( {{$ageArtist}} ans)</b> </span>
               </div>
               <div class="andro_artist-d-meta-item">
                 <b>Albums: </b>
                 <span>Kwa wale, Taux mubaya, Mauno, Tuta fika kwamiguu</span>
+                @endforeach
               </div>
             </div>
 
