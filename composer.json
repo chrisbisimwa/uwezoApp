@@ -9,6 +9,7 @@
         "algolia/algoliasearch-client-php": "^4.8",
         "intervention/image": "2.7",
         "jantinnerezo/livewire-alert": "^3.0",
+        "jenssegers/date": "^2.0",
         "jorenvanhocht/laravel-share": "^4.2",
         "laravel/framework": "^11.9",
         "laravel/scout": "^10.11",

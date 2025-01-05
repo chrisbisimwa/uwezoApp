@@ -3,26 +3,38 @@
 
 @section("content")
 <div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
-    
+<div class="container">
+
+<h1>Les Artistes</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('home')}}">Accueil</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Artistes</li>
+  </ol>
+</nav>
+
+</div>
   </div>
 <div class="section md white-bg">
   
     <div class="container">
 
       <div class="andro_isotope-filter-nav">
-        <a href="#" class="andro_isotope-trigger active" data-filter="*">Toutes les categories</a>
-        <a href="#" class="andro_isotope-trigger" data-filter=".d1">Cat 1</a>
-        <a href="#" class="andro_isotope-trigger" data-filter=".d2">Cat 2</a>
-        <a href="#" class="andro_isotope-trigger" data-filter=".d3">Cat 3</a>
+        @foreach ($categorie as $cat )
+        
+        
+        <a href="#" class="andro_isotope-trigger active" >{{$cat->name}}</a>
+        
+        @endforeach
       </div>
 
       <div class="row andro_isotope-filter" style="position: relative; height: 2981.42px;">
-
+      @foreach ($artiste as $art )
         <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 0px;">
           <div class="andro_artist style-2">
-          @foreach ($artiste as $art )
+          
             <div class="andro_artist-img">  
-              <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
+            <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
               <div class="andro_artist-img-content">
                 <div class="andro_artist-meta">  
                 </div>
@@ -33,34 +45,16 @@
                 </ul>
               </div>
             </div>
-            <span class="andro_artist-designation">Chanteur Rap/Hip Hop</span>
-            <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail')}}">
-            {{ $art->nom }} {{ $art->prenom }}
-            @endforeach</a> </h5>
-          </div>
-        </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 0px;">
-          <div class="andro_artist style-2">
-          @foreach ($artiste as $art )
-            <div class="andro_artist-img">  
-              <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">  
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
             <span class="andro_artist-designation">Chanteur Rap/Hip Hop</span>
-            <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail')}}">
+            <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail', $art->id)}}">
             {{ $art->nom }} {{ $art->prenom }}
-            @endforeach</a> </h5>
+            </a> </h5>
           </div>
         </div>
+        @endforeach
+
+        
 
         
 
