@@ -62,6 +62,26 @@
                                         </a>
                                     </li>
                                     <!-- End::slide -->
+                                    <li class="slide__category"><span class="category-name">Artiste</span></li>
+                                 
+                                    <li class="slide {{ Request::routeIs('artist.index') ? 'active' : '' }}">
+                                        <a href="{{ route('artist.index') }}" class="side-menu__item {{ Request::routeIs('artist.index') ? 'active' : '' }}">
+                                            <i class="bx bx-file side-menu__icon"></i>
+                                            <span class="side-menu__label">Artistes</span>
+                                        </a>
+                                    </li>
+                                    <li class="slide {{ Request::routeIs('blog-category.index') ? 'active' : '' }}">
+                                        <a href="{{route('blog-category.index')}}" class="side-menu__item {{ Request::routeIs('blog-category.index') ? 'active' : '' }}">
+                                            <i class="bx bx-category side-menu__icon"></i>
+                                            <span class="side-menu__label">Catégories</span>
+                                        </a>
+                                    </li>
+                                    <li class="slide {{ Request::routeIs('blog-comment.index') ? 'active' : '' }}">
+                                        <a href="{{route('blog-comment.index')}}" class="side-menu__item {{ Request::routeIs('blog-comment.index') ? 'active' : '' }}">
+                                            <i class="bx bx-comment side-menu__icon"></i>
+                                            <span class="side-menu__label">Commentaires</span>
+                                        </a>
+                                    </li>
 
                                     <li class="slide__category"><span class="category-name">Actualité</span></li>
                                  

@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('email', 255);
             $table->string('genre');
             $table->string('biography');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('abonnement');
             $table->string('numeroCerticat');
             $table->string('phone');
-            $table->unsignedBigInteger('media_id');
+            $table->unsignedBigInteger('media_id')->nullable();
             $table->foreign('media_id')->references('id')->on('media');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('Categories');
