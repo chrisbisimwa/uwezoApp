@@ -2,9 +2,17 @@
 
 
 @section("content")
-
 <div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
+<div class="container">
+<h1>Les Artistes</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('home')}}">Accueil</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Artistes</li>
+  </ol>
+</nav>
 
+</div>
 </div>
 
 <div class="section md white-bg">
@@ -27,14 +35,14 @@
 
             <div class="andro_artist-d-header">
               <div class="andro_artist-d-name">
-                <span class="andro_artist-d-designation">{{$artisteDetail->nom}}</span>
+                <span class="andro_artist-d-designation"></span>
                 <h2 class="h3">
 
                 
-                  @foreach ($artisteDetail as $arti )
-                    {{$arti->nom}} {{ $arti->prenom}}
+                  
+                    {{$artisteDetail->nom}} {{ $artisteDetail->prenom}}
                 
-                @endforeach </h2> 
+                 </h2> 
 
               </div>
               <ul class="andro_socials">
@@ -48,14 +56,15 @@
             <div class="andro_artist-d-meta">
               <div class="andro_artist-d-meta-item">
                 <b>Date de naissance: </b>
-                @foreach ($artisteDetail as $art )
+                 
                  
                 
-                <span>{{$ageArtist = date('d-m-Y', strtotime($art->datenaissance))}} <b class="fw-500 color-primary">( {{$ageArtist}} ans)</b> </span>
+                <span>{{$datenaissance = date('d-m-Y', strtotime($artisteDetail->datenaissance))}} <b class="fw-500 color-primary">( {{$age}} ans)</b> </span>
               </div>
               <div class="andro_artist-d-meta-item">
-                <b>Albums: </b>
-                <span>Kwa wale, Taux mubaya, Mauno, Tuta fika kwamiguu</span>
+                <b>Oeuvres: </b>
+                @foreach ($oeuvre as $oeuvreArtiste )
+                <span><a href="{{$oeuvreArtiste->lieu_oeuvre}}">{{$oeuvreArtiste->nom}},</a></span>
                 @endforeach
               </div>
             </div>
@@ -65,17 +74,6 @@
               <a href="#" class="soundcloud"> <i class="fab fa-soundcloud"></i> Soundcloud </a>
               <a href="#" class="youtube"> <i class="fab fa-youtube"></i> Youtube </a>
             </div>
-
-            <div class="andro_artist-d-upcoming">
-              <div class="andro_artist-d-loc">
-                <h6>Evenements à venir: </h6>
-                <span> <i class="fal fa-map-marker"></i> Bukavu, Goma </span>
-              </div>
-              <div class="andro_artist-d-countdown">
-                <div class="andro_countdown-timer" data-countdown="2023/01/01"><span>00 <i>days</i></span> <span>00 <i>hrs</i></span> <span>00 <i>mins</i></span> <span>00 <i>sec</i></span></div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -87,9 +85,6 @@
               <ul class="nav">
                 <li class="nav-item">
                   <a class="nav-link" href="#artistDescription"> <i class="far fa-chevron-right"></i> Description</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#artistTracks"> <i class="far fa-chevron-right"></i> Titres</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#artistEvents"> <i class="far fa-chevron-right"></i> Evenement</a>
@@ -105,57 +100,17 @@
                 <h4>Description</h4>
                 <div class="andro_artist-d-section-content">
                   <p>
-                    @foreach ($artisteDetail as $arti)
-                    {{$arti->biography}}
-                    @endforeach
+                    
+                    {{$artisteDetail->biography}}
+                    
                   </p>
-                  <p>
-                  En 2016, c’est l’année du grand succès dans toute l'Afrique de l'est avec la sortie de la chanson « Taux Mbaya ».  Afande ready continue sa carrière musicale en véhiculant des messages de paix, d’espoir et de résilience.
-                  </p>
-                </div>
-              </div>
-
-              <div class="andro_artist-d-section" id="artistTracks">
-                <h4>Titres <a href="#">Tout afficher</a> </h4>
-                <div class="andro_artist-d-section-content">
-
-                  <div class="andro_track style-2 andro_audio-track">
-                    <audio preload="metadata" src="assets/audio/1.mp3" title="Audio"></audio>
-                    <div class="andro_track-img">
-                      <img src="assets/img/tracks/md/1.jpg" alt="track">
-                      <div class="andro_track-status">
-                        <i class="fal fa-compact-disc"></i>
-                      </div>
-                    </div>
-                    <div class="andro_track-content">
-
-                      <h5>Maisha</h5>
-                      <div class="andro_track-footer">
-                        <div class="andro_track-data">
-                          <span>By: Afande Ready</span>
-                          <b>October 06, 2015</b>
-                        </div>
-                        <div class="andro_track-controls">
-                          <a data-bs-toggle="tooltip" title="" href="#" class="play andro_music-player-play" data-bs-original-title="Play Track"> <i class="fas fa-play"></i> </a>
-                          <a data-bs-toggle="tooltip" title="" class="download" href="#" data-bs-original-title="Download Track"> <i class="fal fa-download"></i> </a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-               
-                    </div>
-                  </div>
-
+                  
                 </div>
               </div>
 
               <div class="andro_artist-d-section" id="artistEvents">
                 <h4>Evenements <a href="#">Tout afficher</a></h4>
                 <div class="andro_artist-d-section-content">
-
-                  
 
                   <div class="andro_event">
                     <div class="andro_event-date">
