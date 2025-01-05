@@ -87,7 +87,6 @@
             <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
             <li> <a href="{{ route('front.artistes') }}">Artistes</a> </li>
             <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
-
             {{-- <li> <a href="#">Promo</a> </li> --}}
             <li> <a href="{{ route('front.blog') }}">Actualités</a> </li>
             <li> <a href="{{ route('front.about') }}">A propos</a> </li>
