@@ -149,7 +149,7 @@
             <h5 class="widget-title">Recent News</h5>
             @forelse ( $blogPosts as $blogPost)
             <div class="andro_recent-post">
-              <a href="" class="andro_recent-post-date"> {{$blogPost->created_at->format('d/m/Y')}}</a>
+               {{$blogPost->created_at->format('d/m/Y')}}
               <a href="{{ route('front.blog-post', $blogPost->title) }}" class="andro_recent-post-title">{{$blogPost->title}}</a>
             </div>
             @empty
