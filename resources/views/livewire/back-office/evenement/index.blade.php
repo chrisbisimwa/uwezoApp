@@ -40,16 +40,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($posts as $post)
+                            @forelse($events as $event)
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center" >
                                             <div class="me-2 lh-1">
                                                 <span class="avatar avatar-sm ">
 
-                                                    @if ($post->image_path)
+                                                    @if ($event->image_path)
                                                         <img style="width: 40px"
-                                                            src="{{ asset('storage/uploads/' . $post->image_path) }}"
+                                                            src="{{ asset('storage/uploads/' . $event->image_path) }}"
                                                             alt="">
                                                     @else
                                                         <img src="../assets/images/faces/11.jpg" alt="">
@@ -58,45 +58,45 @@
                                                 </span>
                                             </div>
                                             <div >
-                                                <p class="mb-0 fw-semibold" >{{ $post->title }}</p>
+                                                <p class="mb-0 fw-semibold" >{{ $event->title }}</p>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        {{ $post->description}}
+                                        {{ $event->description}}
                                     </td>
                                     <td>
-                                        {{ $post->location }}
+                                        {{ $event->location }}
                                     </td>
                                     <td>
-                                        {{ $post->start_date }}
+                                        {{ $event->start_date }}
                                     </td>
                                     <td>
-                                        {{ $post->end_date }}
+                                        {{ $event->end_date }}
                                     </td>
                                     <td>
-                                        @if ($post->status == 'completed')
+                                        @if ($event->status == 'completed')
                                             <span class="badge bg-success">Terminé</span>
                                         @endif
 
-                                        @if ($post->status == 'upcoming')
+                                        @if ($event->status == 'upcoming')
                                             <span class="badge bg-warning">A venir</span>
                                         @endif
-                                        @if ($post->status == 'ongoing')
+                                        @if ($event->status == 'ongoing')
                                             <span class="badge bg-warning">En cours</span>
                                         @endif
 
                                     </td>
                                     <td>
-                                        {{ $post->author->name }}
+                                        {{ $event->author->name }}
                                     </td>
                                     <td>
-                                        {{ $post->created_at->format('M d Y') }}
+                                        {{ $event->created_at->format('M d Y') }}
                                     </td>
                                     
                                     <td>
                                         <a class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" data-bs-title="Modifier" href="">
+                                            data-bs-placement="top" data-bs-title="Modifier" href="{{route('evenement.editevent'), $event->title}}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
@@ -114,15 +114,9 @@
                         </tbody>
                     </table>
                 </div>
-
-
-
-
             </div>
             <div class="card-footer">
-               
-
-                {{ $posts->links('vendor.livewire.backend') }}
+                {{ $events->links('vendor.livewire.backend') }}
             </div>
         </div>
     </div>
