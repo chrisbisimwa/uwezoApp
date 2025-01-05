@@ -24,7 +24,7 @@ class ArtistController extends Controller
     {
         //
 
-        return view('back-office.blog.create');
+        return view('back-office.artist.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class ArtistController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('back-office.artist.show', compact('id'));
     }
 
     /**
@@ -48,7 +48,7 @@ class ArtistController extends Controller
      */
     public function edit(string $id)
     {
-        return view('back-office.blog.edit');
+        return view('back-office.artist.edit');
     }
 
     /**

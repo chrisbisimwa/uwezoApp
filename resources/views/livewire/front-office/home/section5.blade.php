@@ -21,11 +21,8 @@
                         <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
 
                         <p>
-                            @foreach ($artist->categories->pluck('name')->toArray() as $item)
-                                {{ $item }}@if (!$loop->last)
-                                    ,
-                                @endif
-                            @endforeach
+                            {{ $artist->category->name }}
+                           
                         </p>
 
 
