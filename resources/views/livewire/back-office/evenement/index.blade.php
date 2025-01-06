@@ -96,7 +96,7 @@
                                     
                                     <td>
                                         <a class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" data-bs-title="Modifier" href="{{route('evenement.editevent'), $event->title}}">
+                                            data-bs-placement="top" data-bs-title="Modifier" href="{{ route('evenement.edit', $event->id) }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
