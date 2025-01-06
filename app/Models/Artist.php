@@ -6,12 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    //
+    
+    protected $fillable = [
+        'nom',
+        'prenom',
+        'email',
+        'biography',
+        'photo',
+        'abonnement',
+        'numeroCertificat',
+        'phone',
+        'category_id',
+        'datenaissance'
+    ];
 
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(ArtworkCategory::class, 'artwork_categories');
+        return $this->belongsTo(Category::class);
     }
 
 }
