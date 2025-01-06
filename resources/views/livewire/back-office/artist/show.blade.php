@@ -576,7 +576,7 @@
                                                                                         class="avatar-list-stacked d-block mt-4 text-end">
                                                                                         <span
                                                                                             class="avatar avatar-xs avatar-rounded">
-                                                                                            <img src="../assets/images/faces/2.jpg"
+                                                                                            <img src="{{asset('back-office-assets/images/faces/2.jpg')}}"
                                                                                                 alt="img">
                                                                                         </span>
                                                                                         <span
@@ -1152,9 +1152,9 @@
                                     aria-labelledby="gallery-tab" tabindex="0">
                                     <div class="row">
                                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                            <a href="../assets/images/media/media-40.jpg" class="glightbox card"
+                                            <a href="{{asset('back-office-assets/images/media/media-40.jpg')}}" class="glightbox card"
                                                 data-gallery="gallery1">
-                                                <img src="../assets/images/media/media-40.jpg" alt="image">
+                                                <img src="{{asset('back-office-assets/images/media/media-40.jpg')}}" alt="image">
                                             </a>
                                         </div>
                                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
@@ -1239,5 +1239,7 @@
             </div>
 
         </div>
+
+        
     </div>
 </div>
