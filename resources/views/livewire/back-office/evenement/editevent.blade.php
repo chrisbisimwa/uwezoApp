@@ -2,43 +2,59 @@
     <div class="col-xxl-9 col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="card custom-card">
             <div class="card-header">
-                <div class="card-title">Modification l'article</div>
+                <div class="card-title">Modification de l'évènement</div>
             </div>
             <div class="card-body">
                 <div class="row gy-3">
                     <div class="col-xl-12">
-                        <label for="blog-title" class="form-label">Titre</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="blog-title"
-                            wire:model="title" placeholder="Blog Title" required>
+                        <label for="event-title" class="form-label">Titre</label>
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="event-title"
+                            wire:model="title" placeholder="Event Title" required>
                         @error('title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                    
+                </div>
+
+                <div class="col-xl-12">
+                    <label class="form-label">Event description</label>
+                    <input type="hidden" wire:model="description" class="form-control @error('description') is-invalid @enderror">
+                    @error('description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    <div class="relative mt-4" wire:ignore>
+
+                        <div id="editor" wire:model="description"></div>
                     </div>
+                </div>
+
 
                     <div class="col-xl-12">
-                        <label class="form-label">Event Content</label>
-                        <input type="hidden" wire:model="content" class="form-control @error('content') is-invalid @enderror">
-                        @error('content')
+                        <label class="form-label">Event Location</label>
+                        <input type="text" wire:model="location" class="form-control @error('location') is-invalid @enderror">
+                        @error('location')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                         <div class="relative mt-4" wire:ignore>
 
-                            <div id="editor" wire:model="content"></div>
+                            <div id="editor" wire:model="location"></div>
                         </div>
                     </div>
-
-
-                </div>
+                    <div class="date-fields">
+                        <label for="start-date">Date de début :</label>
+                        <input type="date" class="form-control" wire:model="start_date" id="editor" name="start-date">
+                        <label for="end-date">Date de fin :</label>
+                        <input type="date" class="form-control" wire:model="end_date" id="editor" name="end-date">
+                      </div>
             </div>
             <div class="card-footer">
-                {{-- <div class="btn-list text-end">
-                    <button type="button" class="btn btn-sm btn-light">Save As Draft</button>
-                    <button type="button" class="btn btn-sm btn-primary">Post Blog</button>
-                </div> --}}
+               
             </div>
         </div>
     </div>
@@ -67,7 +83,6 @@
 
                                 <select class="form-control" data-trigger name="choices-single-default"
                                     wire:model="status" id="choices-single-default">
-
                                     <option value="upcoming">A venir</option>
                                     <option value="ongoing">Encours</option>
                                     <option value="completed">Terminé</option>
@@ -97,7 +112,7 @@
                     <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
                             <div class="col-xl-12">
-                                <label for="image_path" class="form-label">Image</label>
+                                <label for="image_path" class="form-label">Image Path</label>
 
                                 @if ($image_path && $image_path->isValid())
                                     <div class="card custom-card product-card">
@@ -141,6 +156,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#datepicker').datepicker();
+$('#datepicker').on('changeDate', function() {
+    $('#my_hidden_input').val(
+        $('#datepicker').datepicker('getFormattedDate')
+    );
+});
+</script>
 
 
 @push('quilEditor')
@@ -216,7 +240,7 @@
             // Update the previous list of images
             previousImages = currentImages;
 
-            @this.set('content', editor.root.innerHTML);
+            @this.set('description', editor.root.innerHTML);
         });
 
         Livewire.on('eventimageUploaded', function(imagePaths) {

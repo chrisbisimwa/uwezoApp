@@ -13,5 +13,5 @@
     </div>
 </div>
 
-@livewire('back-office.evenement.editevent', ['post' => $post])
+@livewire('back-office.evenement.editevent', ['events' => $events])
 @endsection

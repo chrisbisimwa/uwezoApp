@@ -55,8 +55,8 @@ class EventController extends Controller
      */
     public function edit(string $id)
     {
-        $post = Evenement::where('title', $id)->first();
-        return view('back-office.evenement.editevent', compact('post'));
+        $events = Evenement::where('id', $id)->first();
+        return view('back-office.evenement.editevent', compact('events'));
     }
 
     /**

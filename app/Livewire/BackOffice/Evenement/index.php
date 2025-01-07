@@ -55,10 +55,7 @@ class Index extends Component
         $this->render();
     }
 
-    public function edit($id)
-    {
-        $this->dispatch('editevent', $id);
-    }
+    
 
     public function render()
     {
