@@ -28,7 +28,7 @@ class EditEvent extends Component
         $this->location = $events->location;
         $this->start_date = $events->start_date;
         $this->end_date = $events->end_date;
-        /* $this->image_path = $events->imahge_path; */
+        /* $this->image_path = $events->image_path; */
         $this->status = $events->status;
         $this->selectedCategories = $events->categories->pluck('id')->toArray();
         
@@ -37,6 +37,6 @@ class EditEvent extends Component
     public function render()
     {
         $this->categories = EventCategory::all();
-        return view('livewire.back-office.editevent');
+        return view('livewire.back-office.evenement.editevent');
     }
 }
