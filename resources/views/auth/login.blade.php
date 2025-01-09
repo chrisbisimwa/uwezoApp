@@ -98,7 +98,7 @@
                                     class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
                                     <div>
                                         <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/2.png') }}" class="authentication-image"
+                                            <img src="{{ asset('back-office-assets/images/authentication/slider 1.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
                                         <h6 class="fw-semibold">Sign In</h6>
@@ -115,7 +115,7 @@
                                     class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
                                     <div>
                                         <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/2.png') }}" class="authentication-image"
+                                            <img src="{{ asset('back-office-assets/images/authentication/slider 2.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
                                         <h6 class="fw-semibold">Sign In</h6>
@@ -132,7 +132,7 @@
                                     class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
                                     <div>
                                         <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/3.png') }}" class="authentication-image"
+                                            <img src="{{ asset('back-office-assets/images/authentication/slider 1.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
                                         <h6 class="fw-semibold">Sign In</h6>
@@ -150,7 +150,7 @@
                                     class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
                                     <div>
                                         <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/2.png') }}" class="authentication-image"
+                                            <img src="{{ asset('back-office-assets/images/authentication/slider 3.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
                                         <h6 class="fw-semibold">Sign In</h6>
@@ -168,7 +168,7 @@
                                     class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
                                     <div>
                                         <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/2.png') }}" class="authentication-image"
+                                            <img src="{{ asset('back-office-assets/images/authentication/backLogin.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
                                         <h6 class="fw-semibold">Sign In</h6>

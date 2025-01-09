@@ -76,9 +76,6 @@ class Create extends Component
         'content' => 'required',
         'featured_image' => 'required|image|max:1024',
     ]);
-
-    
-
         $featured_image = $this->featured_image->store('blog_featured_images', 'public_uploads');
 
         $post = BlogPost::create([
