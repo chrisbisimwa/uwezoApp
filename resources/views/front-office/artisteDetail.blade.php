@@ -2,7 +2,7 @@
 
 
 @section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
+<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
 <div class="container">
 <h1>Les Artistes</h1>
 <nav aria-label="breadcrumb">
@@ -16,17 +16,15 @@
 </div>
 
 <div class="section md white-bg">
-<div class="section md">
+  <div class="section md">
     <div class="container">
-
-
 
       <div class="row align-items-start align-items-md-center">
         <div class="col-lg-4 col-sm-4">
           <div class="andro_artist-d-img">
             <img class="andro_img-cover" src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
             <div class="andro_artist-d-img-shadow">
-              <img class="andro_img-cover" src="assets/img/artists/details/profile.jpg" alt="artist">
+              <img class="andro_img-cover" src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
             </div>
           </div>
         </div>
@@ -38,41 +36,36 @@
                 <span class="andro_artist-d-designation"></span>
                 <h2 class="h3">
 
-                
-                  
                     {{$artisteDetail->nom}} {{ $artisteDetail->prenom}}
                 
                  </h2> 
 
               </div>
               <ul class="andro_socials">
-                <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
-                <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                <li> <a href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
+                <li> <a href="{{$artisteDetail->facebook_link}}" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
+                <li> <a href="{{$artisteDetail->twitter_link}}" target="_blank"> <i class="fab fa-twitter"></i> </a> </li>
+                <li> <a href="{{$artisteDetail->instagram_link}}" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
+                <li> <a href="{{$artisteDetail->soundcloud}}" target="_blank"> <i class="fab fa-soundcloud"></i> </a> </li>
               </ul>
             </div>
 
             <div class="andro_artist-d-meta">
               <div class="andro_artist-d-meta-item">
                 <b>Date de naissance: </b>
-                 
-                 
-                
                 <span>{{$datenaissance = date('d-m-Y', strtotime($artisteDetail->datenaissance))}} <b class="fw-500 color-primary">( {{$age}} ans)</b> </span>
               </div>
               <div class="andro_artist-d-meta-item">
                 <b>Oeuvres: </b>
                 @foreach ($oeuvre as $oeuvreArtiste )
-                <span><a href="{{$oeuvreArtiste->lieu_oeuvre}}">{{$oeuvreArtiste->nom}},</a></span>
+                <span><a href="{{$oeuvreArtiste->lieu_oeuvre}}" target="_blank">{{$oeuvreArtiste->nom}},</a></span>
                 @endforeach
               </div>
             </div>
 
             <div class="andro_artist-d-availability">
               <h6>Disponible sur: </h6>
-              <a href="#" class="soundcloud"> <i class="fab fa-soundcloud"></i> Soundcloud </a>
-              <a href="#" class="youtube"> <i class="fab fa-youtube"></i> Youtube </a>
+              <a href="{{$artisteDetail->soundcloud_link}}" class="soundcloud" target="_blank"> <i class="fab fa-soundcloud"></i> Soundcloud </a>
+              <a href="{{$artisteDetail->youtube_link}}" class="youtube" target="_blank" target="_blank"> <i class="fab fa-youtube"></i> Youtube </a>
             </div>
           </div>
         </div>
@@ -110,32 +103,30 @@
 
               <div class="andro_artist-d-section" id="artistEvents">
                 <h4>Evenements <a href="#">Tout afficher</a></h4>
+                @foreach ($event as $evt)
                 <div class="andro_artist-d-section-content">
-
                   <div class="andro_event">
                     <div class="andro_event-date">
-                      <b>11</b>
-                      <span>Nov 2024</span>
+                      <b>{{$date_day= date('d', strtotime($evt->start_date))}}</b>
+                      <span>{{$date_my= date('m-y', strtotime($evt->start_date))}}</span>
                     </div>
                     <div class="andro_event-content">
                       <div class="andro_event-body">
-                        <h5>Festi Ras</h5>
+                        <h5>{{$evt->title}}</h5>
                         <div class="andro_event-data">
-                          <span>Organisateur: Eric </span>
-                          <b> <i class="fal fa-map-marker"></i> Ibanda, Bukavu </b>
+                          <span>Organisateur: {{$evt->organisateur}} </span>
+                          <b> <i class="fal fa-map-marker"></i> {{$evt->location}} </b>
                         </div>
                       </div>
                       <div class="andro_event-controls">
                         <a href="#" class="button secondary disabled sm"> Fermé </a>
                         <a href="#" class="button outline sm"> Details </a>
                       </div>
-
                     </div>
                   </div>
-
-                  
-
                 </div>
+                @endforeach
+                
               </div>
 
               

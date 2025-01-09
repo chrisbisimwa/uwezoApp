@@ -2,7 +2,7 @@
 
 
 @section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
+<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
 <div class="container">
 
 <h1>Les Artistes</h1>
@@ -39,36 +39,20 @@
                 <div class="andro_artist-meta">  
                 </div>
                 <ul class="andro_socials">
-                  <li> <a class="facebook" href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="#"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
+                  <li> <a class="facebook" href="{{$art->facebook_link}}" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
+                  <li> <a class="instagram" href="{{$art->instagram_link}}" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
+                  <li> <a class="soundcloud" href="{{$art->soundcloud_link}}" target="_blank"> <i class="fab fa-soundcloud"></i> </a> </li>
                 </ul>
               </div>
             </div>
 
-            <span class="andro_artist-designation">Chanteur Rap/Hip Hop</span>
+            
             <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail', $art->id)}}">
             {{ $art->nom }} {{ $art->prenom }}
             </a> </h5>
           </div>
         </div>
         @endforeach
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
 
       </div>
     </div>
