@@ -75,20 +75,16 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i
+                                    class="ri-share-line me-2 align-middle d-inline-block"></i>Modifier</a></li>
+                                <li><a class="dropdown-item" href="#"><i
                                             class="ri-share-line me-2 align-middle d-inline-block"></i>Share</a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="ri-phone-line me-2 align-middle d-inline-block"></i>Call</a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="ri-chat-2-line me-2 align-middle d-inline-block"></i>Message</a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="ri-video-chat-line me-2 align-middle d-inline-block"></i>Video
-                                        Call</a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="ri-delete-bin-5-line me-2 align-middle d-inline-block"></i>Delete</a>
+                                
+                              
+                               
+                                <li><a class="dropdown-item" wire:click="delete({{$artist->id}})" style="cursor:pointer;"><i
+                                            class="ri-delete-bin-5-line me-2 align-middle d-inline-block"></i>Supprimer</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="ri ri-heart-3-line me-2 align-middle d-inline-block"></i>Favourite</a>
-                                </li>
+                               
                             </ul>
                         </div>
                         

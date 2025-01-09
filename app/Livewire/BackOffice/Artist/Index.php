@@ -10,7 +10,12 @@ use App\Models\Artist;
 class Index extends Component
 {
     use WithPagination;
-    public $searchTerm;
+    use LivewireAlert;
+    public $searchTerm, $artist_id;
+
+    protected $listeners = [
+        'deleteArtist',
+    ];
 
     public function goToAddArtist()
     {
@@ -20,6 +25,34 @@ class Index extends Component
     public function goToShowArtist($id)
     {
         return redirect()->route('artist.show', $id);
+    }
+
+    public function delete($id)
+    {
+        $this->artist_id = $id;
+        $this->confirm('Etes-vous sûr de vouloir supprimer cet artiste?', [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'cancelButtonText' => 'Annuler',
+            'onConfirmed' => 'deleteArtist',
+        ]);
+    }
+
+    public function deleteArtist()
+    {
+        $artist = Artist::find($this->artist_id);
+        $artist->delete();
+        $this->alert('success', 'Artiste supprimé avec success', [
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Fermer',
+            'cancelButtonText' =>  'Annuler',
+            'showCancelButton' =>  false,
+            'showConfirmButton' =>  false,
+        ]);
     }
 
     public function render()

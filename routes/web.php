@@ -35,7 +35,8 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
    
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::redirect('/home', '/');
+
 Route::get('/evenements', [App\Http\Controllers\EventController::class, 'evenements'])->name('front.evenements');
 Route::get('/actualite', [App\Http\Controllers\FrontOfficePageController::class, 'blog'])->name('front.blog');
 Route::get('/actualite/{slug}', [App\Http\Controllers\FrontOfficePageController::class, 'blogPost'])->name('front.blog-post');

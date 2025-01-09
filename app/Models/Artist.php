@@ -26,4 +26,14 @@ class Artist extends Model
         return $this->belongsTo(Category::class);
     }
 
+    /* public function events()
+    {
+        return $this->belongsToMany(Evenement::class);
+    } */
+
+    public function artworks()
+    {
+        return $this->hasMany(Artwork::class);
+    }
+
 }

@@ -238,5 +238,9 @@
                 console.warn('Received empty or invalid imagePaths array');
             }
         });
+
+        Livewire.on('post-loaded', function(post) {
+            editor.root.innerHTML = post.content;
+        });
     </script>
 @endpush

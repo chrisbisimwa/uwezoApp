@@ -26,6 +26,9 @@ class Edit extends Component
         $this->status = $post->status;
         $this->selectedCategories = $post->categories->pluck('id')->toArray();
         //$this->featured_image = $post->featured_image;
+
+        //dd($post->categories);
+        $this->dispatch('post-loaded', content: $post->content);
     }
 
     public function render()
