@@ -22,7 +22,6 @@
                             <p>{!! Str::limit($blog->short_content(), 150, ' ...') !!}</p>
                             <div class="andro_post-author">
                                 <div class="andro_post-author-thumb">
-
                                     @if ($blog->author->profile_image)
                                         <img src="{{ asset('storage/uploads/' . $blog->author->profile_image) }}"
                                             alt="post author">
