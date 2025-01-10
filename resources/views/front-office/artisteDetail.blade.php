@@ -1,11 +1,10 @@
 @extends("front-office.layouts.app")
 
-
 @section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
-<div class="container">
-<h1>Les Artistes</h1>
-<nav aria-label="breadcrumb">
+<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(../front-office-assets/img/subheader-7.jpg)">
+ <div class="container">
+ <h1>Les Artistes</h1>
+ <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{route('home')}}">Accueil</a></li>
     <li class="breadcrumb-item active" aria-current="page">Artistes</li>

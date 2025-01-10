@@ -1,7 +1,7 @@
 @extends("front-office.layouts.app")
 
 @section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
+<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
     <div class="container">
 
       <h1>Nous contacter</h1>
@@ -86,20 +86,20 @@
       <form method="post">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <input type="text" class="form-control" name="fname" placeholder="Your Name" value="">
+            <input type="text" class="form-control" name="fname" placeholder="Votre adresse mail" value="">
           </div>
           <div class="col-lg-4 mb-4">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" value="">
+            <input type="email" class="form-control" name="email" placeholder="Votre adresse mail" value="">
           </div>
           <div class="col-lg-4 mb-4">
-            <input type="text" class="form-control" name="phone" placeholder="Your Phone Number" value="">
+            <input type="text" class="form-control" name="phone" placeholder="Votre numéro" value="">
           </div>
           <div class="col-lg-12 mb-4">
-            <textarea name="message" class="form-control" placeholder="Your Message" cols="80"></textarea>
+            <textarea name="message" class="form-control" placeholder="Votre message" cols="80"></textarea>
           </div>
         </div>
         <div class="text-center">
-          <button type="submit" class="button primary" name="button">Send Message</button>
+          <button type="submit" class="button primary" name="button">Envoyer</button>
         </div>
       </form>
 

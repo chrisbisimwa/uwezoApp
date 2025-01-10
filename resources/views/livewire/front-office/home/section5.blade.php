@@ -12,36 +12,64 @@
 
         </div>
         @forelse ($artists as $artist)
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="{{ asset('front-office-assets/img/gallery/1.jpg') }}" class="andro_img-popup andro_gallery">
-                    <img class="andro_img-cover" src="{{ asset('front-office-assets/img/gallery/1.jpg') }}"
-                        alt="gallery">
-                    <div class="andro_gallery-content">
-                        <i class="far fa-search"></i>
-                        <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            @if ($artist->photo)
+            <a href="{{asset('storage/uploads/'.$artist->photo)}}" class="andro_img-popup andro_gallery">
 
-                        <p>
-                            {{ $artist->category->name }}
-                           
-                        </p>
+                <img class="andro_img-cover" src="{{asset('storage/uploads/'.$artist->photo)}}"
+                    alt="gallery">
 
 
-                    </div>
-                </a>
-            </div>
+                <div class="andro_gallery-content">
+                    <i class="far fa-search"></i>
+                    <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
 
-            @empty
-            <div class="col-lg-6 col-md-8">
-                <h5>Aucun artiste disponible pour le moment !</h5>
-            </div>
-            
+                    <p>
+                        {{ $artist->category->name }}
 
-            @endforelse
-            
-            
-            
-            
-            
+                    </p>
+
+
+                </div>
+            </a>
+
+            @else
+            <a href="{{ asset('front-office-assets/img/gallery/1.jpg') }}" class="andro_img-popup andro_gallery">
+
+                <img class="andro_img-cover" src="{{ asset('front-office-assets/img/gallery/1.jpg') }}"
+                    alt="gallery">
+
+
+                <div class="andro_gallery-content">
+                    <i class="far fa-search"></i>
+                    <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
+
+                    <p>
+                        {{ $artist->category->name }}
+
+                    </p>
+
+
+                </div>
+            </a>
+            @endif
+
+
 
         </div>
+
+        @empty
+        <div class="col-lg-6 col-md-8">
+            <h5>Aucun artiste disponible pour le moment !</h5>
+        </div>
+
+
+        @endforelse
+
+
+
+
+
+
     </div>
+</div>

@@ -1,7 +1,7 @@
 @extends("front-office.layouts.app")
 
 @section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-1.jpg)">
+<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
   <div class="container">
 
     <h1>A propos</h1>
@@ -21,7 +21,7 @@
 
       <div class="col-lg-6">
         <div class="section-title mb-0">
-          <h3> Uwezo Afrika <span class="family-display color-primary">Ce que nous sommes</span> </h3>
+          <h3> A propos <span class="family-display color-primary">de Uwezo Afrika</span> </h3>
           <p>
             Lorem ipsum dolor sit amet concateur non tropp sit namo, all
             bravo pensare, chicco milo naturoel spresso concateur non a
