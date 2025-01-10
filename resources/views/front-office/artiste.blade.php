@@ -1,8 +1,7 @@
 @extends("front-office.layouts.app")
 
-
 @section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
+<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(../front-office-assets/img/subheader-7.jpg)">
 <div class="container">
 
 <h1>Les Artistes</h1>
@@ -20,8 +19,8 @@
     <div class="container">
 
       <div class="andro_isotope-filter-nav">
+      <a href="#" class="andro_isotope-trigger active" >Tous les artistes</a>
         @foreach ($categorie as $cat )
-        
         
         <a href="#" class="andro_isotope-trigger active" >{{$cat->name}}</a>
         
@@ -34,7 +33,7 @@
           <div class="andro_artist style-2">
           
             <div class="andro_artist-img">  
-            <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
+            <img src="{{asset('storage/uploads/'.$art->photo)}}" alt="artist">
               <div class="andro_artist-img-content">
                 <div class="andro_artist-meta">  
                 </div>
@@ -67,32 +66,7 @@
 
       <div class="andro_lineup">
 
-        <div class="andro_lineup-item">
-
-          <div class="andro_lineup-title">
-            <h5 class="h3 color-primary">Experimental</h5>
-          </div>
-          <div class="andro_lineup-table">
-            <div class="andro_lineup-table-row">
-              <b>Sean Joe Praise</b>
-              <b>Moïse Freed Apostolos</b>
-              <b>Yvon Bwishe</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>Auga Chak</b>
-              <b>Babul Nigga</b>
-              <b>J’Adore Viscache</b>
-            </div>
-            
-          </div>
-
-        </div>
-
-        
-
-        
-
-        
+      
 
       </div>
 

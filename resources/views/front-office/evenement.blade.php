@@ -4,7 +4,7 @@
       <h1>Evenements</h1>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/">Accueil</a></li>
           <li class="active" aria-current="page"> &nbsp;/ Evenements</li>
         </ol>
       </nav>
