@@ -9,9 +9,15 @@ use Illuminate\View\View;
 
 class Liste extends Component
 {
-    public $category_id;
+    public $category_id=null;
     public $categories;
     public $artistes;
+
+    protected $listeners = [
+        'categorySelected' => 'loadByCategory',
+    ];
+
+  
 
     
 
@@ -19,24 +25,23 @@ class Liste extends Component
     {
         if($id == 0){
             $this->category_id = null;
+
         }else{
             $this->category_id = $id;
         }
-
-        // Récupérer les artistes en fonction de la catégorie sélectionnée, ou tous les artistes si aucune catégorie n'est sélectionnée
-        $this->artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->get(): Artist::all();
+        
+      
 
     }
 
     public function mount()
     {
         $this->categories = Category::all();
-        $this->loadByCategory(0);
     }
 
     public function render()
     {
-        
+        $this->artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->get(): Artist::all();
         return view('livewire.front-office.artist.liste');
     }
 }

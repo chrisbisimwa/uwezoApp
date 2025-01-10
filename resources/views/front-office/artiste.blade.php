@@ -1,9 +1,9 @@
-@extends("front-office.layouts.app")
+@extends('front-office.layouts.app')
 
-
-@section("content")
-<div class="andro_subheader bg-cover bg-center bg-norepeat" style="background-image: url(front-office-assets/img/subheader-7.jpg)">
-<div class="container">
+@section('content')
+    <div class="andro_subheader bg-cover bg-center bg-norepeat"
+        style="background-image: url(../front-office-assets/img/subheader-7.jpg)">
+        <div class="container">
 
             <h1>Les Artistes</h1>
             <nav aria-label="breadcrumb">
@@ -13,86 +13,30 @@
                 </ol>
             </nav>
 
-</div>
-  </div>
-<div class="section md white-bg">
-  
-    <div class="container">
-
-      <div class="andro_isotope-filter-nav">
-        @foreach ($categorie as $cat )
-        
-        
-        <a href="#" class="andro_isotope-trigger active" >{{$cat->name}}</a>
-        
-        @endforeach
-      </div>
-
-      <div class="row andro_isotope-filter" style="position: relative; height: 2981.42px;">
-      @foreach ($artiste as $art )
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 0px;">
-          <div class="andro_artist style-2">
-          
-            <div class="andro_artist-img">  
-            <img src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
-              <div class="andro_artist-img-content">
-                <div class="andro_artist-meta">  
-                </div>
-                <ul class="andro_socials">
-                  <li> <a class="facebook" href="{{$art->facebook_link}}" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
-                  <li> <a class="instagram" href="{{$art->instagram_link}}" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
-                  <li> <a class="soundcloud" href="{{$art->soundcloud_link}}" target="_blank"> <i class="fab fa-soundcloud"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-
-            
-            <h5 class="andro_artist-name"> <a href="{{route('front.artisteDetail', $art->id)}}">
-            {{ $art->nom }} {{ $art->prenom }}
-            </a> </h5>
-          </div>
         </div>
-        @endforeach
-
-      </div>
     </div>
-  </div>
-  <div class="section light-bg __web-inspector-hide-shortcut__">
-    <div class="container">
+
+    <div class="section md white-bg">
+
+        <div class="container">
+    
+            @livewire('front-office.artist.cat')
+    
+            @livewire('front-office.artist.liste')
+        </div>
+    </div>
+    
+    <div class="section light-bg __web-inspector-hide-shortcut__">
+        <div class="container">
 
             <div class="section-title text-center">
                 <h3>Retrouvez toute les meilleures musiques </h3>
                 <p class="mb-0">La musique et les playlists permettront à vos fans de profiter de l'écoute</p>
             </div>
 
-      <div class="andro_lineup">
+            <div class="andro_lineup">
 
-        <div class="andro_lineup-item">
 
-          <div class="andro_lineup-title">
-            <h5 class="h3 color-primary">Experimental</h5>
-          </div>
-          <div class="andro_lineup-table">
-            <div class="andro_lineup-table-row">
-              <b>Sean Joe Praise</b>
-              <b>Moïse Freed Apostolos</b>
-              <b>Yvon Bwishe</b>
-            </div>
-            <div class="andro_lineup-table-row">
-              <b>Auga Chak</b>
-              <b>Babul Nigga</b>
-              <b>J’Adore Viscache</b>
-            </div>
-            
-          </div>
-
-        </div>
-
-        
-
-        
-
-        
 
             </div>
 
