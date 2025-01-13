@@ -13,6 +13,12 @@ class CreatCategory extends Component
 
     public $name;
     public $description;
+    public $mode;
+    public $category_id;
+
+    protected $listeners = [
+        'editCategory' => 'edit',
+    ];
 
     protected $rules = [
         'name' => 'required',
@@ -27,16 +33,22 @@ class CreatCategory extends Component
     {
         $this->validate();
 
-        EventCategory::create([
-            'name' => $this->name,
-            'description' => $this->description,
-        ]);
+        if($this->mode=="create"){
+            EventCategory::create([
+                'name' => $this->name,
+                'description' => $this->description,
+            ]);
+    
+        }else{
+            $category = EventCategory::find($this->category_id);
+            $category->name = $this->name;
+            $category->description = $this->description;
+            $category->save();
+
+        }
 
 
-
-        $this->resetForm();
-
-        $this->alert('success', 'Catégorie créée avec success', [
+        $this->alert('success', 'Catégorie enregistrée avec success', [
             'position' =>  'top-end',
             'timer' =>  3000,
             'toast' =>  true,
@@ -48,6 +60,16 @@ class CreatCategory extends Component
         ]);
 
         $this->dispatch('category-created', 'Category created successfully');
+        $this->resetForm();
+    }
+
+    public function editt($id)
+    {
+        $category = EventCategory::find($id);
+        $this->name = $category->name;
+        $this->description = $category->description;
+        $this->category_id = $id;
+        $this->mode = "edit";
     }
 
     public function resetForm(){
@@ -56,9 +78,9 @@ class CreatCategory extends Component
     }
 
 
-    public function updated($propertyName)
+    public function updated($name)
     {
-        $this->validateOnly($propertyName);
+        $this->validateOnly($name);
     }
 
     public function render()

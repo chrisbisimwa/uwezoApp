@@ -18,14 +18,14 @@ class Index extends Component
 
     protected $listeners = [
         'deletevent',
-        'category-created' => 'reload',
+        'event-created' => 'reload',
     ];
 
 
     public function delete($id)
     {
         $this->event_id = $id;
-        $this->confirm('Êtes-vous sûr de vouloir supprimer cette catégorie?', [
+        $this->confirm('Êtes-vous sûr de vouloir supprimer cette évènement?', [
             'toast' => false,
             'position' => 'center',
             'showConfirmButton' => true,

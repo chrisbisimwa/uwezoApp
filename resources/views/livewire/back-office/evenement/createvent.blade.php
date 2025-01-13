@@ -48,9 +48,9 @@
                     </div>
                     <div class="date-fields">
                         <label for="start-date">Date de début :</label>
-                        <input type="date" class="form-control" wire:model="start_date" id="editor" name="start-date">
+                        <input type="datetime-local" class="form-control" wire:model="start_date" id="editor" name="start-date">
                         <label for="end-date">Date de fin :</label>
-                        <input type="date" class="form-control" wire:model="end_date" id="editor" name="end-date">
+                        <input type="datetime-local" class="form-control" wire:model="end_date" id="editor" name="end-date">
                       </div>
             </div>
             <div class="card-footer">
@@ -75,7 +75,7 @@
                             <button type="button" wire:click="cancel()" class="btn btn-sm btn-light">Annuler</button>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    {{-- <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
 
                             <div class="col-xl-12">
@@ -91,7 +91,7 @@
 
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
@@ -156,16 +156,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    $('#datepicker').datepicker();
-$('#datepicker').on('changeDate', function() {
-    $('#my_hidden_input').val(
-        $('#datepicker').datepicker('getFormattedDate')
-    );
-});
-</script>
-
 
 @push('quilEditor')
     <script>
