@@ -11,7 +11,7 @@ class Liste extends Component
 {
     public $category_id=null;
     public $categories;
-    public $artistes;
+    public $artistes=[];
 
     protected $listeners = [
         'categorySelected' => 'loadByCategory',
@@ -28,6 +28,7 @@ class Liste extends Component
 
         }else{
             $this->category_id = $id;
+            $this->artistes = Artist::where('category_id', $this->category_id)->get();
         }
         
       
@@ -37,11 +38,12 @@ class Liste extends Component
     public function mount()
     {
         $this->categories = Category::all();
+        $this->artistes = Artist::all();
     }
 
     public function render()
     {
-        $this->artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->get(): Artist::all();
+        //$this->artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->get(): Artist::all();
         return view('livewire.front-office.artist.liste');
     }
 }

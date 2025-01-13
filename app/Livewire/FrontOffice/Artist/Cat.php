@@ -9,6 +9,10 @@ class Cat extends Component
 {
     public $category_id;
 
+    public function mount(){
+        $this->category_id=null;
+    }
+
     public function selectCategory($id)
     {
         $this->category_id = $id;
