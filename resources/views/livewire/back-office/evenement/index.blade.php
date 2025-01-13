@@ -18,7 +18,7 @@
                     <div class="p-2">
                         <a href="{{ route('evenement.create') }}"
                             class="btn btn-sm btn-primary btn-wave waves-light waves-effect waves-light"><i
-                                class="ri-add-line fw-semibold align-middle me-1"></i> Créer un article</a>
+                                class="ri-add-line fw-semibold align-middle me-1"></i> Nouvel évènement</a>
                     </div>
                     
                 </div>
@@ -49,7 +49,7 @@
 
                                                     @if ($event->image_path)
                                                         <img style="width: 40px"
-                                                            src="{{ asset('storage/uploads/' . $event->image_path) }}"
+                                                            src="{{ asset('storage/uploads/event_image_path' . $event->image_path) }}"
                                                             alt="">
                                                     @else
                                                         <img src="../assets/images/faces/11.jpg" alt="">
@@ -76,14 +76,14 @@
                                     </td>
                                     <td>
                                         @if ($event->status == 'completed')
-                                            <span class="badge bg-success">Terminé</span>
+                                            <span class="badge bg-danger">Terminé</span>
                                         @endif
 
                                         @if ($event->status == 'upcoming')
                                             <span class="badge bg-warning">A venir</span>
                                         @endif
                                         @if ($event->status == 'ongoing')
-                                            <span class="badge bg-warning">En cours</span>
+                                            <span class="badge bg-success">En cours</span>
                                         @endif
 
                                     </td>
@@ -96,12 +96,12 @@
                                     
                                     <td>
                                         <a class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" data-bs-title="Modifier" href="{{ route('evenement.edit', $event->id) }}">
+                                            data-bs-placement="top" data-bs-title="Modifier" href="{{ route('evenement.edit', $event->title) }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
                                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
-                                                class="ri-delete-bin-5-line"></i></button>
+                                                class="ri-delete-bin-5-line" wire:click="delete({{ $event->id }})"></i></button>
                                     </td>
                                 </tr>
                             @empty

@@ -19,14 +19,14 @@ class Createvent extends Component
     
     public $title;
     public $image_path;
-    public $description;
+    public $description='';
     public $location;
     public $categories;
     public $selectedCategories = [];
     public $start_date;
     public $end_date;
     public $imageNames = [];
-    public $status = 'completed';
+    public $status = 'upcoming';
 
     protected $rules=[
         'title'=> 'required|min:5|max:200',
@@ -80,13 +80,12 @@ class Createvent extends Component
 
     
 
-        $image_path = $this->image_path->store('event_image_path', 'public_uploads');
-
-        $post = Evenement::create([
+        
+        $events = Evenement::create([
             'title' => $this->title,
             'description' => $this->description,
             'location' => $this->location,
-            'image_path' => $this->image_path,
+            'image_path' => $this->image_path->store('event_image_path', 'public_uploads'),
             'status' => $this->status,
             'author_id' => Auth::user()->id,
             'start_date' =>$this->start_date,
@@ -94,7 +93,7 @@ class Createvent extends Component
             
         ]);
 
-        $post->categories()->attach($this->categories);
+        $events->categories()->attach($this->categories);
 
         $this->reset();
 

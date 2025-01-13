@@ -28,7 +28,7 @@
                     @enderror
                     <div class="relative mt-4" wire:ignore>
 
-                        <div id="editor" wire:model="description"></div>
+                        <div type="text" id="editor" wire:model="description"></div>
                     </div>
                 </div>
 
@@ -48,9 +48,9 @@
                     </div>
                     <div class="date-fields">
                         <label for="start-date">Date de début :</label>
-                        <input type="date" class="form-control" wire:model="start_date" id="editor" name="start-date">
+                        <input type="datetime-local" class="form-control" wire:model="start_date" id="editor" name="start-date">
                         <label for="end-date">Date de fin :</label>
-                        <input type="date" class="form-control" wire:model="end_date" id="editor" name="end-date">
+                        <input type="datetime-local" class="form-control" wire:model="end_date" id="editor" name="end-date">
                       </div>
             </div>
             <div class="card-footer">
@@ -71,11 +71,11 @@
                         <div class="btn-list text-end">
 
                             <button type="button" class="btn btn-sm btn-primary"
-                                wire:click="saveEvent()">Enregistrer</button>
+                                wire:click="updateEvent()">Mettre a jour</button>
                             <button type="button" wire:click="cancel()" class="btn btn-sm btn-light">Annuler</button>
                         </div>
                     </li>
-                    <li class="list-group-item">
+            {{--         <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
 
                             <div class="col-xl-12">
@@ -91,7 +91,7 @@
 
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
@@ -114,11 +114,11 @@
                             <div class="col-xl-12">
                                 <label for="image_path" class="form-label">Image Path</label>
 
-                                @if ($image_path && $image_path->isValid())
+                                @if ($image_path)
                                     <div class="card custom-card product-card">
                                         <div class="card-body">
                                             <a href="javascript:void(0);" class="product-image">
-                                                <img src="{{ asset('back-office-assets/images/ecommerce/png/2.png') }}"
+                                                <img src="{{ Storage::url('event_image_path', 'public_uploads',$image_path) }}"
                                                     class="card-img mb-3" alt="...">
                                             </a>
                                             <div class="product-icons" style="cursor: pointer;">
@@ -157,14 +157,7 @@
     </div>
 </div>
 
-<script>
-    $('#datepicker').datepicker();
-$('#datepicker').on('changeDate', function() {
-    $('#my_hidden_input').val(
-        $('#datepicker').datepicker('getFormattedDate')
-    );
-});
-</script>
+
 
 
 @push('quilEditor')

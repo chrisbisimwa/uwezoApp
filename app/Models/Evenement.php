@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Scopes\Searchable;
-use Carbon\Doctrine\CarbonTypeConverter;
+use Carbon\Carbon;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
@@ -66,5 +66,37 @@ class Evenement extends Model
     public function event_body_output()
     {
         return $this->description;
+    }
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->title,
+            description: $this->short_content(),
+            author: $this->author->name,
+            image:"storage/uploads/".$this->image_path,
+            url: route('front.events.event-detail', $this->title),
+            published_time: $this->created_at,
+            modified_time: $this->updated_at,
+            tags: $this->categories->pluck('name')->toArray()
+
+        );
+    }
+    /**
+     * Met à jour le statut de l'événement en fonction des dates.
+     */
+    public function updateStatus()
+    {
+        $now = Carbon::now();
+
+        if ($now->between($this->start_date, $this->end_date)) {
+            $this->status = 'ongoing';
+        } elseif ($now->gt($this->end_date)) {
+            $this->status = 'completed';
+        } else {
+            $this->status = 'upcoming';
+        }
+
+        $this->save();
     }
 }
