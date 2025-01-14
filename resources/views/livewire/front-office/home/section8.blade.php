@@ -47,7 +47,7 @@
         <a href="#"> <i class="fab fa-instagram"></i> </a>
         <div class="row gx-0">
             <div class="col-lg-2 col-md-3 col-sm-6">
-                <a href="#"><img src="{{ asset('front-office-assets/img/instagram/6.jpg') }}" alt="instagram"></a>
+                <a href="#"><img src="{{ asset('front-office-assets/img/instagram/1.jpg') }}" alt="instagram"></a>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <a href="#"><img src="{{ asset('front-office-assets/img/instagram/2.jpg') }}" alt="instagram"></a>
