@@ -1,5 +1,5 @@
  <!-- Event Start -->
- <div class="section bg-cover" style="background-image: url(front-office-assets/img/banner-11.jpg)">
+ <div class="section bg-cover"  style="background-image: url(../front-office-assets/img/banner-11.jpg)"> 
     <div class="container">
       <div class="row">
         <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">

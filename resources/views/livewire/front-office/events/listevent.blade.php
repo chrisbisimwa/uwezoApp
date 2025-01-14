@@ -11,9 +11,10 @@
                 <h4>Events ({{$count}}) <a href="#">Voir plus</a></h4>
                 <div class="andro_artist-d-section-content">
                   @forelse ($events as $event)
+                 
                   <div class="andro_event">
                     <div class="andro_album-img">
-                      <img src="{{ asset('Storage/uploads/',$event->image_path) }}" alt="album">
+                      <img src="{{ asset('storage/uploads/'.$event->image_path) }}" alt="album">
                     </div>
                     
                     <div class="andro_event-content">
@@ -25,7 +26,6 @@
                         </div>
                       </div>
                       <div class="andro_event-controls">
-                        <a href="#" class="button primary sm"> Tickets </a>
                         <a href="{{route('front.event-details', $event->title)}}" class="button outline sm"> Details </a>
                       </div>
                     </div>
@@ -57,7 +57,7 @@
                   <div class="andro_event-content">
                     <div class="andro_event-body">
                        <div class="andro_event-data">
-                        <span> <a href="{{route(artist.artiste)}}"> {{$topartist->nom}} </a> </span>
+                        <span> <a href="{{route('front.artisteDetail', $topartist->id)}}"> {{$topartist->nom}} </a> </span>
                         <b> <i class="fal fa-map-marker"> </i> </b>
                          
                       </div>
