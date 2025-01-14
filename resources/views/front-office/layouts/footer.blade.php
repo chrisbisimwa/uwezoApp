@@ -22,24 +22,13 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <div class="widget">
-            <h5 class="widget-title">Get In Touch</h5>
-            <div class="andro_footer-newsletter">
-              <p>Subscribe to our mailing list to <span class="color-primary">get the updates</span> to your email inbox.</p>
-              <form method="post">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Addresse Email">
-                  <button class="button primary" type="submit"> <i class="fal fa-paper-plane"></i> </button>
-                </div>
-              </form>
-            </div>
-          </div>
+          @livewire('front-office.home.subscription')
 
-          <ul class="andro_footer-socials">
+          {{-- <ul class="andro_footer-socials">
             <li> <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a> </li>
             <li> <a href="#"> <i class="fab fa-instagram"></i> Instagram </a> </li>
             <li> <a href="#"> <i class="fab fa-twitter"></i> Twitter </a> </li>
-          </ul>
+          </ul> --}}
 
         </div>
 
