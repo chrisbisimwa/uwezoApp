@@ -17,8 +17,13 @@
 
                     {{-- <li> <a href="#">Promo</a> </li> --}}
                     <li> <a href="{{ route('front.blog') }}">Actualités</a> </li>
-                    <li> <a href="{{ route('front.about') }}">A propos</a> </li>
-                    <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
+                    <li>
+                        <a href="#">A propos</a>
+                        <ul>
+                            <li> <a href="{{ route('front.about') }}">Qui sommes-nous</a> </li>
+                            <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
+                        </ul>
+                    </li>
 
                 </ul>
 
@@ -32,7 +37,7 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                      </a>
+                    </a>
 
                 </div>
 
@@ -89,8 +94,13 @@
             <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
             {{-- <li> <a href="#">Promo</a> </li> --}}
             <li> <a href="{{ route('front.blog') }}">Actualités</a> </li>
-            <li> <a href="{{ route('front.about') }}">A propos</a> </li>
-            <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
+            <li>
+                <a href="#">A propos</a>
+                <ul>
+                    <li> <a href="{{ route('front.about') }}">Qui sommes-nous</a> </li>
+                    <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
+                </ul>
+            </li>
 
 
         </ul>
