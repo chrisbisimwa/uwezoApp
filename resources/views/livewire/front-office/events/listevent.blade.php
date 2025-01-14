@@ -14,12 +14,13 @@
                  
                   <div class="andro_event">
                     <div class="andro_album-img">
-                      <img src="{{ asset('storage/uploads/'.$event->image_path) }}" alt="album">
+                      <img src="{{ asset('storage/uploads/'.$event->image_path) }} " width="100" height="60" alt="album">
                     </div>
                     
                     <div class="andro_event-content">
                       <div class="andro_event-body">
                          <div class="andro_event-data">
+                          <span></span>
                           <span> <a href="{{route('front.event-details', $event->title)}}"> {{$event->title}} </a> </span>
                           <b> <i class="fal fa-map-marker"></i> {{$event->location}} </b>
                             Du {{$event->start_date->format('d M Y')}} Au {{$event->end_date->format('M y')}}  

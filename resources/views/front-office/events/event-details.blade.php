@@ -15,12 +15,10 @@
    <!-- Events details start -->
  <div class="section andro_post-d style-3">
   <div class="container">
-
     <div class="row align-items-start align-items-md-center">
       <div class="col-lg-4 col-sm-4">
         <div class="andro_artist-d-img">
-          <img class="andro_img-cover" src="../assets/img/artists/details/profile-2.jpg" alt="artist">
-          <img src="../assets/img/artists/details/1.png" class="andro_artist-d-type" alt="artist type">
+          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$eventDetails->image_path) }} " width="100" height="60" alt="image event">
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1 col-sm-8">
@@ -49,9 +47,6 @@
               <span>+243990071004</span>
             </div>
           </div>
-
-          
-
           <div class="andro_artist-d-upcoming">
             <div class="andro_artist-d-loc">
               <h6>Evenement à venir: </h6>
@@ -123,7 +118,7 @@
                 @forelse ($events as $event)
                 <div class="andro_event">
                   <div class="andro_album-img">
-                    <img src="../assets/img/albums/sm/2.jpg" alt="album">
+                    <a href="{{route('front.event-details', $event->title)}}"><img src="{{ asset('storage/uploads/'.$event->image_path) }}"width="80" height="60" alt="image event"></a>
                   </div>
                   <div class="andro_event-content">
                     <div class="andro_event-body">
