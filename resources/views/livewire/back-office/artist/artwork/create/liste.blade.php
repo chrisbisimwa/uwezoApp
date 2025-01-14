@@ -95,3 +95,13 @@
         </table>
     </div>
 </div>
+
+
+@push('closeArtWorkModal')
+<script>
+    Livewire.on('clodeArtworkModal', function(imagePaths) {
+        $('#exampleModalXl').modal('hide');
+        });
+  
+</script> 
+@endpush

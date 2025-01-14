@@ -15,7 +15,7 @@ class Artist extends Model
         'biography',
         'photo',
         'abonnement',
-        'numeroCertificat',
+        'numeroCerticat',
         'phone',
         'facebook_link',
         'twitter_link',

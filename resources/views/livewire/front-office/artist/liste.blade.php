@@ -21,7 +21,7 @@
 
 
                 <h5 class="andro_artist-name"> 
-                    <a href="{{ route('front.artisteDetail', $art->id) }}"> </a> </h5>
+                    <a href="{{ route('front.artisteDetail', $art->id) }}">{{$art->nom}} {{$art->prenom}} </a> </h5>
             </div>
         </div>
     @endforeach

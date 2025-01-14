@@ -45,7 +45,7 @@
                                             @livewire('back-office.artist.artwork.create.liste')
                                         </div>
 
-                                        <hr>
+                                        {{-- <hr>
                                         <div class="d-flex mb-3 align-items-center justify-content-between">
                                             <p class="mb-0 fw-semibold fs-14">Evenements de l'artiste</p>
                                             <button class="btn btn-sm btn-primary-light">View All</button>
@@ -102,7 +102,7 @@
                                                     </table>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -113,4 +113,8 @@
             </div>
         </div>
     </div>
+
+
+
+        
 @endsection
