@@ -12,8 +12,13 @@ use App\Models\Category;
 class Create extends Component
 {
     use WithFileUploads;
+
+    protected $listeners = ['save-artist' => 'save'];
    
   
+    public function save(){
+        dd('save');
+    }
     
     public function render()
     {

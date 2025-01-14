@@ -3,10 +3,13 @@
 namespace App\Livewire\BackOffice\Artist\Artwork\Create;
 
 use Livewire\Component;
+use App\Models\Oeuvre;
 
 class Liste extends Component
 {
-    public $oeuvres= [];
+    //déclarer une variable $oeuvres de type Oeuvre
+    public $oeuvres = [];
+    
     protected $listeners = ['addNewArtwork' => 'addNewArtwork'];
 
     public function addNewArtwork($artwork){
@@ -17,3 +20,5 @@ class Liste extends Component
         return view('livewire.back-office.artist.artwork.create.liste');
     }
 }
+
+

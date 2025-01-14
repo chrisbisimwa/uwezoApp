@@ -11,11 +11,16 @@ class Artist extends Model
         'nom',
         'prenom',
         'email',
+        'genre',
         'biography',
         'photo',
         'abonnement',
         'numeroCertificat',
         'phone',
+        'facebook_link',
+        'twitter_link',
+        'instagram_link',
+        'soundcloud_link',
         'category_id',
         'datenaissance'
     ];
