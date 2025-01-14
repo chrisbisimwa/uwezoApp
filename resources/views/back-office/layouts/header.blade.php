@@ -131,9 +131,9 @@
                 data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
                 <i class="bx bx-bell header-link-icon"></i>
                 <span class="badge bg-secondary rounded-pill header-icon-badge pulse pulse-secondary"
-                    id="notification-icon-badge">5</span>
+                    id="notification-icon-badge">0</span>
             </a>
-            <div class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
+            {{-- <div class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="mb-0 fs-17 fw-semibold">Notifications</p>
@@ -300,7 +300,7 @@
                         <h6 class="fw-semibold mt-3">No New Notifications</h6>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="header-element header-shortcuts-dropdown">
@@ -312,7 +312,7 @@
                 aria-labelledby="notificationDropdown">
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
-                        <p class="mb-0 fs-17 fw-semibold">Related Apps</p>
+                        {{-- <p class="mb-0 fs-17 fw-semibold">Related Apps</p> --}}
                     </div>
                 </div>
                 <div class="dropdown-divider mb-0"></div>
