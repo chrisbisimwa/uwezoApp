@@ -53,7 +53,7 @@
                                                     @if ($event->image_path)
                                                     
                                                         <img style="width: 40px"
-                                                            src="{{ asset('storage/uploads/'.$event->image_path) }}"
+                                                            src="{{ assets('storage/uploads/'.$event->image_path) }}"
                                                             alt="">
                                                     @else
                                                         <img src="../assets/images/faces/11.jpg" alt="">
