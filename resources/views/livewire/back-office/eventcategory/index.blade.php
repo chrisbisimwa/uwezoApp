@@ -66,8 +66,7 @@
         
                                 <tr class="odd">
                                     <td valign="top" colspan="7" class="dataTables_empty" style="color: red;">Rien à afficher pour
-                                        le
-                                        moment</td>
+                                        le moment</td>
                                 </tr>
                             @endforelse
                         </tbody>

@@ -58,7 +58,7 @@
               <span> <i class="fal fa-map-marker"></i> {{$eventDetails->location}}</span>
             </div>
             <div class="andro_artist-d-countdown">
-              <div class="andro_countdown-timer" data-countdown="2025/01/20"></div>
+              <div class="andro_countdown-timer" data-countdown="{{$eventDetails->end_date}}"></div>
             </div>
           </div>
 

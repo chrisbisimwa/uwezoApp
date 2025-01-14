@@ -63,7 +63,7 @@ class CreatCategory extends Component
         $this->resetForm();
     }
 
-    public function editt($id)
+    public function edit($id)
     {
         $category = EventCategory::find($id);
         $this->name = $category->name;

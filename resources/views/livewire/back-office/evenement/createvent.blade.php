@@ -15,18 +15,20 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    
                 </div>
 
                 <div class="col-xl-12">
                     <label class="form-label">Event description</label>
-                    <input type="hidden" wire:model="description" class="form-control @error('description') is-invalid @enderror">
+                    <br>
+                    <textarea wire:model="description" class="form-control @error('description') is-invalid @enderror" cols="100" rows="10"></textarea>
+                    {{-- <input type="hidden" wire:model="description" class="form-control @error('description') is-invalid @enderror"> --}}
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <div class="relative mt-4" wire:ignore>
+                    
+                     <div class="relative mt-4" wire:ignore>
 
                         <div id="editor" wire:model="description"></div>
                     </div>
@@ -157,7 +159,7 @@
     </div>
 </div>
 
-@push('quilEditor')
+{{-- @push('quilEditor')
     <script>
         var editor = new Quill('#editor', {
             theme: 'snow',
@@ -250,4 +252,4 @@
             }
         });
     </script>
-@endpush
+@endpush --}}
