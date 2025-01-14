@@ -42,14 +42,18 @@
                         <tbody>
                             @forelse($events as $event)
                                 <tr>
+                                    @php
+                                                        dd($event->image_path);
+                                                    @endphp
                                     <td>
                                         <div class="d-flex align-items-center" >
                                             <div class="me-2 lh-1">
                                                 <span class="avatar avatar-sm ">
 
                                                     @if ($event->image_path)
+                                                    
                                                         <img style="width: 40px"
-                                                            src="{{ asset('storage/uploads/event_image_path' . $event->image_path) }}"
+                                                            src="{{ assets('storage/uploads/'.$event->image_path) }}"
                                                             alt="">
                                                     @else
                                                         <img src="../assets/images/faces/11.jpg" alt="">

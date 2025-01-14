@@ -17,7 +17,7 @@
                             <div class="d-flex align-items-center">
                                 <div class="me-2">
                                     <span class="avatar avatar-xs">
-                                        @if ($oeuvre->type == 'image')
+                                        @if ($oeuvre['type'] == 'image')
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="svg-primary"
                                                 enable-background="new 0 0 24 24"
@@ -32,7 +32,7 @@
                                                     d="m22 15.858-3.879-3.879a3.008 3.008 0 0 0-4.242 0l-.888.888 8.165 8.209c.542-.555.845-1.3.844-2.076v-3.142z">
                                                 </path>
                                             </svg>
-                                        @elseif($oeuvre->type == 'video')
+                                        @elseif($oeuvre['type'] == 'video')
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="svg-secondary"
                                                 enable-background="new 0 0 24 24"
@@ -44,7 +44,7 @@
                                                     d="M21.895 7.554a1 1 0 0 0-1.342-.449l-3.564 1.783c.001.038.01.073.011.112v6c0 .039-.01.074-.011.112l3.564 1.783A1 1 0 0 0 22 16V8a1 1 0 0 0-.105-.446z">
                                                 </path>
                                             </svg>
-                                        @elseif($oeuvre->type == 'audio')
+                                        @elseif($oeuvre['type'] == 'audio')
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="svg-info"
                                                 enable-background="new 0 0 24 24"
@@ -60,11 +60,11 @@
                                     </span>
                                 </div>
                                 <div>
-                                    {{ $oeuvre->name }}
+                                    {{ $oeuvre['name'] }}
                                 </div>
                             </div>
                         </th>
-                        <td>{{ $oeuvre->type }}</td>
+                        <td>{{ $oeuvre['type'] }}</td>
                         <td>87MB</td>
                         <td>22,Nov 2022</td>
                         <td>
@@ -95,3 +95,13 @@
         </table>
     </div>
 </div>
+
+
+@push('closeArtWorkModal')
+<script>
+    Livewire.on('clodeArtworkModal', function(imagePaths) {
+        $('#exampleModalXl').modal('hide');
+        });
+  
+</script> 
+@endpush

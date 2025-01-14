@@ -1,5 +1,5 @@
  <!-- Event Start -->
- <div class="section bg-cover" style="background-image: url(front-office-assets/img/banner-11.jpg)">
+ <div class="section bg-cover"  style="background-image: url(../front-office-assets/img/banner-11.jpg)"> 
     <div class="container">
       <div class="row">
         <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
@@ -59,7 +59,7 @@
               </div>
               <div class="col-sm-6 mt-3 mt-sm-0">
                 <div class="andro_countdown-timer-data">
-                  <h6 class="text-white text-uppercase mb-0">Lieu de l'évènement: </h6>
+                  <h6 class="text-white mb-0">Lieu de l'évènement: </h6>
                   <p class="mb-1 color-body-light-2">{{$event->location}}</p>
                 </div>
               </div>

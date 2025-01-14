@@ -45,7 +45,7 @@
                                             @livewire('back-office.artist.artwork.create.liste')
                                         </div>
 
-                                        <hr>
+                                        {{-- <hr>
                                         <div class="d-flex mb-3 align-items-center justify-content-between">
                                             <p class="mb-0 fw-semibold fs-14">Evenements de l'artiste</p>
                                             <button class="btn btn-sm btn-primary-light">View All</button>
@@ -102,18 +102,19 @@
                                                     </table>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="px-4 py-3 border-top border-block-start-dashed d-sm-flex justify-content-end">
-                        <button class="btn btn-primary-light m-1">Add Product<i class="bi bi-plus-lg ms-2"></i></button>
-                        <button class="btn btn-success-light m-1">Save Product<i class="bi bi-download ms-2"></i></button>
-                    </div>
+                    @livewire('back-office.artist.action')
                 </div>
             </div>
         </div>
     </div>
+
+
+
+        
 @endsection
