@@ -20,14 +20,19 @@ class Evenement extends Model
     protected $searchableFields = ['*'];
 
     protected $fillable = [ 
-        'title', 
-        'description', 
-        'location', 
+        
+        'title',
+        'description',
+        'location',
         'start_date',
-        'end_date', 
-        'image_path', 
+        'end_date',
+        'image_path',
         'status',
-        'author_id'
+        'organizer',
+        'organizer_phone',
+        'organizer_email',
+        'artist_id',
+        'author_id',
     ]; 
         protected $dates = [ 
         'start_date', 
@@ -46,6 +51,9 @@ class Evenement extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
+    public function artist(){
+        return $this->belongsTo(Artist::class,'artist_id');
+    }
     public function categories()
     {
         return $this->belongsToMany(EventCategory::class, 'event_category_mappings');
