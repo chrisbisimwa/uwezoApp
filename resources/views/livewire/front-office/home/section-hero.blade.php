@@ -7,7 +7,7 @@
                 <div class="andro_hero-typo">
                     <img src="{{ asset('front-office-assets/img/hero/typo-3.png') }}" alt="Music">
                 </div>
-                <p>Donnez vie à l'art – Explorez, soutenez et célébrez nos talents.</p>
+                <p>Donner vie à l'art – Explorer, soutenir et célébrer les talents.</p>
             </div>
 
         </div>

@@ -66,17 +66,29 @@
               <a href="{{$artisteDetail->soundcloud_link}}" class="soundcloud" target="_blank"> <i class="fab fa-soundcloud"></i> Soundcloud </a>
               <a href="{{$artisteDetail->youtube_link}}" class="youtube" target="_blank" target="_blank"> <i class="fab fa-youtube"></i> Youtube </a>
             </div>
+            <div class="andro_artist-d-upcoming">
+              <div class="andro_artist-d-loc">
+                <h6>Upcoming Show: </h6>
+                <span> <i class="fal fa-map-marker"></i> Air centre, London, UK </span>
+              </div>
+              <div class="andro_artist-d-countdown">
+                <div class="andro_countdown-timer" data-countdown="2023/01/01"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="andro_artist-d-content-wrap">
-        <div class="row">
-          <div class="col-lg-4 col-md-4">
+        
+          
             <nav class="navbar">
               <ul class="nav">
                 <li class="nav-item">
                   <a class="nav-link" href="#artistDescription"> <i class="far fa-chevron-right"></i> Description</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#artistTracks"> <i class="far fa-chevron-right"></i> Oeuvres</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#artistEvents"> <i class="far fa-chevron-right"></i> Evenement</a>
@@ -84,8 +96,8 @@
 
               </ul>
             </nav>
-          </div>
-          <div class="col-lg-7 offset-lg-1 col-md-8">
+          
+          
             <div class="andro_artist-d-content">
 
               <div class="andro_artist-d-section" id="artistDescription">
@@ -100,8 +112,42 @@
                 </div>
               </div>
 
+              <div class="andro_artist-d-section" id="artistTracks">
+                <h4>Oeuvres (15) <a href="#">Afficher tout</a> </h4>
+
+                
+                <div class="andro_artist-d-section-content">
+                @foreach ($oeuvre as $oeuvreArti)
+                  <div class="andro_track style-2 andro_audio-track">
+                    <audio preload="metadata" src="assets/audio/1.mp3" title="Audio"></audio>
+                    <div class="andro_track-img">
+                      <img src="assets/img/tracks/md/1.jpg" alt="track">
+                      <div class="andro_track-status">
+                        <i class="fal fa-compact-disc"></i>
+                      </div>
+                    </div>
+                    <div class="andro_track-content">
+                      <h5><a href="{{$oeuvreArti->lieu_oeuvre}}" target="_blank">{{$oeuvreArti->nom}}</a></h5>
+                      <div class="andro_track-footer">
+                        <div class="andro_track-data">
+                          <span>By: Sheldon Fierce</span>
+                          <b>{{$dateOeuvreArti= date('D, d - m - Y', strtotime($oeuvreArti->date))}}</b>
+                        </div>
+                        <div class="andro_track-controls">
+                          <a data-bs-toggle="tooltip" title="Play Track" href="#" class="play andro_music-player-play"> <i class="fas fa-play"></i> </a>
+                          <a data-bs-toggle="tooltip" title="Download Track" class="download" href="#"> <i class="fal fa-download"></i> </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                
+              </div>
+
               <div class="andro_artist-d-section" id="artistEvents">
-                <h4>Evenements <a href="#">Tout afficher</a></h4>
+                <h4>Evenements <a href="#">Afficher tout</a></h4>
                 @foreach ($event as $evt)
                 <div class="andro_artist-d-section-content">
                   <div class="andro_event">
@@ -133,8 +179,8 @@
             
 
             </div>
-          </div>
-        </div>
+          
+        
       </div>
 
     </div>

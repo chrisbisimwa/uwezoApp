@@ -3,12 +3,12 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="me-0 me-lg-5 mb-lg-0 mb-5">
-                    <h3 class="h2">La mission de<span class="fw-400 color-primary"> SAANA LETU</span> : mettre en
+                    <h3 class="h2">La mission de<span class="fw-400 color-primary"> SANAA LETU</span> : mettre en
                         lumière les talents Africains</h3>
                     <p>
-                        Chez Saana Letu, nous croyons en la puissance de l'art pour raconter des histoires, préserver
+                        Chez Sanaa Letu, nous croyons en la puissance de l'art pour raconter des histoires, préserver
                         notre patrimoine culturel, et connecter les communautés. Notre plateforme est dédiée à la mise
-                        en valeur des talents artistiques africains, en offrant un espace où les artistes peuvent
+                        en valeur des talents artistiques congolais, en offrant un espace où les artistes peuvent
                         partager leurs créations uniques avec le monde
                     </p>
                     <br>

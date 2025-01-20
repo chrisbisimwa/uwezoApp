@@ -21,7 +21,7 @@
 
       <div class="col-lg-6">
         <div class="section-title mb-0">
-          <h3> A propos <span class="family-display color-primary">de Uwezo Afrika</span> </h3>
+          <h3> A propos <span class="family-display color-primary">de Sanaa Letu</span> </h3>
           <p>
             Lorem ipsum dolor sit amet concateur non tropp sit namo, all
             bravo pensare, chicco milo naturoel spresso concateur non a
@@ -51,7 +51,10 @@
 
     <div class="section-title text-center">
       <h3 class="text-white family-display fw-400">Aimez-vous l'art</h3>
-      <p class="text-white"></p>
+      <p class="text-white">Tout savoir sur l'actualité des artistes, l'application mobile vous rapproche de la communauté</p>
+      <p class="text-white"> 
+      <a href="#" class="button primary icon-after">Télécharger maintenant<i class="fal fa-arrow-right"></i> </a>
+      </p>
     </div>
     
 
