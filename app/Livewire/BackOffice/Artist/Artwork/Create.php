@@ -33,9 +33,10 @@ class Create extends Component
 
     public function addNewArtwork()
     {
+        
         $validated = $this->validate();
         if ($validated) {
-           /*  $image = null;
+            $image = null;
             if ($this->type == 'Image') {
                 $image = $this->image->store('artworks', 'public_uploads');
             }
@@ -49,10 +50,9 @@ class Create extends Component
                 'source' => $this->source,
                 'date' => $this->date,
                 'status' => $this->status,
-            ]); */
+            ]);
 
-            //dispatch browser event
-            $this->dispatchBrowserEvent('clodeArtworkModal');
+            $this->dispatch('clodeArtworkModal');
            
             $this->reset();
         }

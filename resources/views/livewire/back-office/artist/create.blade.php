@@ -99,23 +99,23 @@
                     </span>
                 @enderror
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Facebook</label>
                 <input type="text" class="form-control" id="product-name-add" placeholder="Facebook">
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Twitter</label>
                 <input type="text" class="form-control" id="product-name-add" placeholder="Twiter">
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Instagram</label>
                 <input type="text" class="form-control" id="product-name-add" placeholder="Instagram">
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Spotify</label>
                 <input type="text" class="form-control" id="product-name-add" placeholder="Spotify">
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Youtube</label>
                 <input type="text" class="form-control" id="product-name-add" placeholder="Youtube">
             </div>
