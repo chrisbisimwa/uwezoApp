@@ -19,9 +19,6 @@ class Liste extends Component
         'categorySelected' => 'loadByCategory',
     ];
 
-  
-
-    
 
     public function loadByCategory($id)
     {

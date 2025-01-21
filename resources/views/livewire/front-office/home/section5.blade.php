@@ -3,10 +3,10 @@
 
         <div class="col-lg-6">
             <div class="gallery-spacing container">
-                <h3 class="h1">À la rencontre des<span class="fw-400 color-primary">Talents</span> africain</h3>
-                <p class="mb-0">Découvrez les artistes récemment ajoutés sur SAANA LETU, une communauté vibrante et
+                <h3 class="h1">À la rencontre des<span class="fw-400 color-primary">Talents</span> congolais</h3>
+                <p class="mb-0">Découvrez les artistes récemment ajoutés sur SANAA LETU, une communauté vibrante et
                     dynamique où chaque talent raconte une histoire unique. Ces créateurs, issus de différents horizons,
-                    incarnent la richesse et la diversité de l’art africain. </p>
+                    incarnent la richesse et la diversité de l’art congolais. </p>
                 <a href="{{route('front.artistes')}}" class="button primary">Tous les artistes</a>
             </div>
 

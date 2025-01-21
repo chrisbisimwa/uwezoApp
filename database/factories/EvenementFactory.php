@@ -24,7 +24,7 @@ class EvenementFactory extends Factory
             'start_date'=> $this->faker->date(),
             'end_date'=> $this->faker->date(),
             'image_path'=> $this->faker->text(),
-            'status'=> "completed",
+            'status'=> "ongoing",
             'author_id'=> \App\Models\User::factory(),
             
         ];
