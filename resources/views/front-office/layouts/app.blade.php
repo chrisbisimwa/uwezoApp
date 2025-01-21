@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="{{ asset('front-office-assets/fonts/flaticon/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/style.css') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front-office-assets/img/logo-uwezo.png') }}">
+    {{-- <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front-office-assets/img/logo-uwezo.png') }}"> --}}
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('front-office-assets/img/favicon.png') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
         integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="

@@ -12,12 +12,22 @@
             <img src="{{asset('front-office-assets/img/sponsors/enabel.png')}}" alt="Sponsor">
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        {{-- <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="andro_sponsor">
             <img src="{{asset('front-office-assets/img/sponsors/kivutech.png')}}" alt="Sponsor">
           </div>
+        </div> --}}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="andro_sponsor">
+            <img src="{{asset('front-office-assets/img/sponsors/culture&art.jpg')}}" alt="Sponsor">
+          </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="andro_sponsor">
+            <img src="{{asset('front-office-assets/img/sponsors/uwezo.png')}}" alt="Sponsor">
+          </div>
+        </div>
+        {{-- <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="andro_sponsor">
             <img src="{{asset('front-office-assets/img/sponsors/11.png')}}" alt="Sponsor">
           </div>
@@ -31,17 +41,7 @@
           <div class="andro_sponsor">
             <img src="{{asset('front-office-assets/img/sponsors/11.png')}}" alt="Sponsor">
           </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="andro_sponsor">
-            <img src="{{asset('front-office-assets/img/sponsors/11.png')}}" alt="Sponsor">
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="andro_sponsor">
-            <img src="{{asset('front-office-assets/img/sponsors/11.png')}}" alt="Sponsor">
-          </div>
-        </div>
+        </div> --}}
       </div>
 
     </div>
