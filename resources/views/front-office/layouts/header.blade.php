@@ -11,7 +11,7 @@
 
                 <ul>
 
-                    <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
+                    <li > <a href="{{ route('front.home') }}" >Accueil</a> </li>
                     <li> <a href="{{ route('front.artistes') }}">Artistes</a> </li>
                     <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
 
