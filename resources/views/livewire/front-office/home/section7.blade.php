@@ -50,7 +50,7 @@
                     </div>
                 </div>
             @empty
-                <h2>Aucun article trouvé !</h2>
+                <center><h4>Aucun article trouvé !</h4></center>
             @endforelse
 
 
