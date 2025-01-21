@@ -1,6 +1,6 @@
-<div class="row andro_isotope-filter" style="position: relative;">
+<div class="row andro_isotope-filter" >
     @foreach ($artistes as $art)
-        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" style="position: absolute; left: 0px; top: 0px;">
+        <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" >
             <div class="andro_artist style-2">
 
                 <div class="andro_artist-img">
@@ -21,7 +21,8 @@
 
 
                 <h5 class="andro_artist-name"> 
-                    <a href="{{ route('front.artisteDetail', $art->id) }}">{{$art->nom}} {{$art->prenom}} </a> </h5>
+                    <a href="{{ route('front.artisteDetail', $art->id) }}">{{$art->nom}} {{$art->prenom}} </a> 
+                </h5>
             </div>
         </div>
     @endforeach

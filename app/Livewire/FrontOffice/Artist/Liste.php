@@ -6,12 +6,14 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Artist;
 use Illuminate\View\View;
+use Livewire\WithPagination;
 
 class Liste extends Component
 {
     public $category_id=null;
     public $categories;
     public $artistes=[];
+    use WithPagination;
 
     protected $listeners = [
         'categorySelected' => 'loadByCategory',
@@ -24,11 +26,10 @@ class Liste extends Component
     public function loadByCategory($id)
     {
         if($id == 0){
-            $this->category_id = null;
+            $this->artistes = Artist::all();
 
         }else{
-            $this->category_id = $id;
-            $this->artistes = Artist::where('category_id', $this->category_id)->get();
+            $this->artistes = Artist::where('category_id', $id)->get();
         }
         
       
@@ -38,7 +39,7 @@ class Liste extends Component
     public function mount()
     {
         $this->categories = Category::all();
-        $this->artistes = Artist::all();
+        $this->artistes = Artist::paginate(10);
     }
 
     public function render()
