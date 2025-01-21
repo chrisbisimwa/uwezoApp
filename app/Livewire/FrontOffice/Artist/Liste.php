@@ -36,7 +36,7 @@ class Liste extends Component
     public function mount()
     {
         $this->categories = Category::all();
-        $this->artistes = Artist::paginate(10);
+        $this->artistes = Artist::all();
     }
 
     public function render()
