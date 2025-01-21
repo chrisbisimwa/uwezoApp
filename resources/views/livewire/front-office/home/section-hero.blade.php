@@ -5,7 +5,7 @@
 
             <div class="andro_hero-item-inner">
                 <div class="andro_hero-typo">
-                    <img src="{{ asset('front-office-assets/img/hero/typo-3.png') }}" alt="Music">
+                    <img src="{{ asset('front-office-assets/img/hero/typo-32.png') }}" alt="Music">
                 </div>
                 <p>Donner vie à l'art – Explorer, soutenir et célébrer les talents.</p>
             </div>
