@@ -48,12 +48,84 @@
                             <div id="editor" wire:model="location"></div>
                         </div>
                     </div>
-                    <div class="date-fields">
-                        <label for="start-date">Date de début :</label>
+                    <div class="row tm-3">
+                        <div class="col-xl-6">
+                        <label for="form-label">Date de début :</label>
                         <input type="datetime-local" class="form-control" wire:model="start_date" id="editor" name="start-date">
-                        <label for="end-date">Date de fin :</label>
+                         </div>
+                        <div class="col-xl-6">
+                        <label for="form-label">Date de fin :</label>
                         <input type="datetime-local" class="form-control" wire:model="end_date" id="editor" name="end-date">
-                      </div>
+                    </div>
+                    </div>
+                    
+                    <div class="col-xl-12">
+                        <label class="form-label">Type d'organisateur</label>
+                        <select  class="form-control" wire:model.live="typeOrganisateur">
+                            <option value="">-- Sélectionnez un type --</option>
+                            <option value="externe">Organisateur Externe</option>
+                            <option value="artiste">Artiste</option>
+                        </select>
+                    </div>
+                    <!-- Section pour l'Organisateur -->
+                    @if ($typeOrganisateur==="externe")
+                    <div id="organizerSection" class="mt-4" >
+                        <div class="col-xl-12">
+                            <label class="form-label">Organisateur</label>
+                            <input type="text" id="organizer" class="form-control" wire:model="organizer" placeholder="Organizer Event" >
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-xl-6">
+                                <label class="form-label">Téléphone/Contact</label>
+                                <input type="text" id="organizer_phone" class="form-control" wire:model="organizer_phone" placeholder="organizer Pphone" >
+                            </div>
+                            <div class="col-xl-6">
+                                <label class="form-label">Adresse Mail</label>
+                                <input type="email" id="organizer_email" class="form-control" wire:model="organizer_email" placeholder="Mail Organizer" >
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    
+                    <!-- Section pour les Artiste -->
+                    @if($typeOrganisateur==="artiste")
+                    <div id="articlesSection" class="mt-4" >
+                        <label class="form-label">Artites disponible</label>
+                        <select class="form-control" id="articlesList" wire:model="artist_id" name="artist-id">
+                            <!-- Les articles seront injectés ici -->
+                            @foreach ($artists as $artist)
+                                        <option  value="{{ $artist->id }}">{{ $artist->nom }}</option>
+                                    @endforeach
+                        </select>
+                    </div>
+                    @endif
+                    
+                    {{-- <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const typeSelector = document.getElementById('typeSelector');
+                            const organizerSection = document.getElementById('organizerSection');
+                            const articlesSection = document.getElementById('articlesSection');
+                            const articlesList = document.getElementById('articlesList');
+                            const artistes = @json($artists);
+                            // Fonction pour afficher ou masquer les sections
+                            typeSelector.addEventListener('change', function () {
+                                const selectedType = typeSelector.value;
+                                if (selectedType === 'organisateur') {
+                                    organizerSection.style.display = 'block';
+                                    articlesSection.style.display = 'none';
+                                } else if (selectedType === 'artiste') {
+                                    organizerSection.style.display = 'none';
+                                    articlesSection.style.display = 'block';
+                                    // Injecter la liste des articles
+                                    //articlesList.innerHTML = artists.map(artist => `<select class="form-control" >${artists.nom}</select>`).join('');
+                                } else {
+                                    organizerSection.style.display = 'none';
+                                    articlesSection.style.display = 'none';
+                                }
+                            });
+                        });
+                    </script>      --}}            
+                    
             </div>
             <div class="card-footer">
                
