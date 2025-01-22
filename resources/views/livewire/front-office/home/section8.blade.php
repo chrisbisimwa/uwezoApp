@@ -10,7 +10,7 @@
                     </div>
                     <div class="andro_infobox-body">
                         <h6 class="text-white">Téléphone</h6>
-                        <span class="text-white">+(243)971 954 135</span>
+                        <span class="text-white">+(243)998 564 037</span>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="andro_infobox-body">
                         <h6 class="text-white">Email</h6>
-                        <span class="text-white">namwezidouce@yahoo.fr </span>
+                        <span class="text-white">info@sanaayetu.art</span>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="andro_infobox-body">
                         <h6 class="text-white">Location</h6>
-                        <span class="text-white">N°243, Av. FIZI, IBANDA,</span>
+                        <span class="text-white">N°3, Av. FIZI, IBANDA,</span>
                         <span class="text-white">Bukavu, RDC</span>
                     </div>
                 </div>

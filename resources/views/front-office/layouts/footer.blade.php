@@ -5,9 +5,9 @@
 
         <div class="col-lg-3">
           <div class="andro_footer-logo">
-            <img src="/front-office-assets/img/logo-sanaa-letu.png" alt="logo">
+            <img src="/front-office-assets/img/logo-sanaa-yetu2.png" alt="logo">
           </div>
-          <p class="m-0"> <a href="#">SANAA LETU APP</a> - Copyright 2024 © - Designer by KIVUTECH</p>
+          <p class="m-0"> <a href="#">SANAA YETU APP</a> - Copyright 2024 © - Designer by KIVUTECH</p>
         </div>
         <div class="col-lg-3 offset-lg-1">
           <div class="widget">

@@ -2,7 +2,7 @@
 
     <div class="container andro_header-wrap">
         <div class="andro_header-logo">
-            <a href="{{ route('front.home') }}"><img src="{{ asset('front-office-assets/img/logo-sanaa-letu.png') }}"
+            <a href="{{ route('front.home') }}"><img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}"
                     style="width: 120px" alt="logo"></a>
         </div>
         <div class="andro_header-inner">
@@ -11,7 +11,7 @@
 
                 <ul>
 
-                    <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
+                    <li > <a href="{{ route('front.home') }}" >Accueil</a> </li>
                     <li> <a href="{{ route('front.artistes') }}">Artistes</a> </li>
                     <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
 
