@@ -9,8 +9,8 @@ return [
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
         'display' => 'standalone',
-        'orientation'=> 'any',
-        'status_bar'=> 'black',
+        'orientation' => 'any',
+        'status_bar' => 'black',
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/icon-72x72.png',
@@ -73,6 +73,15 @@ return [
                 'url' => '/shortcutlink2'
             ]
         ],
+        'categories' => [
+            "education",
+            "entertainment",
+            "lifestyle",
+            "music",
+            "news"
+        ],
+        'id' => "com.kivutech.uwezo",
+        'description' => "Découvrez les artistes récemment ajoutés sur SANAA YETU, une communauté vibrante et dynamique où chaque talent raconte une histoire unique. Ces créateurs, issus de différents horizons, incarnent la richesse et la diversité de l’art congolais.",
         'custom' => []
     ]
 ];
