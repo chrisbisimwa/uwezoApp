@@ -53,8 +53,8 @@
                         </div>
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Phone</h6>
-                            <span class="text-white">+(123)4567890</span>
-                            <span class="text-white">+(123)4567890</span>
+                            <span class="text-white">+(243)998 564 037</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,7 @@
                         </div>
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Email</h6>
-                            <span class="text-white">example@example.com</span>
-                            <span class="text-white">example@example.com</span>
+                            <span class="text-white">info@sanaayetu.art</span>
                         </div>
                     </div>
                 </div>
@@ -79,8 +78,8 @@
                         </div>
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Location</h6>
-                            <span class="text-white">123 New Yourk E Block 12670,</span>
-                            <span class="text-white">Street 2101 USA</span>
+                            <span class="text-white">N°3, Av. FIZI, IBANDA,</span>
+                            <span class="text-white">Bukavu, RDC</span>
                         </div>
                     </div>
                 </div>
