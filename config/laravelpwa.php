@@ -4,7 +4,7 @@ return [
     'name' => 'LaravelPWA',
     'manifest' => [
         'name' => env('APP_NAME', 'SANAA YETU'),
-        'short_name' => 'SLT',
+        'short_name' => 'SANAA LETU',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
@@ -71,9 +71,8 @@ return [
                 'name' => 'Shortcut Link 2',
                 'description' => 'Shortcut Link 2 Description',
                 'url' => '/shortcutlink2'
-            ] */
-        ],
-        
+            ] */],
+
         'custom' => [
             'id' => "art.sanaayetu.twa",
             'description' => "Découvrez les artistes récemment ajoutés sur SANAA YETU, une communauté vibrante et dynamique où chaque talent raconte une histoire unique. Ces créateurs, issus de différents horizons, incarnent la richesse et la diversité de l’art congolais.",
@@ -84,6 +83,16 @@ return [
                 "music",
                 "news"
             ],
+            "lang" => "fr",
+            "display_override" => [
+                "window-controls-overlay",
+                "standalone",
+                "browser"
+            ],
+            "edge_side_panel" => [
+                "preferred_width" => 400
+            ]
+
         ]
     ]
 ];
