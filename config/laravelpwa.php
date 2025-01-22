@@ -4,7 +4,7 @@ return [
     'name' => 'LaravelPWA',
     'manifest' => [
         'name' => env('APP_NAME', 'SANAA YETU'),
-        'short_name' => 'SANAA LETU',
+        'short_name' => 'SANAA YETU',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
