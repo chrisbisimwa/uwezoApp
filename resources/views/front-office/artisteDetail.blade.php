@@ -21,9 +21,9 @@
       <div class="row align-items-start align-items-md-center">
         <div class="col-lg-4 col-sm-4">
           <div class="andro_artist-d-img">
-            <img class="andro_img-cover" src="{{ asset('storage/uploads/' . $artisteDetail->photo) }}" alt="artist">
+            <img class="andro_img-cover" src="{{\Storage::url($artisteDetail->photo)}}" alt="artist">
             <div class="andro_artist-d-img-shadow">
-              <img class="andro_img-cover" src="{{ asset('storage/uploads/' . $artisteDetail->photo) }}" alt="artist">
+              <img class="andro_img-cover" src="{{\Storage::url($artisteDetail->photo)}}" alt="artist">
             </div>
           </div>
         </div>
