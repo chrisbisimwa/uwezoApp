@@ -2,6 +2,18 @@
 <html dir="ltr" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWX2ER6G3M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HWX2ER6G3M');
+    </script>
 
     <!-- Meta Data -->
     <meta charset="UTF-8">
@@ -27,7 +39,7 @@
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/style.css') }}">
     {{-- <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front-office-assets/img/logo-uwezo.png') }}"> --}}
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('front-office-assets/img/favicon.png') }}">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('/images/icons/favicon.png') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
         integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
@@ -38,6 +50,8 @@
 
 
     @livewireStyles
+
+    @laravelPWA
 </head>
 
 
@@ -131,6 +145,21 @@
         })
     </script>
 
+
+    <script type="text/javascript">
+        // Initialize the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js', {
+                scope: '.'
+            }).then(function(registration) {
+                // Registration was successful
+                console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('Laravel PWA: ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>
 
 
 </body>

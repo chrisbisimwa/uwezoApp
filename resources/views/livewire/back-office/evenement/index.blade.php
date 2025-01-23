@@ -42,9 +42,7 @@
                         <tbody>
                             @forelse($events as $event)
                                 <tr>
-                                    @php
-                                                        dd($event->image_path);
-                                                    @endphp
+                                   
                                     <td>
                                         <div class="d-flex align-items-center" >
                                             <div class="me-2 lh-1">
@@ -53,7 +51,7 @@
                                                     @if ($event->image_path)
                                                     
                                                         <img style="width: 40px"
-                                                            src="{{ assets('storage/uploads/'.$event->image_path) }}"
+                                                            src="{{ asset('storage/uploads/'.$event->image_path) }}"
                                                             alt="">
                                                     @else
                                                         <img src="../assets/images/faces/11.jpg" alt="">
@@ -99,13 +97,14 @@
                                     </td>
                                     
                                     <td>
+                                        
                                         <a class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
                                             data-bs-placement="top" data-bs-title="Modifier" href="{{ route('evenement.edit', $event->title) }}">
                                             <i class="las la-edit"></i>
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
                                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
-                                                class="ri-delete-bin-5-line" wire:click="delete({{ $event->id }})"></i></button>
+                                                class="ri-delete-bin-5-line" wire:click="delete({{ $event->title }})"></i></button>
                                     </td>
                                 </tr>
                             @empty

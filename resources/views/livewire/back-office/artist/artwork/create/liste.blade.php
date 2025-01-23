@@ -5,8 +5,9 @@
                 <tr>
                     <th scope="col">Nom</th>
                     <th scope="col">Type</th>
-                    <th scope="col">Source</th>
+                    
                     <th scope="col">Date</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -65,8 +66,9 @@
                             </div>
                         </th>
                         <td>{{ $oeuvre['type'] }}</td>
-                        <td>87MB</td>
-                        <td>22,Nov 2022</td>
+                        
+                        <td>{{$oeuvre['date']}}</td>
+                        <td>{{$oeuvre['status']}}</td>
                         <td>
                             <div class="hstack gap-2 fs-15">
                                 <a href="javascript:void(0);"

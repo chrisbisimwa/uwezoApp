@@ -3,6 +3,7 @@
 namespace App\Livewire;
 namespace App\Livewire\BackOffice\Evenement;
 
+use App\Models\Artist;
 use Intervention\Image\ImageManagerStatic as Image;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\EventCategory;
 use App\Models\Evenement;
+use Carbon\Carbon;
 use Livewire\Component;
 
 
@@ -17,56 +19,82 @@ class EditEvent extends Component
 {
     use WithFileUploads;
 
-    public Evenement $events; // Important: Type hinting
-    public $title;
+    // Important: Type hinting
     public $id;
-    public $image_path;
+    public $title;
     public $description;
     public $location;
-    public $categories;
-    public $selectedCategories = [];
     public $start_date;
     public $end_date;
-    public $updated_at;
-    public $newImage; // Pour la nouvelle image téléchargée lors de la modification
-    public $imageNames = [];
-    //public $status;
+    public $status;
+    public $typeOrganisateur; // 'artiste' ou 'organisateur'
+    public $organizer;
+    public $organizer_phone;
+    public $organizer_email;
+    public $image_path;
+    public $artist_id;
+    public $author_id;
+    public $artist_name;
+    public $categories = [];
+    public $selectedCategories = [];
+    public $artists;
 
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
 
     protected $rules = [
         'title' => 'required|min:5|max:200',
         'description' => 'required',
         'location' => 'required',
-        //'status' => 'required|in:upcoming,ongoing,completed',
-        'selectedCategories' => 'array',
-        'newImage' => 'nullable|image|max:1024', // Validation pour la nouvelle image
-        'start_date' => 'nullable|date',
-        'end_date' => 'nullable|date|after_or_equal:start_date',
+        'organizer' => 'required_if:typeOrganisateur,organisateur',
+        'artist_id' => 'required_if:typeOrganisateur,artiste',
     ];
 
     protected $messages = [
         'title.required' => 'Le titre est obligatoire.',
         'description.required' => 'La description est obligatoire.',
-        'newImage.image' => 'Le fichier doit être une image.',
-        'newImage.max' => 'L\'image ne doit pas dépasser 1 Mo.',
-        'start_date.date' => 'La date de début doit être une date valide',
-        'end_date.date' => 'La date de fin doit être une date valide',
-        'end_date.after_or_equal' => 'La date de fin doit être postérieure ou égale à la date de début',
+        'organizer.required_if' => 'Le nom de l’organisateur est obligatoire.',
+        'artist_id.required_if' => 'Un artiste doit être sélectionné.',
     ];
    
 
+
     public function mount($events)
     {
+        //dd($this->id=$events->id);
+        $this->id = $events->id;
         $this->title = $events->title;
         $this->description = $events->description;
         $this->location = $events->location;
         $this->start_date = $events->start_date;
         $this->end_date = $events->end_date;
         $this->image_path = $events->image_path;
+        /* dd($this->end_date->format('d/m/Y H:m')); */
         //$this->updated_at= $events->updated_at;
         /* $this->status = $events->status; */
         $this->selectedCategories = $events->categories->pluck('id')->toArray();
         $this->dispatch('events-loaded', description: $events->description);
+
+       
+
+        // Récupérer l'événement
+        //$event = Evenement::findOrFail($this->eventId);
+        
+        // Vérifier si c'est un artiste ou un organisateur
+        //dd($events);
+        if ($events->artist_id) {
+            $this->typeOrganisateur = 'artiste';
+            $this->artist_id = $events->artist_id;
+            $this->artist_name = Artist::find($events->artist_id)?->name;
+        } else {
+            $this->typeOrganisateur = 'organisateur';
+            $this->organizer = $events->organizer;
+           
+            $this->organizer_phone = $events->organizer_phone;
+            $this->organizer_email = $events->organizer_email;
+        }
         
     }
 
@@ -75,25 +103,30 @@ class EditEvent extends Component
         
         $this->validate();
 
-        if ($this->newImage) {
-            // Supprimer l'ancienne image si elle existe
-           if($this->events->image_path){
-                Storage::disk('public_uploads')->delete($this->events->image_path);
-           }
-            $this->events->image_path = $this->newImage->store('event_image_path', 'public_uploads');
-        }
         $events= Evenement::find($this->id);
+        if($events){
+            //dd($events->title = $this->title);
         $events->title = $this->title;
         $events->description = $this->description;
         $events->location = $this->location;
-        $events->start_date = $this->start_date;
+        $events->start_date = Carbon::parse($this->start_date->format('Y-m-d H:m'));
         $events->end_date = $this->end_date;
-        $events->updated_at= $this->updated_at;
-        $events->image_path = $this->image_path->store('event_image_path', 'public_uploads');
+        $events->organizer= $this->organizer;
+        $events->organizer_phone=$this->organizer_phone;
+        $events->organizer_email=$this->organizer_email;
+        $events->artist_id= $this->artist_id;
+        $events->image_path = $this->image_path ? $this->image_path->store('event_image_path', 'public_uploads') : null;
+        $events->author_id = Auth::id();
        // $this->events->categories()->sync($this->selectedCategories);
         $events->save();   
-
+        session()->flash('success', 'Événement mis à jour avec succès.');
         return redirect()->route('evenement.index')->with('success', 'Événement mis à jour avec succès.');
+        }
+        else{
+            session()->flash('error', 'Événement non trouvé.');
+            return redirect()->back(); // Redirection en cas d'erreur
+        }
+        
     }
 
     public function cancel()
@@ -134,6 +167,7 @@ class EditEvent extends Component
     public function render()
     {
         $this->categories = EventCategory::all();
+        $this->artists= Artist::all();
         return view('livewire.back-office.evenement.editevent');
     }
 }

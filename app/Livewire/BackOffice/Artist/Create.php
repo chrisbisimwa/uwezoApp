@@ -77,12 +77,25 @@ class Create extends Component
         ]);
 
         if($this->oeuvres){
-            $artist->oeuvres()->createMany($this->oeuvres);
+            
+            foreach($this->oeuvres as $oeuvre){
+                $artist->oeuvres()->create([
+                    'type' => $oeuvre['type'],
+                    'nom' => $oeuvre['name'],
+                    'description' => $oeuvre['description'],
+                    'prix' => $oeuvre['price'],
+                    'image' => $oeuvre['image'],
+                    'source' => $oeuvre['source'],
+                    'date' => $oeuvre['date'],
+                    'statut' => $oeuvre['status'],
+                ]);
+            }
+            //$artist->oeuvres()->createMany($this->oeuvres);
         }
 
         $this->alert('success', 'Artiste ajouté avec succès');
 
-        $this->redirectRoute('backoffice.artist.index');
+        $this->redirectRoute('back-office.artist.index');
 
         
 

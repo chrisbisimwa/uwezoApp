@@ -14,9 +14,9 @@
         @forelse ($artists as $artist)
         <div class="col-lg-3 col-md-4 col-sm-6">
             @if ($artist->photo)
-            <a href="{{asset('storage/uploads/'.$artist->photo)}}" class="andro_img-popup andro_gallery">
+            <a href="{{\Storage::url($artist->photo)}}" class="andro_img-popup andro_gallery">
 
-                <img class="andro_img-cover" src="{{asset('storage/uploads/'.$artist->photo)}}"
+                <img class="andro_img-cover" src="{{\Storage::url($artist->photo)}}"
                     alt="gallery">
 
 

@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => null,
+    'favicon' => '/images/icons/icon-192x192.png',
 
     'title' => [
         /**
@@ -82,7 +82,7 @@ return [
          * so you'll need to add the suffix manually if you want that. If set to null, we'll determine the title
          * just like the other pages.
          */
-        'homepage_title' => "SANAA YETU",
+        'homepage_title' => "SANAA YETU: Donner vie à l'art – Explorer, soutenir et célébrer les talents.",
     ],
 
     'description' => [
@@ -91,7 +91,7 @@ return [
          * where we don't have a description set via an associated ->seo model or via
          * the ->getDynamicSEOData() method.
          */
-        'fallback' => null,
+        'fallback' => "Notre plateforme est dédiée à la mise en valeur des talents artistiques congolais, en offrant un espace où les artistes peuvent partager leurs créations uniques avec le monde entier.",
     ],
 
     'image' => [

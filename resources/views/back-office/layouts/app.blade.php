@@ -18,7 +18,7 @@
         content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front-office-assets/img/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/images/icons/favicon.png') }}">
 
 
 
