@@ -21,9 +21,9 @@
       <div class="row align-items-start align-items-md-center">
         <div class="col-lg-4 col-sm-4">
           <div class="andro_artist-d-img">
-            <img class="andro_img-cover" src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
+            <img class="andro_img-cover" src="{{ asset('storage/uploads/' . $artisteDetail->photo) }}" alt="artist">
             <div class="andro_artist-d-img-shadow">
-              <img class="andro_img-cover" src="front-office-assets/img/artists/md/afande.jpg" alt="artist">
+              <img class="andro_img-cover" src="{{ asset('storage/uploads/' . $artisteDetail->photo) }}" alt="artist">
             </div>
           </div>
         </div>
@@ -63,17 +63,13 @@
 
             <div class="andro_artist-d-availability">
               <h6>Disponible sur: </h6>
-              <a href="{{$artisteDetail->soundcloud_link}}" class="soundcloud" target="_blank"> <i class="fab fa-soundcloud"></i> Soundcloud </a>
+              <a href="{{$artisteDetail->soundcloud_link}}" class="soundcloud" target="_blank"> <i class="fab fa-spotify"></i> Spotify </a>
               <a href="{{$artisteDetail->youtube_link}}" class="youtube" target="_blank" target="_blank"> <i class="fab fa-youtube"></i> Youtube </a>
             </div>
             <div class="andro_artist-d-upcoming">
-              <div class="andro_artist-d-loc">
-                <h6>Upcoming Show: </h6>
-                <span> <i class="fal fa-map-marker"></i> Air centre, London, UK </span>
-              </div>
-              <div class="andro_artist-d-countdown">
-                <div class="andro_countdown-timer" data-countdown="2023/01/01"></div>
-              </div>
+           
+            
+            
             </div>
           </div>
         </div>
@@ -113,7 +109,7 @@
               </div>
 
               <div class="andro_artist-d-section" id="artistTracks">
-                <h4>Oeuvres (15) <a href="#">Afficher tout</a> </h4>
+                <h4>Oeuvres <a href="#">Afficher tout</a> </h4>
 
                 
                 <div class="andro_artist-d-section-content">
@@ -130,13 +126,10 @@
                       <h5><a href="{{$oeuvreArti->lieu_oeuvre}}" target="_blank">{{$oeuvreArti->nom}}</a></h5>
                       <div class="andro_track-footer">
                         <div class="andro_track-data">
-                          <span>By: Sheldon Fierce</span>
-                          <b>{{$dateOeuvreArti= date('D, d - m - Y', strtotime($oeuvreArti->date))}}</b>
+                          <span>{{$artisteDetail->nom}} {{ $artisteDetail->prenom}}</span>
+                          <b>{{$dateOeuvreArti= date('d - m - Y', strtotime($oeuvreArti->date))}}</b>
                         </div>
-                        <div class="andro_track-controls">
-                          <a data-bs-toggle="tooltip" title="Play Track" href="#" class="play andro_music-player-play"> <i class="fas fa-play"></i> </a>
-                          <a data-bs-toggle="tooltip" title="Download Track" class="download" href="#"> <i class="fal fa-download"></i> </a>
-                        </div>
+                        
                       </div>
 
                     </div>
@@ -201,8 +194,7 @@
             </div>
             <div class="andro_infobox-body">
               <h6 class="text-white">Phone</h6>
-              <span class="text-white">+(123)4567890</span>
-              <span class="text-white">+(123)4567890</span>
+              <span class="text-white">+(243)998 564 037</span>
             </div>
           </div>
         </div>
@@ -214,8 +206,7 @@
             </div>
             <div class="andro_infobox-body">
               <h6 class="text-white">Email</h6>
-              <span class="text-white">example@example.com</span>
-              <span class="text-white">example@example.com</span>
+              <span class="text-white">info@sanaayetu.art</span>
             </div>
           </div>
         </div>
@@ -226,9 +217,9 @@
               <i class="flaticon-pin"></i>
             </div>
             <div class="andro_infobox-body">
-              <h6 class="text-white">Location</h6>
-              <span class="text-white">123 New Yourk E Block 12670,</span>
-              <span class="text-white">Street 2101 USA</span>
+              <h6 class="text-white">Localisation</h6>
+              <span class="text-white">N°3, Av. FIZI, IBANDA,</span>
+              <span class="text-white">Bukavu, RDC</span>
             </div>
           </div>
         </div>
