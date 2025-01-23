@@ -42,7 +42,7 @@
                             @if ($artist->photo)
                             <div class="avatar avatar-xl avatar-rounded me-3">*
                                 
-                                    <img style="width: 40px" src="{{ asset('storage/uploads/' . $artist->photo) }}"
+                                    <img  src="{{\Storage::url($artist->photo)}}"
                                         alt="">
                                 
                             </div>

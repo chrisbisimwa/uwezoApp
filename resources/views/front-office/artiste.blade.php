@@ -26,7 +26,7 @@
         </div>
     </div>
     
-    <div class="section light-bg __web-inspector-hide-shortcut__">
+    {{-- <div class="section light-bg __web-inspector-hide-shortcut__">
         <div class="container">
 
             <div class="section-title text-center">
@@ -41,7 +41,7 @@
             </div>
 
         </div>
-    </div>
+    </div> --}}
     <div class="section lg blue-bg" style="background-image: url(assets/img/texture-2.png)">
         <div class="container">
             <div class="row justify-content-center">

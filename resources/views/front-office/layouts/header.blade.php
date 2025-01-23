@@ -31,12 +31,13 @@
                     <a class="search-trigger" href="#">
                         <i class="fal fa-search"></i>
                     </a>
-                    <a href="#" class="andro_burger-icon mobile-trigger">
+                    <a href="#" class=" mobile-trigger">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                       {{--  <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <span></span>
-                        <span></span>
+                        <span></span> --}}
                     </a>
 
                 </div>
@@ -106,7 +107,7 @@
         </ul>
     </nav>
 
-    <div class="andro_aside-notice">
+    {{-- <div class="andro_aside-notice">
         <h6>Follow Us</h6>
         <p>Follow us on social media and stay up to date with the latest news and information.</p>
         <ul class="andro_socials">
@@ -115,7 +116,7 @@
             <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li>
             <li> <a href="#"> <i class="fab fa-soundcloud"></i> </a> </li>
         </ul>
-    </div>
+    </div> --}}
 
 </aside>
 
