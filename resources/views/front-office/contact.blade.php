@@ -62,7 +62,7 @@
                 <i class="flaticon-pin"></i>
               </div>
               <div class="andro_infobox-body">
-                <h6 class="color-primary">Location</h6>
+                <h6 class="color-primary">Localisation</h6>
                 <span class="text-white">N°3, Av. FIZI, IBANDA,</span>
                 <span class="text-white">Bukavu, RDC</span>
               </div>

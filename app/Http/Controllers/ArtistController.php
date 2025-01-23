@@ -23,10 +23,16 @@ class ArtistController extends Controller
         $age = Carbon::parse($artisteDetail->datenaissance)->age;
         //dd($age);
         $event = Evenement::all()->where('artist_id', $id);
-        
+        $eventComing = Evenement::all()->where('artist_id', $id);
         //dd($event);
-
-        
         return view('front-office.artisteDetail',compact('artisteDetail','oeuvre','age','media','event'));
+    }
+
+    public function eventComing($id){
+        
+        $event = Evenement::all()->where('artist_id', $id);
+        $eventComing = Evenement::all()->where('artist_id', $id);
+        //dd($event);
+        return view('front-office.eventComingArtist',compact('event'));
     }
 }
