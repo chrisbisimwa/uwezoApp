@@ -65,29 +65,50 @@
             </div>
 
             <div class="col-xl-12">
-                <label for="image-oeuvre-add" class="form-label">image</label>
-                <input type="file" class="form-control @error('photo') is-invalid @enderror" id="image-oeuvre-add"
-                    wire:model="photo">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <label for="image-oeuvre-add" class="form-label">image</label>
+                                <input type="file" class="form-control @error('photo') is-invalid @enderror"
+                                    id="image-oeuvre-add" wire:model="photo">
 
-                @error('photo')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            @if ($type == '!Image')
-                <div class="col-xl-12">
-                    <label for="source-oeuvre-add" class="form-label">URL</label>
-                    <input type="text" class="form-control @error('source') is-invalid @enderror"
-                        id="source-oeuvre-add" wire:model="source">
+                                @error('photo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            @if ($type == 'Vidéo' || $type == 'Audio')
+                                <div class="col-xl-12">
+                                    <label for="source-oeuvre-add" class="form-label">URL</label>
+                                    <input type="text" class="form-control @error('source') is-invalid @enderror"
+                                        id="source-oeuvre-add" wire:model="source">
 
-                    @error('source')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                                    @error('source')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            @endif
+                        </div>
+
+                    </div>
+                    <div class="col-xl-6">
+                        @if ($photo)
+                        <center>
+                            <img src="{{ $photo->temporaryUrl() }}" style="width: 30%;" class="img-fluid"
+                            alt="preview">
+                        </center>
+                            
+                        @endif
+                    </div>
+
                 </div>
-            @endif
+
+            </div>
+
 
         </div>
     </div>

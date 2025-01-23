@@ -15,8 +15,7 @@ class Create extends Component
         'type' => 'required',
         'date' => 'required',
         'status' => 'required',
-        'photo' => 'required|image',
-        'source' => 'required_if:type,!Image|url',
+        'photo' => 'required|image'
     ];
 
     protected $messages = [
@@ -26,16 +25,13 @@ class Create extends Component
         'status.required' => 'Le champ status est obligatoire.',
         'photo.required' => 'Le champ photo est obligatoire.',
         'photo.image' => 'Le champ image doit être une image.',
-        'source.required_unless' => 'Le champ URL est obligatoire.',
-        'source.url' => 'Le champ URL doit être une URL valide.',
     ];
 
     public function addNewArtwork()
     {
-        dd($this->photo);
+        //dd($this->photo);
         $validated = $this->validate();
         if ($validated) {
-            dd($validated);
             $image = null;
             if ($this->type == 'Image') {
                 $image = $this->photo->store('artworks', 'public_uploads');
