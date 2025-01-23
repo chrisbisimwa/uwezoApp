@@ -10,6 +10,10 @@ use App\Http\Controllers\BackOffice\ArtworkController;
 use App\Http\Controllers\BackOffice\ArtworkCategoryController;
 use App\Http\Controllers\BackOffice\BlogCategoryController;
 use App\Http\Controllers\BackOffice\BlogCommentController;
+use Illuminate\Support\Facades\File;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use App\Models\BlogPost;
 
 Route::get('/', [App\Http\Controllers\FrontOfficePageController::class, 'index'])->name('front.home');
 
@@ -45,7 +49,47 @@ Route::get('/actualite/{slug}', [App\Http\Controllers\FrontOfficePageController:
 Route::get('/evenements/{id}', [App\Http\Controllers\EventController::class,'eventDetails'])->name('front.event-details');
 
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
-Route::get('/artistes/{id}', [App\Http\Controllers\ArtistController::class, 'artisteDetails'])->name('front.artisteDetail');
+Route::get('/artistes/{slug}', [App\Http\Controllers\ArtistController::class, 'artisteDetails'])->name('front.artisteDetail');
 
 Route::get('nous-contacter', [App\Http\Controllers\FrontOfficePageController::class, 'contact'])->name('front.contact');
 Route::get('a-propos', [App\Http\Controllers\FrontOfficePageController::class, 'about'])->name('front.about');
+
+Route::get('/sitemap.xml', function(){
+    //file path from storage foleter
+    $path = storage_path('app/public/sitemap.xml');
+    if(!File::exists($path)){
+        \Spatie\Sitemap\SitemapGenerator::create(env('APP_URL'))->writeToFile($path)->writeToFile($path);
+    }
+
+    $sitemap= Sitemap::create()
+    ->add(Url::create('/')->setPriority(0.1))
+    ->add(Url::create('/a-propos')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
+    ->add(Url::create('/contact')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
+    ->add(Url::create('/actualite')->setPriority(0.1))
+    ->add(Url::create('/evenements')->setPriority(0.1))
+    ->add(Url::create('/artistes')->setPriority(0.1))
+    ->add(Url::create('/nous-contacter')->setPriority(0.1));
+    
+    $blogs = BlogPost::all();
+    if($blogs){
+        foreach($blogs as $blog){
+            $sitemap->add(Url::create(route('front.blog-post', $blog->slug))->setPriority(0.5)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+        }
+    }
+
+    $artists = App\Models\Artist::all();
+    if($artists){
+        foreach($artists as $artist){
+            $sitemap->add(Url::create(route('front.artisteDetail', $artist->slug))->setPriority(0.5)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+        }
+    }
+
+    $sitemap->writeToFile($path);
+
+
+    $sitemapContent = file_get_contents($path);
+    return response($sitemapContent)->header('Content-Type', 'text/xml');
+
+
+    //dd($path);
+});

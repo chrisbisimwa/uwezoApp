@@ -1,5 +1,5 @@
 <div class="row andro_isotope-filter" >
-    @foreach ($artistes as $art)
+    @forelse ($artistes as $art)
         <div class="col-lg-3 col-md-4 col-sm-6 andro_isotope-item d1" >
             <div class="andro_artist style-2">
 
@@ -21,10 +21,19 @@
 
 
                 <h5 class="andro_artist-name"> 
-                    <a href="{{ route('front.artisteDetail', $art->id) }}">{{$art->nom}} {{$art->prenom}} </a> 
+                    <a href="{{ route('front.artisteDetail', $art->slug) }}">{{$art->nom}} {{$art->prenom}} </a> 
                 </h5>
             </div>
         </div>
-    @endforeach
+        @empty
+        <div class="col-lg-12">
+            <center>
+                <div class="alert alert-warning" role="alert">
+                    Aucun artiste trouvé
+                </div>
+            </center>
+            
+        </div>
+    @endforelse
 
 </div>

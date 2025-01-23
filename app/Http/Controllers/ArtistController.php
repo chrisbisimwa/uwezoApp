@@ -12,18 +12,18 @@ use Carbon\Carbon;
 class ArtistController extends Controller
 {
     
-    public function artisteDetails($id){
-        $artisteDetail = Artist::findOrFail($id);
+    public function artisteDetails($slug){
+        $artisteDetail = Artist::where('slug', $slug)->first();
         //dd($artisteDetail);
         //$categorie = Category::findOrFail($id);
-        $oeuvre = Oeuvre::all()->where('artist_id',$id);
+        $oeuvre = Oeuvre::all()->where('artist_id',$artisteDetail->id);
         //dd($oeuvre);
-        $media = Media::all()->where('mediaable_id', $id);
+        $media = Media::all()->where('mediaable_id', $artisteDetail->id);
         $dateToDay = date('y-m-d');
         $age = Carbon::parse($artisteDetail->datenaissance)->age;
         //dd($age);
-        $event = Evenement::all()->where('artist_id', $id);
-        $eventComing = Evenement::all()->where('artist_id', $id);
+        $event = Evenement::all()->where('artist_id', $artisteDetail->id);
+        $eventComing = Evenement::all()->where('artist_id', $artisteDetail->id);
         //dd($event);
         return view('front-office.artisteDetail',compact('artisteDetail','oeuvre','age','media','event'));
     }
