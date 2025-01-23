@@ -4,7 +4,7 @@
             <div class="andro_artist style-2">
 
                 <div class="andro_artist-img">
-                    <img src="{{ asset('storage/uploads/' . $art->photo) }}" alt="artist">
+                    <img src="{{\Storage::url($art->photo)}}" alt="artist">
                     <div class="andro_artist-img-content">
                         <div class="andro_artist-meta">
                         </div>
