@@ -64,11 +64,10 @@ Route::get('/sitemap.xml', function(){
     $sitemap= Sitemap::create()
     ->add(Url::create('/')->setPriority(0.1))
     ->add(Url::create('/a-propos')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
-    ->add(Url::create('/contact')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
+    ->add(Url::create('/nous-contacter')->setPriority(0.1)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
     ->add(Url::create('/actualite')->setPriority(0.1))
     ->add(Url::create('/evenements')->setPriority(0.1))
-    ->add(Url::create('/artistes')->setPriority(0.1))
-    ->add(Url::create('/nous-contacter')->setPriority(0.1));
+    ->add(Url::create('/artistes')->setPriority(0.1));
     
     $blogs = BlogPost::all();
     if($blogs){
