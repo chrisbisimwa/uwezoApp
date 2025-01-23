@@ -21,7 +21,7 @@
 
       <div class="col-lg-6">
         <div class="section-title mb-0">
-          <h3> A propos <span class="family-display color-primary">de Sanaa Letu</span> </h3>
+          <h3> A propos <span class="family-display color-primary">de Sanaa Yetu</span> </h3>
           <p>
             Lorem ipsum dolor sit amet concateur non tropp sit namo, all
             bravo pensare, chicco milo naturoel spresso concateur non a
