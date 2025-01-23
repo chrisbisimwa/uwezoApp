@@ -45,16 +45,55 @@
                             </span>
                         @enderror
                         <div class="relative mt-4" wire:ignore>
-
                             <div id="editor" wire:model="location"></div>
                         </div>
                     </div>
-                    <div class="date-fields">
-                        <label for="start-date">Date de début :</label>
-                        <input type="datetime-local" class="form-control" wire:model="start_date" id="editor" name="start-date">
-                        <label for="end-date">Date de fin :</label>
-                        <input type="datetime-local" class="form-control" wire:model="end_date" id="editor" name="end-date">
-                      </div>
+                    <div class="row tm-3">
+                        <div class="col-xl-6">
+                        <label for="form-label">Date de début :</label>
+                        <input type="datetime" class="form-control" wire:model="start_date" id="editor" name="start-date">
+                         </div>
+                        <div class="col-xl-6">
+                        <label for="form-label">Date de fin :</label>
+                        <input type="datetime" class="form-control" wire:model="end_date" id="end-date" name="end-date">
+                    </div>
+                    </div>
+                    <div>
+                       
+                        @if ($artist_id == null)
+                            <div id="organizerSection" class="mt-4">
+                                <div class="col-xl-12">
+                                    <label class="form-label">Organisateur</label>
+                                    <input type="text" id="organizer" class="form-control" wire:model.live="organizer" placeholder="Nom de l'organisateur">
+                                </div>
+                                {{-- @php
+                                    dd($organizer)
+                                @endphp --}}
+                                <div class="row mt-3">
+                                    <div class="col-xl-6">
+                                        <label class="form-label">Téléphone/Contact</label>
+                                        <input type="text" id="organizer_phone" class="form-control" wire:model="organizer_phone" placeholder="Téléphone de l'organisateur">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <label class="form-label">Adresse Mail</label>
+                                        <input type="email" id="organizer_email" class="form-control" wire:model="organizer_email" placeholder="E-mail de l'organisateur">
+                                    </div>
+                                </div>
+                            </div>
+                            @else
+                            <div id="articlesSection" class="mt-4">
+                                <label class="form-label">Artistes</label>
+                                <select class="form-control" id="articlesList" wire:model="artist_id">
+                                    @foreach ($artists as $artist)
+                                        <option value="{{ $artist->id }}">{{ $artist->nom }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endif
+                    
+                        
+                    </div>
+                    
             </div>
             <div class="card-footer">
                
@@ -78,24 +117,6 @@
                             <button type="button" wire:click="cancel()" class="btn btn-sm btn-light">Annuler</button>
                         </div>
                     </li>
-            {{--         <li class="list-group-item">
-                        <div class="d-flex gap-2 flex-wrap align-items-center">
-
-                            <div class="col-xl-12">
-                                <label for="event-category" class="form-label">Completed Status</label>
-
-                                <select class="form-control" data-trigger name="choices-single-default"
-                                    wire:model="status" id="choices-single-default">
-                                    <option value="upcoming">A venir</option>
-                                    <option value="ongoing">Encours</option>
-                                    <option value="completed">Terminé</option>
-                                </select>
-
-
-                            </div>
-                        </div>
-                    </li> --}}
-
                     <li class="list-group-item">
                         <div class="d-flex gap-2 flex-wrap align-items-center">
                             <div class="col-xl-12">
@@ -121,16 +142,15 @@
                                     <div class="card custom-card product-card">
                                         <div class="card-body">
                                             <a href="javascript:void(0);" class="product-image">
-                                                <img src="{{ Storage::url('event_image_path', 'public_uploads',$image_path) }}"
-                                                    class="card-img mb-3" alt="...">
+                                                <img style="width: 40px"
+                                                            src="{{ asset('storage/uploads/'.$image_path) }}"
+                                                            alt="">
                                             </a>
                                             <div class="product-icons" style="cursor: pointer;">
                                                 <a wire:click="removeImage()" class="wishlist btn-delete"><i
                                                         class="ri-close-line"></i></a>
                                             </div>
-
                                         </div>
-
                                     </div>
                                 @else
                                     <input type="file" wire:model="image_path"

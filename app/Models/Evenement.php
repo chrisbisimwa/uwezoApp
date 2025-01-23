@@ -34,12 +34,14 @@ class Evenement extends Model
         'artist_id',
         'author_id',
     ]; 
+    
         protected $dates = [ 
         'start_date', 
         'end_date', 
         'created_at', 
         'updated_at' 
     ];
+
     protected $casts = [
         'start_date'=> 'datetime',
         'end_date'=> 'datetime',
@@ -54,6 +56,7 @@ class Evenement extends Model
     public function artist(){
         return $this->belongsTo(Artist::class,'artist_id');
     }
+
     public function categories()
     {
         return $this->belongsToMany(EventCategory::class, 'event_category_mappings');
