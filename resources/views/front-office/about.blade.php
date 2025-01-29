@@ -26,15 +26,36 @@
                         <p>
                             La mission de la plate forme est la promotion des artistes et des évènements culturels
                         </p>
-                        <ul>
-                            <li>Mettre en avant les évènements culturels à venir (Concerts, expositions, festivals, ect.) à
+                        <ul style="list-style-type: none;margin: 0;padding: 0;">
+                            <li style="margin-bottom: 10px;padding: 5px 0;background-color: #f9f9f9;border-radius: 3px;">
+                                Mettre en avant les évènements culturels à venir (Concerts, expositions, festivals, ect.) à
                                 travers des agendas en ligne et des alertes personnalisées,</li>
-                            <li>Diffuser des contenus culturels variés ( vidéos, photos, articles) pour faire connaître les
+                            <li style="margin-bottom: 10px;padding: 5px 0;background-color: #f9f9f9;border-radius: 3px;">
+                                Diffuser des contenus culturels variés ( vidéos, photos, articles) pour faire connaître les
                                 artistes et les expressions culturelles </li>
-                            <li>Faciliter la mise en relation entre les artistes et le public (réservations, ventes de
+                            <li style="margin-bottom: 10px;padding: 5px 0;background-color: #f9f9f9;border-radius: 3px;">
+                                Faciliter la mise en relation entre les artistes et le public (réservations, ventes de
                                 billets, etc)</li>
                         </ul>
 
+                        <style>
+                            /* Si vous voulez ajouter des puces personnalisées */
+                            ul.custom-bullets {
+                                list-style-type: none;
+                            }
+
+                            ul.custom-bullets li:before {
+                                content: "•";
+                                /* Bullet point */
+                                color: #333;
+                                /* Couleur de la puce */
+                                font-weight: bold;
+                                /* Met en gras la puce pour qu'elle se détache */
+                                display: inline-block;
+                                width: 1em;
+                                margin-left: -1em;
+                            }
+                        </style>
 
 
                     </div>
