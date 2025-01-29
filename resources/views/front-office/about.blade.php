@@ -21,12 +21,15 @@
 
       <div class="col-lg-6">
         <div class="section-title mb-0">
-          <h3> A propos <span class="family-display color-primary">de Sanaa Yetu</span> </h3>
+          <h3> La mission <span class="family-display color-primary">de Sanaa Yetu</span> </h3>
           <p>
-            Lorem ipsum dolor sit amet concateur non tropp sit namo, all
-            bravo pensare, chicco milo naturoel spresso concateur non a
-            roel spresso concateur non value maro troppo Lorem ipsum d
-            troppo Lorem ipsum dolorel spres strata. es strata.
+           La mission de la plate forme est la promotion des artistes et des évènements culturels
+           <ul>
+            <li>Mettre en avant les évènements culturels à venir (Concerts, expositions, festivals, ect.) à travers des agendas en ligne et des alertes personnalisées,</li>
+            <li>Diffuser des contenus culturels variés ( vidéos, photos, articles) pour faire connaître les artistes et les expressions culturelles </li>
+            <li>Faciliter la mise en relation entre les artistes et le public (réservations, ventes de billets, etc)</li>
+           </ul>
+
           </p>
           
         </div>
