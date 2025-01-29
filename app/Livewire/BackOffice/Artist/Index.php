@@ -61,7 +61,7 @@ class Index extends Component
         $artists = Artist::where('nom', 'like', '%'.$this->searchTerm.'%')
                             ->orWhere('prenom', 'like', '%'.$this->searchTerm.'%')
                              ->orWhere('biography', 'like', '%'.$this->searchTerm.'%')
-                                ->orderBy('created_at', 'desc')->paginate(10);
+                                ->orderBy('created_at', 'desc')->paginate(12);
         return view('livewire.back-office.artist.index', compact('artists'));
     }
 }

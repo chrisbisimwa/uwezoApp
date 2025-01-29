@@ -13,17 +13,15 @@
                                 <button class="btn btn-light" type="button" id="search-contact-member"><i
                                         class="ri-search-line text-muted"></i></button>
                             </div>
-                            <div class="dropdown ms-2">
+                            {{-- <div class="dropdown ms-2">
                                 <button class="btn btn-icon btn-primary-light btn-wave waves-effect waves-light"
                                     type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="ti ti-dots-vertical"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Delete All</a></li>
-                                    <li><a class="dropdown-item" href="#">Copy All</a></li>
-                                    <li><a class="dropdown-item" href="#">Move To</a></li>
+                                    <li><a class="dropdown-item" href="#">Tout supprimer</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <button class="btn btn-icon btn-secondary-light ms-2" data-bs-toggle="tooltip" wire:click="goToAddArtist"
                                 data-bs-placement="top" data-bs-title="Ajouter un artiste"><i class="ri-add-line"></i></button>
                         </div>
@@ -75,9 +73,8 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i
-                                    class="ri-share-line me-2 align-middle d-inline-block"></i>Modifier</a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="ri-share-line me-2 align-middle d-inline-block"></i>Share</a></li>
+                                    class="ri-pencil-line me-2 align-middle d-inline-block"></i>Modifier</a></li>
+                             
                                 
                               
                                

@@ -61,6 +61,8 @@ class Create extends Component
         $artist = Artist::create([
             'nom' => $this->nom,
             'prenom' => $this->prenom,
+            //générer un slug à partir du nom et prénom et un code à 4 chiffres
+            'slug' => strtolower($this->nom.'_'.$this->prenom.'_'.rand(1000, 9999)),
             'email' => $this->email,
             'genre' => $this->genre,
             'biography' => $this->biography,
@@ -95,7 +97,8 @@ class Create extends Component
 
         $this->alert('success', 'Artiste ajouté avec succès');
 
-        $this->redirectRoute('back-office.artist.index');
+   
+        return redirect()->route('artist.index');
 
         
 
