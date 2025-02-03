@@ -62,7 +62,6 @@ class Index extends Component
 
     public function render()
     {
-        
         $categories = EventCategory::where('name', 'like', '%'.$this->searchTerm.'%')
             ->orWhere('description', 'like', '%'.$this->searchTerm.'%')
             ->paginate(10);

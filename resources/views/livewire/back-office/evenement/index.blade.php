@@ -42,7 +42,6 @@
                         <tbody>
                             @forelse($events as $event)
                                 <tr>
-                                   
                                     <td>
                                         <div class="d-flex align-items-center" >
                                             <div class="me-2 lh-1">
@@ -104,7 +103,7 @@
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
                                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
-                                                class="ri-delete-bin-5-line" wire:click="delete({{ $event->title }})"></i></button>
+                                                class="ri-delete-bin-5-line" wire:click="delete({{ $event->id }})"></i></button>
                                     </td>
                                 </tr>
                             @empty
