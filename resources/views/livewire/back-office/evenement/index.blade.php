@@ -102,8 +102,10 @@
                                             <i class="las la-edit"></i>
                                         </a>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
-                                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
-                                                class="ri-delete-bin-5-line" wire:click="delete({{ $event->id }})"></i></button>
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-title="Delete" wire:click="delete({{$event->id}})"><i class="ri-delete-bin-5-line"></i>
+                                        </button>
+                                        
                                     </td>
                                 </tr>
                             @empty

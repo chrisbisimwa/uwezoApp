@@ -63,12 +63,12 @@
                         <label class="form-label">Type d'organisateur</label>
                         <select  class="form-control" wire:model.live="typeOrganisateur">
                             <option value="">-- Sélectionnez un type --</option>
-                            <option value="externe">Organisateur Externe</option>
+                            <option value="organisateur">Organisateur Externe</option>
                             <option value="artiste">Artiste</option>
                         </select>
                     </div>
                     <!-- Section pour l'Organisateur -->
-                    @if ($typeOrganisateur==="externe")
+                    @if ($typeOrganisateur==="organisateur")
                     <div id="organizerSection" class="mt-4" >
                         <div class="col-xl-12">
                             <label class="form-label">Organisateur</label>

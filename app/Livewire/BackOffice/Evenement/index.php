@@ -18,7 +18,7 @@ class Index extends Component
     public $searchTerm;
 
     protected $listeners = [
-        'deletevent',
+        'deleteEvent',
         'event-created' => 'reload',
     ];
 // Fonction pour déterminer le statut
@@ -58,34 +58,49 @@ public function updateEventStatus()
 }
 
 
-    public function delete($id)
-    {
-        $this->event_id = $id;
-        $this->confirm('Êtes-vous sûr de vouloir supprimer cette évènement?', [
-            'toast' => false,
-            'position' => 'center',
-            'showConfirmButton' => true,
-            'cancelButtonText' => 'Annuler',
-            'onConfirmed' => 'deleteCategory',
-            'onCancelled' => 'cancelled'
-        ]);
-    }
+public function delete($id)
+{
+    $this->event_id = $id;
+    $this->confirm('Êtes-vous sûr de vouloir supprimer cet évènement?', [
+        'toast' => false,
+        'position' => 'center',
+        'showConfirmButton' => true,
+        'cancelButtonText' => 'Annuler',
+        'onConfirmed' => 'deleteEvent',
+        'onCancelled' => 'cancelled'
+    ]);
+}
 
-    public function deletEvent(){
-        $events_ = Evenement::find($this->event_id);
-        $events_->delete();
-        $this->alert('success', 'Evènement supprimé avec success', [
-            'position' =>  'top-end',
-            'timer' =>  3000,
-            'toast' =>  true,
-            'text' =>  '',
-            'confirmButtonText' =>  'Fermer',
-            'cancelButtonText' =>  'Annuler',
-            'showCancelButton' =>  false,
-            'showConfirmButton' =>  false,
+public function deleteEvent()
+{
+    $events = Evenement::find($this->event_id);
+    if ($events) {
+        $events->delete();
+        $this->alert('success', 'Evènement supprimé avec succès', [
+            'position' => 'top-end',
+            'timer' => 3000,
+            'toast' => true,
+            'text' => '',
+            'confirmButtonText' => 'Fermer',
+            'cancelButtonText' => 'Annuler',
+            'showCancelButton' => false,
+            'showConfirmButton' => false,
         ]);
-        $this->render();
+    } else {
+        $this->alert('error', 'Evènement non trouvé', [
+            'position' => 'top-end',
+            'timer' => 3000,
+            'toast' => true,
+            'text' => '',
+            'confirmButtonText' => 'Fermer',
+            'cancelButtonText' => 'Annuler',
+            'showCancelButton' => false,
+            'showConfirmButton' => false,
+        ]);
     }
+    $this->render();
+}
+
 
     public function reload(){
         $this->render();

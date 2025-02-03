@@ -99,6 +99,44 @@ class EditEvent extends Component
     }
 
     public function updateEvent()
+{
+    $this->validate();
+
+    $events = Evenement::find($this->id);
+    if ($events) {
+        $events->title = $this->title;
+        $events->description = $this->description;
+        $events->location = $this->location;
+        $events->start_date = Carbon::parse($this->start_date)->format('Y-m-d H:i:s');
+        $events->end_date = Carbon::parse($this->end_date)->format('Y-m-d H:i:s');
+        $events->organizer = $this->organizer;
+        $events->organizer_phone = $this->organizer_phone;
+        $events->organizer_email = $this->organizer_email;
+        $events->artist_id = $this->artist_id;
+
+        // Gestion de l'image
+        if ($this->image_path instanceof \Illuminate\Http\UploadedFile) {
+            // Supprimer l'ancienne image si une nouvelle est téléchargée
+            if ($events->image_path && Storage::disk('public_uploads')->exists($events->image_path)) {
+                Storage::disk('public_uploads')->delete($events->image_path);
+            }
+            // Enregistrer la nouvelle image
+            $events->image_path = $this->image_path->store('event_image_path', 'public_uploads');
+        }
+
+        $events->author_id = Auth::id();
+        $events->save();
+
+        session()->flash('success', 'Événement mis à jour avec succès.');
+        return redirect()->route('evenement.index')->with('success', 'Événement mis à jour avec succès.');
+    } else {
+        session()->flash('error', 'Événement non trouvé.');
+        return redirect()->back(); // Redirection en cas d'erreur
+    }
+}
+
+
+    /* public function updateEvent()
     {
         
         $this->validate();
@@ -127,7 +165,7 @@ class EditEvent extends Component
             return redirect()->back(); // Redirection en cas d'erreur
         }
         
-    }
+    } */
 
     public function cancel()
     {

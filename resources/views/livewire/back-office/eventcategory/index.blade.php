@@ -59,7 +59,8 @@
                                     </button>
                                         <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"
                                             data-bs-toggle="tooltip" data-bs-placement="top"
-                                            data-bs-title="Delete" wire:click="delete({{$category->id}})"><i class="ri-delete-bin-5-line"></i></button>
+                                            data-bs-title="Delete" wire:click="delete({{$category->id}})"><i class="ri-delete-bin-5-line"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @empty
