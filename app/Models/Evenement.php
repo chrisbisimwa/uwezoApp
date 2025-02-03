@@ -110,4 +110,35 @@ class Evenement extends Model
 
         $this->save();
     }
+    public function isUpcoming()
+    {
+        return Carbon::parse($this->start_date)->isFuture();
+    }
+
+    public function isOngoing()
+    {
+        $now = Carbon::now();
+        return $now->between(Carbon::parse($this->start_date)->toIso8601String(), Carbon::parse($this->end_date)->toIso8601String());
+    }
+    public function getStartDateForJs() {
+        return Carbon::parse($this->start_date)->toIso8601String();
+    }
+
+    public function getRemainingTime()
+    {
+        $now = Carbon::now();
+        $diff = $now->diffInSeconds(Carbon::parse($this->start_date)->toIso8601String());
+
+        $days = floor($diff / (60 * 60 * 24));
+        $hours = floor(($diff - $days * 60 * 60 * 24) / (60 * 60));
+        $minutes = floor(($diff - $days * 60 * 60 * 24 - $hours * 60 * 60) / 60);
+        $seconds = $diff - $days * 60 * 60 * 24 - $hours * 60 * 60 - $minutes * 60;
+
+        return [
+            'days' => $days,
+            'hours' => $hours,
+            'minutes' => $minutes,
+            'seconds' => $seconds,
+        ];
+    }
 }

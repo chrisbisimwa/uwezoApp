@@ -38,14 +38,26 @@
           </div>
 
           <div class="andro_artist-d-meta">
+            @if ($eventDetails->organizer == null)
             <div class="andro_artist-d-meta-item">
               <b>Organisateur: </b>
-              <span> <b class="fw-500 color-primary">(Uwezo)</b> </span>
+              <span> <b class="fw-500 color-primary">{{ $artists->nom }} {{ $artists->prenom }}</b> </span>
             </div>
             <div class="andro_artist-d-meta-item">
               <b>Contact </b>
-              <span>+243990071004</span>
+              <span>{{$artists->phone}}</span>
             </div>
+            @else
+            <div class="andro_artist-d-meta-item">
+              <b>Organisateur: </b>
+              <span> <b class="fw-500 color-primary">{{$eventDetails->organizer}}</b> </span>
+            </div>
+            <div class="andro_artist-d-meta-item">
+              <b>Contact </b>
+              <span>{{$eventDetails->organizer_phone}}</span>
+            </div>
+            @endif
+          
           </div>
           <div class="andro_artist-d-upcoming">
             <div class="andro_artist-d-loc">

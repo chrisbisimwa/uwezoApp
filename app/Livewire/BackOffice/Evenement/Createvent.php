@@ -8,6 +8,7 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Evenement;
 use App\Models\EventCategory;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -83,12 +84,16 @@ class Createvent extends Component
     {
         $validatedData = $this->validate();
 
+        // Vérifier et mettre à jour le statut avant l'enregistrement
+        $this->status = $this->determineStatus($this->start_date, $this->end_date);
+
+
         $event = Evenement::create([
             'title' => $this->title,
             'description' => $this->description,
             'location' => $this->location,
             'image_path' => $this->image_path ? $this->image_path->store('event_image_path', 'public_uploads') : null,
-            'status' => $this->status,
+            'status' => $this->status, // Utiliser le statut déterminé
             'organizer' => $this->typeOrganisateur === 'organisateur' ? $this->organizer : null,
             'organizer_phone' => $this->typeOrganisateur === 'organisateur' ? $this->organizer_phone : null,
             'organizer_email' => $this->typeOrganisateur === 'organisateur' ? $this->organizer_email : null,
@@ -105,19 +110,58 @@ class Createvent extends Component
         return redirect()->route('evenement.index');
     }
 
+    // Fonction pour déterminer le statut
+    private function determineStatus($startDate, $endDate)
+    {
+        $now = Carbon::now();
+        $start = Carbon::parse($startDate);
+        $end = Carbon::parse($endDate);
+
+        if ($now->between($start, $end)) {
+            return 'ongoing';
+        } elseif ($now->greaterThan($end)) {
+            return 'completed';
+        } else {
+            return 'upcoming';
+        }
+    }
+
+
+    // Dans votre méthode render() ou dans un autre endroit approprié pour la mise à jour en base de données
+    public function updateEventStatus()
+    {
+        $now = Carbon::now();
+
+        $events = Evenement::all(); // Récupérer tous les événements
+
+        foreach ($events as $event) {
+            $start = Carbon::parse($event->start_date);
+            $end = Carbon::parse($event->end_date);
+            $newStatus = $this->determineStatus($start, $end);
+
+            if ($event->status !== $newStatus) { // Mettre à jour uniquement si le statut a changé
+                $event->status = $newStatus;
+                $event->save();
+            }
+        }
+    }
+
     public function cancel()
     {
         return redirect()->route('evenement.index');
+        $this->updateEventStatus();
     }
 
     public function removeImage()
     {
         $this->image_path = null;
+        $this->updateEventStatus();
     }
 
     public function render()
     {
         $this->categories = EventCategory::all();
+        $this->updateEventStatus();
         return view('livewire.back-office.evenement.createvent');
     }
 }
