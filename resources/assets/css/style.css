@@ -31,10 +31,10 @@ Version: 1.0.0
   --family-display: "Barlow", cursive;
 
    /* Primary color */
-  --color-primary: #FF214F;
-  --color-primary-hover: #D1173D;
-  --color-primary-rgb: 255, 33, 79;
-  --color-primary-hue: #FFDBE2;
+  --color-primary: #ec173f;
+  --color-primary-hover: #8b031f;
+  --color-primary-rgb: 236, 23, 63;
+/*   --color-primary-hue: #FFDBE2; */
 
   /* Secondary Color */
   --color-secondary: #000;

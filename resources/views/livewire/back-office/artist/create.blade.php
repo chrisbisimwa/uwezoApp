@@ -101,23 +101,23 @@
             </div>
             <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Facebook</label>
-                <input type="text" class="form-control" id="product-name-add" placeholder="Facebook">
+                <input type="text" class="form-control"  placeholder="Facebook" wire:model="facebook_link">
             </div>
             <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Twitter</label>
-                <input type="text" class="form-control" id="product-name-add" placeholder="Twiter">
+                <input type="text" class="form-control"  placeholder="Twiter" wire:model="twitter_link">
             </div>
             <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Instagram</label>
-                <input type="text" class="form-control" id="product-name-add" placeholder="Instagram">
+                <input type="text" class="form-control"  placeholder="Instagram" wire:model="instagram_link">
             </div>
             <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Spotify</label>
-                <input type="text" class="form-control" id="product-name-add" placeholder="Spotify">
+                <input type="text" class="form-control"  placeholder="Spotify" wire:model="spotify_link">
             </div>
             <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Youtube</label>
-                <input type="text" class="form-control" id="product-name-add" placeholder="Youtube">
+                <input type="text" class="form-control"  placeholder="Youtube" wire:model="youtube_link">
             </div>
 
 
