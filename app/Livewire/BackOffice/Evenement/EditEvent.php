@@ -68,10 +68,10 @@ class EditEvent extends Component
         $this->title = $events->title;
         $this->description = $events->description;
         $this->location = $events->location;
-        $this->start_date = $events->start_date;
-        $this->end_date = $events->end_date;
+        $this->start_date = $events->start_date->format('d/m/Y H:m:s');
+        $this->end_date = $events->end_date->format('d/m/Y H:m:s');
         $this->image_path = $events->image_path;
-        /* dd($this->end_date->format('d/m/Y H:m')); */
+        /*  dd($this->end_date->format('d/m/Y H:m:s')); */
         //$this->updated_at= $events->updated_at;
         /* $this->status = $events->status; */
         $this->selectedCategories = $events->categories->pluck('id')->toArray();
@@ -163,11 +163,46 @@ class EditEvent extends Component
         $this->image_path = null;
     }
 
+// Fonction pour déterminer le statut
+private function determineStatus($startDate, $endDate)
+{
+    $now = Carbon::now();
+    $start = Carbon::parse($startDate);
+    $end = Carbon::parse($endDate);
 
+    if ($now->between($start, $end)) {
+        return 'ongoing';
+    } elseif ($now->greaterThan($end)) {
+        return 'completed';
+    } else {
+        return 'upcoming';
+    }
+}
+
+
+// Dans votre méthode render() ou dans un autre endroit approprié pour la mise à jour en base de données
+public function updateEventStatus()
+{
+    $now = Carbon::now();
+
+    $events = Evenement::all(); // Récupérer tous les événements
+
+    foreach ($events as $event) {
+        $start = Carbon::parse($event->start_date);
+        $end = Carbon::parse($event->end_date);
+        $newStatus = $this->determineStatus($start, $end);
+
+        if ($event->status !== $newStatus) { // Mettre à jour uniquement si le statut a changé
+            $event->status = $newStatus;
+            $event->save();
+        }
+    }
+}
     public function render()
     {
         $this->categories = EventCategory::all();
         $this->artists= Artist::all();
+        $this->updateEventStatus();
         return view('livewire.back-office.evenement.editevent');
     }
 }

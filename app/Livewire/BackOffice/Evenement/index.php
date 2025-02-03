@@ -4,6 +4,7 @@ namespace App\Livewire\BackOffice\Evenement;
 
 use Livewire\Component;
 use App\Models\Evenement;
+use Carbon\Carbon;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\WithPagination;
 
@@ -20,6 +21,41 @@ class Index extends Component
         'deletevent',
         'event-created' => 'reload',
     ];
+// Fonction pour déterminer le statut
+private function determineStatus($startDate, $endDate)
+{
+    $now = Carbon::now();
+    $start = Carbon::parse($startDate);
+    $end = Carbon::parse($endDate);
+
+    if ($now->between($start, $end)) {
+        return 'ongoing';
+    } elseif ($now->greaterThan($end)) {
+        return 'completed';
+    } else {
+        return 'upcoming';
+    }
+}
+
+
+// Dans votre méthode render() ou dans un autre endroit approprié pour la mise à jour en base de données
+public function updateEventStatus()
+{
+    $now = Carbon::now();
+
+    $events = Evenement::all(); // Récupérer tous les événements
+
+    foreach ($events as $event) {
+        $start = Carbon::parse($event->start_date);
+        $end = Carbon::parse($event->end_date);
+        $newStatus = $this->determineStatus($start, $end);
+
+        if ($event->status !== $newStatus) { // Mettre à jour uniquement si le statut a changé
+            $event->status = $newStatus;
+            $event->save();
+        }
+    }
+}
 
 
     public function delete($id)
@@ -68,6 +104,7 @@ class Index extends Component
             })
             ->orderBy('created_at', 'desc')
             ->paginate(10);
+            $this->updateEventStatus();
         return view('livewire.back-office.evenement.index', compact('events'));
     }
 }
