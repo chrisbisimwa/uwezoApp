@@ -22,4 +22,9 @@ Class BackOfficePageController extends Controller
     {
         return view('back-office.index');
     }
+
+    public function profile()
+    {
+        return view('back-office.profile.show');
+    }
 }
