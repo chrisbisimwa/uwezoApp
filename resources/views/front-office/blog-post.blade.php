@@ -79,11 +79,6 @@
 
                 {!! $blogPost->post_body_output() !!}
 
-
-
-
-
-
             </div>
 
             <div class="andro_post-d-footer">

@@ -36,6 +36,7 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
     Route::resource('event-category', App\Http\Controllers\BackOffice\EventCategoryController::class);
     Route::resource('event-comment', App\Http\Controllers\BackOffice\EventCommentController::class);
    // Route::resource('artwork-category', App\Http\Controllers\BackOffice\ArtworkCategoryController::class);
+   Route::get('/user/profile', [BackOfficePageController::class, 'profile'])->name('profile');
    
 });
 
@@ -50,6 +51,7 @@ Route::get('/evenements/{id}', [App\Http\Controllers\EventController::class,'eve
 
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
 Route::get('/artistes/{slug}', [App\Http\Controllers\ArtistController::class, 'artisteDetails'])->name('front.artisteDetail');
+Route::get('/artistes/category/{slug}', [App\Http\Controllers\ArtistController::class, 'artisteCategory'])->name('front.artisteCategory');
 
 Route::get('nous-contacter', [App\Http\Controllers\FrontOfficePageController::class, 'contact'])->name('front.contact');
 Route::get('a-propos', [App\Http\Controllers\FrontOfficePageController::class, 'about'])->name('front.about');

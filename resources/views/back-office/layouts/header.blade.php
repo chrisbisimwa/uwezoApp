@@ -377,11 +377,11 @@
             </a>
             <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
                 aria-labelledby="mainHeaderProfile">
-                <li><a class="dropdown-item d-flex" href="profile.html"><i
+                <li><a class="dropdown-item d-flex" href="{{route('profile')}}"><i
                             class="ti ti-user-circle fs-18 me-2 op-7"></i>Profile</a></li>
 
 
-                <li><a class="dropdown-item d-flex" href="mail-settings.html"><i
+                <li><a class="dropdown-item d-flex" href="{{route('profile')}}"><i
                             class="ti ti-adjustments-horizontal fs-18 me-2 op-7"></i>Settings</a></li>
 
 

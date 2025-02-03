@@ -21,8 +21,21 @@
         <div class="container">
     
             @livewire('front-office.artist.cat')
+            
     
             @livewire('front-office.artist.liste')
+
+            {{-- <div class="row">
+                <div class="col-lg-4">
+                    @livewire('front-office.artist.cat')
+                </div>
+
+                <div class="col-lg-8"> 
+                    @livewire('front-office.artist.liste')
+                </div>
+
+            </div> --}}
+
         </div>
     </div>
     
