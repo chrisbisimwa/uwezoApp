@@ -74,6 +74,7 @@ class Create extends Component
             'twitter_link' => $this->twitter_link,
             'instagram_link' => $this->instagram_link,
             'spotify_link' => $this->spotify_link,
+            'youtube_link' => $this->youtube_link,
             'category_id' => $this->category_id,
             'datenaissance' => $this->datenaissance,
         ]);

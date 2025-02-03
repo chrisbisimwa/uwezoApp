@@ -21,7 +21,8 @@ class Artist extends Model
         'facebook_link',
         'twitter_link',
         'instagram_link',
-        'soundcloud_link',
+        'spotify_link',
+        'youtube_link',
         'category_id',
         'datenaissance'
     ];

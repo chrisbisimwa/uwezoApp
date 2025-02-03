@@ -14,5 +14,6 @@
     </div>
 
 
-   @livewire('back-office.evenement.index')
+
+   {{-- @livewire('back-office.evenement.index') --}}
 @endsection

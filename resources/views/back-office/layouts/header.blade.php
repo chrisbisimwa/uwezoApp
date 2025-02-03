@@ -130,8 +130,8 @@
             <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown"
                 data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
                 <i class="bx bx-bell header-link-icon"></i>
-                <span class="badge bg-secondary rounded-pill header-icon-badge pulse pulse-secondary"
-                    id="notification-icon-badge">0</span>
+                {{-- <span class="badge bg-secondary rounded-pill header-icon-badge pulse pulse-secondary"
+                    id="notification-icon-badge">0</span> --}}
             </a>
             {{-- <div class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
                 <div class="p-3">
