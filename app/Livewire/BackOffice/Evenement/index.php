@@ -71,14 +71,10 @@ public function updateEventStatus()
         ]);
     }
 
-    public function reload(){
-        $this->render();
-    }
-
     public function deletEvent(){
         $events_ = Evenement::find($this->event_id);
         $events_->delete();
-        $this->alert('success', 'Catégorie supprimée avec success', [
+        $this->alert('success', 'Evènement supprimé avec success', [
             'position' =>  'top-end',
             'timer' =>  3000,
             'toast' =>  true,
@@ -91,7 +87,9 @@ public function updateEventStatus()
         $this->render();
     }
 
-    
+    public function reload(){
+        $this->render();
+    }
 
     public function render()
     {

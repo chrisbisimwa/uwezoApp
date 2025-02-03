@@ -57,7 +57,6 @@
               <span>{{$eventDetails->organizer_phone}}</span>
             </div>
             @endif
-          
           </div>
           <div class="andro_artist-d-upcoming">
             <div class="andro_artist-d-loc">
