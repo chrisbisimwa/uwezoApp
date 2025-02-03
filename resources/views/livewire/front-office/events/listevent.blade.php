@@ -53,13 +53,13 @@
                 @forelse ($topartist as $topartist) 
                 <div class="andro_event">
                   <div class="andro_album-img">
-                    <img src="{{\Storage::url($topartist->photo)}}" alt="album">
+                    <img src="{{\Storage::url($topartist->photo)}}" alt="album" style="width: 120px;">
                   </div>
                   <div class="andro_event-content">
                     <div class="andro_event-body">
                        <div class="andro_event-data">
-                        <span> <a href="{{route('front.artisteDetail', $topartist->id)}}"> {{$topartist->nom}} </a> </span>
-                        <b> <i class="fal fa-map-marker"> </i> </b>
+                        <span> <a href="{{route('front.artisteDetail', $topartist->slug)}}"> {{$topartist->nom}} </a> </span>
+                        
                          
                       </div>
                     </div>
