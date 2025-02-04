@@ -57,6 +57,9 @@ Route::get('/artistes/category/{slug}', [App\Http\Controllers\ArtistController::
 Route::get('nous-contacter', [App\Http\Controllers\FrontOfficePageController::class, 'contact'])->name('front.contact');
 Route::get('a-propos', [App\Http\Controllers\FrontOfficePageController::class, 'about'])->name('front.about');
 
+//unsubscribe route
+/* Route::get('/unsubscribe', [App\Http\Controllers\NewsletterSubscriptionController::class, 'unsubscribe'])->name('front.unsubscribe'); */
+
 Route::get('/sitemap.xml', function(){
     //file path from storage foleter
     $path = storage_path('app/public/sitemap.xml');

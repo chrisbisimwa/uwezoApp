@@ -54,7 +54,7 @@
         <p>{{ Str::limit($blogPost->content, 200) }}...</p>
         <a href="{{ route('front.blog-post', $blogPost->slug) }}" class="button">Lire l'article</a>
         <div class="footer">
-            <p>Cet email vous a été envoyé parce que vous êtes abonné à notre newsletter. Si vous ne souhaitez plus recevoir ces emails, vous pouvez <a href="{{ route('unsubscribe') }}">vous désinscrire ici</a>.</p>
+            <p>Cet email vous a été envoyé parce que vous êtes abonné à notre newsletter. Si vous ne souhaitez plus recevoir ces emails, vous pouvez <a href="#">vous désinscrire ici</a>.</p>
         </div>
     </div>
 </body>
