@@ -9,11 +9,11 @@
 
         <div class="row gy-3">
             <div class="col-xl-12">
-                <label for="input-noradius" class="form-label @error('name') is-invalid @enderror">Nom de la
+                <label for="input-noradius" class="form-label @error('namecat') is-invalid @enderror">Nom de la
                     catégorie</label>
-                <input type="text" class="form-control rounded-0" id="name" placeholder="Nom de la catégorie"
-                    wire:model="name">
-                @error('name')
+                <input type="text" class="form-control rounded-0" id="namecat" placeholder="Nom de la catégorie"
+                    wire:model="namecat">
+                @error('namecat')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -21,8 +21,8 @@
             </div>
             <div class="col-xl-12">
                 <label for="input-rounded" class="form-label">Description (Optionel)</label>
-                <textarea name="description" cols="80" class="form-control" id="description" placeholder="Description"
-                    wire:model="description"> </textarea>
+                <textarea name="descriptioncat" cols="80" class="form-control" id="descriptioncat" placeholder="Description"
+                    wire:model="descriptioncat"> </textarea>
             </div>
 
         </div>

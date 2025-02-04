@@ -11,8 +11,8 @@ class CreatCategory extends Component
 {
     use LivewireAlert;
 
-    public $name;
-    public $description;
+    public $namecat;
+    public $descriptioncat;
     public $mode;
     public $category_id;
 
@@ -21,11 +21,12 @@ class CreatCategory extends Component
     ];
 
     protected $rules = [
-        'name' => 'required',
+        'namecat' => 'required',
+        'descriptioncat' => 'nullable|string',
     ];
 
     protected $messages = [
-        'name.required' => 'Le nom de la catégorie est requise',
+        'namecat.required' => 'Le nom de la catégorie est requise',
     ];
 
 
@@ -35,18 +36,17 @@ class CreatCategory extends Component
 
         if($this->mode=="create"){
             EventCategory::create([
-                'name' => $this->name,
-                'description' => $this->description,
+                'name' => $this->namecat,
+                'description' => $this->descriptioncat,
             ]);
     
         }else{
             $category = EventCategory::find($this->category_id);
-            $category->name = $this->name;
-            $category->description = $this->description;
+            $category->name = $this->namecat;
+            $category->description = $this->descriptioncat;
             $category->save();
 
         }
-
 
         $this->alert('success', 'Catégorie enregistrée avec success', [
             'position' =>  'top-end',
@@ -66,21 +66,21 @@ class CreatCategory extends Component
     public function edit($id)
     {
         $category = EventCategory::find($id);
-        $this->name = $category->name;
-        $this->description = $category->description;
+        $this->namecat = $category->name;
+        $this->descriptioncat = $category->description;
         $this->category_id = $id;
         $this->mode = "edit";
     }
 
     public function resetForm(){
-        $this->name="";
-        $this->description="";
+        $this->namecat="";
+        $this->descriptioncat="";
     }
 
 
-    public function updated($name)
+    public function updated($namecat)
     {
-        $this->validateOnly($name);
+        $this->validateOnly($namecat);
     }
 
     public function render()
