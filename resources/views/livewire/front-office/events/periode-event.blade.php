@@ -13,14 +13,15 @@
                   @forelse ($events as $event)
                  
                   <div class="andro_event">
-                    <div class="andro_album-img" style="margin-right: 10px;">
+                    <div class="andro_album-img">
                       <img src="{{ asset('storage/uploads/'.$event->image_path) }} " width="100" height="60" alt="album">
                     </div>
+                    
                     <div class="andro_event-content">
                       <div class="andro_event-body">
                          <div class="andro_event-data">
                           <span></span>
-                          <span> <a href="{{route('front.event-details', $event->title)}}"> <b>{{$event->title}}</b> </a> </span>
+                          <span> <a href="{{route('front.event-details', $event->title)}}"> {{$event->title}} </a> </span>
                           <b> <i class="fal fa-map-marker"></i> {{$event->location}} </b>
                             Du {{$event->start_date->format('d M Y')}} Au {{$event->end_date->format('M y')}}  
                         </div>
@@ -51,14 +52,14 @@
               <div class="andro_artist-d-section-content">
                 @forelse ($topartist as $topartist) 
                 <div class="andro_event">
-                  <div class="andro_album-img" style="margin-right: 6px;">
+                  <div class="andro_album-img">
                     <img src="{{\Storage::url('uploads/'.$topartist->photo)}}" alt="album" style="width: 120px;">
                   </div>
                   <div class="andro_event-content">
                     <div class="andro_event-body">
                        <div class="andro_event-data">
-                        <span> <a href="{{route('front.artisteDetail', $topartist->slug)}}"> {{$topartist->nom}} {{$topartist->prenom}} </a> </span>
-                        <span> </span>
+                        <span> <a href="{{route('front.artisteDetail', $topartist->slug)}}"> {{$topartist->nom}} </a> </span>
+                        
                          
                       </div>
                     </div>
@@ -74,22 +75,22 @@
             
           </div>
           {{-- widget mois d'évènement --}}
-          {{-- <div class="widget widget-recent-posts">
+          <div class="widget widget-recent-posts">
             <h5 class="widget-title">Periode de l'évenement</h5>
             @forelse ( $mouthYearEvent as $mouthYear )
             <div class="andro_recent-post">
               <a href="#" >{{DateTime::createFromFormat('!m', $mouthYear)->Format('F')}}</a>
-              
+              {{-- DateTime::createFromFormat('!m', $month)->format('F') --}}
             </div>
             @empty
             <span>
               <h6>Aucune catégorie trouvée !</h6>
           </span>
             @endforelse
-          </div> --}}
+          </div>
           {{-- fin widget mois de l'evenement --}}
           {{-- widget catégories d'évènement --}}
-         {{--  <div class="widget widget-recent-posts">
+          <div class="widget widget-recent-posts">
             <h5 class="widget-title">Catégories d'évènement</h5>
             @forelse ( $eventcats as $eventcat )
             <div class="andro_recent-post">
@@ -101,7 +102,7 @@
               <h6>Aucune catégorie trouvée !</h6>
           </span>
             @endforelse
-          </div> --}}
+          </div>
           {{-- fin widget catégories d'évènement --}}
         </div>
       </div>
