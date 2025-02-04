@@ -23,7 +23,8 @@
 
                     <div class="col-xl-12">
                         <label class="form-label">Blog Content</label>
-                        <input type="hidden" wire:model="content" class="form-control @error('content') is-invalid @enderror">
+                        <input type="hidden" wire:model="content"
+                            class="form-control @error('content') is-invalid @enderror">
                         @error('content')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -102,12 +103,13 @@
                             <div class="col-xl-12">
                                 <label for="featured_image" class="form-label">Featured Image</label>
 
-                                @if ($featured_image && $featured_image->isValid())
+                                @if ($featured_image_url || $featured_image)
                                     <div class="card custom-card product-card">
                                         <div class="card-body">
                                             <a href="javascript:void(0);" class="product-image">
-                                                <img src="{{ asset('back-office-assets/images/ecommerce/png/2.png') }}"
+                                                <img src="{{ $featured_image_url ?? $featured_image->temporaryUrl() }}"
                                                     class="card-img mb-3" alt="...">
+                                                    
                                             </a>
                                             <div class="product-icons" style="cursor: pointer;">
                                                 <a wire:click="removeImage()" class="wishlist btn-delete"><i
@@ -122,12 +124,15 @@
                                         class=" @error('featured_image') is-invalid @enderror">
 
                                     @error('featured_image')
-                                        <span class="text-sm text-red-500 italic" style="color: red;" role="alert">{{ $message }}</span>
+                                        <span class="text-sm text-red-500 italic" style="color: red;"
+                                            role="alert">{{ $message }}</span>
                                     @enderror
-                                   
+
 
                                     <div wire:loading wire:target="featured_image" class="text-sm text-gray-500 italic">
                                         Uploading...</div>
+
+                                  
                                 @endif
 
 

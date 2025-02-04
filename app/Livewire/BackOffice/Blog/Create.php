@@ -44,7 +44,7 @@ class Create extends Component
         'featured_image.max' => 'The featured image may not be greater than 1MB.',
     ];
 
-    
+
 
     public function uploadImage($image)
     {
@@ -69,13 +69,14 @@ class Create extends Component
         return $this->dispatch('blogimageUploaded', $url);
     }
 
-    public function savePost(){
+    public function savePost()
+    {
         //dd($this->content);
-      $validatedData = $this->validate([
-        'title' => 'required',
-        'content' => 'required',
-        'featured_image' => 'required|image|max:1024',
-    ]);
+        $validatedData = $this->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'featured_image' => 'required|image|max:1024',
+        ]);
         $featured_image = $this->featured_image->store('blog_featured_images', 'public_uploads');
 
         $post = BlogPost::create([
@@ -88,21 +89,22 @@ class Create extends Component
         ]);
 
         $post->categories()->attach($this->categories);
-       // $post->tags()->attach($this->tags);
+        // $post->tags()->attach($this->tags);
 
         $this->reset();
 
         return redirect()->route('blog.index');
-        
     }
 
-   
 
-    public function cancel(){
+
+    public function cancel()
+    {
         return redirect()->route('blog.index');
     }
 
-    public function removeImage(){
+    public function removeImage()
+    {
         $this->featured_image = null;
     }
 
