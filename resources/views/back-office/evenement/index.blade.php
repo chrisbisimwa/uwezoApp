@@ -15,5 +15,5 @@
 
 
 
- @livewire('back-office.evenement.index')
+ @livewire('back-office.evenement.index2')
 @endsection
