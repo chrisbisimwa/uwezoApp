@@ -9,7 +9,6 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-
     use LivewireAlert;
     use WithPagination;
 
@@ -59,12 +58,11 @@ class Index extends Component
     {
         $this->dispatch('editCategory', $id);
     }
-
     public function render()
     {
         $categories = EventCategory::where('name', 'like', '%'.$this->searchTerm.'%')
             ->orWhere('description', 'like', '%'.$this->searchTerm.'%')
             ->paginate(10);
-        return view('livewire.back-office.eventcategory.index', compact('categories'));
+        return view('livewire.back-office.event-category.index', compact('categories'));
     }
 }
