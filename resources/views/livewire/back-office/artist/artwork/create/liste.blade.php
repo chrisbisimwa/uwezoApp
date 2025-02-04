@@ -75,7 +75,7 @@
                                 <a href="javascript:void(0);"
                                     class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                         class="ri-eye-line"></i></a>
-                                <a href="javascript:void(0);"
+                                <a wire:click="delete({{ $oeuvre }})"
                                     class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
                                         class="ri-delete-bin-line"></i></a>
                             </div>

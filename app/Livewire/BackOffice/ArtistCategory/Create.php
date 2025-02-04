@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Livewire\BackOffice\Category;
+namespace App\Livewire\BackOffice\ArtistCategory;
 
-use App\Models\BlogCategory;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use App\Models\Category;
 
 class Create extends Component
 {
     use LivewireAlert;
 
     public $categoryName;
-    public $categoryDescription;
     public $mode;
     public $category_id;
 
     protected $listeners = [
-        'editCategory' => 'edit',
+        'editArtistCategory' => 'edit',
     ];
 
     protected $rules = [
@@ -33,15 +32,13 @@ class Create extends Component
         $this->validate();
 
         if($this->mode=="create"){
-            BlogCategory::create([
+            Category::create([
                 'name' => $this->categoryName,
-                'description' => $this->categoryDescription,
             ]);
     
         }else{
-            $category = BlogCategory::find($this->category_id);
+            $category = Category::find($this->category_id);
             $category->name = $this->categoryName;
-            $category->description = $this->categoryDescription;
             $category->save();
 
         }
@@ -58,15 +55,14 @@ class Create extends Component
             'showConfirmButton' =>  false,
         ]);
 
-        $this->dispatch('category-created', 'Category created successfully');
+        $this->dispatch('artistCategory-created', 'Category created successfully');
         $this->resetForm();
     }
 
     public function edit($id)
     {
-        $category = BlogCategory::find($id);
+        $category = Category::find($id);
         $this->categoryName = $category->name;
-        $this->categoryDescription = $category->description;
         $this->category_id = $id;
         $this->mode = "edit";
     }
@@ -74,7 +70,6 @@ class Create extends Component
 
     public function resetForm(){
         $this->categoryName="";
-        $this->categoryDescription="";
         $this->mode = "create";
         $this->category_id = null;
     }
@@ -85,11 +80,8 @@ class Create extends Component
     }
 
 
-
-
-
     public function render()
     {
-        return view('livewire.back-office.category.create');
+        return view('livewire.back-office.artist-category.create');
     }
 }

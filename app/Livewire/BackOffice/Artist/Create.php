@@ -16,8 +16,8 @@ class Create extends Component
     use WithFileUploads, LivewireAlert;
 
     public $oeuvres = [];
-    public $nom, $prenom, $email, $genre, $biography, $photo, $abonnement, $numeroCerticat, $phone, $facebook_link, $twitter_link, $instagram_link, $spotify_link, $category_id, $datenaissance; 
-    protected $listeners = ['save-artist' => 'save', 'addNewArtwork' => 'addNewArtwork'];
+    public $nom, $prenom, $email, $genre, $biography, $photo, $abonnement, $numeroCerticat, $phone, $facebook_link, $twitter_link, $instagram_link, $spotify_link, $youtube_link, $category_id, $datenaissance; 
+    protected $listeners = ['save-artist' => 'save', 'addNewArtwork' => 'addNewArtwork', 'deleteArtwork' => 'deleteArtWork'];
 
     protected $rules = [
         'nom' => 'required',
@@ -48,6 +48,13 @@ class Create extends Component
     public function addNewArtwork($artwork){
         $this->oeuvres[] = $artwork;
     }
+
+    public function deleteArtWork($artwork){
+        /* $index = array_search($artwork, $this->oeuvres);
+        unset($this->oeuvres[$index]); */
+    }
+
+    
    
   
     public function save(){
@@ -73,7 +80,7 @@ class Create extends Component
             'facebook_link' => $this->facebook_link,
             'twitter_link' => $this->twitter_link,
             'instagram_link' => $this->instagram_link,
-            'spotify_link' => $this->spotify_link,
+            'soundcloud_link' => $this->spotify_link,
             'youtube_link' => $this->youtube_link,
             'category_id' => $this->category_id,
             'datenaissance' => $this->datenaissance,
@@ -100,9 +107,6 @@ class Create extends Component
 
    
         return redirect()->route('artist.index');
-
-        
-
 
 
     }

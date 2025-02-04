@@ -70,13 +70,13 @@
                                             <span class="side-menu__label">Artistes</span>
                                         </a>
                                     </li>
-                                    {{-- <li class="slide {{ Request::routeIs('artwork.index') ? 'active' : '' }}">
-                                        <a href="{{route('artwork.index')}}" class="side-menu__item {{ Request::routeIs('artwork.index') ? 'active' : '' }}">
+                                    <li class="slide {{ Request::routeIs('artist-category.index') ? 'active' : '' }}">
+                                        <a href="{{route('artist-category.index')}}" class="side-menu__item {{ Request::routeIs('artist-category.index') ? 'active' : '' }}">
                                             <i class="bx bx-category side-menu__icon"></i>
-                                            <span class="side-menu__label">Oeuvres</span>
+                                            <span class="side-menu__label">Catégories</span>
                                         </a>
                                     </li>
-                                    --}}
+                                   
 
                                     <li class="slide__category"><span class="category-name">Actualité</span></li>
                                  

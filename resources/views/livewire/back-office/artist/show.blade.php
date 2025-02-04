@@ -6,7 +6,7 @@
                     <div>
                         @if ($artist->photo)
                             <span class="avatar avatar-xxl avatar-rounded me-3">
-                                <img src="{{ \Storage::url($artist->photo) }}"alt="">
+                                <img src="{{ \Storage::url('uploads/'.$artist->photo) }}"alt="">
                             </span>
                         @else
                             <div class="avatar avatar-xl avatar-rounded me-3 bg-primary">

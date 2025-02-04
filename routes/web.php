@@ -28,6 +28,7 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('blog', App\Http\Controllers\BackOffice\BlogController::class);
     Route::resource('artist', App\Http\Controllers\BackOffice\ArtistController::class);
+    Route::resource('artist-category', App\Http\Controllers\BackOffice\ArtistCategoryController::class);
     //Route::resource('event', App\Http\Controllers\BackOffice\EventController::class);
     Route::resource('artwork', App\Http\Controllers\BackOffice\ArtworkController::class);
     Route::resource('blog-category', App\Http\Controllers\BackOffice\BlogCategoryController::class);
