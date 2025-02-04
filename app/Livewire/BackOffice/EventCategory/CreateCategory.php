@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Livewire;
 namespace App\Livewire\BackOffice\EventCategory;
 
 use Livewire\Component;
 use App\Models\EventCategory;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class CreatCategory extends Component
+class CreateCategory extends Component
 {
     use LivewireAlert;
 
@@ -82,9 +81,8 @@ class CreatCategory extends Component
     {
         $this->validateOnly($namecat);
     }
-
     public function render()
     {
-        return view('livewire.back-office.eventcategory.creatcategory');
+        return view('livewire.back-office.event-category.create-category');
     }
 }

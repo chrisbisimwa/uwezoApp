@@ -16,13 +16,13 @@
             @if ($artist->photo)
             <a href="{{\Storage::url('uploads/'.$artist->photo)}}" class="andro_img-popup andro_gallery">
 
-                <img class="andro_img-cover" src="{{\Storage::url($artist->photo)}}"
+                <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}"
                     alt="gallery">
 
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
-                    <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
+                    <h6 class="h3" style="cursor: pointer;" wire:click="goToArtist()">{{ $artist->nom }} {{ $artist->prenom }}</h6>
 
                     <p>
                         {{ $artist->category->name }}

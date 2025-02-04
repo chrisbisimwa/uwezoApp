@@ -12,6 +12,7 @@
         </nav>
     </div>
 </div>
-            @livewire('back-office.eventcategory.index')
+
+@livewire('back-office.event-category.index2')
 
 @endsection

@@ -53,7 +53,7 @@
                 @forelse ($topartist as $topartist) 
                 <div class="andro_event">
                   <div class="andro_album-img">
-                    <img src="{{\Storage::url($topartist->photo)}}" alt="album" style="width: 120px;">
+                    <img src="{{\Storage::url('uploads/'.$topartist->photo)}}" alt="album" style="width: 120px;">
                   </div>
                   <div class="andro_event-content">
                     <div class="andro_event-body">
