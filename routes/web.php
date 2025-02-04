@@ -58,7 +58,7 @@ Route::get('nous-contacter', [App\Http\Controllers\FrontOfficePageController::cl
 Route::get('a-propos', [App\Http\Controllers\FrontOfficePageController::class, 'about'])->name('front.about');
 
 //unsubscribe route
-/* Route::get('/unsubscribe', [App\Http\Controllers\NewsletterSubscriptionController::class, 'unsubscribe'])->name('front.unsubscribe'); */
+Route::get('/unsubscribe', [App\Http\Controllers\NewsletterSubscriptionController::class, 'unsubscribe'])->name('front.unsubscribe');
 
 Route::get('/sitemap.xml', function(){
     //file path from storage foleter
