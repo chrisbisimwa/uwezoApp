@@ -105,37 +105,39 @@
                                                     <div class="card-title">
                                                         Information de l'utilisateur
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="mb-3">
                                                         <label for="exampleInputEmail1" class="form-label">Nom</label>
                                                         <input type="text" class="form-control"
                                                             aria-describedby="Nom d'utilisateur" wire:model="userName">
-        
+
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                                                        <input type="email" class="form-control" aria-describedby="Email"
-                                                            wire:model="userEmail" disabled>
-        
+                                                        <input type="email" class="form-control"
+                                                            aria-describedby="Email" wire:model="userEmail" disabled>
+
                                                     </div>
-        
+
                                                     <div class="mb-3">
-                                                        <label for="exampleInputPassword1" class="form-label">Rôle</label>
-                                                        <select name="role" class="form-control" wire:model="userRole"
-                                                            disabled>
+                                                        <label for="exampleInputPassword1"
+                                                            class="form-label">Rôle</label>
+                                                        <select name="role" class="form-control"
+                                                            wire:model="userRole" disabled>
                                                             <option value="">Choisir un rôle</option>
                                                             <option value="admin">Admin</option>
                                                             <option value="user">Utilisateur</option>
                                                         </select>
                                                     </div>
-        
-                                                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+
+                                                    <button type="submit" class="btn btn-primary">Mettre à
+                                                        jour</button>
                                                 </div>
-                                                
+
                                             </div>
-                                            
+
                                         </div>
 
 
@@ -145,24 +147,27 @@
                                                     <div class="card-title">
                                                         Mot de passe
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">Ancien mot de
+                                                        <label for="exampleInputEmail1" class="form-label">Ancien mot
+                                                            de
                                                             passe</label>
                                                         <input type="password"
                                                             class="form-control @error('oldPassword') is-invalid @enderror"
-                                                            aria-describedby="Nom d'utilisateur" wire:model="oldPassword">
+                                                            aria-describedby="Nom d'utilisateur"
+                                                            wire:model="oldPassword">
                                                         @error('oldPassword')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span>
                                                         @enderror
                                                     </div>
-        
+
                                                     <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">Nouveau mot de
+                                                        <label for="exampleInputEmail1" class="form-label">Nouveau mot
+                                                            de
                                                             passe</label>
                                                         <input type="password"
                                                             class="form-control @error('userPassword') is-invalid @enderror"
@@ -173,26 +178,28 @@
                                                             </span>
                                                         @enderror
                                                     </div>
-        
+
                                                     <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">Confirmer le mot de
+                                                        <label for="exampleInputEmail1" class="form-label">Confirmer
+                                                            le mot de
                                                             passe</label>
                                                         <input type="password"
                                                             class="form-control @error('userPassword') is-invalid @enderror"
-                                                            aria-describedby="Email" wire:model="userPassword_confirmation">
+                                                            aria-describedby="Email"
+                                                            wire:model="userPassword_confirmation">
                                                         @error('userPassword')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span>
                                                         @enderror
                                                     </div>
-        
+
                                                     <button type="submit" class="btn btn-primary"
                                                         wire:click="changePassword()">Modifier le mot de passe</button>
                                                 </div>
-                                                
+
                                             </div>
-                                            
+
                                         </div>
                                     </div>
 
@@ -203,6 +210,21 @@
                                 <div class="tab-pane fade p-0 border-0" id="posts-tab-pane" role="tabpanel"
                                     aria-labelledby="posts-tab" tabindex="0">
                                     <div class="col-xl-12">
+                                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                                            <p class="mb-0 fw-semibold fs-14">Liste d'utilisateurs</p>
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModalXl">
+            
+                                                Ajouter
+                                            </button>
+                                            <div class="modal fade" id="exampleModalXl" tabindex="-1"
+                                                aria-labelledby="exampleModalXlLabel" style="display: none;"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-xl">
+                                                    @livewire('back-office.user.add-user')
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="table-responsive border border-bottom-0">
                                             <table class="table text-nowrap table-hover">
                                                 <thead>
