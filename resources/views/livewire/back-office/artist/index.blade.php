@@ -40,8 +40,7 @@
                             @if ($artist->photo)
                             <div class="avatar avatar-xl avatar-rounded me-3">*
                                 
-                                    <img  src="{{\Storage::url('uploads/'.$artist->photo)}}"
-                                        alt="">
+                                    <img  src="{{\Storage::url('uploads/'.$artist->photo)}}" alt="{{$artist->nom}}" class="avatar-img">
                                 
                             </div>
                             @else

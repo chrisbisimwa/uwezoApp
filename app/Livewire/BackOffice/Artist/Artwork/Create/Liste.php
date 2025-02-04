@@ -16,12 +16,10 @@ class Liste extends Component
         $this->oeuvres[] = $artwork;
     }
 
-    public function delete($artwork){
-        dd($artwork);
-        $index = array_search($artwork, $this->oeuvres);
+    public function deleteArt($index){
         unset($this->oeuvres[$index]);
 
-        $this->dispatch('deleteArtwork', $artwork);
+        $this->dispatch('deleteArtwork', $index);
     }
 
     public function render()
@@ -30,4 +28,17 @@ class Liste extends Component
     }
 }
 
+Class Artwork{
+    public $name, $type, $description, $price, $photo, $source, $date, $status;
+    public function __construct($name, $type, $description, $price, $photo, $source, $date, $status){
+        $this->name = $name;
+        $this->type = $type;
+        $this->description = $description;
+        $this->price = $price;
+        $this->photo = $photo;
+        $this->source = $source;
+        $this->date = $date;
+        $this->status = $status;
+    }
+}
 

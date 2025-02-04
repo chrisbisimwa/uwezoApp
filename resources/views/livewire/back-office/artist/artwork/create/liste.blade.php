@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody class="files-list">
-                @forelse ($oeuvres as $oeuvre)
+                @forelse ($oeuvres as $index => $oeuvre)
                     <tr>
                         <th scope="row">
                             <div class="d-flex align-items-center">
@@ -75,7 +75,7 @@
                                 <a href="javascript:void(0);"
                                     class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                         class="ri-eye-line"></i></a>
-                                <a wire:click="delete({{ $oeuvre }})"
+                                <a wire:click="deleteArt({{ $index }})"
                                     class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
                                         class="ri-delete-bin-line"></i></a>
                             </div>

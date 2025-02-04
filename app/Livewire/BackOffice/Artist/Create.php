@@ -46,12 +46,13 @@ class Create extends Component
     ];
 
     public function addNewArtwork($artwork){
+        
         $this->oeuvres[] = $artwork;
+       
     }
 
-    public function deleteArtWork($artwork){
-        /* $index = array_search($artwork, $this->oeuvres);
-        unset($this->oeuvres[$index]); */
+    public function deleteArtWork($index){
+        unset($this->oeuvres[$index]);
     }
 
     
