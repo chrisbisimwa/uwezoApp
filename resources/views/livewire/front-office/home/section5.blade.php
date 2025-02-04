@@ -22,7 +22,7 @@
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
-                    <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
+                    <h6 class="h3" style="cursor: pointer;" wire:click="goToArtist()">{{ $artist->nom }} {{ $artist->prenom }}</h6>
 
                     <p>
                         {{ $artist->category->name }}

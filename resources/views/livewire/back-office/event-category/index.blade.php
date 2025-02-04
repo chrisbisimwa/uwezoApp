@@ -85,7 +85,7 @@
 
     </div>
     <div class="col-xl-5">
-        @livewire('back-office.eventcategory.creatcategory')
+        @livewire('back-office.event-category.createCategory')
 
     </div>
 </div>
