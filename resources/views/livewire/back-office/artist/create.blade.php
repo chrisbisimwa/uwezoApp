@@ -36,7 +36,7 @@
                 @enderror
             </div>
             <div class="col-xl-6">
-                <label for="product-gender-add" class="form-label">Gender</label>
+                <label for="product-gender-add" class="form-label">Sexe</label>
                 <select class="form-control @error('genre') is-invalid @enderror" data-trigger name="product-gender-add" id="product-gender-add" wire:model="genre">
                     <option value="">Sélectionner</option>
                     <option value="Homme">Homme</option>
