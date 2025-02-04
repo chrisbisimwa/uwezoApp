@@ -6,10 +6,12 @@ use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class AddUser extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
     public $type, $photo, $name, $email, $password, $password_confirmation;
 
     protected $rules = [
@@ -29,13 +31,21 @@ class AddUser extends Component
 
         User::create([
             'type' => $this->type,
-            'photo' => $photo,
+            'profile_image' => $photo,
             'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make($this->password),
         ]);
 
         $this->reset();
+        $this->alert('success', 'Utilisateur enregistré avec success', [
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Close',
+            'cancelButtonText' =>  'Cancel',
+        ]);
         $this->dispatch('userAdded');
     }
 
