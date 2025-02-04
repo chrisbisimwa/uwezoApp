@@ -81,7 +81,6 @@ class CreateCategory extends Component
     {
         $this->validateOnly($name);
     }
-
     public function render()
     {
         return view('livewire.back-office.event-category.create-category');

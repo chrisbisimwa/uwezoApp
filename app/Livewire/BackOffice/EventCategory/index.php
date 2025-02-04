@@ -63,6 +63,6 @@ class Index extends Component
         $categories = EventCategory::where('name', 'like', '%'.$this->searchTerm.'%')
             ->orWhere('description', 'like', '%'.$this->searchTerm.'%')
             ->paginate(10);
-        return view('livewire.back-office.event-category.index', compact('categories'));
+        return view('livewire.back-office.event-category.index', compact('categories') );
     }
 }
