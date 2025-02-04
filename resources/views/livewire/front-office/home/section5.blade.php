@@ -16,7 +16,7 @@
             @if ($artist->photo)
             <a href="{{\Storage::url('uploads/'.$artist->photo)}}" class="andro_img-popup andro_gallery">
 
-                <img class="andro_img-cover" src="{{\Storage::url($artist->photo)}}"
+                <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}"
                     alt="gallery">
 
 
