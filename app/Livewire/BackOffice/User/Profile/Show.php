@@ -16,6 +16,7 @@ class Show extends Component
     public $subscriberId;
     public $userId, $userName, $userEmail,  $userRole,$oldPassword, $userPassword, $userPassword_confirmation;
 
+
     protected $messages = [
         'oldPassword.required' => 'Le champ ancien mot de passe est obligatoire',
         'userPassword.required' => 'Le champ nouveau mot de passe est obligatoire',
@@ -24,7 +25,7 @@ class Show extends Component
     ];
 
     protected $listeners = [
-        'deleteSubscription','deleteUsers'
+        'deleteSubscription','deleteUsers', 'userAdded' => 'reload'
     ];
 
     public function deleteSubscriber($id)
@@ -53,6 +54,11 @@ class Show extends Component
             'onConfirmed' => 'deleteUsers',
             'onCancelled' => 'cancelled'
         ]);
+    }
+
+    public function reload()
+    {
+        $this->render();
     }
 
     public function deleteUsers()

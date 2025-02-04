@@ -1,7 +1,6 @@
 <div class="modal-content">
     <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalXlLabel">Ajouter un
-            utilisateur</h6>
+        <h6 class="modal-title" id="exampleModalXlLabel">Modifier un utilisateur</h6>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
@@ -32,7 +31,8 @@
             </div>
             <div class="col-xl-12">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" wire:model="email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" wire:model="email"
+                    disabled>
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -41,7 +41,8 @@
             </div>
             <div class="col-xl-6">
                 <label class="form-label">Mot de passe</label>
-                <input type="password" class="form-control @error('password') is-invalid @enderror" wire:model="password">
+                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                    wire:model="password">
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -58,8 +59,8 @@
                     </span>
                 @enderror
             </div>
-            
-            
+
+
 
 
             <div class="col-xl-12">
@@ -68,7 +69,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <label for="image-oeuvre-add" class="form-label">Photo de profil</label>
-                                <input type="file" class="form-control @error('photo') is-invalid @enderror"
+                                <input type="file" class="form-control @error('photo') is-invalid @enderror"  accept="image/*"
                                     id="image-oeuvre-add" wire:model="photo">
 
                                 @error('photo')
@@ -77,29 +78,20 @@
                                     </span>
                                 @enderror
                             </div>
-                            @if ($type == 'Vidéo' || $type == 'Audio')
-                                <div class="col-xl-12">
-                                    <label for="source-oeuvre-add" class="form-label">URL</label>
-                                    <input type="text" class="form-control @error('source') is-invalid @enderror"
-                                        id="source-oeuvre-add" wire:model="source">
 
-                                    @error('source')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            @endif
                         </div>
 
                     </div>
                     <div class="col-xl-6">
                         @if ($photo)
-                        <center>
-                            <img src="{{ $photo->temporaryUrl() }}" style="width: 30%;" class="img-fluid"
-                            alt="preview">
-                        </center>
-                            
+                            <center>
+                                <img src="{{ $photo->temporaryUrl() }}" style="width: 30%;" class="img-fluid"
+                                    alt="preview">
+
+                            </center>
+                        @else
+                            <center>
+                                <img src="{{ \Storage::url('uploads/'.$photo_url) }}" style="width: 30%;" class="img-fluid" alt="preview">
                         @endif
                     </div>
 
@@ -112,6 +104,6 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary" wire:click="save">Ajouter</button>
+        <button type="button" class="btn btn-primary" wire:click="updateUser">Modifier</button>
     </div>
 </div>

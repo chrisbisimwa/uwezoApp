@@ -212,13 +212,15 @@
                                     <div class="col-xl-12">
                                         <div class="d-flex mb-3 align-items-center justify-content-between">
                                             <p class="mb-0 fw-semibold fs-14">Liste d'utilisateurs</p>
-                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModalXl">
-            
-                                                Ajouter
-                                            </button>
-                                            <div class="modal fade" id="exampleModalXl" tabindex="-1"
-                                                aria-labelledby="exampleModalXlLabel" style="display: none;"
+                                            @if (Auth::user()->role == 'admin')
+                                                <button type="button" class="btn btn-primary m-1"
+                                                    data-bs-toggle="modal" data-bs-target="#addUserModalXl">
+
+                                                    Ajouter
+                                                </button>
+                                            @endif
+                                            <div class="modal fade" id="addUserModalXl" tabindex="-1"
+                                                aria-labelledby="addUserModalXlLabel" style="display: none;"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-xl">
                                                     @livewire('back-office.user.add-user')
@@ -249,9 +251,29 @@
                                                             <td>
                                                                 <div class="hstack gap-2 fs-15">
 
-                                                                    <a wire:click="deleteUser({{ $user->id }})"
-                                                                        class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                                                            class="ri-delete-bin-line"></i></a>
+                                                                    @if (Auth::user()->role == 'admin')
+                                                                       
+                                                                            <button type="button"
+                                                                                class="btn btn-icon btn-sm btn-primary-transparent rounded-pill"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#editUserModalXl-{{ $user->id }}">
+
+                                                                                <i
+                                                                                class="ri-pencil-line"></i>
+                                                                            </button>
+                                                                        <div class="modal fade" id="editUserModalXl-{{ $user->id }}"
+                                                                            tabindex="-1"
+                                                                            aria-labelledby="editUserModalXlLabel"
+                                                                            style="display: none;" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-xl">
+                                                                                @livewire('back-office.user.edit-user', ['user' => $user])
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <a wire:click="deleteUser({{ $user->id }})"
+                                                                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                                class="ri-delete-bin-line"></i></a>
+                                                                    @endif
                                                                 </div>
                                                             </td>
                                                         </tr>
