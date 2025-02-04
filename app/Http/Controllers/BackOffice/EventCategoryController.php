@@ -11,7 +11,7 @@ class EventCategoryController extends Controller{
     
     public function index(Request $request){
       
-        return view("back-office.eventcategory.index");
+        return view("back-office.event-category.index");
     }
   
     public function create()
