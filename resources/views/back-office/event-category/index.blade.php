@@ -13,6 +13,6 @@
     </div>
 </div>
 
-@livewire('back-office.event-category.index')
+@livewire('back-office.event-category.index2')
 
 @endsection
