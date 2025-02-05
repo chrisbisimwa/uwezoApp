@@ -28,6 +28,7 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('blog', App\Http\Controllers\BackOffice\BlogController::class);
     Route::resource('artist', App\Http\Controllers\BackOffice\ArtistController::class);
+    Route::resource('updateArtist', App\Http\Controllers\BackOffice\ArtistController::class);
     Route::resource('artist-category', App\Http\Controllers\BackOffice\ArtistCategoryController::class);
     //Route::resource('event', App\Http\Controllers\BackOffice\EventController::class);
     Route::resource('artwork', App\Http\Controllers\BackOffice\ArtworkController::class);
@@ -38,6 +39,8 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
     Route::resource('event-comment', App\Http\Controllers\BackOffice\EventCommentController::class);
    // Route::resource('artwork-category', App\Http\Controllers\BackOffice\ArtworkCategoryController::class);
    Route::get('/user/profile', [BackOfficePageController::class, 'profile'])->name('profile');
+
+   //Route::put('/artist/{id}', [ArtistController::class, 'update'])->name('artist.update');
    
 });
 

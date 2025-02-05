@@ -28,6 +28,16 @@ class ArtistController extends Controller
     }
 
     /**
+     * Show the form for update a new resource.
+     */
+    public function update(string $id)
+    {
+        //
+
+        return view('back-office.artist.update', compact('id'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -53,11 +63,12 @@ class ArtistController extends Controller
 
     /**
      * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+     
+    *public function update(Request $request, string $id)
+    *{
+     *   //
+    *} 
+        */
 
     /**
      * Remove the specified resource from storage.

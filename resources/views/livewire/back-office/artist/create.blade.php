@@ -119,6 +119,10 @@
                 <label for="product-size-add" class="form-label">Youtube</label>
                 <input type="text" class="form-control"  placeholder="Youtube" wire:model="youtube_link">
             </div>
+            <div class="col-xl-6">
+                <label for="product-size-add" class="form-label">TikTok</label>
+                <input type="text" class="form-control"  placeholder="TikTok" wire:model="tiktok_link">
+            </div>
 
 
 

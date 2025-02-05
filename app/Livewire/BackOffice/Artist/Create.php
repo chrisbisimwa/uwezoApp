@@ -16,7 +16,7 @@ class Create extends Component
     use WithFileUploads, LivewireAlert;
 
     public $oeuvres = [];
-    public $nom, $prenom, $email, $genre, $biography, $photo, $abonnement, $numeroCerticat, $phone, $facebook_link, $twitter_link, $instagram_link, $spotify_link, $youtube_link, $category_id, $datenaissance; 
+    public $nom, $prenom, $email, $genre, $biography, $photo, $abonnement, $numeroCerticat, $phone, $facebook_link, $twitter_link, $instagram_link, $spotify_link, $youtube_link,$tiktok_link, $category_id, $datenaissance; 
     protected $listeners = ['save-artist' => 'save', 'addNewArtwork' => 'addNewArtwork', 'deleteArtwork' => 'deleteArtWork'];
 
     protected $rules = [
@@ -83,6 +83,7 @@ class Create extends Component
             'instagram_link' => $this->instagram_link,
             'soundcloud_link' => $this->spotify_link,
             'youtube_link' => $this->youtube_link,
+            'tiktok_link' =>$this->tiktok_link,
             'category_id' => $this->category_id,
             'datenaissance' => $this->datenaissance,
         ]);

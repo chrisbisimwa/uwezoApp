@@ -15,6 +15,8 @@
                                         class="fab fa-instagram"></i> </a> </li>
                             <li> <a class="soundcloud" href="{{ $art->soundcloud_link }}" target="_blank"> <i
                                         class="fab fa-soundcloud"></i> </a> </li>
+                            <li> <a class="soundcloud" href="{{ $art->soundcloud_link }}" target="_blank"> <i
+                                        class="fab fa-tiktok"></i> </a> </li>
                         </ul>
                     </div>
                 </div>

@@ -27,6 +27,11 @@ class Index extends Component
         return redirect()->route('artist.show', $id);
     }
 
+    public function goToUpdateArtist($id)
+    {
+        return redirect()->route('artist.update', $id);
+    }
+
     public function delete($id)
     {
         $this->artist_id = $id;

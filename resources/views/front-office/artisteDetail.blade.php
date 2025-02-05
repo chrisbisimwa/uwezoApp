@@ -21,9 +21,9 @@
       <div class="row align-items-start align-items-md-center">
         <div class="col-lg-4 col-sm-4">
           <div class="andro_artist-d-img">
-            <img class="andro_img-cover" src="{{\Storage::url($artisteDetail->photo)}}" alt="artist">
+            <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artisteDetail->photo)}}" alt="artist">
             <div class="andro_artist-d-img-shadow">
-              <img class="andro_img-cover" src="{{\Storage::url($artisteDetail->photo)}}" alt="artist">
+              <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artisteDetail->photo)}}" alt="artist">
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
                 <li> <a href="{{$artisteDetail->facebook_link}}" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
                 <li> <a href="{{$artisteDetail->twitter_link}}" target="_blank"> <i class="fab fa-twitter"></i> </a> </li>
                 <li> <a href="{{$artisteDetail->instagram_link}}" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
-                <li> <a href="{{$artisteDetail->soundcloud}}" target="_blank"> <i class="fab fa-soundcloud"></i> </a> </li>
+                <li> <a href="{{$artisteDetail->tiktok_link}}" target="_blank"> <i class="fab fa-tiktok"></i> </a> </li>
               </ul>
             </div>
 
@@ -56,7 +56,7 @@
               <div class="andro_artist-d-meta-item">
                 <b>Oeuvres: </b>
                 @foreach ($oeuvre as $oeuvreArtiste )
-                <span><a href="{{$oeuvreArtiste->lieu_oeuvre}}" target="_blank">{{$oeuvreArtiste->nom}},</a></span>
+                <span><a href="{{$oeuvreArtiste->source}}" target="_blank">{{$oeuvreArtiste->nom}},</a></span>
                 @endforeach
               </div>
             </div>
@@ -113,17 +113,19 @@
 
                 
                 <div class="andro_artist-d-section-content">
-                @foreach ($oeuvre as $oeuvreArti)
-                  <div class="andro_track style-2 andro_audio-track">
+                 @foreach ($oeuvre as $oeuvreArti)
+                   @if ($oeuvreArti->type == 'Image')
+                   <div class="andro_track style-2 andro_audio-track">
                     <audio preload="metadata" src="assets/audio/1.mp3" title="Audio"></audio>
                     <div class="andro_track-img">
-                      <img src="assets/img/tracks/md/1.jpg" alt="track">
+                    <a href="{{\Storage::url('uploads/'.$oeuvreArti->image)}}" class="andro_img-popup andro_gallery">
+                      <img src="{{\Storage::url('uploads/'.$oeuvreArti->image)}}" alt="track"></a>
                       <div class="andro_track-status">
                         <i class="fal fa-compact-disc"></i>
                       </div>
                     </div>
                     <div class="andro_track-content">
-                      <h5><a href="{{$oeuvreArti->lieu_oeuvre}}" target="_blank">{{$oeuvreArti->nom}}</a></h5>
+                      <h5>{{$oeuvreArti->nom}}</h5>
                       <div class="andro_track-footer">
                         <div class="andro_track-data">
                           <span>{{$artisteDetail->nom}} {{ $artisteDetail->prenom}}</span>
@@ -134,6 +136,39 @@
 
                     </div>
                   </div>
+                   @else
+                   <div class="andro_track style-2 andro_audio-track">
+                    <audio preload="metadata" src="assets/audio/1.mp3" title="Audio"></audio>
+                    <div class="andro_track-img">
+                    <div class="col-lg-6">
+                        <div class="position-relative h-100">
+                            <img class="andro_img-cover" src="../front-office-assets/img/videos/10.jpg" alt="Video">
+                            <a href="{{$oeuvreArti->source}}"
+                                class="center-absolute andro_video-icon pulse andro_video-popup"> <i
+                                    class="fas fa-play"></i> </a>
+                        </div>
+                    </div>
+                      
+                      <div class="andro_track-status">
+                        <i class="fal fa-compact-disc"></i>
+                      </div>
+                    </div>
+                    <div class="andro_track-content">
+                      <h5><a href="{{$oeuvreArti->source}}" target="_blank">{{$oeuvreArti->nom}}</a></h5>
+                      <div class="andro_track-footer">
+                        <div class="andro_track-data">
+                          <span>{{$artisteDetail->nom}} {{ $artisteDetail->prenom}}</span>
+                          <b>{{$dateOeuvreArti= date('d - m - Y', strtotime($oeuvreArti->date))}}</b>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                  </div>
+                   @endif
+                  
+                  
+
                   @endforeach
                 </div>
                 

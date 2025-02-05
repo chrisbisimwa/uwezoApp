@@ -27,4 +27,9 @@ Class BackOfficePageController extends Controller
     {
         return view('back-office.profile.show');
     }
+
+    public function updateArtist()
+    {
+        return view('back-office.update');
+    }
 }

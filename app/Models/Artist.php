@@ -23,6 +23,7 @@ class Artist extends Model
         'instagram_link',
         'soundcloud_link',
         'youtube_link',
+        'tiktok_link',
         'category_id',
         'datenaissance'
     ];

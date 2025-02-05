@@ -41,11 +41,6 @@
                                             </div>
                                         </div>
                                     </td>
-                                   
-        
-        
-        
-        
                                     <td>
                                         <button class="btn btn-primary-light btn-icon btn-sm" data-bs-toggle="tooltip"
                                             data-bs-placement="top" data-bs-title="Modifier"

@@ -23,10 +23,10 @@
                                     class="ri-pencil-line me-1 align-middle d-inline-block"></i>Modifier</button>
                         </div>
                         <p class="mb-1 text-muted text-fixed-white op-7">{{ $artist->category->name }}</p>
-                         <p class="fs-12 text-fixed-white mb-4 op-5">
+                         {{--<p class="fs-12 text-fixed-white mb-4 op-5">
                             <span class="me-3"><i class="ri-building-line me-1 align-middle"></i>Georgia</span>
-                            <span><i class="ri-map-pin-line me-1 align-middle"></i>Washington sh D.C</span>
-                        </p> 
+                            <span><i class="ri-map-pin-line me-1 align-middle"></i>Washingtons D.C</span>
+                        </p> --}}
                         <div class="d-flex mb-0">
                             <div class="me-4">
                                 <p class="fw-bold fs-20 text-fixed-white text-shadow mb-0">
@@ -65,12 +65,12 @@
                             </span>
                             {{ $artist->phone }}
                         </p>
-                        {{-- <p class="mb-0">
+                         <p class="mb-0">
                             <span class="avatar avatar-sm avatar-rounded me-2 bg-light text-muted">
                                 <i class="ri-map-pin-line align-middle fs-14"></i>
                             </span>
                             MIG-1-11, Monroe Street, Georgetown, Washington D.C, USA,20071
-                        </p> --}}
+                        </p> 
                     </div>
                 </div>
                 <div class="p-4 border-bottom border-block-end-dashed d-flex align-items-center">
@@ -149,18 +149,6 @@
                                                 class="ri-bill-line me-1 align-middle d-inline-block"></i>Evenements</button>
                                     </li>
                                 </ul>
-                                <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModalXl">
-                                                <i class="ri-image-add-line me-1 align-middle d-inline-block"></i>
-                                                Ajouter
-                                            </button>
-                                            <div class="modal fade" id="exampleModalXl" tabindex="-1"
-                                                aria-labelledby="exampleModalXlLabel" style="display: none;"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog modal-xl">
-                                                    @livewire('back-office.artist.artwork.create')
-                                                </div>
-                                            </div>
                             </div>
 
                         </div>
