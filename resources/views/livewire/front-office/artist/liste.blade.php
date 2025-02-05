@@ -9,14 +9,31 @@
                         <div class="andro_artist-meta">
                         </div>
                         <ul class="andro_socials">
+                            @if ($art->facebook_link)
                             <li> <a class="facebook" href="{{ $art->facebook_link }}" target="_blank"> <i
-                                        class="fab fa-facebook-f"></i> </a> </li>
+                                class="fab fa-facebook-f"></i> </a> </li>
+                            @endif
+                            @if ($art->twitter_link)
+                            <li> <a class="twitter" href="{{ $art->twitter_link }}" target="_blank"> <i
+                                class="fab fa-twitter"></i> </a> </li>
+                            @endif
+                            @if ($art->instagram_link)
                             <li> <a class="instagram" href="{{ $art->instagram_link }}" target="_blank"> <i
-                                        class="fab fa-instagram"></i> </a> </li>
-                            <li> <a class="soundcloud" href="{{ $art->soundcloud_link }}" target="_blank"> <i
-                                        class="fab fa-soundcloud"></i> </a> </li>
-                            <li> <a class="soundcloud" href="{{ $art->soundcloud_link }}" target="_blank"> <i
-                                        class="fab fa-tiktok"></i> </a> </li>
+                                class="fab fa-instagram"></i> </a> </li>
+                            @endif
+                            @if ($art->soundcloud_link)
+                            <li> <a class="spotify" href="{{ $art->soundcloud_link }}" target="_blank"> <i
+                                class="fab fa-spotify"></i> </a> </li> 
+                            @endif
+                            @if ($art->youtube_link)
+                            <li> <a class="youtube" href="{{ $art->youtube_link }}" target="_blank"> <i
+                                class="fab fa-youtube"></i> </a> </li>
+                            @endif
+                            @if($art->tiktok_link)
+                            <li> <a class="tiktok" href="{{ $art->tiktok_link }}" target="_blank"> <i
+                                class="fab fa-tiktok"></i> </a> </li>
+                            @endif
+                            
                         </ul>
                     </div>
                 </div>
