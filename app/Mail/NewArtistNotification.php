@@ -15,7 +15,7 @@ class NewBlogPostNotification extends Mailable
 
     public function __construct(Artist $artist)
     {
-        $this->blogPost = $artist;
+        $this->artist = $artist;
     }
 
     public function build()
