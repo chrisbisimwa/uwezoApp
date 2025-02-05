@@ -18,9 +18,10 @@ class NewBlogPostNotification extends Mailable
         $this->artist = $artist;
     }
 
+
     public function build()
     {
-        return $this->subject('Nouvel artiste disponible !')
+        return $this->subject('Un nouvel artiste disponible sur SANAA YETU!')
                     ->view('emails.new_artist');
     }
 }
