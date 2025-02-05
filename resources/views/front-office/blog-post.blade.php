@@ -50,7 +50,7 @@
         <div class="container">
 
             <div class="andro_post-d-img">
-                @if ($blogPost->featured_image)
+                @if ($blogPost && $blogPost->featured_image)
                     <img src="{{ asset('storage/uploads/' . $blogPost->featured_image) }}" alt="blog" alt="artist" style="max-height: 580px">
                 @else
                     <img src="{{ asset('front-office-assets/img/blog/details/11.jpg') }}" alt="blog">
