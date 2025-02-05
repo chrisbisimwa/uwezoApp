@@ -4,6 +4,7 @@ namespace App\Livewire\BackOffice\Artist;
 
 use Livewire\Component;
 use App\Models\Artist;
+use App\Models\Oeuvre;
 use Livewire\WithPagination;
 use App\Models\Category;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -12,9 +13,11 @@ class Show extends Component
 {
     use WithPagination;
     use LivewireAlert;
-    protected $listeners = ['clodeAddArtworkModal' => 'reload'];
+    protected $listeners = ['clodeAddArtworkModal' => 'reload', 'deleteArtworks'];
     public $id, $mode='show', $nom, $prenom, $email, $genre, $biography, $photo, $numeroCerticat, $phone, $datenaissance;
     public $facebook_link, $instagram_link, $twitter_link, $soundcloud_link, $youtube_link, $category_id;
+    public $oeuvre_id;
+
 
     protected $rules = [
         'nom' => 'required',
@@ -122,6 +125,36 @@ class Show extends Component
     {
         $this->render();
     }
+
+    public function deleteArtwork($id)
+    {
+
+        $this->oeuvre_id = $id;
+        $this->confirm('Voulez-vous vraiment supprimer cette oeuvre ?', [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'cancelButtonText' => 'Non',
+            'onConfirmed' => 'deleteArtworks',
+        ]);
+    }
+
+    public function deleteArtworks(){
+        $oeuvre = Oeuvre::where('id', $this->oeuvre_id)->first();
+        $oeuvre->delete();
+        $this->alert('success', 'Oeuvre supprimée avec succès', [
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Fermer',
+            'cancelButtonText' =>  'Annuler',
+            'showCancelButton' =>  false,
+            'showConfirmButton' =>  false,
+        ]);
+        $this->render();
+    }
+        
 
     public function render()
     {
