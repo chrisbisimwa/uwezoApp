@@ -71,9 +71,9 @@
                                 <i class="ri-more-2-fill"></i>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" wire:click="goToUpdateArtist({{$artist->id}})" style="cursor:pointer;"><i
+                              {{--   <li><a class="dropdown-item" wire:click="goToUpdateArtist({{$artist->id}})" style="cursor:pointer;"><i
                                     class="ri-pencil-line me-2 align-middle d-inline-block"></i>Modifier</a></li>
-                             
+                              --}}
                                 
                               
                                

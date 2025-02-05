@@ -6,7 +6,7 @@
                     <div>
                         @if ($artist->photo)
                             <span class="avatar avatar-xxl avatar-rounded me-3">
-                                <img src="{{ \Storage::url('uploads/'.$artist->photo) }}"alt="">
+                                <img src="{{ \Storage::url('uploads/' . $artist->photo) }}"alt="">
                             </span>
                         @else
                             <div class="avatar avatar-xl avatar-rounded me-3 bg-primary">
@@ -19,107 +19,253 @@
                     <div class="flex-fill main-profile-info">
                         <div class="d-flex align-items-center justify-content-between">
                             <h6 class="fw-semibold mb-1 text-fixed-white">{{ $artist->nom }} {{ $artist->prenom }}</h6>
-                            <button class="btn btn-light btn-wave waves-effect waves-light"><i
-                                    class="ri-pencil-line me-1 align-middle d-inline-block"></i>Modifier</button>
+                            @if ($mode == 'show')
+                                <button class="btn btn-light btn-wave waves-effect waves-light"
+                                    wire:click="changeMode('edit')"><i
+                                        class="ri-pencil-line me-1 align-middle d-inline-block"></i>Modifier</button>
+                            @endif
+
+
+
                         </div>
                         <p class="mb-1 text-muted text-fixed-white op-7">{{ $artist->category->name }}</p>
-                         <p class="fs-12 text-fixed-white mb-4 op-5">
+                        {{--  <p class="fs-12 text-fixed-white mb-4 op-5">
                             <span class="me-3"><i class="ri-building-line me-1 align-middle"></i>Georgia</span>
                             <span><i class="ri-map-pin-line me-1 align-middle"></i>Washington sh D.C</span>
-                        </p> 
+                        </p> --}}
+
                         <div class="d-flex mb-0">
                             <div class="me-4">
                                 <p class="fw-bold fs-20 text-fixed-white text-shadow mb-0">
-                                    {{ count($artist->artworks) }}</p>
+                                    {{ count($artist->oeuvres) }}</p>
                                 <p class="mb-0 fs-11 op-5 text-fixed-white">Oeuvres</p>
                             </div>
                             <div class="me-4">
-                                <p class="fw-bold fs-20 text-fixed-white text-shadow mb-0">0</p>
+                                <p class="fw-bold fs-20 text-fixed-white text-shadow mb-0">
+                                    {{ count($artist->evenements) }}</p>
                                 <p class="mb-0 fs-11 op-5 text-fixed-white">Evenemnts</p>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="p-4 border-bottom border-block-end-dashed">
-                    <div class="mb-4">
-                        <p class="fs-15 mb-2 fw-semibold">Biographie :</p>
-                        <p class="fs-12 text-muted op-7 mb-0">
-                            {{ $artist->biography }}
-                        </p>
-                    </div>
+                @if ($mode == 'show')
+                    <div class="p-4 border-bottom border-block-end-dashed">
+                        <div class="mb-4">
+                            <p class="fs-15 mb-2 fw-semibold">Biographie :</p>
+                            <p class="fs-12 text-muted op-7 mb-0">
+                                {{ $artist->biography }}
+                            </p>
+                        </div>
 
-                </div>
-                <div class="p-4 border-bottom border-block-end-dashed">
-                    <p class="fs-15 mb-2 me-4 fw-semibold">Contacts :</p>
-                    <div class="text-muted">
-                        <p class="mb-2">
-                            <span class="avatar avatar-sm avatar-rounded me-2 bg-light text-muted">
-                                <i class="ri-mail-line align-middle fs-14"></i>
-                            </span>
-                            {{ $artist->email }}
-                        </p>
-                        <p class="mb-2">
-                            <span class="avatar avatar-sm avatar-rounded me-2 bg-light text-muted">
-                                <i class="ri-phone-line align-middle fs-14"></i>
-                            </span>
-                            {{ $artist->phone }}
-                        </p>
-                        {{-- <p class="mb-0">
+                    </div>
+                    <div class="p-4 border-bottom border-block-end-dashed">
+                        <p class="fs-15 mb-2 me-4 fw-semibold">Contacts :</p>
+                        <div class="text-muted">
+                            <p class="mb-2">
+                                <span class="avatar avatar-sm avatar-rounded me-2 bg-light text-muted">
+                                    <i class="ri-mail-line align-middle fs-14"></i>
+                                </span>
+                                {{ $artist->email }}
+                            </p>
+                            <p class="mb-2">
+                                <span class="avatar avatar-sm avatar-rounded me-2 bg-light text-muted">
+                                    <i class="ri-phone-line align-middle fs-14"></i>
+                                </span>
+                                {{ $artist->phone }}
+                            </p>
+                            {{-- <p class="mb-0">
                             <span class="avatar avatar-sm avatar-rounded me-2 bg-light text-muted">
                                 <i class="ri-map-pin-line align-middle fs-14"></i>
                             </span>
                             MIG-1-11, Monroe Street, Georgetown, Washington D.C, USA,20071
                         </p> --}}
+                        </div>
                     </div>
-                </div>
-                <div class="p-4 border-bottom border-block-end-dashed d-flex align-items-center">
-                    <p class="fs-15 mb-2 me-4 fw-semibold">Réseaux sociaux:</p>
-                    <div class="btn-list mb-0">
-                        @if ($artist->facebook_link)
-                            <a href="{{ $artist->facebook_link }}"
-                                class="btn btn-sm btn-icon btn-primary-light btn-wave waves-effect waves-light"
-                                target="_blank">
-                                <i class="ri-facebook-line fw-semibold"></i>
-                            </a>
-                        @endif
-                        @if ($artist->twitter_link)
-                            <a href="{{ $artist->twitter_link }}"
-                                class="btn btn-sm btn-icon btn-secondary-light btn-wave waves-effect waves-light"
-                                target="_blank">
-                                <i class="ri-twitter-line fw-semibold"></i>
-                            </a>
-                        @endif
-                        @if ($artist->instagram_link)
-                            <a href="{{ $artist->instagram_link }}"
-                                class="btn btn-sm btn-icon btn-warning-light btn-wave waves-effect waves-light"
-                                target="_blank">
-                                <i class="ri-instagram-line fw-semibold"></i>
-                            </a>
-                        @endif
-                        @if ($artist->tiktok_link)
-                            <a href="{{ $artist->tiktok_link }}"
-                                class="btn btn-sm btn-icon btn-warning-light btn-wave waves-effect waves-light"
-                                target="_blank">
-                                <i class="ri-tiktok-line fw-semibold"></i>
-                            </a>
-                        @endif
-                        @if ($artist->soundcloud_link)
-                            <a href="{{ $artist->soundcloud_link }}"
-                                class="btn btn-sm btn-icon btn-info-light btn-wave waves-effect waves-light"
-                                target="_blank">
-                                <i class="ri-spotify-line fw-semibold"></i>
-                            </a>
-                        @endif
-                        @if ($artist->youtube_link)
-                            <a href="{{ $artist->youtube_link }}"
-                                class="btn btn-sm btn-icon btn-danger-light btn-wave waves-effect waves-light"
-                                target="_blank">
-                                <i class="ri-youtube-line fw-semibold"></i>
-                            </a>
-                        @endif
+                    <div class="p-4 border-bottom border-block-end-dashed d-flex align-items-center">
+                        <p class="fs-15 mb-2 me-4 fw-semibold">Réseaux sociaux:</p>
+                        <div class="btn-list mb-0">
+                            @if ($artist->facebook_link)
+                                <a href="{{ $artist->facebook_link }}"
+                                    class="btn btn-sm btn-icon btn-primary-light btn-wave waves-effect waves-light"
+                                    target="_blank">
+                                    <i class="ri-facebook-line fw-semibold"></i>
+                                </a>
+                            @endif
+                            @if ($artist->twitter_link)
+                                <a href="{{ $artist->twitter_link }}"
+                                    class="btn btn-sm btn-icon btn-secondary-light btn-wave waves-effect waves-light"
+                                    target="_blank">
+                                    <i class="ri-twitter-line fw-semibold"></i>
+                                </a>
+                            @endif
+                            @if ($artist->instagram_link)
+                                <a href="{{ $artist->instagram_link }}"
+                                    class="btn btn-sm btn-icon btn-warning-light btn-wave waves-effect waves-light"
+                                    target="_blank">
+                                    <i class="ri-instagram-line fw-semibold"></i>
+                                </a>
+                            @endif
+                            @if ($artist->tiktok_link)
+                                <a href="{{ $artist->tiktok_link }}"
+                                    class="btn btn-sm btn-icon btn-warning-light btn-wave waves-effect waves-light"
+                                    target="_blank">
+                                    <i class="ri-tiktok-line fw-semibold"></i>
+                                </a>
+                            @endif
+                            @if ($artist->soundcloud_link)
+                                <a href="{{ $artist->soundcloud_link }}"
+                                    class="btn btn-sm btn-icon btn-info-light btn-wave waves-effect waves-light"
+                                    target="_blank">
+                                    <i class="ri-spotify-line fw-semibold"></i>
+                                </a>
+                            @endif
+                            @if ($artist->youtube_link)
+                                <a href="{{ $artist->youtube_link }}"
+                                    class="btn btn-sm btn-icon btn-danger-light btn-wave waves-effect waves-light"
+                                    target="_blank">
+                                    <i class="ri-youtube-line fw-semibold"></i>
+                                </a>
+                            @endif
+                        </div>
                     </div>
-                </div>
+                @else
+                    <div class="p-4 border-bottom border-block-end-dashed d-flex align-items-center">
+                        
+                        <div class="row">
+                            <p class="fs-15 mb-2 me-4 fw-semibold">Modifier l'artiste</p>
+                            <div class="col-xl-6">
+                                <label for="product-name-add" class="form-label">Nom</label>
+                                <input type="text" class="form-control @error('nom') is-invalid @enderror" id="product-name-add"
+                                    placeholder="Nom" wire:model="nom">
+                                    @error('nom')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-name-add" class="form-label">Prénom</label>
+                                <input type="text" class="form-control @error('prenom') is-invalid @enderror" id="product-name-add" placeholder="Prénom" wire:model="prenom">
+                                @error('prenom')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-category-add" class="form-label">Categorie</label>
+                                <select class="form-control @error('category_id') is-invalid @enderror" data-trigger name="product-category-add" id="product-category-add" wire:model="category_id">
+                                    <option value="">Sélectionner</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                
+                                </select>
+                                @error('category_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-gender-add" class="form-label">Sexe</label>
+                                <select class="form-control @error('genre') is-invalid @enderror" data-trigger name="product-gender-add" id="product-gender-add" wire:model="genre">
+                                    <option value="">Sélectionner</option>
+                                    <option value="Homme">Homme</option>
+                                    <option value="Femme">Femme</option>
+                                </select>
+                                @error('genre')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Numéro
+                                    d'enregistrement</label>
+                                <input type="text" class="form-control @error('numeroCerticat') is-invalid @enderror" placeholder="Numéro d'enregistrement" wire:model="numeroCerticat">
+                                @error('numeroCerticat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Date de naissance</label>
+                                <input type="date" class="form-control @error('datenaissance') is-invalid @enderror" placeholder="Date de naissance" wire:model="datenaissance">
+                                @error('datenaissance')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-12">
+                                <label for="product-description-add" class="form-label">Biographie</label>
+                                <textarea class="form-control" id="product-description-add" rows="5" wire:model="biography"></textarea>
+                                <label for="product-description-add" class="form-label mt-1 fs-12 op-5 text-muted mb-0">*La description ne doit pas dépasser 500 lettres</label>
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Numéro de téléphone</label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="product-name-add" placeholder="Téléphone" wire:model="phone">
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Email</label>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="product-name-add" placeholder="Email" wire:model="email">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-12">
+                                <label for="product-size-add" class="form-label">Photo</label>
+                                <input type="file" class="form-control @error('photo') is-invalid @enderror" wire:model="photo">
+                                @error('photo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Facebook</label>
+                                <input type="text" class="form-control"  placeholder="Facebook" wire:model="facebook_link">
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Twitter</label>
+                                <input type="text" class="form-control"  placeholder="Twiter" wire:model="twitter_link">
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Instagram</label>
+                                <input type="text" class="form-control"  placeholder="Instagram" wire:model="instagram_link">
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Spotify</label>
+                                <input type="text" class="form-control"  placeholder="Spotify" wire:model="spotify_link">
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">Youtube</label>
+                                <input type="text" class="form-control"  placeholder="Youtube" wire:model="youtube_link">
+                            </div>
+                            <div class="col-xl-6">
+                                <label for="product-size-add" class="form-label">TikTok</label>
+                                <input type="text" class="form-control"  placeholder="TikTok" wire:model="tiktok_link">
+                            </div>
+
+                            <div class="px-4 py-3 border-top border-block-start-dashed d-sm-flex justify-content-end">
+                                <button class="btn btn-primary-light m-1" wire:click="update()" >Enregistrer<i class="bi bi-save-line ms-2"></i></button>
+                                <button class="btn btn-success-light m-1" wire:click="changeMode('show')" >Annuler</i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                @endif
+
 
 
             </div>
@@ -132,36 +278,28 @@
                     <div class="card-body p-0">
                         <div
                             class="p-3 border-bottom border-block-end-dashed d-flex align-items-center justify-content-between">
-                            <div>
-                                <ul class="nav nav-tabs mb-0 tab-style-6 justify-content-start" id="myTab"
-                                    role="tablist">
 
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="followers-tab" data-bs-toggle="tab"
-                                            data-bs-target="#followers-tab-pane" type="button" role="tab"
-                                            aria-controls="followers-tab-pane" aria-selected="false" tabindex="-1"><i
-                                                class="ri-exchange-box-line me-1 align-middle d-inline-block"></i>Oeuvres</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="gallery-tab" data-bs-toggle="tab"
-                                            data-bs-target="#gallery-tab-pane" type="button" role="tab"
-                                            aria-controls="gallery-tab-pane" aria-selected="false" tabindex="-1"><i
-                                                class="ri-bill-line me-1 align-middle d-inline-block"></i>Evenements</button>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModalXl">
-                                                <i class="ri-image-add-line me-1 align-middle d-inline-block"></i>
-                                                Ajouter
-                                            </button>
-                                            <div class="modal fade" id="exampleModalXl" tabindex="-1"
-                                                aria-labelledby="exampleModalXlLabel" style="display: none;"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog modal-xl">
-                                                    @livewire('back-office.artist.artwork.create')
-                                                </div>
-                                            </div>
-                            </div>
+                            <ul class="nav nav-tabs mb-0 tab-style-6 justify-content-start" id="myTab"
+                                role="tablist">
+
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="followers-tab" data-bs-toggle="tab"
+                                        data-bs-target="#followers-tab-pane" type="button" role="tab"
+                                        aria-controls="followers-tab-pane" aria-selected="false" tabindex="-1"><i
+                                            class="ri-exchange-box-line me-1 align-middle d-inline-block"></i>Oeuvres</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="gallery-tab" data-bs-toggle="tab"
+                                        data-bs-target="#gallery-tab-pane" type="button" role="tab"
+                                        aria-controls="gallery-tab-pane" aria-selected="false" tabindex="-1"><i
+                                            class="ri-bill-line me-1 align-middle d-inline-block"></i>Evenements</button>
+                                </li>
+                            </ul>
+
+
+
+
+
 
                         </div>
                         <div class="p-3">
@@ -171,6 +309,24 @@
                                     role="tabpanel" aria-labelledby="followers-tab" tabindex="0">
                                     <div class="row">
                                         <div class="col-xl-12">
+                                            <div class="d-flex mb-3 align-items-center justify-content-between">
+                                                <p class="mb-0 fw-semibold fs-14">Les oeuvres de l'artiste</p>
+
+                                                <button type="button" class="btn btn-primary m-1"
+                                                    data-bs-toggle="modal" data-bs-target="#addArtWorkModalXl">
+                                                    <i class="ri-image-add-line me-1 align-middle d-inline-block"></i>
+                                                    Ajouter
+                                                </button>
+
+                                                <div class="modal fade" id="addArtWorkModalXl" tabindex="-1"
+                                                    aria-labelledby="addArtWorkModalXlLabel" style="display: none;"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl">
+                                                        @livewire('back-office.artist.artwork.add', ['artist' => $artist])
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="table-responsive border border-bottom-0">
                                                 <table class="table text-nowrap table-hover">
                                                     <thead>
@@ -258,19 +414,7 @@
                                                     <tfoot>
                                                         <tr>
                                                             <td colspan="5">
-                                                                <nav aria-label="Page navigation">
-                                                                    <ul class="pagination justify-content-end mb-0">
-                                                                        <li class="page-item disabled"><a
-                                                                                class="page-link"
-                                                                                href="#">Previous</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">1</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">2</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">Next</a></li>
-                                                                    </ul>
-                                                                </nav>
+
                                                             </td>
                                                         </tr>
                                                     </tfoot>

@@ -4,11 +4,14 @@ namespace App\Livewire\BackOffice\Artist\Artwork;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Models\Oeuvre;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class createOeuvre extends Component
+class Add extends Component
 {
     use WithFileUploads;
-    public $name, $type, $description, $price, $photo, $source, $date, $status;
+    use LivewireAlert;
+    public $name, $type, $description, $price, $photo, $source, $date, $status, $artist;
 
     protected $rules = [
         'name' => 'required',
@@ -27,7 +30,12 @@ class createOeuvre extends Component
         'photo.image' => 'Le champ image doit être une image.',
     ];
 
-    public function addNewArtwork()
+    public function mount($artist)
+    {
+        $this->artist = $artist;
+    }
+
+    public function saveNewArtwork()
     {
         //dd($this->photo);
         $validated = $this->validate();
@@ -37,24 +45,27 @@ class createOeuvre extends Component
                 $image = $this->photo->store('artworks', 'public_uploads');
             }
 
-            $this->dispatch('addNewArtwork', [
-                'name' => $this->name,
+            $this->artist->oeuvres()->create([
+                'nom' => $this->name,
                 'type' => $this->type,
                 'description' => $this->description,
-                'price' => $this->price,
+                'prix' => $this->price,
                 'image' => $image,
                 'source' => $this->source,
                 'date' => $this->date,
-                'status' => $this->status,
+                'statut' => $this->status,
             ]);
 
-            $this->dispatch('clodeArtworkModal');
+           
+           
+
+            $this->dispatch('clodeAddArtworkModal');
 
             $this->reset();
         }
     }
     public function render()
     {
-        return view('livewire.back-office.artist.artwork.create');
+        return view('livewire.back-office.artist.artwork.add');
     }
 }

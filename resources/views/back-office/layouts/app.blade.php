@@ -760,6 +760,14 @@
             }
         });
 
+        document.addEventListener('clodeAddArtworkModal', () => {
+            const modalElement = document.getElementById('addArtWorkModalXl');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+        });
+
         document.addEventListener('closeUserEditModal', (event) => {
             const userId = event.detail.id;
             const modalElement = document.getElementById('editUserModalXl-'+userId);
