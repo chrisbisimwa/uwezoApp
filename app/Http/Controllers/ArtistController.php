@@ -35,4 +35,13 @@ class ArtistController extends Controller
         //dd($event);
         return view('front-office.eventComingArtist',compact('event'));
     }
+
+
+    public function artisteCategory($slug){
+
+        $category_id = Category::where('slug', $slug)->first()->id;
+       
+        return view('front-office.artiste', compact('category_id'));
+        
+    }
 }

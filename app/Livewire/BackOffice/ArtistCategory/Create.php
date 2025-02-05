@@ -34,6 +34,7 @@ class Create extends Component
         if($this->mode=="create"){
             Category::create([
                 'name' => $this->categoryName,
+                'slug' => \Str::slug($this->categoryName),
             ]);
     
         }else{

@@ -19,7 +19,7 @@
                         <ul>
                             <li> <a href="{{ route('front.artistes') }}">Tous les artistes</a> </li>
                             @foreach ($categories as $cat)
-                                <li> <a href="{{ route('front.artisteCategory', ['slug' => $cat->id]) }}">{{ $cat->name }}</a> </li>
+                                <li> <a href="{{ route('front.artisteCategory', ['slug' => $cat->slug]) }}">{{ $cat->name }}</a> </li>
                             @endforeach
                         </ul>
                     </li>

@@ -20,7 +20,7 @@
 
         <div class="container">
     
-            @livewire('front-office.artist.cat')
+            @livewire('front-office.artist.cat', ['category_id' => $category_id])
             
     
             @livewire('front-office.artist.liste')

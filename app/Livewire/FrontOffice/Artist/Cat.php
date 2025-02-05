@@ -10,7 +10,7 @@ class Cat extends Component
     public $category_id;
 
     public function mount(){
-        $this->category_id=null;
+        $this->dispatch('categorySelected', $this->category_id);   
     }
 
     public function selectCategory($id)
