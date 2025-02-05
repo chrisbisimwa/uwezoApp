@@ -21,7 +21,7 @@ class HomeController extends Controller
     
 
     public function artistes(){
-        $category_id=null;
+        $category_id=0;
         return view('front-office.artiste',compact('category_id'));
     }
     

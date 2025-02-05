@@ -23,7 +23,7 @@
             @livewire('front-office.artist.cat', ['category_id' => $category_id])
             
     
-            @livewire('front-office.artist.liste')
+            @livewire('front-office.artist.liste', ['category_id' => $category_id])
 
             {{-- <div class="row">
                 <div class="col-lg-4">
