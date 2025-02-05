@@ -112,7 +112,7 @@
         </ul>
       </div>
 
-      @livewire('front-office.events.eventcomment', ['eventDetails' => $eventDetails])
+      @livewire('front-office.events.event-comment2', ['eventDetails' => $eventDetails])
 
           </div>
         </div>
