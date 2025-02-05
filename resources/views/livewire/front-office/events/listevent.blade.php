@@ -14,7 +14,7 @@
                  
                   <div class="andro_event">
                     <div class="andro_album-img" style="margin-right: 10px;">
-                      <img src="{{ asset('storage/uploads/'.$event->image_path) }} " width="100"  alt="album">
+                      <img src="{{ asset('storage/uploads/'.$event->image_path) }} " width="100" height="60" alt="album">
                     </div>
                     <div class="andro_event-content">
                       <div class="andro_event-body">
