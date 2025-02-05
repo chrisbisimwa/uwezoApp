@@ -9,7 +9,7 @@ class Section5 extends Component
 {
     public function render()
     {
-        $artists = Artist::orderBy('created_at', 'desc')->take(6)->get();
+        $artists = Artist::orderBy('created_at', 'desc')->inRandomOrder()->limit(6)->get();
         return view('livewire.front-office.home.section5', compact('artists'));
     }
 }
