@@ -18,7 +18,7 @@
     <div class="row align-items-start align-items-md-center">
       <div class="col-lg-4 col-sm-4">
         <div class="andro_artist-d-img">
-          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$eventDetails->image_path) }} " width="100" height="60" alt="image event">
+          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$eventDetails->image_path) }} " width="100" alt="image event">
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1 col-sm-8">
