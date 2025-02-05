@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="section md white-bg">
+    <div class="section md white-bg" style="margin-bottom: 20px;">
 
         <div class="container">
     
@@ -43,19 +43,21 @@
         <div class="container">
 
             <div class="section-title text-center">
-                <h3>Retrouvez toute les meilleures musiques </h3>
-                <p class="mb-0">La musique et les playlists permettront à vos fans de profiter de l'écoute</p>
+                <h3>Devenez partie intégrante de notre communauté artistique</h3>
+                
             </div>
 
-            <div class="andro_lineup">
+            <div class="andro_lineup text-center">
 
+                <p class="mb-0">Vous avez aimé découvrir nos artistes ? Pourquoi ne pas aller plus loin ? En nous contactant, vous pourrez non seulement suivre les dernières œuvres de vos artistes préférés, mais aussi participer à des discussions, des événements exclusifs, et même soumettre vos propres créations. Rejoignez-nous pour faire partie d'un réseau où l'art est célébré, discuté et vécu au quotidien.
 
+                </p>
 
             </div>
 
         </div>
     </div>
-   {{--  <div class="section lg blue-bg" style="background-image: url(assets/img/texture-2.png)">
+    <div class="section lg blue-bg" style="background-image: url(assets/img/texture-2.png)">
         <div class="container">
             <div class="row justify-content-center">
 
@@ -66,7 +68,7 @@
                         </div>
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Phone</h6>
-                            <span class="text-white">+(243)998 564 037</span>
+                            <span class="text-white">+(243) 998 564 037</span>
                             
                         </div>
                     </div>
@@ -123,5 +125,5 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 @endsection
