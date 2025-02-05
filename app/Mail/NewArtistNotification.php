@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NewBlogPostNotification extends Mailable
+class NewArtistNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
