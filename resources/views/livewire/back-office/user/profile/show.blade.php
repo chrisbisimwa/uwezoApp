@@ -6,7 +6,7 @@
                     <div>
                         <span class="avatar avatar-xxl avatar-rounded online me-3">
                             @if (Auth::user()->profile_image)
-                                <img src="{{ asset('storage/' . Auth::user()->profile_image) }}"
+                                <img src="{{ asset('storage/uploads/' . Auth::user()->profile_image) }}"
                                     alt="{{ Auth::user()->name }}">
                             @else
                                 <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
