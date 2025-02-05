@@ -4,7 +4,7 @@
         <div class="andro_post-d-section-content">
             <ol class="andro_comment-list">
                 @forelse ($comments as $comment)
-                    @if ($comment->status == 'approved' || $comment->user_id == Auth()->user()->id)
+                    @if ($comment->status == 'approved' || (Auth()->user() && $comment->user_id == Auth()->user()->id))
                         <li>
                             <div class="andro_comment-item">
                                 <div class="andro_comment-author">
