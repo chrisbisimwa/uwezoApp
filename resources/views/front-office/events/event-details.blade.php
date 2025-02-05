@@ -156,7 +156,7 @@
             @forelse ( $blogPosts as $blogPost)
             <div class="andro_recent-post">
                {{$blogPost->created_at->format('d/m/Y')}}
-              <a href="{{ route('front.blog-post', $blogPost->title) }}" class="andro_recent-post-title">{{$blogPost->title}}</a>
+              <a href="{{ route('front.blog-post', $blogPost->slug) }}" class="andro_recent-post-title">{{$blogPost->title}}</a>
             </div>
             @empty
             <span>
