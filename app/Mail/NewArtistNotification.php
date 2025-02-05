@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NewBlogPostNotification extends Mailable
+class NewArtistNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -15,12 +15,13 @@ class NewBlogPostNotification extends Mailable
 
     public function __construct(Artist $artist)
     {
-        $this->blogPost = $artist;
+        $this->artist = $artist;
     }
+
 
     public function build()
     {
-        return $this->subject('Nouvel artiste disponible !')
+        return $this->subject('Un nouvel artiste disponible sur SANAA YETU!')
                     ->view('emails.new_artist');
     }
 }
