@@ -28,6 +28,10 @@ class CreateCategory extends Component
         'namecat.required' => 'Le nom de la catégorie est requise',
     ];
 
+    public function mount(){
+        $this->mode = "create";
+    }
+
 
     public function savecat()
     {
@@ -74,6 +78,8 @@ class CreateCategory extends Component
     public function resetForm(){
         $this->namecat="";
         $this->descriptioncat="";
+        $this->mode = "create";
+        
     }
 
 

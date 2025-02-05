@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Scopes\Searchable;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
+use App\Events\BlogPostPublished;
 
 class BlogPost extends Model
 {
@@ -27,6 +28,17 @@ class BlogPost extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saved(function ($blogPost) {
+            if ($blogPost->status == 'published') {
+                event(new BlogPostPublished($blogPost));
+            }
+        });
     }
 
     public function short_content()
@@ -57,7 +69,7 @@ class BlogPost extends Model
             title: $this->title,
             description: $this->short_content(),
             author: $this->author->name,
-            image:"storage/uploads/".$this->featured_image,
+            image: "storage/uploads/" . $this->featured_image,
             url: route('front.blog-post', $this->slug),
             published_time: $this->created_at,
             modified_time: $this->updated_at,
