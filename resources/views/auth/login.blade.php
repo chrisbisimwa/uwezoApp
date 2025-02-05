@@ -101,11 +101,10 @@
                                             <img src="{{ asset('back-office-assets/images/authentication/slider 1.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
-                                        <h6 class="fw-semibold">Sign In</h6>
-                                        <p class="fw-normal fs-14 op-7"> Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit. Ipsa eligendi expedita aliquam quaerat nulla voluptas facilis. Porro rem
-                                            voluptates possimus, ad, autem quae culpa architecto, quam labore blanditiis at
-                                            ratione.</p>
+                                        <h6 class="fw-semibold">Découvrez l'Art sous un Nouveau Jour</h6>
+                                        <p class="fw-normal fs-14 op-7"> Plongez dans un monde où chaque œuvre raconte une histoire unique. Connectez-vous pour explorer notre collection.
+
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -118,11 +117,12 @@
                                             <img src="{{ asset('back-office-assets/images/authentication/slider 2.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
-                                        <h6 class="fw-semibold">Sign In</h6>
-                                        <p class="fw-normal fs-14 op-7"> Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit. Ipsa eligendi expedita aliquam quaerat nulla voluptas facilis. Porro rem
-                                            voluptates possimus, ad, autem quae culpa architecto, quam labore blanditiis at
-                                            ratione.</p>
+                                        <h6 class="fw-semibold">Votre Galerie Privée, Ici et Maintenant
+
+                                        </h6>
+                                        <p class="fw-normal fs-14 op-7"> Accédez à des chefs-d'œuvre exclusifs. Rejoignez notre communauté et profitez d'une expérience artistique personnalisée.
+
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -135,12 +135,12 @@
                                             <img src="{{ asset('back-office-assets/images/authentication/slider 1.jpg') }}" class="authentication-image"
                                                 alt="">
                                         </div>
-                                        <h6 class="fw-semibold">Sign In</h6>
-                                        <p class="fw-normal fs-14 op-7"> Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing
-                                            elit. Ipsa eligendi expedita aliquam quaerat nulla voluptas facilis. Porro rem
-                                            voluptates possimus, ad, autem quae culpa architecto, quam labore blanditiis at
-                                            ratione.</p>
+                                        <h6 class="fw-semibold">L'Art, à Portée de Clic
+
+                                        </h6>
+                                        <p class="fw-normal fs-14 op-7"> Transformez votre quotidien avec des œuvres qui inspirent. Inscrivez-vous pour commencer votre voyage artistique.
+
+                                        </p>
                                     </div>
                                 </div>
                             </div>
