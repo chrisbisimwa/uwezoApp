@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Events\ArtistPublished
 
 class Artist extends Model
 {
@@ -27,6 +28,17 @@ class Artist extends Model
         'category_id',
         'datenaissance'
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saved(function ($artist) {
+            if ($artist->created_at) {
+                event(new ArtistPublished($artist));
+            }
+        });
+    }
 
 
     public function category()
