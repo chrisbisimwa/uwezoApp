@@ -144,41 +144,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group"
-                                aria-label="3 / 3" style="width: 381px; margin-right: 30px;">
-                                <div
-                                    class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
-                                    <div>
-                                        <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/slider 3.jpg') }}" class="authentication-image"
-                                                alt="">
-                                        </div>
-                                        <h6 class="fw-semibold">Sign In</h6>
-                                        <p class="fw-normal fs-14 op-7"> Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Ipsa eligendi expedita aliquam quaerat nulla voluptas facilis.
-                                            Porro rem voluptates possimus, ad, autem quae culpa architecto, quam labore
-                                            blanditiis at ratione.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                                data-swiper-slide-index="0" role="group" aria-label="1 / 3"
-                                style="width: 381px; margin-right: 30px;">
-                                <div
-                                    class="text-fixed-white text-center p-5 d-flex align-items-center justify-content-center">
-                                    <div>
-                                        <div class="mb-5">
-                                            <img src="{{ asset('back-office-assets/images/authentication/backLogin.jpg') }}" class="authentication-image"
-                                                alt="">
-                                        </div>
-                                        <h6 class="fw-semibold">Sign In</h6>
-                                        <p class="fw-normal fs-14 op-7"> Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Ipsa eligendi expedita aliquam quaerat nulla voluptas facilis.
-                                            Porro rem voluptates possimus, ad, autem quae culpa architecto, quam labore
-                                            blanditiis at ratione.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
                             aria-controls="swiper-wrapper-ca24d161e7ded101c"></div>
