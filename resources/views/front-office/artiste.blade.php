@@ -2,9 +2,8 @@
 
 @section('content')
     <div class="andro_subheader bg-cover bg-center bg-norepeat"
-        style="background-image: url(../front-office-assets/img/subheader-7.jpg)">
+        style="background-image: url({{asset('front-office-assets/img/subheader-7.jpg')}})">
         <div class="container">
-
             <h1>Les Artistes</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
