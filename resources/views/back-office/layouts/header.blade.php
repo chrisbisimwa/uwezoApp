@@ -357,7 +357,7 @@
                 <div class="d-flex align-items-center">
                     <div class="me-sm-2 me-0">
                         @if (Auth::user()->profile_image)
-                            <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="img"
+                            <img src="{{ asset('storage/uploads/' . Auth::user()->profile_image) }}" alt="img"
                                 width="32" height="32" class="rounded-circle">
                         @else
                         <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 32px; height: 32px;">

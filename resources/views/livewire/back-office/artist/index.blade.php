@@ -51,7 +51,7 @@
                                 @endif
                             <div>
                                 <h6 class="mb-1 fw-semibold">
-                                    {{ $artist->nom }} {{ $artist->prenom }}
+                                    {!! Str::limit($artist->nom.' '.$artist->prenom , 18, ' ...') !!}
                                 </h6>
                                 <p class="mb-1 text-muted contact-mail text-truncate">{{$artist->genre}}</p>
                                 <p class="fw-semibold fs-11 mb-0 text-primary">

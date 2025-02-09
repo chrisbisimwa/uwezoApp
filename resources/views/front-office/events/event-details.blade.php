@@ -18,7 +18,7 @@
     <div class="row align-items-start align-items-md-center">
       <div class="col-lg-4 col-sm-4">
         <div class="andro_artist-d-img">
-          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$eventDetails->image_path) }} " width="100" height="60" alt="image event">
+          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$eventDetails->image_path) }} " style="width: 600%;" alt="image event">
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1 col-sm-8">
@@ -112,7 +112,7 @@
         </ul>
       </div>
 
-      @livewire('front-office.events.eventcomment', ['eventDetails' => $eventDetails])
+      @livewire('front-office.events.event-comment2', ['eventDetails' => $eventDetails])
 
           </div>
         </div>
@@ -128,8 +128,8 @@
               <div class="andro_artist-d-section-content">
                 @forelse ($events as $event)
                 <div class="andro_event">
-                  <div class="andro_album-img">
-                    <a href="{{route('front.event-details', $event->title)}}"><img src="{{ asset('storage/uploads/'.$event->image_path) }}"width="80" height="60" alt="image event"></a>
+                  <div class="andro_album-img" style="margin-right: 6px;">
+                    <a href="{{route('front.event-details', $event->title)}}"><img src="{{ asset('storage/uploads/'.$event->image_path) }}"  style="width: 120px;" alt="image event"></a>
                   </div>
                   <div class="andro_event-content">
                     <div class="andro_event-body">
@@ -156,7 +156,7 @@
             @forelse ( $blogPosts as $blogPost)
             <div class="andro_recent-post">
                {{$blogPost->created_at->format('d/m/Y')}}
-              <a href="{{ route('front.blog-post', $blogPost->title) }}" class="andro_recent-post-title">{{$blogPost->title}}</a>
+              <a href="{{ route('front.blog-post', $blogPost->slug) }}" class="andro_recent-post-title">{{$blogPost->title}}</a>
             </div>
             @empty
             <span>

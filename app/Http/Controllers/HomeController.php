@@ -21,11 +21,8 @@ class HomeController extends Controller
     
 
     public function artistes(){
-        $artiste = Artist::all();
-        $categorie = Category::all();
-        //$categorieArtist = Category::select(name = )
-        //dd($categorie);
-        return view('front-office.artiste',compact('artiste','categorie'));
+        $category_id=0;
+        return view('front-office.artiste',compact('category_id'));
     }
     
 }

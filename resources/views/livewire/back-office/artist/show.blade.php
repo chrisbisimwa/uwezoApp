@@ -400,7 +400,7 @@
                                                                         <a href="javascript:void(0);"
                                                                             class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                                                                 class="ri-eye-line"></i></a>
-                                                                        <a href="javascript:void(0);"
+                                                                        <a wire:click="deleteArtwork({{ $oeuvre->id }})"
                                                                             class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
                                                                                 class="ri-delete-bin-line"></i></a>
                                                                     </div>
@@ -430,7 +430,7 @@
                                         <div class="col-xl-12">
                                             <div class="table-responsive border border-bottom-0">
                                                 
-                                                
+
                                             </div>
                                         </div>
                                     </div>
