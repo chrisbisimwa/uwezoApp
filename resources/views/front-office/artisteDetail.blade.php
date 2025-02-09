@@ -142,10 +142,21 @@
                     <div class="andro_track-img">
                     <div class="col-lg-6">
                         <div class="position-relative h-100">
-                            <img class="andro_img-cover" src="../front-office-assets/img/videos/10.jpg" alt="Video">
-                            <a href="{{$oeuvreArti->source}}"
-                                class="center-absolute andro_video-icon pulse andro_video-popup"> <i
-                                    class="fas fa-play"></i> </a>
+                          
+                        @php
+                         function getYouTubeVideoId($url) {
+                            preg_match('/(?:youtu\.be\/|youtube\.com\/(?:.*v=|embed\/|v\/))([^&?\/]+)/', $url, $matches);
+                            return $matches[1] ?? null;
+                            }
+                         $url = "{{$oeuvreArti->source}}";
+                         $videoId = getYouTubeVideoId($url); 
+                      
+                        @endphp
+
+                          <a href="https://www.youtube.com/watch?v={{ $videoId }}" target="_blank">
+                            <img src="https://img.youtube.com/vi/{{ $videoId }}/maxresdefault.jpg" 
+                             alt="Thumbnail de la vidéo" width="600">
+                          </a>
                         </div>
                     </div>
                       
