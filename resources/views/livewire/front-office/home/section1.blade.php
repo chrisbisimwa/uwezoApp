@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="me-0 me-lg-5 mb-lg-0 mb-5">
-                    <h3 class="h2">La mission de<span class="fw-400 color-primary"> SANAA YETU</span> : mettre en
+                    <h3 class="h3">La mission de<span class="fw-400 color-primary"> SANAA YETU</span> : mettre en
                         lumière les talents Congolais</h3>
                     <p>
                         Chez Sanaa Yetu, nous croyons en la puissance de l'art pour raconter des histoires, préserver
