@@ -28,6 +28,11 @@ class ArtistController extends Controller
         return view('front-office.artisteDetail',compact('artisteDetail','oeuvre','age','media','event'));
     }
 
+    function getYouTubeVideoId($url) {
+        preg_match('/(?:youtu\.be\/|youtube\.com\/(?:.*v=|embed\/|v\/))([^&?\/]+)/', $url, $matches);
+        return $matches[1] ?? null;
+    }
+
     public function eventComing($id){
         
         $event = Evenement::all()->where('artist_id', $id);
