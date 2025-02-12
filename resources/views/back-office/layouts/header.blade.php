@@ -5,12 +5,12 @@
         <div class="header-element">
             <div class="horizontal-logo">
                 <a href="{{ route('home') }}" class="header-logo">
-                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo" class="desktop-logo">
-                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo"
+                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt="logo" class="desktop-logo">
+                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt="logo"
                         class="toggle-logo">
-                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo"
+                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt="logo"
                         class="desktop-dark">
-                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo"
+                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt="logo"
                         class="toggle-dark">
                 </a>
             </div>
@@ -40,14 +40,7 @@
                     class="rounded-circle">
             </a>
             <ul class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
-                <li>
-                    <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                        <span class="avatar avatar-xs lh-1 me-2">
-                            <img src="{{ asset('back-office-assets/images/flags/us_flag.jpg') }}" alt="img">
-                        </span>
-                        English
-                    </a>
-                </li>
+               
 
                 <li>
                     <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
@@ -57,14 +50,7 @@
                         French
                     </a>
                 </li>
-                <li>
-                    <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                        <span class="avatar avatar-xs lh-1 me-2">
-                            <img src="{{ asset('back-office-assets/images/flags/germany_flag.jpg') }}" alt="img">
-                        </span>
-                        German
-                    </a>
-                </li>
+               
 
 
             </ul>
