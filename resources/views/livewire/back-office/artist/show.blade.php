@@ -397,12 +397,23 @@
                                                                 <td>{{ $oeuvre->statut }}</td>
                                                                 <td>
                                                                     <div class="hstack gap-2 fs-15">
+                                                                        
                                                                         <a href="javascript:void(0);"
                                                                             class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                                                                 class="ri-eye-line"></i></a>
-                                                                        <a wire:click="deleteArtwork({{ $oeuvre->id }})"
-                                                                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                                                                class="ri-delete-bin-line"></i></a>
+                                                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-primary-transparent rounded-pill"
+                                                                            data-bs-toggle="modal" data-bs-target="#editArtWorkModalXl-{{$oeuvre->id}}"><i
+                                                                                class="ri-pencil-line"></i></a>
+                                                                                <a wire:click="deleteArtwork({{ $oeuvre->id }})"
+                                                                                    class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                                        class="ri-delete-bin-line"></i></a>
+                                                                        <div class="modal fade" id="editArtWorkModalXl-{{$oeuvre->id}}" tabindex="-1"
+                                                                            aria-labelledby="editArtWorkModalXlLabel" style="display: none;"
+                                                                            aria-hidden="true">
+                                                                            <div class="modal-dialog modal-xl">
+                                                                                @livewire('back-office.artist.artwork.edit', ['artwork' => $oeuvre])
+                                                                            </div>
+                                                                        
                                                                     </div>
                                                                 </td>
                                                             </tr>

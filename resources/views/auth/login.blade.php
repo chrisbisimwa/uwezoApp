@@ -11,9 +11,9 @@
                         <div class="p-5">
                             <div class="mb-3">
                                 <a href="index.html">
-                                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt=""
+                                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt=""
                                         class="authentication-brand desktop-logo">
-                                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt=""
+                                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt=""
                                         class="authentication-brand desktop-dark">
                                 </a>
                             </div>
