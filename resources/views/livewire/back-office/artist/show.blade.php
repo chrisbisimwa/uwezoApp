@@ -426,15 +426,12 @@
                                                                     <div class="modal fade" id="imagemodal-{{$oeuvre->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                                                         <div class="modal-dialog">
                                                                           <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                                             
-                                                                            </div>
+                                                                           
                                                                             <div class="modal-body">
                                                                               <img src="{{asset('storage/uploads/' . $oeuvre->image)}}"  style="width: 400px;" >
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
                                                                             </div>
                                                                           </div>
                                                                         </div>
