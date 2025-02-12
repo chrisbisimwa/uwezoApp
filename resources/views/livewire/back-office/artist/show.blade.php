@@ -403,7 +403,7 @@
                                                                             class="btn btn-icon btn-sm btn-info-transparent rounded-pill" data-bs-toggle="modal" data-bs-target="#imagemodal-{{$oeuvre->id}}"><i
                                                                                 class="ri-eye-line"></i></a>
                                                                         @else
-                                                                        <a href="{{$oeuvre->source}}"
+                                                                        <a href="{{$oeuvre->source}}" target="_blank"
                                                                             class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                                                                 class="ri-eye-line"></i></a>
                                                                         @endif
