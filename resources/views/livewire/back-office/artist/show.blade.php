@@ -398,9 +398,16 @@
                                                                 <td>
                                                                     <div class="hstack gap-2 fs-15">
                                                                         
+                                                                        @if($oeuvre->type == 'Image')
                                                                         <a href="javascript:void(0);"
+                                                                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill" data-bs-toggle="modal" data-bs-target="#imagemodal-{{$oeuvre->id}}"><i
+                                                                                class="ri-eye-line"></i></a>
+                                                                        @else
+                                                                        <a href="{{$oeuvre->source}}"
                                                                             class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                                                                 class="ri-eye-line"></i></a>
+                                                                        @endif
+                                                                         
                                                                         <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-primary-transparent rounded-pill"
                                                                             data-bs-toggle="modal" data-bs-target="#editArtWorkModalXl-{{$oeuvre->id}}"><i
                                                                                 class="ri-pencil-line"></i></a>
@@ -415,6 +422,23 @@
                                                                             </div>
                                                                         
                                                                     </div>
+
+                                                                    <div class="modal fade" id="imagemodal-{{$oeuvre->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                                        <div class="modal-dialog">
+                                                                          <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                             
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                              <img src="{{asset('storage/uploads/' . $oeuvre->image)}}"  style="width: 400px;" >
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
                                                                 </td>
                                                             </tr>
                                                         @empty
