@@ -24,7 +24,6 @@ class Create extends Component
         'prenom' => 'required',
         'email' => 'required|email',
         'genre' => 'required',
-        'photo' => 'required|image',
         'phone' => 'required',
         'category_id' => 'required',
         'datenaissance' => 'required',
@@ -61,6 +60,9 @@ class Create extends Component
 
         $photo = null;
         if($this->photo){
+            $this->validate([
+                'photo' => 'required|image'
+            ]);
             $photo = $this->photo->store('artist-photos', 'public_uploads');
         }
 
