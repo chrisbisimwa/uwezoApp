@@ -92,7 +92,7 @@
             </div>
             <div class="col-xl-12">
                 <label for="product-size-add" class="form-label">Photo</label>
-                <input type="file" class="form-control @error('photo') is-invalid @enderror" wire:model="photo">
+                <input type="file" class="form-control @error('photo') is-invalid @enderror" wire:model.live="photo">
                 @error('photo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
