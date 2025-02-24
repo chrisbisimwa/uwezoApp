@@ -92,7 +92,7 @@
             </div>
             <div class="col-xl-12">
                 <label for="product-size-add" class="form-label">Photo</label>
-                <input type="file" class="form-control @error('photo') is-invalid @enderror" wire:model.live="photo">
+                <input type="file" class="form-control @error('photo') is-invalid @enderror" wire:model="photo">
                 @error('photo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -123,9 +123,6 @@
                 <label for="product-size-add" class="form-label">TikTok</label>
                 <input type="text" class="form-control"  placeholder="TikTok" wire:model="tiktok_link">
             </div>
-
-
-
 
         </div>
     </div>
