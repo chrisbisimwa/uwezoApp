@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <p class="fs-12 text-muted mt-4">Dont have an account? <a href="sign-up-cover.html"
+                                <p class="fs-12 text-muted mt-4">Dont have an account? <a href="#"
                                         class="text-primary">Sign Up</a></p>
                             </div>
                         </div>

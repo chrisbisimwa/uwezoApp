@@ -60,10 +60,23 @@ class Add extends Component
            
 
             $this->dispatch('clodeAddArtworkModal');
+            $this->resetAllFields();
 
-            $this->reset();
+            $this->render();
         }
     }
+
+    public function resetAllFields(){
+        $this->name = '';
+        $this->type = '';
+        $this->description = '';
+        $this->price = '';
+        $this->photo = '';
+        $this->source = '';
+        $this->date = '';
+        $this->status = '';
+    }
+
     public function render()
     {
         return view('livewire.back-office.artist.artwork.add');
