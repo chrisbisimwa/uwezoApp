@@ -78,7 +78,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
+                                <div wire:loading wire:target="photo" class="text-sm text-gray-500 italic">
+                                    Uploading...</div>
                             </div>
+                            
                             @if ($type == 'Vidéo' || $type == 'Audio')
                                 <div class="col-xl-12">
                                     <label for="source-oeuvre-add" class="form-label">URL</label>
