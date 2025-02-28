@@ -11,9 +11,9 @@
                         <div class="p-5">
                             <div class="mb-3">
                                 <a href="index.html">
-                                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt=""
+                                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt=""
                                         class="authentication-brand desktop-logo">
-                                    <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt=""
+                                    <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt=""
                                         class="authentication-brand desktop-dark">
                                 </a>
                             </div>
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <p class="fs-12 text-muted mt-4">Dont have an account? <a href="sign-up-cover.html"
+                                <p class="fs-12 text-muted mt-4">Dont have an account? <a href="#"
                                         class="text-primary">Sign Up</a></p>
                             </div>
                         </div>

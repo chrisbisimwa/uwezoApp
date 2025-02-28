@@ -78,11 +78,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-
-                                <div wire:loading wire:target="photo" class="text-sm text-gray-500 italic">
-                                    Uploading...</div>
                             </div>
-                            
                             @if ($type == 'Vidéo' || $type == 'Audio')
                                 <div class="col-xl-12">
                                     <label for="source-oeuvre-add" class="form-label">URL</label>
@@ -105,6 +101,11 @@
                             <img src="{{ $photo->temporaryUrl() }}" style="width: 30%;" class="img-fluid"
                             alt="preview">
                         </center>
+                        @else
+                        <center>
+                            <img src="{{ $photoUrl }}" style="width: 30%;" class="img-fluid"
+                            alt="preview">
+                        </center>
                             
                         @endif
                     </div>
@@ -118,6 +119,7 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary" wire:click="addNewArtwork">Ajouter</button>
+        <button type="button" class="btn btn-primary" wire:click="editNewArtwork">Modifier</button>
     </div>
 </div>
+

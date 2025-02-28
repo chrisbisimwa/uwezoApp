@@ -397,13 +397,45 @@
                                                                 <td>{{ $oeuvre->statut }}</td>
                                                                 <td>
                                                                     <div class="hstack gap-2 fs-15">
+                                                                        
+                                                                        @if($oeuvre->type == 'Image')
                                                                         <a href="javascript:void(0);"
+                                                                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill" data-bs-toggle="modal" data-bs-target="#imagemodal-{{$oeuvre->id}}"><i
+                                                                                class="ri-eye-line"></i></a>
+                                                                        @else
+                                                                        <a href="{{$oeuvre->source}}" target="_blank"
                                                                             class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
                                                                                 class="ri-eye-line"></i></a>
-                                                                        <a wire:click="deleteArtwork({{ $oeuvre->id }})"
-                                                                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                                                                class="ri-delete-bin-line"></i></a>
+                                                                        @endif
+                                                                         
+                                                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-primary-transparent rounded-pill"
+                                                                            data-bs-toggle="modal" data-bs-target="#editArtWorkModalXl-{{$oeuvre->id}}"><i
+                                                                                class="ri-pencil-line"></i></a>
+                                                                                <a wire:click="deleteArtwork({{ $oeuvre->id }})"
+                                                                                    class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                                                        class="ri-delete-bin-line"></i></a>
+                                                                        <div class="modal fade" id="editArtWorkModalXl-{{$oeuvre->id}}" tabindex="-1"
+                                                                            aria-labelledby="editArtWorkModalXlLabel" style="display: none;"
+                                                                            aria-hidden="true">
+                                                                            <div class="modal-dialog modal-xl">
+                                                                                @livewire('back-office.artist.artwork.edit', ['artwork' => $oeuvre])
+                                                                            </div>
+                                                                        
                                                                     </div>
+
+                                                                    <div class="modal fade" id="imagemodal-{{$oeuvre->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                                        <div class="modal-dialog">
+                                                                          <div class="modal-content">
+                                                                           
+                                                                            <div class="modal-body">
+                                                                              <img src="{{asset('storage/uploads/' . $oeuvre->image)}}"  style="width: 400px;" >
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
                                                                 </td>
                                                             </tr>
                                                         @empty

@@ -1,7 +1,7 @@
 <div class="andro_header andro_header-absolute style-1">
-@php
-    $categories = \App\Models\Category::all();
-@endphp
+    @php
+        $categories = \App\Models\Category::all();
+    @endphp
     <div class="container andro_header-wrap">
         <div class="andro_header-logo">
             <a href="{{ route('front.home') }}"><img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}"
@@ -14,12 +14,14 @@
                 <ul>
 
                     <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
-                    <li> 
-                        <a href="{{ route('front.artistes') }}">Artistes</a> 
+                    <li>
+                        <a href="{{ route('front.artistes') }}">Artistes</a>
                         <ul>
                             <li> <a href="{{ route('front.artistes') }}">Tous les artistes</a> </li>
                             @foreach ($categories as $cat)
-                                <li> <a href="{{ route('front.artisteCategory', ['slug' => $cat->id]) }}">{{ $cat->name }}</a> </li>
+                                <li> <a
+                                        href="{{ route('front.artisteCategory', ['slug' => $cat->slug]) }}">{{ $cat->name }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </li>
@@ -101,7 +103,17 @@
     <nav>
         <ul>
             <li> <a href="{{ route('front.home') }}">Accueil</a> </li>
-            <li> <a href="{{ route('front.artistes') }}">Artistes</a> </li>
+            <li class="has-children" style="display: list-item;">
+                <a href="{{ route('front.artistes') }}">Artistes</a>
+                <ul style="display: none;">
+                    <li> <a href="{{ route('front.artistes') }}">Tous les artistes</a> </li>
+                    @foreach ($categories as $cat)
+                        <li> <a
+                                href="{{ route('front.artisteCategory', ['slug' => $cat->slug]) }}">{{ $cat->name }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </li>
             <li> <a href="{{ route('front.evenements') }}">Evenements</a> </li>
             {{-- <li> <a href="#">Promo</a> </li> --}}
             <li> <a href="{{ route('front.blog') }}">Actualités</a> </li>
@@ -112,7 +124,7 @@
                     <li> <a href="{{ route('front.contact') }}">Nous contacter</a> </li>
                 </ul>
             </li>
-           
+
 
 
         </ul>

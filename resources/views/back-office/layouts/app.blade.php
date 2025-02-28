@@ -776,6 +776,10 @@
                 modalInstance.hide();
             }
         });
+
+        document.addEventListener('artworkUpdated', () => {
+            window.location.reload(false);
+        });
     </script>
 
 </body>

@@ -90,7 +90,7 @@
                     </span>
                 @enderror
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Photo</label>
                 <input type="file" class="form-control @error('photo') is-invalid @enderror" wire:model="photo">
                 @error('photo')
@@ -98,6 +98,17 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
+                <div wire:loading wire:target="photo" class="text-sm text-gray-500 italic">
+                    Uploading...</div>
+            </div>
+            <div class="col-xl-6">
+                @if ($photo)
+                <center>
+                    <img src="{{ $photo->temporaryUrl() }}" style="width: 30%;" class="img-fluid"
+                    alt="preview">
+                </center>
+                    
+                @endif
             </div>
             <div class="col-xl-6">
                 <label for="product-size-add" class="form-label">Facebook</label>
@@ -123,9 +134,6 @@
                 <label for="product-size-add" class="form-label">TikTok</label>
                 <input type="text" class="form-control"  placeholder="TikTok" wire:model="tiktok_link">
             </div>
-
-
-
 
         </div>
     </div>

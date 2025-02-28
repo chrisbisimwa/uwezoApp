@@ -4,11 +4,11 @@
         <a href="{{route('home')}}" class="header-logo">
 
 
-            <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo" class="desktop-logo">
-            <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo"
+            <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt="logo" class="desktop-logo">
+            <img src="{{ asset('front-office-assets/img/favicon.png') }}" alt="logo"
                 class="toggle-logo">
-            <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo" class="desktop-dark">
-            <img src="{{ asset('back-office-assets/images/logo-uwezo.png') }}" alt="logo"
+            <img src="{{ asset('front-office-assets/img/logo-sanaa-yetu2.png') }}" alt="logo" class="desktop-dark">
+            <img src="{{ asset('front-office-assets/img/favicon.png') }}" alt="logo"
                 class="toggle-dark">
         </a>
     </div>

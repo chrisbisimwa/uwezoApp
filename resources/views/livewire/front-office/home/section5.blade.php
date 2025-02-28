@@ -14,7 +14,7 @@
         @forelse ($artists as $artist)
         <div class="col-lg-3 col-md-4 col-sm-6">
             @if ($artist->photo)
-            <a href="{{\Storage::url('uploads/'.$artist->photo)}}" class="andro_img-popup andro_gallery">
+            <a href="{{route('front.artisteDetail', $artist->slug)}}" >
 
                 <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}"
                     alt="gallery">
@@ -42,7 +42,7 @@
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
-                    <h6 class="h3">{{ $artist->nom }} {{ $artist->prenom }}</h6>
+                    <h6 class="h3" ><a href="{{route('front.blog-post', $artist->slug)}}">{{ $artist->nom }} {{ $artist->prenom }} </a> </h6>
 
                     <p>
                         {{ $artist->category->name }}

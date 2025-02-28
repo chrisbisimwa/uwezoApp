@@ -8,11 +8,13 @@ use App\Models\Oeuvre;
 use Livewire\WithPagination;
 use App\Models\Category;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithFileUploads;
 
 class Show extends Component
 {
     use WithPagination;
     use LivewireAlert;
+    use WithFileUploads;
     protected $listeners = ['clodeAddArtworkModal' => 'reload', 'deleteArtworks'];
     public $id, $mode='show', $nom, $prenom, $email, $genre, $biography, $photo, $numeroCerticat, $phone, $datenaissance;
     public $facebook_link, $instagram_link, $twitter_link, $soundcloud_link, $youtube_link, $category_id;

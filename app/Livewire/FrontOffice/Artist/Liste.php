@@ -10,7 +10,7 @@ use Livewire\WithPagination;
 
 class Liste extends Component
 {
-    public $category_id=null;
+    public $category_id;
     public $categories;
     public $artistes=[];
     use WithPagination;
@@ -35,8 +35,13 @@ class Liste extends Component
 
     public function mount()
     {
-        $this->categories = Category::all();
-        $this->artistes = Artist::all();
+        if($this->category_id==0){
+            $this->artistes = Artist::all();
+        }else{
+            $this->artistes = Artist::where('category_id', $this->category_id)->get();
+        }
+
+        
     }
 
     public function render()
