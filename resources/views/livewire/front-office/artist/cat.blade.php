@@ -5,9 +5,9 @@
     @endforeach
  --}}
     <div class="nav flex-column nav-pills andro_isotope-filter-nav"  role="tablist" aria-orientation="vertical">
-        <a class=" andro_isotope-trigger {{ $category_id === 0 ? 'active' : '' }}" wire:click="selectCategory({{0}})" >Tous les artistes</a>
+        <a class=" andro_isotope-trigger {{ $category_id === 0 ? 'active' : '' }}" wire:click="selectCategory({{0}})" >Tous les artistes ({{$allArtistCount}}) </a>
         @foreach ($categories as $cat)
-            <a class="andro_isotope-trigger {{ $category_id === $cat->id ? 'active' : '' }}" wire:click="selectCategory({{$cat->id}})" style="cursor: pointer;">{{ $cat->name }}</a>
+            <a class="andro_isotope-trigger {{ $category_id === $cat->id ? 'active' : '' }}" wire:click="selectCategory({{$cat->id}})" style="cursor: pointer;">{{ $cat->name.' ('.$cat->artistCount.')' }} </a>
         @endforeach
     </div>
 {{-- </div> --}}
