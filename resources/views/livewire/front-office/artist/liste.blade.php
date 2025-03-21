@@ -1,7 +1,7 @@
 <div>
 
 
-<div class="section md white-bg" style="margin-bottom: 20px;">
+<div class="section md white-bg" >
 
     <div class="container">
         <div class="row andro_isotope-filter">

@@ -19,7 +19,7 @@
 
 
     <div class="section md white-bg">
-        <div style="margin:40px;">
+        <div style="margin-left: 40px; margin-right: 40px;">
             <div class="row">
                 <div class="col-lg-3">
                     @livewire('front-office.artist.cat', ['category_id' => $category_id])
