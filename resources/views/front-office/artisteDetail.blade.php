@@ -279,7 +279,7 @@
                         </div>
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Localisation</h6>
-                            <span class="text-white">N°3, Av. FIZI, IBANDA,</span>
+                            <span class="text-white">4, Av. FIZI, IBANDA,</span>
                             <span class="text-white">Bukavu, RDC</span>
                         </div>
                     </div>

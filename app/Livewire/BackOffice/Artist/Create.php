@@ -8,6 +8,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Artist;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Illuminate\Support\Str;
 
 
 
@@ -68,7 +69,7 @@ class Create extends Component
             'nom' => $this->nom,
             'prenom' => $this->prenom,
             //générer un slug à partir du nom et prénom et un code à 4 chiffres
-            'slug' => strtolower($this->nom.'-'.$this->prenom.'-'.rand(1000, 9999)),
+            'slug' => Str::slug($this->nom.' '.$this->prenom.' '.rand(1000, 9999)),
             'email' => $this->email,
             'genre' => $this->genre,
             'biography' => $this->biography,

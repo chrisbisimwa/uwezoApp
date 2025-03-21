@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="andro_subheader bg-cover bg-center bg-norepeat"
-        style="background-image: url({{asset('front-office-assets/img/subheader-7.jpg')}})">
+        style="background-image: url({{ asset('front-office-assets/img/subheader-7.jpg') }})">
         <div class="container">
             <h1>Les Artistes</h1>
             <nav aria-label="breadcrumb">
@@ -14,41 +14,50 @@
 
         </div>
     </div>
-
-    <div class="section md white-bg" style="margin-bottom: 20px;">
-
-        <div class="container">
+   
     
-            @livewire('front-office.artist.cat', ['category_id' => $category_id])
-            
-    
-            @livewire('front-office.artist.liste', ['category_id' => $category_id])
 
-            {{-- <div class="row">
-                <div class="col-lg-4">
-                    @livewire('front-office.artist.cat')
+
+    <div class="section md white-bg">
+        <div style="margin:40px;">
+            <div class="row">
+                <div class="col-lg-3">
+                    @livewire('front-office.artist.cat', ['category_id' => $category_id])
                 </div>
-
-                <div class="col-lg-8"> 
-                    @livewire('front-office.artist.liste')
+                <div class="col-lg-9">
+                    @livewire('front-office.artist.liste', ['category_id' => $category_id])
                 </div>
-
-            </div> --}}
-
+            </div>
         </div>
+        
+        
     </div>
-    
+
+
+
+
+
+
+    {{-- @livewire('front-office.artist.liste', ['category_id' => $category_id]) --}}
+
+
+
+
+
     <div class="section light-bg __web-inspector-hide-shortcut__">
         <div class="container">
 
             <div class="section-title text-center">
                 <h3>Devenez partie intégrante de notre communauté artistique</h3>
-                
+
             </div>
 
             <div class="andro_lineup text-center">
 
-                <p class="mb-0">Vous avez aimé découvrir nos artistes ? Pourquoi ne pas aller plus loin ? En nous contactant, vous pourrez non seulement suivre les dernières œuvres de vos artistes préférés, mais aussi participer à des discussions, des événements exclusifs, et même soumettre vos propres créations. Rejoignez-nous pour faire partie d'un réseau où l'art est célébré, discuté et vécu au quotidien.
+                <p class="mb-0">Vous avez aimé découvrir nos artistes ? Pourquoi ne pas aller plus loin ? En nous
+                    contactant, vous pourrez non seulement suivre les dernières œuvres de vos artistes préférés, mais aussi
+                    participer à des discussions, des événements exclusifs, et même soumettre vos propres créations.
+                    Rejoignez-nous pour faire partie d'un réseau où l'art est célébré, discuté et vécu au quotidien.
 
                 </p>
 
@@ -68,7 +77,7 @@
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Phone</h6>
                             <span class="text-white">+(243) 998 564 037</span>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -92,7 +101,7 @@
                         </div>
                         <div class="andro_infobox-body">
                             <h6 class="text-white">Location</h6>
-                            <span class="text-white">N°3, Av. FIZI, IBANDA,</span>
+                            <span class="text-white">N°4, Av. FIZI, IBANDA,</span>
                             <span class="text-white">Bukavu, RDC</span>
                         </div>
                     </div>

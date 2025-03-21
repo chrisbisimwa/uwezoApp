@@ -12,7 +12,7 @@ class Liste extends Component
 {
     public $category_id;
     public $categories;
-    public $artistes=[];
+    //public $artistes=[];
     use WithPagination;
 
     protected $listeners = [
@@ -22,31 +22,26 @@ class Liste extends Component
 
     public function loadByCategory($id)
     {
-        if($id == 0){
-            $this->artistes = Artist::all();
-
-        }else{
-            $this->artistes = Artist::where('category_id', $id)->get();
-        }
+       $this->category_id = $id;
         
       
 
     }
 
-    public function mount()
+    /* public function mount()
     {
         if($this->category_id==0){
-            $this->artistes = Artist::all();
+            $this->artistes = Artist::paginate(6);
         }else{
             $this->artistes = Artist::where('category_id', $this->category_id)->get();
         }
 
         
-    }
+    } */
 
     public function render()
     {
-        //$this->artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->get(): Artist::all();
-        return view('livewire.front-office.artist.liste');
+        $artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->paginate(12): Artist::paginate(12);
+        return view('livewire.front-office.artist.liste', compact('artistes'));
     }
 }
