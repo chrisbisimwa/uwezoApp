@@ -36,6 +36,7 @@ class EventController extends Controller
         $artists= Artist::find($artistId);
         $events= Evenement::whereIn('status', ['upcoming', 'ongoing', 'completed'])->latest()->paginate(3);
         $blogPosts = BlogPost::where('status', 'published')->latest()->paginate(4);
+        $seo = $eventDetails->getDynamicSEOData();
         return view('front-office.events.event-details',compact('eventDetails','events','blogPosts','artists','seo'));
     }
 }

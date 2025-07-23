@@ -52,6 +52,12 @@ class Artist extends Model
         return $this->hasMany(Evenement::class);
     }
 
+    public function shortBiography()
+    {
+        $content = strip_tags($this->biography);
+        return substr($content, 0, 200);
+    }
+
     
 
     public function oeuvres()
@@ -64,9 +70,10 @@ class Artist extends Model
     
         return new SEOData(
             title: $this->nom . ' ' . $this->prenom,
-            description: $this->biography,
+            description: $this->shortBiography(),
             image: "storage/uploads/".$this->photo ,
             url: route('front.artisteDetail', ['slug' => $this->slug]),
+            tags: ['artist', 'artiste', 'art'],
         );
 
 
