@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Events\ArtistPublished;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Artist extends Model
 {
@@ -56,6 +57,19 @@ class Artist extends Model
     public function oeuvres()
     {
         return $this->hasMany(Oeuvre::class);
+    }
+
+    public function getDynamicSEOData():  SEOData
+    {
+        dd($this->photo);
+        return new SEOData(
+            title: $this->nom . ' ' . $this->prenom,
+            description: $this->biography,
+            image: "storage/uploads/".$this->photo ? asset("storage/uploads/".$this->photo) : null,
+            url: route('front.artisteDetail', ['slug' => $this->slug]),
+        );
+
+
     }
 
 }

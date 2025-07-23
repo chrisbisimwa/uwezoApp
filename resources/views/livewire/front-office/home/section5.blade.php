@@ -21,7 +21,7 @@
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
-                    <h6 class="h3" style="cursor: pointer;" wire:click="goToArtist()">{{ $artist->nom }} {{ $artist->prenom }}</h6>
+                    <h6 class="h3" style="cursor: pointer;" wire:click="goToArtist('{{ $artist->slug }}')">{{ $artist->nom }} {{ $artist->prenom }}</h6>
 
                     <p>
                         {{ $artist->category->name }}
@@ -40,7 +40,7 @@
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
-                    <h6 class="h3" ><a href="{{route('front.blog-post', $artist->slug)}}">{{ $artist->nom }} {{ $artist->prenom }} </a> </h6>
+                    <h6 class="h3" ><a href="{{route('front.artisteDetail', $artist->slug)}}">{{ $artist->nom }} {{ $artist->prenom }} </a> </h6>
 
                     <p>
                         {{ $artist->category->name }}

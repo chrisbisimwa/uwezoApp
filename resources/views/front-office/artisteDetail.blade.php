@@ -7,8 +7,9 @@
             <h1>Les Artistes</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Artistes</li>
+                    <li class="breadcrumb-item"><a href="{{ route('front.home') }}">Accueil</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('front.artistes') }}">Artistes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $artisteDetail->nom }} {{ $artisteDetail->prenom }}</li>
                 </ol>
             </nav>
 

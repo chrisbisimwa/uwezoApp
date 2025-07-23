@@ -32,9 +32,6 @@ class FrontOfficePageController extends Controller
         $blogPost = BlogPost::where('slug', $slug)->first();
 
 
-
-
-
         //dd($blogPost->getDynamicSEOData());
         return view('front-office.blog-post', compact('blogPost'));
     }
