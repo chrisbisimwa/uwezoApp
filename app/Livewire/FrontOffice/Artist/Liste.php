@@ -41,7 +41,7 @@ class Liste extends Component
 
     public function render()
     {
-        $artistes = $this->category_id ? Artist::where('category_id', $this->category_id)->paginate(12): Artist::paginate(12);
+        $artistes = $this->category_id ? Artist::inRandomOrder()->where('category_id', $this->category_id)->paginate(12): Artist::inRandomOrder()->paginate(12);
         return view('livewire.front-office.artist.liste', compact('artistes'));
     }
 }
