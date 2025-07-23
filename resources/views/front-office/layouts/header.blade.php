@@ -80,11 +80,13 @@
             </path>
         </svg>
     </div>
-    <form class="andro_header-search-form" method="post">
-        <input type="text" placeholder="Search..." value="">
+    <form id="andro_header-search-form" class="andro_header-search-form" method="get" action="#">
+        <input type="text" name="q" id="header-search-input" autocomplete="off" placeholder="Recherche..."
+            value="">
         <button type="submit" class="andro_header-search-btn">
             <i class="fal fa-search"></i>
         </button>
+        <div id="search-results" class="search-results-dropdown"></div>
     </form>
 </div>
 

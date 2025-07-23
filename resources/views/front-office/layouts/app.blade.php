@@ -45,7 +45,8 @@
         integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" />
 
 
 
@@ -162,6 +163,41 @@
     </script>
 
 
+    <script>
+        // On met l'URL générée par Blade dans une variable JS
+        const ajaxSearchUrl = "{{ route('front.ajax-search') }}";
+
+        $(document).ready(function() {
+            $('#header-search-input').on('keyup', function() {
+                var query = $(this).val();
+                if (query.length > 1) {
+                    $.ajax({
+                        url: ajaxSearchUrl,
+                        method: "GET",
+                        data: {
+                            q: query
+                        },
+                        success: function(response) {
+                            $('#search-results').html(response.html).show();
+                        }
+                    });
+                } else {
+                    $('#search-results').hide();
+                }
+            });
+
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('#andro_header-search-form').length) {
+                    $('#search-results').hide();
+                }
+            });
+
+            $('#andro_header-search-form').on('submit', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        });
+    </script>
 </body>
 
 </html>

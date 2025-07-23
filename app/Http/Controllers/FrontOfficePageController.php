@@ -7,7 +7,7 @@ use App\Models\BlogPost;
 
 class FrontOfficePageController extends Controller
 {
-    
+
 
     /**
      * Show the application dashboard.
@@ -27,15 +27,15 @@ class FrontOfficePageController extends Controller
     public function blogPost($slug)
     {
         //get host url
-        
-        
+
+
         $blogPost = BlogPost::where('slug', $slug)->first();
-        
 
 
-     
 
-         //dd($blogPost->getDynamicSEOData());
+
+
+        //dd($blogPost->getDynamicSEOData());
         return view('front-office.blog-post', compact('blogPost'));
     }
 
@@ -47,5 +47,41 @@ class FrontOfficePageController extends Controller
     public function about()
     {
         return view('front-office.about');
+    }
+
+    public function ajaxSearch(Request $request)
+    {
+        $q = $request->input('q', '');
+
+        // On vérifie que la requête n'est pas vide
+        if (empty($q)) {
+            return response()->json(['html' => '<div>Veuillez entrer un terme de recherche.</div>']);
+        }
+
+        // On vérifie que les modèles existent et on protège les accès aux relations
+        $artists = \App\Models\Artist::where('nom', 'like', "%{$q}%")
+            ->orWhere('prenom', 'like', "%{$q}%")
+            ->take(5)->get();
+
+        $oeuvres = \App\Models\Oeuvre::where('nom', 'like', "%{$q}%")
+            ->orWhere('description', 'like', "%{$q}%")
+            ->take(5)->get();
+
+        $evenements = \App\Models\Evenement::where('title', 'like', "%{$q}%")
+            ->orWhere('description', 'like', "%{$q}%")
+            ->take(5)->get();
+
+        $blogPosts = \App\Models\BlogPost::where('title', 'like', "%{$q}%")
+            ->orWhere('content', 'like', "%{$q}%")
+            ->take(5)->get();
+
+        // On évite une erreur si la vue n'existe pas !
+        try {
+            $html = view('front-office.partials.search-results', compact('artists', 'oeuvres', 'evenements', 'blogPosts', 'q'))->render();
+        } catch (\Exception $e) {
+            return response()->json(['html' => '<div>Erreur lors de la génération du résultat : ' . $e->getMessage() . '</div>']);
+        }
+
+        return response()->json(['html' => $html]);
     }
 }

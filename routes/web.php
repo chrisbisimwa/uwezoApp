@@ -63,6 +63,8 @@ Route::get('a-propos', [App\Http\Controllers\FrontOfficePageController::class, '
 //unsubscribe route
 Route::get('/unsubscribe', [App\Http\Controllers\NewsletterSubscriptionController::class, 'unsubscribe'])->name('front.unsubscribe');
 
+Route::get('/ajax-search', [App\Http\Controllers\FrontOfficePageController::class, 'ajaxSearch'])->name('front.ajax-search');
+
 Route::get('/sitemap.xml', function(){
     //file path from storage foleter
     $path = storage_path('app/public/sitemap.xml');
