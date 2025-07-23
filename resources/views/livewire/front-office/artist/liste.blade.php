@@ -9,8 +9,8 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 andro_isotope-item d1">
                     <div class="andro_artist style-2">
 
-                        <div class="andro_artist-img">
-                            <img src="{{ \Storage::url('uploads/' . $art->photo) }}" alt="{{ $art->prenom }} ">
+                        <div class="andro_artist-img" >
+                            <img src="{{ \Storage::url('uploads/' . $art->photo) }}" alt="{{ $art->prenom }} " loading="lazy" width="300" height="300">
                             <div class="andro_artist-img-content">
                                 <div class="andro_artist-meta">
                                 </div>
@@ -58,7 +58,6 @@
                             Aucun artiste trouvé
                         </div>
                     </center>
-
                 </div>
             @endforelse
 

@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('front-office.layouts.app')
 
 @section('content')
 
-    <h1>You are currently not connected to any networks.</h1>
+    <h1>Vous n'êtes actuellement connecté à Internet.</h1>
 
 @endsection

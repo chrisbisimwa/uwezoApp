@@ -12,13 +12,12 @@
 
         </div>
         @forelse ($artists as $artist)
+         
         <div class="col-lg-3 col-md-4 col-sm-6">
             @if ($artist->photo)
-            <a href="{{route('front.artisteDetail', $artist->slug)}}" >
+            <a href="{{route('front.artisteDetail', $artist->slug)}}" class="andro_img-popup andro_gallery"> 
 
-                <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}"
-                    alt="gallery">
-
+                <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}" alt="{{$artist->prenom}}" loading="lazy" width="300" height="300">
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
@@ -26,7 +25,6 @@
 
                     <p>
                         {{ $artist->category->name }}
-
                     </p>
 
 
@@ -57,6 +55,7 @@
 
 
         </div>
+       
 
         @empty
         <div class="col-lg-6 col-md-8">
