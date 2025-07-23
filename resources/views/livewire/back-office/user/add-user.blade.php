@@ -18,8 +18,7 @@
             </div>
             <div class="col-xl-6">
                 <label for="type-oeuvre-add" class="form-label">Rôle d'utilisateur</label>
-                <select class="form-control @error('type') is-invalid @enderror" data-trigger name="type-oeuvre-add"
-                    id="type-oeuvre-add" wire:model.live="type">
+                <select class="form-control @error('type') is-invalid @enderror" data-trigger  wire:model="type">
                     <option value="">Sélectionner</option>
                     <option value="admin">Administrateur</option>
                     <option value="user">Utilisateur</option>

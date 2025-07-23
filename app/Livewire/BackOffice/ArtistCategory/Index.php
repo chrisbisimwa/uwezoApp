@@ -23,36 +23,54 @@ class Index extends Component
 
     public function delete($id)
     {
+
         $this->category_id = $id;
         $this->confirm('Êtes-vous sûr de vouloir supprimer cette catégorie?', [
             'toast' => false,
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => 'Annuler',
-            'onConfirmed' => 'deleteCategory',
+            'onConfirmed' => 'deleteArtistCategory',
             'onCancelled' => 'cancelled'
         ]);
     }
 
-    public function reload(){
+    public function deleteArtistCategory()
+    {
+        $category = Category::find($this->category_id);
+        if ($category) {
+            $category->delete();
+            $this->alert('success', 'Catégorie supprimée avec success', [
+                'position' =>  'top-end',
+                'timer' =>  3000,
+                'toast' =>  true,
+                'text' =>  '',
+                'confirmButtonText' =>  'Fermer',
+                'cancelButtonText' =>  'Annuler',
+                'showCancelButton' =>  false,
+                'showConfirmButton' =>  false,
+            ]);
+        } else {
+            $this->alert('error', 'Catégorie non trouvée', [
+                'position' =>  'top-end',
+                'timer' =>  3000,
+                'toast' =>  true,
+                'text' =>  '',
+                'confirmButtonText' =>  'Fermer',
+                'cancelButtonText' =>  'Annuler',
+                'showCancelButton' =>  false,
+                'showConfirmButton' =>  false,
+            ]);
+        }
         $this->render();
     }
 
-    public function deleteCategory(){
-        $category = Category::find($this->category_id);
-        $category->delete();
-        $this->alert('success', 'Catégorie supprimée avec success', [
-            'position' =>  'top-end',
-            'timer' =>  3000,
-            'toast' =>  true,
-            'text' =>  '',
-            'confirmButtonText' =>  'Fermer',
-            'cancelButtonText' =>  'Annuler',
-            'showCancelButton' =>  false,
-            'showConfirmButton' =>  false,
-        ]);
+    public function reload()
+    {
         $this->render();
     }
+
+
 
     public function edit($id)
     {
@@ -61,7 +79,7 @@ class Index extends Component
 
     public function render()
     {
-        $categories = Category::where('name', 'like', '%'.$this->searchTerm.'%')
+        $categories = Category::where('name', 'like', '%' . $this->searchTerm . '%')
             ->paginate(10);
         return view('livewire.back-office.artist-category.index', compact('categories'));
     }

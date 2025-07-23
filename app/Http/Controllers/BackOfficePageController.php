@@ -40,8 +40,14 @@ Class BackOfficePageController extends Controller
         ->take(5)
         ->get();
 
+    $totalOeuvres = Artist::with('oeuvres')
+        ->get()
+        ->sum(function ($artist) {
+            return $artist->oeuvres->count();
+        });
+
     return view('back-office.index', 
-    compact('users', 'events', 'blogs', 'artists', 'recentBlogs', 'recentEvents')
+    compact('users', 'events', 'blogs', 'artists', 'recentBlogs', 'recentEvents', 'totalOeuvres')
 );
 }
 
