@@ -25,7 +25,9 @@ class ArtistController extends Controller
         $event = Evenement::all()->where('artist_id', $artisteDetail->id);
         $eventComing = Evenement::all()->where('artist_id', $artisteDetail->id);
         //dd($event);
-        return view('front-office.artisteDetail',compact('artisteDetail','oeuvre','age','media','event'));
+
+        $seo = $artisteDetail->getDynamicSEOData();
+        return view('front-office.artisteDetail',compact('artisteDetail','oeuvre','age','media','event','seo'));
     }
 
     function getYouTubeVideoId($url) {

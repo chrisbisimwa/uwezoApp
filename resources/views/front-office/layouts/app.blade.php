@@ -28,7 +28,8 @@
     <meta name="keywords"
         content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit."> --}}
 
-    {!! seo($blogPost ?? null) !!}
+    {!! seo($seo ?? null) !!}
+
 
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front-office-assets/css/plugins/bootstrap-datepicker.min.css') }}">

@@ -61,11 +61,11 @@ class Artist extends Model
 
     public function getDynamicSEOData():  SEOData
     {
-        dd($this->photo);
+    
         return new SEOData(
             title: $this->nom . ' ' . $this->prenom,
             description: $this->biography,
-            image: "storage/uploads/".$this->photo ? asset("storage/uploads/".$this->photo) : null,
+            image: "storage/uploads/".$this->photo ,
             url: route('front.artisteDetail', ['slug' => $this->slug]),
         );
 
