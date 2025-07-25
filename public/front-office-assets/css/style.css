@@ -3457,8 +3457,20 @@ table .form-control:focus{
   background-color: var(--color-primary);
 }
 .andro_artist-name{
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin: 0;
+  text-align: center;
+}
+
+.andro_artist-name a {
+    font-family: 'Montserrat', Arial, sans-serif;
+    /* font-weight: 300;
+    font-size: 1em; */
+    letter-spacing: 0.01em;
+    color: #212121;
+    margin-top: 10px;
+    display: block;
+    transition: color 0.2s;
 }
 .andro_artist-designation{
   font-size: 24px;
