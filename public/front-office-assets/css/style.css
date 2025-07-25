@@ -7467,3 +7467,88 @@ Responsive
 .search-results-dropdown li { list-style: disc; margin-bottom: 7px;}
 .search-results-dropdown a { color: #333; text-decoration: none;}
 .search-results-dropdown a:hover { color: var(--color-primary);}
+
+.artist-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1; /* carré, change en 4/3 si tu veux */
+    background: #f7f7f7;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.artist-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+}
+.artist-img-loading {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+    z-index: 1;
+}
+
+
+@media (max-width: 991px) {
+  .cat-list-collapsible {
+    border: 1px solid #eee;
+    border-radius: 14px;
+    max-width: 100%;
+    margin-bottom: 24px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+  .cat-list-collapsible .cat-collapsible-header {
+    padding: 14px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #ff3f34;
+    background: #f7f7f7;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cat-list-collapsible .cat-collapsible-list {
+    display: none;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+  }
+  .cat-list-collapsible.open .cat-collapsible-list {
+    display: flex;
+  }
+  .cat-collapsible-arrow {
+    font-size: 1.2em;
+    transition: transform 0.2s;
+  }
+  .cat-list-collapsible.open .cat-collapsible-arrow {
+    transform: rotate(180deg);
+  }
+  .cat-list-collapsible .cat-pill {
+    background: none;
+    color: #222;
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+  }
+  .cat-list-collapsible .cat-pill.active,
+  .cat-list-collapsible .cat-pill:hover {
+    background: #ff3f34;
+    color: #fff;
+  }
+}
+
