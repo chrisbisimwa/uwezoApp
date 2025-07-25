@@ -67,7 +67,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-top: 10%;">
+    <div class="section md white-bg">
         {{ $artistes->links('vendor.livewire.frontend') }}
     </div>
 </div>
