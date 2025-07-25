@@ -14,7 +14,7 @@
                                     <img src="{{ \Storage::url('uploads/' . $art->photo) }}" alt="{{ $art->prenom }}"
                                         loading="lazy" width="300" height="300"
                                         onload="this.style.opacity=1; this.parentNode.querySelector('.artist-img-loading').style.display='none';"
-                                        onerror="this.src='{{ asset('front-office-assets/img/avatar-placeholder.png') }}'; this.style.opacity=1; this.parentNode.querySelector('.artist-img-loading').style.display='none';"
+                                        onerror="this.src='{{ asset('front-office-assets/img/no-image.jpg') }}'; this.style.opacity=1; this.parentNode.querySelector('.artist-img-loading').style.display='none';"
                                         style="opacity:0;transition:opacity 0.3s;">
                                 </div>
                                 <div class="andro_artist-img-content">

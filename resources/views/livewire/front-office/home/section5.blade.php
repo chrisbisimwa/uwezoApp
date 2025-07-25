@@ -17,7 +17,11 @@
             @if ($artist->photo)
             <a href="{{route('front.artisteDetail', $artist->slug)}}" class="andro_img-popup andro_gallery"> 
 
-                <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}" alt="{{$artist->prenom}}" loading="lazy" width="300" height="300">
+                <img class="andro_img-cover" src="{{\Storage::url('uploads/'.$artist->photo)}}" alt="{{$artist->prenom}}" 
+                loading="lazy" width="300" height="300"
+                onload="this.style.opacity=1; this.parentNode.querySelector('.artist-img-loading').style.display='none';"
+                onerror="this.src='{{ asset('front-office-assets/img/no-image.jpg') }}'; this.style.opacity=1; this.parentNode.querySelector('.artist-img-loading').style.display='none';"
+                style="opacity:0;transition:opacity 0.3s;">
 
                 <div class="andro_gallery-content">
                     <i class="far fa-search"></i>
