@@ -7,7 +7,7 @@ use App\Models\BlogPost;
 use App\Models\Evenement;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class FrontEventController extends Controller
 {
     
      /**
@@ -31,12 +31,13 @@ class EventController extends Controller
 
     public function eventDetails($title)
     {
-        $eventDetails=Evenement::where('title',$title)->first();
-        $artistId= $eventDetails->artist_id;
+        $event=Evenement::where('title',$title)->first();
+        
+        $artistId= $event->artist_id;
         $artists= Artist::find($artistId);
         $events= Evenement::whereIn('status', ['upcoming', 'ongoing', 'completed'])->latest()->paginate(3);
         $blogPosts = BlogPost::where('status', 'published')->latest()->paginate(4);
-        $seo = $eventDetails->getDynamicSEOData();
-        return view('front-office.events.event-details',compact('eventDetails','events','blogPosts','artists','seo'));
+        //$seo = $event->getDynamicSEOData();
+        return view('front-office.events.event-details',compact('event','events','blogPosts','artists'));
     }
 }

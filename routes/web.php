@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\File;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Models\BlogPost;
+use App\Http\Controllers\FrontEventController;
 
 Route::get('/', [App\Http\Controllers\FrontOfficePageController::class, 'index'])->name('front.home');
 
@@ -46,12 +47,13 @@ Route::prefix('back-office')->middleware('auth')->group(function () {
 
 Route::redirect('/home', '/');
 
-Route::get('/evenements', [App\Http\Controllers\EventController::class, 'evenements'])->name('front.evenements');
+Route::get('/evenements', [App\Http\Controllers\FrontEventController::class, 'evenements'])->name('front.evenements');
 Route::get('/actualite', [App\Http\Controllers\FrontOfficePageController::class, 'blog'])->name('front.blog');
 Route::get('/actualite/{slug}', [App\Http\Controllers\FrontOfficePageController::class, 'blogPost'])->name('front.blog-post');
 
 
-Route::get('/evenements/{id}', [App\Http\Controllers\EventController::class,'eventDetails'])->name('front.event-details');
+Route::get('/evenements/{title}', [App\Http\Controllers\FrontEventController::class,'eventDetails'])->name('front.event.details');
+
 
 Route::get('/artistes', [App\Http\Controllers\HomeController::class, 'artistes'])->name('front.artistes');
 Route::get('/artistes/{slug}', [App\Http\Controllers\ArtistController::class, 'artisteDetails'])->name('front.artisteDetail');

@@ -25,7 +25,7 @@
               </p>
               @endif
               
-              <a href="{{route('front.event-details', $event->title)}}" class="button primary">En savoir plus</a>
+              <a href="{{route('front.event.details', $event->title)}}" class="button primary">En savoir plus</a>
             </div>
           </div>
           @if ($event->isUpComing())

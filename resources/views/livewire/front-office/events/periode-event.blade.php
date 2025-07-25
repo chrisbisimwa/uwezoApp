@@ -21,13 +21,13 @@
                       <div class="andro_event-body">
                          <div class="andro_event-data">
                           <span></span>
-                          <span> <a href="{{route('front.event-details', $event->title)}}"> {{$event->title}} </a> </span>
+                          <span> <a href="{{route('front.event.details', $event->title)}}"> {{$event->title}} </a> </span>
                           <b> <i class="fal fa-map-marker"></i> {{$event->location}} </b>
                             Du {{$event->start_date->format('d M Y')}} Au {{$event->end_date->format('M y')}}  
                         </div>
                       </div>
                       <div class="andro_event-controls">
-                        <a href="{{route('front.event-details', $event->title)}}" class="button outline sm"> Details </a>
+                        <a href="{{route('front.event.details', $event->title)}}" class="button outline sm"> Details </a>
                       </div>
                     </div>
                   </div>

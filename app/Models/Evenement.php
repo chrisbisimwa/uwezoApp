@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Scopes\Searchable;
 use Carbon\Carbon;
-use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Evenement extends Model
@@ -93,6 +92,10 @@ class Evenement extends Model
 
         );
     }
+
+    
+
+
     /**
      * Met à jour le statut de l'événement en fonction des dates.
      */

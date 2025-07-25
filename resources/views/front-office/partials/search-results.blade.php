@@ -39,7 +39,7 @@
                 <ul>
                     @forelse($evenements as $event)
                         <li>
-                            <a href="{{ route('front.event-details', ['title' => $event->title]) }}">
+                            <a href="{{ route('front.event.details', ['title' => $event->title]) }}">
                                 {{ $event->title }}
                             </a>
                         </li>

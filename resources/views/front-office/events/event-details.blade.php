@@ -18,7 +18,7 @@
     <div class="row align-items-start align-items-md-center">
       <div class="col-lg-4 col-sm-4">
         <div class="andro_artist-d-img">
-          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$eventDetails->image_path) }} " style="width: 600%;" alt="image event">
+          <img class="andro_img-cover"  src="{{ asset('storage/uploads/'.$event->image_path) }} " style="width: 600%;" alt="image event">
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1 col-sm-8">
@@ -27,7 +27,7 @@
           <div class="andro_artist-d-header">
             <div class="andro_artist-d-name">
               {{-- <span class="andro_artist-d-designation">Categorie d'evenement</span> --}}
-              <h2 class="h3">{{$eventDetails->title}}</h2>
+              <h2 class="h3">{{$event->title}}</h2>
             </div>
             <ul class="andro_socials">
               <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
@@ -38,7 +38,7 @@
           </div>
 
           <div class="andro_artist-d-meta">
-            @if ($eventDetails->organizer == null)
+            @if ($event->organizer == null)
             <div class="andro_artist-d-meta-item">
               <b>Organisateur: </b>
               <span> <b class="fw-500 color-primary">{{ $artists->nom }} {{ $artists->prenom }}</b> </span>
@@ -50,21 +50,21 @@
             @else
             <div class="andro_artist-d-meta-item">
               <b>Organisateur: </b>
-              <span> <b class="fw-500 color-primary">{{$eventDetails->organizer}}</b> </span>
+              <span> <b class="fw-500 color-primary">{{$event->organizer}}</b> </span>
             </div>
             <div class="andro_artist-d-meta-item">
               <b>Contact </b>
-              <span>{{$eventDetails->organizer_phone}}</span>
+              <span>{{$event->organizer_phone}}</span>
             </div>
             @endif
           </div>
           <div class="andro_artist-d-upcoming">
             <div class="andro_artist-d-loc">
               <h6>Evenement à venir: </h6>
-              <span> <i class="fal fa-map-marker"></i> {{$eventDetails->location}}</span>
+              <span> <i class="fal fa-map-marker"></i> {{$event->location}}</span>
             </div>
             <div class="andro_artist-d-countdown">
-              <div class="andro_countdown-timer" data-countdown="{{$eventDetails->start_date}}"></div>
+              <div class="andro_countdown-timer" data-countdown="{{$event->start_date}}"></div>
             </div>
           </div>
 
@@ -82,7 +82,7 @@
               <h4>Description</h4>
               <div class="andro_artist-d-section-content">
                 <p>
-                 {{ $eventDetails->description }}
+                 {{ $event->description }}
                 </p>
                 
               </div>
@@ -91,10 +91,10 @@
             
       <div class="andro_post-d-footer">
 
-        @if ($eventDetails->categories)
+        @if ($event->categories)
         <div class="andro_post-d-tags">
           <b>Tags: </b>
-          @foreach ($eventDetails->categories->pluck('name')->toArray() as $item)
+          @foreach ($event->categories->pluck('name')->toArray() as $item)
           <a href="#">{{$item}}</a>@if (!$loop->last), @endif
               
           @endforeach
@@ -112,7 +112,7 @@
         </ul>
       </div>
 
-      @livewire('front-office.events.event-comment2', ['eventDetails' => $eventDetails])
+      @livewire('front-office.events.event-comment2', ['event' => $event])
 
           </div>
         </div>
@@ -129,12 +129,12 @@
                 @forelse ($events as $event)
                 <div class="andro_event">
                   <div class="andro_album-img" style="margin-right: 6px;">
-                    <a href="{{route('front.event-details', $event->title)}}"><img src="{{ asset('storage/uploads/'.$event->image_path) }}"  style="width: 120px;" alt="image event"></a>
+                    <a href="{{route('front.event.details', $event->title)}}"><img src="{{ asset('storage/uploads/'.$event->image_path) }}"  style="width: 120px;" alt="image event"></a>
                   </div>
                   <div class="andro_event-content">
                     <div class="andro_event-body">
                        <div class="andro_event-data">
-                        <span> <a href="{{route('front.event-details', $event->title)}}"> {{$event->title}} </a> </span>
+                        <span> <a href="{{route('front.event.details', $event->title)}}"> {{$event->title}} </a> </span>
                         <b> <i class="fal fa-map-marker"></i> {{$event->location}} </b>
                           Du {{$event->start_date->format('d M Y')}} Au {{$event->end_date->format('M y')}}  
                       </div>
