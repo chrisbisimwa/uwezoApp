@@ -36,6 +36,7 @@
                             <div class="andro_artist-d-header">
                                 <div class="andro_artist-d-name">
                                     <span class="andro_artist-d-designation"></span>
+                                    
                                     <h2 class="h3">
 
                                         {{ $artisteDetail->nom }} {{ $artisteDetail->prenom }}
@@ -43,9 +44,11 @@
                                     </h2>
 
                                 </div>
+
+                                
                                 
                                 <ul class="andro_socials">
-                                    <span style="display: block; margin-bottom: 8px;">Pour partager cet artiste :</span>
+                                    
                                     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
                                             target="_blank" class="social-button">
                                             <i class="fab fa-facebook-f"></i>
