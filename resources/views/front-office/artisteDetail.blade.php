@@ -9,7 +9,8 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('front.home') }}">Accueil</a></li>
                     <li class="breadcrumb-item" aria-current="page"><a href="{{ route('front.artistes') }}">Artistes</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $artisteDetail->nom }} {{ $artisteDetail->prenom }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $artisteDetail->nom }}
+                        {{ $artisteDetail->prenom }}</li>
                 </ol>
             </nav>
 
@@ -42,15 +43,32 @@
                                     </h2>
 
                                 </div>
+                                
                                 <ul class="andro_socials">
-                                    <li> <a href="{{ $artisteDetail->facebook_link }}" target="_blank"> <i
-                                                class="fab fa-facebook-f"></i> </a> </li>
-                                    <li> <a href="{{ $artisteDetail->twitter_link }}" target="_blank"> <i
-                                                class="fab fa-twitter"></i> </a> </li>
-                                    <li> <a href="{{ $artisteDetail->instagram_link }}" target="_blank"> <i
-                                                class="fab fa-instagram"></i> </a> </li>
-                                    <li> <a href="{{ $artisteDetail->tiktok_link }}" target="_blank"> <i
-                                                class="fab fa-tiktok"></i> </a> </li>
+                                    <span style="display: block; margin-bottom: 8px;">Pour partager cet artiste :</span>
+                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                                            target="_blank" class="social-button">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($artisteDetail->nom.' '.$artisteDetail->prenom) }}"
+                                            target="_blank" class="social-button">
+                                            <i class="fab fa-twitter"></i>
+                                        </a></li>
+
+                                    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(url()->current()) }}&title={{ urlencode($artisteDetail->nom.' '.$artisteDetail->prenom) }}&summary={{ urlencode($artisteDetail->shortBiography()) }}&source={{ urlencode('Votre source ici') }}"
+                                            target="_blank" class="social-button">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a></li>
+
+                                    <li>
+                                        <a href="whatsapp://send?text={{ urlencode($artisteDetail->nom.' '.$artisteDetail->prenom.' => ' . url()->current()) }}"
+                                            data-action="share/whatsapp/share" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </li>
+
+                                    
                                 </ul>
                             </div>
 
@@ -70,17 +88,29 @@
                             </div>
 
                             <div class="andro_artist-d-availability">
-                                <h6>Disponible sur: </h6>
+                                <h6>Artiste disponible sur: </h6>
+                                @if ($artisteDetail->facebook_link)
+                                    <a href="{{ $artisteDetail->facebook_link }}" class="facebook" target="_blank"> <i
+                                            class="fab fa-facebook-f"></i> Facebook </a>
+                                @endif
+                                @if ($artisteDetail->twitter_link)
+                                    <a href="{{ $artisteDetail->twitter_link }}" class="twitter" target="_blank"> <i
+                                            class="fab fa-twitter"></i> Twitter </a>
+                                @endif
+                                @if ($artisteDetail->instagram_link)
+                                    <a href="{{ $artisteDetail->instagram_link }}" class="instagram" target="_blank"> <i
+                                            class="fab fa-instagram"></i> Instagram </a>
+                                @endif
+                                @if ($artisteDetail->tiktok_link)
+                                    <a href="{{ $artisteDetail->tiktok_link }}" class="tiktok" target="_blank"> <i
+                                            class="fab fa-tiktok"></i> TikTok </a>
+                                @endif
                                 <a href="{{ $artisteDetail->soundcloud_link }}" class="soundcloud" target="_blank"> <i
                                         class="fab fa-spotify"></i> Spotify </a>
                                 <a href="{{ $artisteDetail->youtube_link }}" class="youtube" target="_blank"
                                     target="_blank"> <i class="fab fa-youtube"></i> Youtube </a>
                             </div>
-                            <div class="andro_artist-d-upcoming">
 
-
-
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,27 +118,12 @@
                 <div class="andro_artist-d-content-wrap">
 
 
-                    <nav class="navbar">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#artistDescription"> <i class="far fa-chevron-right"></i>
-                                    Description</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#artistTracks"> <i class="far fa-chevron-right"></i> Oeuvres</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#artistEvents"> <i class="far fa-chevron-right"></i> Evenement</a>
-                            </li>
-
-                        </ul>
-                    </nav>
 
 
                     <div class="andro_artist-d-content">
 
                         <div class="andro_artist-d-section" id="artistDescription">
-                            <h4>Description</h4>
+                            <h4>Biographie</h4>
                             <div class="andro_artist-d-section-content">
                                 <p>
 
@@ -120,7 +135,7 @@
                         </div>
 
                         <div class="andro_artist-d-section" id="artistTracks">
-                            <h4>Oeuvres <a href="#">Afficher tout</a> </h4>
+                            <h4>Oeuvres  </h4>
 
                             @php
                                 function getYouTubeVideoId($url)
@@ -202,7 +217,7 @@
                         </div>
 
                         <div class="andro_artist-d-section" id="artistEvents">
-                            <h4>Evenements <a href="#">Afficher tout</a></h4>
+                            <h4>Evenements </h4>
                             @foreach ($event as $evt)
                                 <div class="andro_artist-d-section-content">
                                     <div class="andro_event">
